@@ -1,0 +1,208 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 390,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    }
+  },
+  "description": "Ranks within eight selected video services, all measured from 2021 to 2025.",
+  "data": {
+    "url": "data/video_services.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "percent": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "percent",
+          "order": "descending"
+        }
+      ],
+      "groupby": [
+        "year"
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 68
+        },
+        "strokeWidth": 2.6
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "title": null,
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              1,
+              8
+            ],
+            "reverse": true
+          },
+          "axis": {
+            "title": "Rank among selected services",
+            "tickMinStep": 1
+          }
+        },
+        "color": {
+          "field": "service",
+          "type": "nominal",
+          "scale": {
+            "range": [
+              "#24665a",
+              "#914859",
+              "#355f91",
+              "#854689",
+              "#946218",
+              "#496a31",
+              "#9f4329",
+              "#536069"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "columns": 4
+          }
+        },
+        "detail": {
+          "field": "service"
+        },
+        "order": {
+          "field": "year"
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "service",
+            "title": "Service"
+          },
+          {
+            "field": "rank",
+            "title": "Rank"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Used (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year === 2025"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "dy": -8,
+        "font": "Inter",
+        "fontSize": 10,
+        "fontWeight": 700
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "reverse": true
+          }
+        },
+        "text": {
+          "field": "service"
+        },
+        "color": {
+          "field": "service",
+          "type": "nominal",
+          "scale": {
+            "range": [
+              "#24665a",
+              "#914859",
+              "#355f91",
+              "#854689",
+              "#946218",
+              "#496a31",
+              "#9f4329",
+              "#536069"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

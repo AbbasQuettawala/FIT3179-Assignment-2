@@ -1,0 +1,271 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 400,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "description": "Six-month online news and information reach among ACMA survey age groups, 2025.",
+  "data": {
+    "url": "data/news_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "percent": "number",
+        "base_n": "number",
+        "year": "number"
+      }
+    }
+  },
+  "encoding": {
+    "y": {
+      "field": "age",
+      "type": "ordinal",
+      "sort": [
+        "18–24",
+        "25–34",
+        "35–44",
+        "45–54",
+        "55–64",
+        "65–74",
+        "75+"
+      ],
+      "axis": {
+        "title": "Age"
+      },
+      "scale": {
+        "range": [
+          100,
+          {
+            "expr": "height"
+          }
+        ]
+      }
+    },
+    "x": {
+      "field": "percent",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          100
+        ]
+      },
+      "axis": {
+        "title": "Accessed news and information online (%)"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "age",
+        "title": "Age"
+      },
+      {
+        "field": "percent",
+        "type": "quantitative",
+        "format": ".1f",
+        "title": "Six-month reach (%)"
+      },
+      {
+        "field": "base_n",
+        "type": "quantitative",
+        "title": "Respondent base"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "size": 125,
+        "color": "#1f6f5b",
+        "opacity": 1
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dx": -12,
+        "align": "right",
+        "font": "Inter",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "text": {
+          "field": "percent",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "filter": "datum.age === '75+'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "percent",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ]
+        },
+        "x2": {
+          "value": {
+            "expr": "width - 2"
+          }
+        },
+        "y2": {
+          "field": "age"
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "filter": "datum.age === '75+'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "width < 360 ? \"Older respondents still\\nreport broad online reach.\\nThis question measures news\\nand information access, not\\ntrust.\" : \"Older respondents still report broad online reach. This\\nquestion measures news and information access, not trust.\""
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": 4
+        },
+        "y": {
+          "value": 5
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "callout_elbow",
+      "transform": [
+        {
+          "filter": "datum.age === '75+'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width - 2"
+          }
+        },
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ]
+        },
+        "x2": {
+          "value": {
+            "expr": "width - 2"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "10 + 15 * length(split((width < 360 ? \"Older respondents still\\nreport broad online reach.\\nThis question measures news\\nand information access, not\\ntrust.\" : \"Older respondents still report broad online reach. This\\nquestion measures news and information access, not trust.\"), '\\n'))"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    }
+  ]
+}

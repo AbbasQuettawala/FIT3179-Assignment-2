@@ -1,0 +1,447 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 350,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    }
+  },
+  "description": "A bipartite network linking audio formats to the places Australians listen.",
+  "data": {
+    "url": "data/audio_locations.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "percent": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "audioFocus",
+      "value": "All formats",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All formats",
+          "Music streaming",
+          "Podcasts",
+          "Internet radio",
+          "DAB+ radio",
+          "FM radio",
+          "AM radio"
+        ],
+        "name": "Trace a format  "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "indexof(['Music streaming','Podcasts','Internet radio','DAB+ radio','FM radio','AM radio'], datum.format)",
+      "as": "format_y"
+    },
+    {
+      "calculate": "datum.location === 'Home' ? 0.7 : datum.location === 'In transit' ? 2.5 : 4.3",
+      "as": "location_y"
+    }
+  ],
+  "layer": [
+    {
+      "name": "audio_links",
+      "mark": {
+        "type": "rule",
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.16,
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ]
+          },
+          "axis": null
+        },
+        "x2": {
+          "datum": 0.84
+        },
+        "y": {
+          "field": "format_y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.5,
+              5.5
+            ]
+          },
+          "axis": null
+        },
+        "y2": {
+          "field": "location_y"
+        },
+        "color": {
+          "field": "format",
+          "type": "nominal",
+          "scale": {
+            "range": [
+              "#24665a",
+              "#914859",
+              "#355f91",
+              "#854689",
+              "#946218",
+              "#496a31",
+              "#9f4329",
+              "#536069"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": [
+            {
+              "test": "audioFocus === 'All formats'",
+              "value": 0.5
+            },
+            {
+              "test": "datum.format === audioFocus",
+              "value": 0.95
+            }
+          ],
+          "value": 0.06
+        },
+        "strokeWidth": {
+          "field": "percent",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ],
+            "range": [
+              0,
+              12
+            ]
+          },
+          "legend": {
+            "title": "Listened there (%)",
+            "orient": "top",
+            "values": [
+              25,
+              50,
+              75
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "format",
+            "title": "Format"
+          },
+          {
+            "field": "location",
+            "title": "Location"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Share (%)"
+          },
+          {
+            "field": "base_n",
+            "type": "quantitative",
+            "title": "Base n"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "Music streaming",
+            "y": 0,
+            "x": 0.14
+          },
+          {
+            "name": "Podcasts",
+            "y": 1,
+            "x": 0.14
+          },
+          {
+            "name": "Internet radio",
+            "y": 2,
+            "x": 0.14
+          },
+          {
+            "name": "DAB+ radio",
+            "y": 3,
+            "x": 0.14
+          },
+          {
+            "name": "FM radio",
+            "y": 4,
+            "x": 0.14
+          },
+          {
+            "name": "AM radio",
+            "y": 5,
+            "x": 0.14
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 155,
+        "stroke": "#f7f3e8",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "name",
+          "type": "nominal",
+          "scale": {
+            "range": [
+              "#24665a",
+              "#914859",
+              "#355f91",
+              "#854689",
+              "#946218",
+              "#496a31",
+              "#9f4329",
+              "#536069"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": {
+            "test": "audioFocus === 'All formats' || datum.name === audioFocus",
+            "value": 1
+          },
+          "value": 0.25
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "Music streaming",
+            "y": 0,
+            "x": 0.14
+          },
+          {
+            "name": "Podcasts",
+            "y": 1,
+            "x": 0.14
+          },
+          {
+            "name": "Internet radio",
+            "y": 2,
+            "x": 0.14
+          },
+          {
+            "name": "DAB+ radio",
+            "y": 3,
+            "x": 0.14
+          },
+          {
+            "name": "FM radio",
+            "y": 4,
+            "x": 0.14
+          },
+          {
+            "name": "AM radio",
+            "y": 5,
+            "x": 0.14
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -10,
+        "font": "Inter",
+        "fontSize": 11,
+        "fontWeight": 650,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "name"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "Home",
+            "y": 0.7,
+            "x": 0.86
+          },
+          {
+            "name": "In transit",
+            "y": 2.5,
+            "x": 0.86
+          },
+          {
+            "name": "Elsewhere",
+            "y": 4.3,
+            "x": 0.86
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 180,
+        "color": "#10231f",
+        "stroke": "#f7f3e8",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "Home",
+            "y": 0.7,
+            "x": 0.86
+          },
+          {
+            "name": "In transit",
+            "y": 2.5,
+            "x": 0.86
+          },
+          {
+            "name": "Elsewhere",
+            "y": 4.3,
+            "x": 0.86
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "font": "Inter",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "name"
+        }
+      }
+    },
+    {
+      "name": "audio_readout",
+      "transform": [
+        {
+          "filter": "datum.format === audioFocus"
+        },
+        {
+          "calculate": "format(datum.percent, '.1f') + '%'",
+          "as": "reading"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "dy": 16,
+        "font": "Inter",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#1f6f5b"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.86
+        },
+        "y": {
+          "field": "location_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "reading"
+        }
+      }
+    }
+  ]
+}

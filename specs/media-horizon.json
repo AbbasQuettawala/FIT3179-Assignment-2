@@ -1,0 +1,606 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 370,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    }
+  },
+  "description": "Four horizon rows with 10-percentage-point bands folded onto a shared baseline.",
+  "data": {
+    "url": "data/horizon_trends.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "metric_order": "number",
+        "baseline": "number",
+        "percent": "number",
+        "change": "number",
+        "band": "number",
+        "band_value": "number",
+        "y0": "number",
+        "y1": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.band === 1"
+        },
+        {
+          "calculate": "datum.change < 0 ? -datum.band : datum.band",
+          "as": "signed_band"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "orient": "vertical"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              2017,
+              2025
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": null,
+            "format": "d",
+            "tickMinStep": 1,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "y1",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              52
+            ]
+          },
+          "axis": null
+        },
+        "y2": {
+          "field": "y0"
+        },
+        "detail": {
+          "field": "metric"
+        },
+        "color": {
+          "field": "signed_band",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              -4,
+              -3,
+              -2,
+              -1,
+              1,
+              2,
+              3,
+              4
+            ],
+            "range": [
+              "#942c4d",
+              "#b44062",
+              "#d9859e",
+              "#f0c3d0",
+              "#bcd8ca",
+              "#79ad99",
+              "#40856f",
+              "#155641"
+            ]
+          },
+          "legend": {
+            "title": [
+              "Change vs first measured year",
+              "(percentage points)"
+            ],
+            "titleLimit": 290,
+            "orient": "top",
+            "columns": 4,
+            "symbolType": "square",
+            "labelExpr": "datum.value < 0 ? format(datum.value * 10, '+d') + ' to ' + format((datum.value + 1) * 10, '+d') : format((datum.value - 1) * 10, '+d') + ' to ' + format(datum.value * 10, '+d')"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "metric",
+            "title": "Medium"
+          },
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "change",
+            "type": "quantitative",
+            "format": "+.1f",
+            "title": "Change (percentage points)"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Weekly use (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.band === 2"
+        },
+        {
+          "calculate": "datum.change < 0 ? -datum.band : datum.band",
+          "as": "signed_band"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "orient": "vertical"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              2017,
+              2025
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": null,
+            "format": "d",
+            "tickMinStep": 1,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "y1",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              52
+            ]
+          },
+          "axis": null
+        },
+        "y2": {
+          "field": "y0"
+        },
+        "detail": {
+          "field": "metric"
+        },
+        "color": {
+          "field": "signed_band",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              -4,
+              -3,
+              -2,
+              -1,
+              1,
+              2,
+              3,
+              4
+            ],
+            "range": [
+              "#942c4d",
+              "#b44062",
+              "#d9859e",
+              "#f0c3d0",
+              "#bcd8ca",
+              "#79ad99",
+              "#40856f",
+              "#155641"
+            ]
+          },
+          "legend": {
+            "title": [
+              "Change vs first measured year",
+              "(percentage points)"
+            ],
+            "titleLimit": 290,
+            "orient": "top",
+            "columns": 4,
+            "symbolType": "square",
+            "labelExpr": "datum.value < 0 ? format(datum.value * 10, '+d') + ' to ' + format((datum.value + 1) * 10, '+d') : format((datum.value - 1) * 10, '+d') + ' to ' + format(datum.value * 10, '+d')"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "metric",
+            "title": "Medium"
+          },
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "change",
+            "type": "quantitative",
+            "format": "+.1f",
+            "title": "Change (percentage points)"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Weekly use (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.band === 3"
+        },
+        {
+          "calculate": "datum.change < 0 ? -datum.band : datum.band",
+          "as": "signed_band"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "orient": "vertical"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              2017,
+              2025
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": null,
+            "format": "d",
+            "tickMinStep": 1,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "y1",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              52
+            ]
+          },
+          "axis": null
+        },
+        "y2": {
+          "field": "y0"
+        },
+        "detail": {
+          "field": "metric"
+        },
+        "color": {
+          "field": "signed_band",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              -4,
+              -3,
+              -2,
+              -1,
+              1,
+              2,
+              3,
+              4
+            ],
+            "range": [
+              "#942c4d",
+              "#b44062",
+              "#d9859e",
+              "#f0c3d0",
+              "#bcd8ca",
+              "#79ad99",
+              "#40856f",
+              "#155641"
+            ]
+          },
+          "legend": {
+            "title": [
+              "Change vs first measured year",
+              "(percentage points)"
+            ],
+            "titleLimit": 290,
+            "orient": "top",
+            "columns": 4,
+            "symbolType": "square",
+            "labelExpr": "datum.value < 0 ? format(datum.value * 10, '+d') + ' to ' + format((datum.value + 1) * 10, '+d') : format((datum.value - 1) * 10, '+d') + ' to ' + format(datum.value * 10, '+d')"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "metric",
+            "title": "Medium"
+          },
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "change",
+            "type": "quantitative",
+            "format": "+.1f",
+            "title": "Change (percentage points)"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Weekly use (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.band === 4"
+        },
+        {
+          "calculate": "datum.change < 0 ? -datum.band : datum.band",
+          "as": "signed_band"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "orient": "vertical"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              2017,
+              2025
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": null,
+            "format": "d",
+            "tickMinStep": 1,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "y1",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              52
+            ]
+          },
+          "axis": null
+        },
+        "y2": {
+          "field": "y0"
+        },
+        "detail": {
+          "field": "metric"
+        },
+        "color": {
+          "field": "signed_band",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              -4,
+              -3,
+              -2,
+              -1,
+              1,
+              2,
+              3,
+              4
+            ],
+            "range": [
+              "#942c4d",
+              "#b44062",
+              "#d9859e",
+              "#f0c3d0",
+              "#bcd8ca",
+              "#79ad99",
+              "#40856f",
+              "#155641"
+            ]
+          },
+          "legend": {
+            "title": [
+              "Change vs first measured year",
+              "(percentage points)"
+            ],
+            "titleLimit": 290,
+            "orient": "top",
+            "columns": 4,
+            "symbolType": "square",
+            "labelExpr": "datum.value < 0 ? format(datum.value * 10, '+d') + ' to ' + format((datum.value + 1) * 10, '+d') : format((datum.value - 1) * 10, '+d') + ' to ' + format(datum.value * 10, '+d')"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "metric",
+            "title": "Medium"
+          },
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "change",
+            "type": "quantitative",
+            "format": "+.1f",
+            "title": "Change (percentage points)"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Weekly use (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.band === 1"
+        },
+        {
+          "calculate": "max(2017, datum.year - 0.5)",
+          "as": "hover_start"
+        },
+        {
+          "calculate": "min(2025, datum.year + 0.5)",
+          "as": "hover_end"
+        },
+        {
+          "calculate": "datum.y0 + 10",
+          "as": "hover_top"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "opacity": 0
+      },
+      "encoding": {
+        "x": {
+          "field": "hover_start",
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "hover_end"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "hover_top"
+        },
+        "tooltip": [
+          {
+            "field": "metric",
+            "title": "Medium"
+          },
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Weekly use (%)"
+          },
+          {
+            "field": "change",
+            "type": "quantitative",
+            "format": "+.1f",
+            "title": "Change (percentage points)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year === 2025 && datum.band === 1"
+        },
+        {
+          "calculate": "datum.y0 + 11.5",
+          "as": "label_y"
+        },
+        {
+          "calculate": "datum.metric + '  ' + format(datum.change, '+.1f') + ' pp · since ' + (datum.metric === 'Short-form video' ? '2022' : '2017')",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "font": "Inter",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "datum": 2017
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ]
+}

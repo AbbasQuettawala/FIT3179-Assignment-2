@@ -1,0 +1,292 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 460,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "description": "Interactive parallel coordinates showing each age group's cross-media profile.",
+  "data": {
+    "url": "data/age_media.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "age_order": "number",
+        "percent": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "indexof([\"Paid video\", \"Short-form video\", \"Music streaming\", \"Podcasts\", \"Free-to-air TV\", \"FM radio\"], datum.metric)",
+      "as": "metric_position"
+    }
+  ],
+  "params": [
+    {
+      "name": "selectedAge",
+      "value": "18–24",
+      "bind": {
+        "input": "select",
+        "options": [
+          "18–24",
+          "25–34",
+          "35–44",
+          "45–54",
+          "55–64",
+          "65–74",
+          "75+"
+        ],
+        "name": "Highlight age  "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 45
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "metric",
+          "type": "ordinal",
+          "sort": [
+            "Paid video",
+            "Short-form video",
+            "Music streaming",
+            "Podcasts",
+            "Free-to-air TV",
+            "FM radio"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": -28,
+            "labelLimit": 110
+          }
+        },
+        "y": {
+          "field": "percent",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ],
+            "range": [
+              {
+                "expr": "height"
+              },
+              100
+            ]
+          },
+          "axis": {
+            "title": "Past-week use (%)"
+          }
+        },
+        "detail": {
+          "field": "age"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.age === selectedAge",
+            "value": "#d94d72"
+          },
+          "value": "#63736f"
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum.age === selectedAge",
+            "value": 1
+          },
+          "value": 0.16
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.age === selectedAge",
+            "value": 4
+          },
+          "value": 1.2
+        },
+        "order": {
+          "field": "metric_position",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "age",
+            "title": "Age"
+          },
+          {
+            "field": "metric",
+            "title": "Medium"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Share (%)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "filter": "datum.age === selectedAge"
+        },
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "percent",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "metric",
+          "type": "ordinal",
+          "sort": [
+            "Paid video",
+            "Short-form video",
+            "Music streaming",
+            "Podcasts",
+            "Free-to-air TV",
+            "FM radio"
+          ]
+        },
+        "y": {
+          "field": "percent",
+          "type": "quantitative"
+        },
+        "x2": {
+          "value": {
+            "expr": "min(width * 0.8, 280)"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "10 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (width < 360 ? \"Free-to-air leads this age\\nprofile, yet digital formats\\nstill reach some of the same\\nage group. Habits overlap.\" : \"Free-to-air leads this age profile, yet digital formats\\nstill reach some of the same age group. Habits overlap.\") : (width < 360 ? \"Paid video leads this age\\nprofile, but broadcast\\nformats still reach part of\\nthe group. Media habits\\noverlap.\" : \"Paid video leads this age profile, but broadcast formats\\nstill reach part of the group. Media habits overlap.\")), '\\n'))"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "filter": "datum.age === selectedAge"
+        },
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "percent",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "(datum.metric === 'Free-to-air TV') ? (width < 360 ? \"Free-to-air leads this age\\nprofile, yet digital formats\\nstill reach some of the same\\nage group. Habits overlap.\" : \"Free-to-air leads this age profile, yet digital formats\\nstill reach some of the same age group. Habits overlap.\") : (width < 360 ? \"Paid video leads this age\\nprofile, but broadcast\\nformats still reach part of\\nthe group. Media habits\\noverlap.\" : \"Paid video leads this age profile, but broadcast formats\\nstill reach part of the group. Media habits overlap.\")"
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": 4
+        },
+        "y": {
+          "value": 5
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    }
+  ]
+}

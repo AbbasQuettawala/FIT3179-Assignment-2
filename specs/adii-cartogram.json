@@ -1,0 +1,343 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 615,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "description": "Dorling cartogram: area represents March 2026 residents; colour separately represents ADII 2024 fieldwork.",
+  "data": {
+    "url": "data/population_cartogram.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "score": "number",
+        "national": "number",
+        "gap": "number",
+        "absolute_gap": "number",
+        "longitude": "number",
+        "latitude": "number",
+        "population": "number",
+        "radius": "number",
+        "cartogram_x": "number",
+        "cartogram_y": "number",
+        "extent_x": "number",
+        "extent_y": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.cartogram_x * min(width / 307.8186481717228, (height - 185) / 258.07065913860407) + (width - datum.extent_x * min(width / 307.8186481717228, (height - 185) / 258.07065913860407)) / 2",
+      "as": "pixel_x"
+    },
+    {
+      "calculate": "100 + datum.cartogram_y * min(width / 307.8186481717228, (height - 185) / 258.07065913860407) + (height - 185 - datum.extent_y * min(width / 307.8186481717228, (height - 185) / 258.07065913860407)) / 2",
+      "as": "pixel_y"
+    },
+    {
+      "calculate": "4 * pow(datum.radius * min(width / 307.8186481717228, (height - 185) / 258.07065913860407), 2)",
+      "as": "symbol_size"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "pixel_x",
+      "type": "quantitative",
+      "scale": null,
+      "axis": null
+    },
+    "y": {
+      "field": "pixel_y",
+      "type": "quantitative",
+      "scale": null,
+      "axis": null
+    }
+  },
+  "layer": [
+    {
+      "name": "cartogram_states",
+      "mark": {
+        "type": "circle",
+        "stroke": "#f7f3e8",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "size": {
+          "field": "symbol_size",
+          "type": "quantitative",
+          "scale": null
+        },
+        "color": {
+          "field": "score",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              68,
+              80
+            ],
+            "range": [
+              "#edf5ef",
+              "#1f6f5b"
+            ]
+          },
+          "legend": {
+            "title": "ADII score",
+            "orient": "top"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "title": "State / territory"
+          },
+          {
+            "field": "population",
+            "type": "quantitative",
+            "format": ",.0f",
+            "title": "Residents (March 2026 estimate)"
+          },
+          {
+            "field": "score",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "ADII index score"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": "stateFocus === 'All' || datum.state === stateFocus",
+            "value": 1
+          },
+          "value": 0.22
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 12,
+        "fontWeight": 750
+      },
+      "encoding": {
+        "text": {
+          "field": "state"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.score >= 75",
+            "value": "white"
+          },
+          "value": "#10231f"
+        },
+        "opacity": {
+          "condition": {
+            "test": "stateFocus === 'All' || datum.state === stateFocus",
+            "value": 1
+          },
+          "value": 0.22
+        }
+      }
+    },
+    {
+      "name": "context_population_key",
+      "transform": [
+        {
+          "filter": "datum.state === 'NSW'"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "fill": "transparent",
+        "stroke": "#10231f",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width / 2 - 80"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "height - 42"
+          }
+        },
+        "size": {
+          "value": {
+            "expr": "4 * pow(20 * min(width / 307.8186481717228, (height - 185) / 258.07065913860407), 2)"
+          }
+        },
+        "tooltip": {
+          "value": "Area reference: one million residents"
+        }
+      }
+    },
+    {
+      "name": "context_population_label",
+      "transform": [
+        {
+          "filter": "datum.state === 'NSW'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": [
+          "1 million residents",
+          "Area key · March 2026"
+        ],
+        "align": "left",
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "width / 2 - 68 + 20 * min(width / 307.8186481717228, (height - 185) / 258.07065913860407)"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "height - 48"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "filter": "datum.state === 'NSW'"
+        },
+        {
+          "calculate": "datum.pixel_y - sqrt(datum.symbol_size) / 2",
+          "as": "callout_edge_y"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "pixel_x",
+          "type": "quantitative",
+          "scale": null,
+          "axis": null
+        },
+        "y": {
+          "field": "callout_edge_y",
+          "type": "quantitative",
+          "scale": null,
+          "axis": null
+        },
+        "x2": {
+          "value": {
+            "expr": "min(width * 0.8, 280)"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "10 + 15 * length(split((width < 360 ? \"NSW gains visual weight when\\nresidents, not land,\\ndetermine area. Colour still\\nmeasures inclusion, not\\naudience size.\" : \"NSW gains visual weight when residents, not land,\\ndetermine area. Colour still measures inclusion, not\\naudience size.\"), '\\n'))"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "filter": "datum.state === 'NSW'"
+        },
+        {
+          "calculate": "datum.pixel_y - sqrt(datum.symbol_size) / 2",
+          "as": "callout_edge_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "width < 360 ? \"NSW gains visual weight when\\nresidents, not land,\\ndetermine area. Colour still\\nmeasures inclusion, not\\naudience size.\" : \"NSW gains visual weight when residents, not land,\\ndetermine area. Colour still measures inclusion, not\\naudience size.\""
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": 4
+        },
+        "y": {
+          "value": 5
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    }
+  ],
+  "params": [
+    {
+      "name": "stateFocus",
+      "value": "All"
+    }
+  ]
+}

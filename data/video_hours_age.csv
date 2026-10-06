@@ -1,0 +1,43 @@
+age,age_order,metric,hours,national_hours,base_n
+18–24,0,Free-to-air TV,1.41,5.12,457
+25–34,1,Free-to-air TV,1.29,5.12,918
+35–44,2,Free-to-air TV,2.12,5.12,1146
+45–54,3,Free-to-air TV,3.96,5.12,890
+55–64,4,Free-to-air TV,7.11,5.12,790
+65–74,5,Free-to-air TV,11.36,5.12,778
+75+,6,Free-to-air TV,14.8,5.12,356
+18–24,0,FTA catch-up,0.93,2.14,463
+25–34,1,FTA catch-up,0.89,2.14,922
+35–44,2,FTA catch-up,1.43,2.14,1158
+45–54,3,FTA catch-up,2.12,2.14,895
+55–64,4,FTA catch-up,3.16,2.14,801
+65–74,5,FTA catch-up,3.93,2.14,791
+75+,6,FTA catch-up,3.54,2.14,370
+18–24,0,Paid streaming,6.36,6.27,429
+25–34,1,Paid streaming,6.72,6.27,882
+35–44,2,Paid streaming,7.03,6.27,1120
+45–54,3,Paid streaming,6.99,6.27,876
+55–64,4,Paid streaming,6.1,6.27,795
+65–74,5,Paid streaming,5.69,6.27,790
+75+,6,Paid streaming,3.33,6.27,376
+18–24,0,Pay TV,0.48,1.68,471
+25–34,1,Pay TV,0.82,1.68,953
+35–44,2,Pay TV,0.85,1.68,1183
+45–54,3,Pay TV,1.6,1.68,922
+55–64,4,Pay TV,2.8,1.68,827
+65–74,5,Pay TV,3.08,1.68,814
+75+,6,Pay TV,2.99,1.68,386
+18–24,0,Pay-per-view,0.26,0.22,477
+25–34,1,Pay-per-view,0.26,0.22,962
+35–44,2,Pay-per-view,0.39,0.22,1193
+45–54,3,Pay-per-view,0.24,0.22,934
+55–64,4,Pay-per-view,0.17,0.22,853
+65–74,5,Pay-per-view,0.07,0.22,834
+75+,6,Pay-per-view,0.1,0.22,400
+18–24,0,Short-form video,7.49,4.22,441
+25–34,1,Short-form video,5.94,4.22,878
+35–44,2,Short-form video,4.8,4.22,1138
+45–54,3,Short-form video,3.82,4.22,886
+55–64,4,Short-form video,2.88,4.22,807
+65–74,5,Short-form video,2.45,4.22,806
+75+,6,Short-form video,1.19,4.22,385

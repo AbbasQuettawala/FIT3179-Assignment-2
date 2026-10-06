@@ -1,0 +1,36 @@
+age,age_order,service,percent,base_n
+18–24,0,Spotify,70.52,525
+25–34,1,Spotify,62.83,1024
+35–44,2,Spotify,53.36,1265
+45–54,3,Spotify,48.49,977
+55–64,4,Spotify,37.4,885
+65–74,5,Spotify,24.34,879
+75+,6,Spotify,16.25,431
+18–24,0,YouTube Music,21.26,525
+25–34,1,YouTube Music,29.04,1024
+35–44,2,YouTube Music,26.92,1265
+45–54,3,YouTube Music,18.66,977
+55–64,4,YouTube Music,17.06,885
+65–74,5,YouTube Music,18.67,879
+75+,6,YouTube Music,11.57,431
+18–24,0,Apple Music,14.05,525
+25–34,1,Apple Music,13.06,1024
+35–44,2,Apple Music,11.96,1265
+45–54,3,Apple Music,12.52,977
+55–64,4,Apple Music,6.57,885
+65–74,5,Apple Music,4.29,879
+75+,6,Apple Music,2.49,431
+18–24,0,ABC listen,2.25,525
+25–34,1,ABC listen,1.97,1024
+35–44,2,ABC listen,3.41,1265
+45–54,3,ABC listen,5.47,977
+55–64,4,ABC listen,5.71,885
+65–74,5,ABC listen,8.98,879
+75+,6,ABC listen,10.65,431
+18–24,0,Amazon Music,4.09,525
+25–34,1,Amazon Music,5.21,1024
+35–44,2,Amazon Music,6.64,1265
+45–54,3,Amazon Music,3.69,977
+55–64,4,Amazon Music,4.13,885
+65–74,5,Amazon Music,3.75,879
+75+,6,Amazon Music,2.4,431

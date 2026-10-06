@@ -1,0 +1,286 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 440,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "description": "Paired weekly media-use estimates for metro and regional respondents in 2025.",
+  "data": {
+    "url": "data/metro_regional.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "metro": "number",
+        "regional": "number",
+        "gap": "number",
+        "metro_base_n": "number",
+        "regional_base_n": "number",
+        "year": "number"
+      }
+    }
+  },
+  "encoding": {
+    "y": {
+      "field": "metric",
+      "type": "nominal",
+      "sort": [
+        "Paid video",
+        "Short-form video",
+        "Music streaming",
+        "Podcasts",
+        "Free-to-air TV",
+        "FM radio"
+      ],
+      "axis": {
+        "title": null
+      },
+      "scale": {
+        "range": [
+          100,
+          {
+            "expr": "height"
+          }
+        ]
+      }
+    },
+    "x": {
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          100
+        ]
+      },
+      "axis": {
+        "title": "Past-week use (%)"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3,
+        "color": "#bbc9bf"
+      },
+      "encoding": {
+        "x": {
+          "field": "metro"
+        },
+        "x2": {
+          "field": "regional"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": [
+            "metro",
+            "regional"
+          ],
+          "as": [
+            "region",
+            "percent"
+          ]
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 100,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "percent"
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "metro",
+              "regional"
+            ],
+            "range": [
+              "#5279be",
+              "#d94d72"
+            ]
+          },
+          "legend": {
+            "title": "Location",
+            "orient": "top"
+          }
+        },
+        "shape": {
+          "field": "region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "metro",
+              "regional"
+            ],
+            "range": [
+              "circle",
+              "diamond"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "metric",
+            "title": "Weekly behaviour"
+          },
+          {
+            "field": "metro",
+            "format": ".1f",
+            "type": "quantitative",
+            "title": "Metro (%)"
+          },
+          {
+            "field": "regional",
+            "format": ".1f",
+            "type": "quantitative",
+            "title": "Regional (%)"
+          },
+          {
+            "field": "gap",
+            "format": "+.1f",
+            "type": "quantitative",
+            "title": "Regional minus metro (points)"
+          },
+          {
+            "field": "metro_base_n",
+            "title": "Metro base"
+          },
+          {
+            "field": "regional_base_n",
+            "title": "Regional base"
+          }
+        ]
+      }
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "filter": "datum.metric === 'FM radio'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "regional",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "metric",
+          "type": "nominal",
+          "sort": [
+            "Paid video",
+            "Short-form video",
+            "Music streaming",
+            "Podcasts",
+            "Free-to-air TV",
+            "FM radio"
+          ]
+        },
+        "x2": {
+          "value": {
+            "expr": "min(width * 0.8, 280)"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "10 + 15 * length(split((width < 360 ? \"Regional audiences lean more\\ntowards FM and broadcast TV;\\nthe tiny podcast gap\\nchallenges a simple\\nonline/offline divide.\" : \"Regional audiences lean more towards FM and broadcast TV;\\nthe tiny podcast gap challenges a simple online/offline\\ndivide.\"), '\\n'))"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "filter": "datum.metric === 'FM radio'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "width < 360 ? \"Regional audiences lean more\\ntowards FM and broadcast TV;\\nthe tiny podcast gap\\nchallenges a simple\\nonline/offline divide.\" : \"Regional audiences lean more towards FM and broadcast TV;\\nthe tiny podcast gap challenges a simple online/offline\\ndivide.\""
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": 4
+        },
+        "y": {
+          "value": 5
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    }
+  ]
+}

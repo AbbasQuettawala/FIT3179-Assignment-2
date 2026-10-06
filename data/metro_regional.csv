@@ -1,0 +1,7 @@
+metric,metro,regional,gap,metro_base_n,regional_base_n,source_id,question,year
+Paid video,68.87,65.22,-3.65,4107,1880,acma-watch,QF4,2025
+Short-form video,54.04,49.05,-4.99,4107,1880,acma-watch,QF4,2025
+Free-to-air TV,49.61,57.54,7.93,4107,1880,acma-watch,QF4,2025
+Music streaming,40.02,38.18,-1.84,4107,1880,acma-watch,QH3,2025
+Podcasts,18.9,19.24,0.34,4107,1880,acma-watch,QH3,2025
+FM radio,49.89,57.95,8.06,4107,1880,acma-watch,QH3,2025

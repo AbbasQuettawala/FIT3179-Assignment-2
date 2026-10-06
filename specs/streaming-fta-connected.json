@@ -1,0 +1,266 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 490,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "description": "A connected scatterplot contrasting paid streaming and free-to-air viewing.",
+  "data": {
+    "url": "data/streaming_fta.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "paid_streaming": "number",
+        "free_to_air": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "stroke": "#10231f",
+        "strokeWidth": 2.5,
+        "interpolate": "linear"
+      },
+      "encoding": {
+        "x": {
+          "field": "paid_streaming",
+          "type": "quantitative",
+          "scale": {
+            "zero": false
+          },
+          "axis": {
+            "title": "Used paid streaming in past 7 days (%)"
+          }
+        },
+        "y": {
+          "field": "free_to_air",
+          "type": "quantitative",
+          "scale": {
+            "zero": false,
+            "range": [
+              {
+                "expr": "height"
+              },
+              100
+            ]
+          },
+          "axis": {
+            "title": "Watched free-to-air TV in past 7 days (%)"
+          }
+        },
+        "order": {
+          "field": "year",
+          "type": "ordinal"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 125,
+        "stroke": "#f7f3e8",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "paid_streaming",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "free_to_air",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              {
+                "expr": "height"
+              },
+              100
+            ]
+          }
+        },
+        "color": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "viridis"
+          },
+          "legend": {
+            "title": "Year",
+            "orient": "top",
+            "format": "d"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "paid_streaming",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Paid streaming (%)"
+          },
+          {
+            "field": "free_to_air",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Free-to-air TV (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year === 2017 || datum.year === 2025"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontWeight": 700,
+        "dy": -12,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "field": "paid_streaming",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "free_to_air",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              {
+                "expr": "height"
+              },
+              100
+            ]
+          }
+        },
+        "text": {
+          "field": "year"
+        }
+      }
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "filter": "datum.year === 2025"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "paid_streaming",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "free_to_air",
+          "type": "quantitative"
+        },
+        "x2": {
+          "value": {
+            "expr": "min(width * 0.8, 280)"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "10 + 15 * length(split((width < 360 ? \"The FTA rebound interrupts\\nthe longer shift towards\\nstreaming: broadcast viewing\\nhas not simply disappeared.\" : \"The FTA rebound interrupts the longer shift towards\\nstreaming: broadcast viewing has not simply disappeared.\"), '\\n'))"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "filter": "datum.year === 2025"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "width < 360 ? \"The FTA rebound interrupts\\nthe longer shift towards\\nstreaming: broadcast viewing\\nhas not simply disappeared.\" : \"The FTA rebound interrupts the longer shift towards\\nstreaming: broadcast viewing has not simply disappeared.\""
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": 4
+        },
+        "y": {
+          "value": 5
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    }
+  ]
+}

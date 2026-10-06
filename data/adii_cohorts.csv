@@ -1,0 +1,14 @@
+group,cohort,score,gap
+Age,18–34,80.9,7.3
+Age,35–44,80.2,6.6
+Age,45–54,76.1,2.5
+Age,55–64,70.9,-2.7
+Age,65–74,62.9,-10.7
+Age,75+,51.2,-22.4
+Geography,Capital cities,75.5,1.9
+Geography,Regional,69.6,-4.0
+Remoteness,Major cities,75.1,1.5
+Remoteness,Inner regional,69.7,-3.9
+Remoteness,Outer regional,69.4,-4.2
+Remoteness,Remote,70.6,-3.0
+Remoteness,Very remote,62.5,-11.1

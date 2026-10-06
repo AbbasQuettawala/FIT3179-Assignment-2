@@ -1,0 +1,9 @@
+state_name,state,score,national,gap,absolute_gap,direction,longitude,latitude
+New South Wales,NSW,74.0,73.6,0.4,0.4,above,147.0,-32.5
+Victoria,VIC,74.1,73.6,0.5,0.5,above,144.9,-37.0
+Queensland,QLD,72.9,73.6,-0.7,0.7,below,144.0,-22.0
+South Australia,SA,71.3,73.6,-2.3,2.3,below,135.0,-30.0
+Western Australia,WA,73.9,73.6,0.3,0.3,above,121.0,-26.0
+Tasmania,TAS,69.4,73.6,-4.2,4.2,below,146.5,-42.0
+Northern Territory,NT,72.5,73.6,-1.1,1.1,below,133.5,-19.0
+Australian Capital Territory,ACT,79.5,73.6,5.9,5.9,above,149.1,-35.3

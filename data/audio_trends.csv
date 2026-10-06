@@ -1,0 +1,47 @@
+year,metric,percent,base_n
+2017,AM radio,34.66,2277
+2018,AM radio,33.84,2106
+2019,AM radio,29.73,2067
+2020,AM radio,30.99,2009
+2021,AM radio,24.8,3586
+2022,AM radio,25.86,3580
+2023,AM radio,22.98,3572
+2024,AM radio,19.64,3530
+2025,AM radio,20.17,5990
+2017,FM radio,72.56,2277
+2018,FM radio,72.5,2106
+2019,FM radio,69.59,2067
+2020,FM radio,70.25,2009
+2021,FM radio,64.46,3586
+2022,FM radio,60.35,3580
+2023,FM radio,56.21,3572
+2024,FM radio,51.57,3530
+2025,FM radio,52.53,5990
+2017,DAB+ radio,12.65,2277
+2018,DAB+ radio,16.9,2106
+2019,DAB+ radio,14.57,2067
+2020,DAB+ radio,14.71,2009
+2021,DAB+ radio,14.19,3586
+2022,DAB+ radio,12.81,3580
+2023,DAB+ radio,12.61,3572
+2024,DAB+ radio,11.43,3530
+2025,DAB+ radio,10.67,5990
+2017,Internet radio,11.71,2277
+2018,Internet radio,13.52,2106
+2019,Internet radio,11.12,2067
+2020,Internet radio,9.98,2009
+2021,Internet radio,10.45,3586
+2022,Internet radio,14.49,3580
+2023,Internet radio,8.82,3572
+2024,Internet radio,9.55,3530
+2025,Internet radio,8.29,5990
+2021,Music streaming,37.37,3586
+2022,Music streaming,33.98,3580
+2023,Music streaming,42.95,3572
+2024,Music streaming,45.47,3530
+2025,Music streaming,39.4,5990
+2021,Podcasts,16.0,3586
+2022,Podcasts,14.04,3580
+2023,Podcasts,19.18,3572
+2024,Podcasts,20.53,3530
+2025,Podcasts,19.0,5990

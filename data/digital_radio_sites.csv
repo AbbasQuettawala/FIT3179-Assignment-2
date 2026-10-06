@@ -1,0 +1,30 @@
+site_id,name,state,longitude,latitude,am,fm,dr,source_id
+1055,Marrakai Building Lot 5440 (93) Smith Street DARWIN,NT,130.836944,-12.458889,0,0,1,acma-radio
+3397,Broadcast/Comms Tower  Sydney Tower Westfield Centrepoint  100 Market Street SYDNEY,NSW,151.208889,-33.870556,0,0,3,acma-radio
+4045,TXA Artarmon Site Tower 192-196 Hampden Road ARTARMON,NSW,151.180833,-33.805556,0,8,3,acma-radio
+9580,Telecom Tower BLACK MOUNTAIN,ACT,149.097778,-35.275556,0,10,2,acma-radio
+11597,Broadcast/Comms Tower  Roof 101 Collins Street MELBOURNE,VIC,144.970556,-37.815,0,2,3,acma-radio
+12013,TXA Ornata Road Site Tower 12 Ornata Road MOUNT DANDENONG,VIC,145.346667,-37.8375,0,7,2,acma-radio
+12014,BAI Comms Site 116-118 Ridge Rd MOUNT DANDENONG,VIC,145.348611,-37.835,0,11,1,acma-radio
+12749,TXA T-Site Tower 445 Sir Samuel Griffith Drive MOUNT COOT-THA,QLD,152.948056,-27.463056,0,3,3,acma-radio
+13564,NTL Broadcast Site cnr North & Freemans Rds LOWER BEECHMONT,QLD,153.242222,-28.033611,0,5,1,acma-radio
+23181,TXA Crafers Site Tower 115 Mount Lofty Summit Road CRAFERS,SA,138.708056,-34.981111,0,2,2,acma-radio
+26624,TXA Carmel Site 255 Welshpool Road East CARMEL,WA,116.061667,-32.012778,0,3,2,acma-radio
+32830,Broadcast Australia Site Pinnacle Rd MT WELLINGTON,TAS,147.236389,-42.8975,0,8,2,acma-radio
+32964,Broadcast Australia Site White Rock Point OPOSSUM BAY,TAS,147.393056,-42.976111,0,0,1,acma-radio
+34678,Central Park 152 to 158 St Georges Terrace PERTH,WA,115.855556,-31.953889,0,0,2,acma-radio
+51030,Crown Castle Site Bald Hill  off Swans Rd DARLEY,VIC,144.410278,-37.644167,0,0,3,acma-radio
+53537,Broadcast/Comms (Optus) Tower  Sydney Water Board Site off Plateau Rd BILGOLA PLATEAU,NSW,151.314444,-33.643333,0,0,3,acma-radio
+55315,Broadcast/Comms Monopole  Crown Castle Site Plateau Park  off Blandford St COLLAROY PLATEAU,NSW,151.292222,-33.729444,0,0,3,acma-radio
+100353,East Mast 3CR Site Old Sneydes Road WERRIBEE,VIC,144.704444,-37.886389,1,0,3,acma-radio
+130852,Crown Castle Site Cnr Mulgrave Loop and Bergen Way MINDARIE,WA,115.711111,-31.678056,0,0,2,acma-radio
+131097,Vodafone-Optus-Telstra Site Jannali Reserve off Coolgardi Place BONNET BAY,NSW,151.054444,-34.018333,0,0,3,acma-radio
+139711,Broadcast Australia Site 100 Deloraine Rd SHOAL BAY,NT,130.969167,-12.414444,0,9,2,acma-radio
+139978,ABC Studios 45 Ann St LAUNCESTON,TAS,147.146667,-41.440556,0,1,1,acma-radio
+150148,Broadcast Site off Scarp Road Near Turner Hill PINJARRA,WA,115.989722,-32.650278,0,2,1,acma-radio
+150963,FM Monopole  Broadcast Australia Site Tuggeranong Hill  off Callister Cres THEODORE,ACT,149.107778,-35.453333,0,5,1,acma-radio
+153007,Broadcast Monopole  Aust Radio Network Site 754-768 Hawkesbury Rd HAWKESBURY HEIGHTS,NSW,150.639722,-33.6675,0,1,3,acma-radio
+198392,Crown Castle Site Badgelly Hill  off Badgally Rd GREGORY HILLS,NSW,150.784167,-34.0425,0,0,3,acma-radio
+300609,Broadcast/Comms Monopole  Pioneer Concrete Site 213 Boundary St PORT MELBOURNE,VIC,144.938611,-37.824722,0,0,3,acma-radio
+403573,GCT Mt Tamborine Site 103m Tower Golf Course Road MOUNT TAMBORINE,QLD,153.213333,-27.969722,0,3,1,acma-radio
+405182,Broadcast/Comms Tower  Digital Distribution Australia Site Mount Mee Rd MOUNT MEE,QLD,152.780556,-27.065556,0,0,3,acma-radio

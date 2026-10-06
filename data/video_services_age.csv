@@ -1,0 +1,57 @@
+age,service,percent,base_n,source_id,question,year
+18–24,YouTube,73.72,525,acma-watch,QF7,2025
+25–34,YouTube,78.97,1024,acma-watch,QF7,2025
+35–44,YouTube,74.15,1265,acma-watch,QF7,2025
+45–54,YouTube,69.46,977,acma-watch,QF7,2025
+55–64,YouTube,68.72,885,acma-watch,QF7,2025
+65–74,YouTube,63.54,879,acma-watch,QF7,2025
+75+,YouTube,51.91,431,acma-watch,QF7,2025
+18–24,Netflix,71.05,525,acma-watch,QF7,2025
+25–34,Netflix,71.93,1024,acma-watch,QF7,2025
+35–44,Netflix,70.79,1265,acma-watch,QF7,2025
+45–54,Netflix,68.32,977,acma-watch,QF7,2025
+55–64,Netflix,66.24,885,acma-watch,QF7,2025
+65–74,Netflix,54.6,879,acma-watch,QF7,2025
+75+,Netflix,40.66,431,acma-watch,QF7,2025
+18–24,Prime Video,33.65,525,acma-watch,QF7,2025
+25–34,Prime Video,40.07,1024,acma-watch,QF7,2025
+35–44,Prime Video,39.58,1265,acma-watch,QF7,2025
+45–54,Prime Video,38.98,977,acma-watch,QF7,2025
+55–64,Prime Video,33.56,885,acma-watch,QF7,2025
+65–74,Prime Video,24.13,879,acma-watch,QF7,2025
+75+,Prime Video,13.27,431,acma-watch,QF7,2025
+18–24,Disney+,37.72,525,acma-watch,QF7,2025
+25–34,Disney+,43.74,1024,acma-watch,QF7,2025
+35–44,Disney+,41.23,1265,acma-watch,QF7,2025
+45–54,Disney+,33.52,977,acma-watch,QF7,2025
+55–64,Disney+,24.11,885,acma-watch,QF7,2025
+65–74,Disney+,12.61,879,acma-watch,QF7,2025
+75+,Disney+,6.5,431,acma-watch,QF7,2025
+18–24,TikTok,50.36,525,acma-watch,QF7,2025
+25–34,TikTok,37.01,1024,acma-watch,QF7,2025
+35–44,TikTok,26.69,1265,acma-watch,QF7,2025
+45–54,TikTok,18.31,977,acma-watch,QF7,2025
+55–64,TikTok,10.09,885,acma-watch,QF7,2025
+65–74,TikTok,6.68,879,acma-watch,QF7,2025
+75+,TikTok,1.3,431,acma-watch,QF7,2025
+18–24,Stan,23.41,525,acma-watch,QF7,2025
+25–34,Stan,25.66,1024,acma-watch,QF7,2025
+35–44,Stan,22.0,1265,acma-watch,QF7,2025
+45–54,Stan,25.03,977,acma-watch,QF7,2025
+55–64,Stan,26.85,885,acma-watch,QF7,2025
+65–74,Stan,17.28,879,acma-watch,QF7,2025
+75+,Stan,11.78,431,acma-watch,QF7,2025
+18–24,Kayo,15.99,525,acma-watch,QF7,2025
+25–34,Kayo,16.04,1024,acma-watch,QF7,2025
+35–44,Kayo,15.69,1265,acma-watch,QF7,2025
+45–54,Kayo,15.02,977,acma-watch,QF7,2025
+55–64,Kayo,15.79,885,acma-watch,QF7,2025
+65–74,Kayo,17.64,879,acma-watch,QF7,2025
+75+,Kayo,10.6,431,acma-watch,QF7,2025
+18–24,Binge,14.91,525,acma-watch,QF7,2025
+25–34,Binge,15.59,1024,acma-watch,QF7,2025
+35–44,Binge,14.01,1265,acma-watch,QF7,2025
+45–54,Binge,15.69,977,acma-watch,QF7,2025
+55–64,Binge,13.12,885,acma-watch,QF7,2025
+65–74,Binge,8.78,879,acma-watch,QF7,2025
+75+,Binge,7.03,431,acma-watch,QF7,2025

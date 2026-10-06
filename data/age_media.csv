@@ -1,0 +1,43 @@
+age,age_order,metric,percent,base_n,low_base
+18–24,0,Paid video,70.13,525,no
+25–34,1,Paid video,74.51,1024,no
+35–44,2,Paid video,72.55,1265,no
+45–54,3,Paid video,74.65,977,no
+55–64,4,Paid video,67.3,885,no
+65–74,5,Paid video,55.6,879,no
+75+,6,Paid video,43.69,431,no
+18–24,0,Short-form video,61.95,525,no
+25–34,1,Short-form video,64.04,1024,no
+35–44,2,Short-form video,59.97,1265,no
+45–54,3,Short-form video,53.61,977,no
+55–64,4,Short-form video,48.74,885,no
+65–74,5,Short-form video,37.7,879,no
+75+,6,Short-form video,22.93,431,no
+18–24,0,Free-to-air TV,33.89,525,no
+25–34,1,Free-to-air TV,29.96,1024,no
+35–44,2,Free-to-air TV,42.31,1265,no
+45–54,3,Free-to-air TV,54.75,977,no
+55–64,4,Free-to-air TV,68.3,885,no
+65–74,5,Free-to-air TV,76.79,879,no
+75+,6,Free-to-air TV,76.39,431,no
+18–24,0,FM radio,30.35,525,no
+25–34,1,FM radio,41.99,1024,no
+35–44,2,FM radio,54.14,1265,no
+45–54,3,FM radio,59.6,977,no
+55–64,4,FM radio,66.69,885,no
+65–74,5,FM radio,60.4,879,no
+75+,6,FM radio,52.97,431,no
+18–24,0,Music streaming,54.25,525,no
+25–34,1,Music streaming,55.83,1024,no
+35–44,2,Music streaming,45.03,1265,no
+45–54,3,Music streaming,40.9,977,no
+55–64,4,Music streaming,30.46,885,no
+65–74,5,Music streaming,21.42,879,no
+75+,6,Music streaming,10.68,431,no
+18–24,0,Podcasts,18.29,525,no
+25–34,1,Podcasts,25.87,1024,no
+35–44,2,Podcasts,24.74,1265,no
+45–54,3,Podcasts,21.18,977,no
+55–64,4,Podcasts,17.81,885,no
+65–74,5,Podcasts,9.06,879,no
+75+,6,Podcasts,6.02,431,no

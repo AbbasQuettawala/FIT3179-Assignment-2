@@ -1,0 +1,23 @@
+.cache/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+__pycache__/
+*.pyc
+*.doc
+*.docx
+*.docm
+*.odt
+~$*
+*.zip
+/submission/
+/private/
+/planning/ta-feedback-email.txt
+/planning/template-draft.md
+/scripts/build_template_draft.py
+/scripts/build_feedback_package.py
+*email*.txt
+EMAIL-DRAFT-*.txt
+/Data Visualisation 2 Specifications*.pdf
+[Rr][Ee][Aa][Dd][Mm][Ee]*

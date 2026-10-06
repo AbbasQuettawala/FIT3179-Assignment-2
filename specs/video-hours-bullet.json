@@ -1,0 +1,386 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 430,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "description": "Bullet bars comparing reported weekly video hours by age with the national benchmark.",
+  "data": {
+    "url": "data/video_hours_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "age_order": "number",
+        "hours": "number",
+        "national_hours": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "videoFormat",
+      "value": "Free-to-air TV",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Free-to-air TV",
+          "Paid streaming",
+          "Short-form video",
+          "FTA catch-up",
+          "Pay TV",
+          "Pay-per-view"
+        ],
+        "name": "Compare format  "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.metric === videoFormat"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "height": 30,
+        "color": "#dfe7df"
+      },
+      "encoding": {
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ],
+          "scale": {
+            "range": [
+              100,
+              {
+                "expr": "height"
+              }
+            ]
+          }
+        },
+        "x": {
+          "field": "national_hours",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4,
+        "height": 22
+      },
+      "encoding": {
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ],
+          "axis": {
+            "title": "Age"
+          },
+          "scale": {
+            "range": [
+              100,
+              {
+                "expr": "height"
+              }
+            ]
+          }
+        },
+        "x": {
+          "field": "hours",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              16
+            ]
+          },
+          "axis": {
+            "title": "Average hours in past 7 days"
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.hours >= datum.national_hours",
+            "value": "#1f6f5b"
+          },
+          "value": "#84cdb2"
+        },
+        "tooltip": [
+          {
+            "field": "age",
+            "title": "Age"
+          },
+          {
+            "field": "hours",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Hours"
+          },
+          {
+            "field": "national_hours",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "National"
+          },
+          {
+            "field": "base_n",
+            "type": "quantitative",
+            "title": "Respondents (base n)"
+          },
+          {
+            "field": "metric",
+            "title": "Video format"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "tick",
+        "color": "#d94d72",
+        "thickness": 3,
+        "size": 28
+      },
+      "encoding": {
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ],
+          "scale": {
+            "range": [
+              100,
+              {
+                "expr": "height"
+              }
+            ]
+          }
+        },
+        "x": {
+          "field": "national_hours",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "font": "Inter",
+        "fontWeight": 700,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ],
+          "scale": {
+            "range": [
+              100,
+              {
+                "expr": "height"
+              }
+            ]
+          }
+        },
+        "x": {
+          "field": "hours",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "hours",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "hours",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "hours",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ]
+        },
+        "x2": {
+          "value": {
+            "expr": "min(width * 0.8, 280)"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "10 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (width < 360 ? \"Older adults spend longer\\nwith broadcast TV. Reach\\nalone misses how much viewing\\ntime this medium occupies.\" : \"Older adults spend longer with broadcast TV. Reach alone\\nmisses how much viewing time this medium occupies.\") : (width < 360 ? \"The longest bar shows heavier\\nviewing, not a larger\\naudience: hours are averaged\\nacross each age-group base.\" : \"The longest bar shows heavier viewing, not a larger\\naudience: hours are averaged across each age-group base.\")), '\\n'))"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "hours",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "(videoFormat === 'Free-to-air TV') ? (width < 360 ? \"Older adults spend longer\\nwith broadcast TV. Reach\\nalone misses how much viewing\\ntime this medium occupies.\" : \"Older adults spend longer with broadcast TV. Reach alone\\nmisses how much viewing time this medium occupies.\") : (width < 360 ? \"The longest bar shows heavier\\nviewing, not a larger\\naudience: hours are averaged\\nacross each age-group base.\" : \"The longest bar shows heavier viewing, not a larger\\naudience: hours are averaged across each age-group base.\")"
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": 4
+        },
+        "y": {
+          "value": 5
+        },
+        "tooltip": {
+          "value": null
+        }
+      }
+    }
+  ]
+}

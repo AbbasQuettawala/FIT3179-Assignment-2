@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 210,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    }
+  },
+  "description": "A 100-cell waffle showing online video reach in Australia in 2025.",
+  "data": {
+    "sequence": {
+      "start": 0,
+      "stop": 100,
+      "step": 1,
+      "as": "cell"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.cell % 10",
+      "as": "column"
+    },
+    {
+      "calculate": "9 - floor(datum.cell / 10)",
+      "as": "row"
+    }
+  ],
+  "mark": {
+    "type": "square",
+    "filled": true,
+    "size": 310,
+    "cornerRadius": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "column",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "axis": null
+    },
+    "color": {
+      "condition": {
+        "test": "datum.cell < 95",
+        "value": "#1f6f5b"
+      },
+      "value": "#d8ded8",
+      "legend": null
+    },
+    "tooltip": {
+      "value": "95 in every 100 Australians used online video in the past six months"
+    }
+  }
+}

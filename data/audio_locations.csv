@@ -1,0 +1,19 @@
+format,location,percent,base_n
+Music streaming,Home,79.6,2483
+Music streaming,In transit,75.08,2483
+Music streaming,Elsewhere,25.13,2483
+Podcasts,Home,69.69,1304
+Podcasts,In transit,63.99,1304
+Podcasts,Elsewhere,25.2,1304
+Internet radio,Home,69.25,532
+Internet radio,In transit,39.09,532
+Internet radio,Elsewhere,21.7,532
+AM radio,Home,47.21,1174
+AM radio,In transit,83.6,1174
+AM radio,Elsewhere,4.31,1174
+FM radio,Home,30.15,3149
+FM radio,In transit,90.23,3149
+FM radio,Elsewhere,5.57,3149
+DAB+ radio,Home,47.71,663
+DAB+ radio,In transit,67.34,663
+DAB+ radio,Elsewhere,5.54,663

@@ -1,0 +1,328 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 420,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    }
+  },
+  "description": "A state choropleth of Australian Digital Inclusion Index scores.",
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -134,
+      0,
+      0
+    ],
+    "center": [
+      0,
+      -28
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/au_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.state_name",
+          "from": {
+            "data": {
+              "url": "data/adii_states.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "score": "number",
+                  "national": "number",
+                  "gap": "number",
+                  "absolute_gap": "number",
+                  "longitude": "number",
+                  "latitude": "number"
+                }
+              }
+            },
+            "key": "state_name",
+            "fields": [
+              "score",
+              "state",
+              "gap"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#f7f3e8",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "color": {
+          "field": "score",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              68,
+              80
+            ],
+            "range": [
+              "#edf5ef",
+              "#1f6f5b"
+            ]
+          },
+          "legend": {
+            "title": "ADII score",
+            "orient": "top"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State / territory"
+          },
+          {
+            "field": "score",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "ADII score"
+          },
+          {
+            "field": "gap",
+            "type": "quantitative",
+            "format": "+.1f",
+            "title": "vs national"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": "stateFocus === 'All' || datum.state === stateFocus",
+            "value": 1
+          },
+          "value": 0.22
+        }
+      }
+    },
+    {
+      "name": "state_label_pointer",
+      "data": {
+        "url": "data/adii_states.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "score": "number",
+            "national": "number",
+            "gap": "number",
+            "absolute_gap": "number",
+            "longitude": "number",
+            "latitude": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.state === 'ACT'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 0.8,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "datum": 151.9
+        },
+        "latitude2": {
+          "datum": -35.9
+        },
+        "opacity": {
+          "condition": {
+            "test": "stateFocus === 'All' || datum.state === stateFocus",
+            "value": 1
+          },
+          "value": 0.22
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/adii_states.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "score": "number",
+            "national": "number",
+            "gap": "number",
+            "absolute_gap": "number",
+            "longitude": "number",
+            "latitude": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.state === 'ACT' ? 153.2 : datum.longitude",
+          "as": "label_longitude"
+        },
+        {
+          "calculate": "datum.state === 'ACT' ? -35.9 : datum.latitude",
+          "as": "label_latitude"
+        }
+      ],
+      "encoding": {
+        "longitude": {
+          "field": "label_longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "label_latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "title": "State / territory"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": "stateFocus === 'All' || datum.state === stateFocus",
+            "value": 1
+          },
+          "value": 0.22
+        }
+      },
+      "name": "state_label_halos",
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "stroke": "#f7f3e8",
+        "strokeWidth": 3,
+        "color": "#f7f3e8"
+      }
+    },
+    {
+      "data": {
+        "url": "data/adii_states.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "score": "number",
+            "national": "number",
+            "gap": "number",
+            "absolute_gap": "number",
+            "longitude": "number",
+            "latitude": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.state === 'ACT' ? 153.2 : datum.longitude",
+          "as": "label_longitude"
+        },
+        {
+          "calculate": "datum.state === 'ACT' ? -35.9 : datum.latitude",
+          "as": "label_latitude"
+        }
+      ],
+      "encoding": {
+        "longitude": {
+          "field": "label_longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "label_latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "title": "State / territory"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": "stateFocus === 'All' || datum.state === stateFocus",
+            "value": 1
+          },
+          "value": 0.22
+        }
+      },
+      "name": "state_labels",
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#10231f"
+      }
+    }
+  ],
+  "params": [
+    {
+      "name": "stateFocus",
+      "value": "All"
+    }
+  ]
+}

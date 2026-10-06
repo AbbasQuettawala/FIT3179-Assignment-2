@@ -1,0 +1,43 @@
+age,age_order,metric,percent,base_n,low_base
+18–24,0,AM radio,8.14,525,no
+25–34,1,AM radio,7.59,1024,no
+35–44,2,AM radio,12.48,1265,no
+45–54,3,AM radio,17.7,977,no
+55–64,4,AM radio,26.35,885,no
+65–74,5,AM radio,39.77,879,no
+75+,6,AM radio,44.1,431,no
+18–24,0,FM radio,30.35,525,no
+25–34,1,FM radio,41.99,1024,no
+35–44,2,FM radio,54.14,1265,no
+45–54,3,FM radio,59.6,977,no
+55–64,4,FM radio,66.69,885,no
+65–74,5,FM radio,60.4,879,no
+75+,6,FM radio,52.97,431,no
+18–24,0,DAB+ radio,4.06,525,no
+25–34,1,DAB+ radio,6.39,1024,no
+35–44,2,DAB+ radio,11.27,1265,no
+45–54,3,DAB+ radio,14.46,977,no
+55–64,4,DAB+ radio,13.64,885,no
+65–74,5,DAB+ radio,13.84,879,no
+75+,6,DAB+ radio,9.96,431,no
+18–24,0,Internet radio,3.57,525,no
+25–34,1,Internet radio,4.81,1024,no
+35–44,2,Internet radio,8.79,1265,no
+45–54,3,Internet radio,10.81,977,no
+55–64,4,Internet radio,11.23,885,no
+65–74,5,Internet radio,12.27,879,no
+75+,6,Internet radio,4.58,431,no
+18–24,0,Music streaming,54.25,525,no
+25–34,1,Music streaming,55.83,1024,no
+35–44,2,Music streaming,45.03,1265,no
+45–54,3,Music streaming,40.9,977,no
+55–64,4,Music streaming,30.46,885,no
+65–74,5,Music streaming,21.42,879,no
+75+,6,Music streaming,10.68,431,no
+18–24,0,Podcasts,18.29,525,no
+25–34,1,Podcasts,25.87,1024,no
+35–44,2,Podcasts,24.74,1265,no
+45–54,3,Podcasts,21.18,977,no
+55–64,4,Podcasts,17.81,885,no
+65–74,5,Podcasts,9.06,879,no
+75+,6,Podcasts,6.02,431,no

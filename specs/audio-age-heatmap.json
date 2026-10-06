@@ -1,0 +1,135 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 320,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    }
+  },
+  "description": "A heatmap of weekly audio format use by age.",
+  "data": {
+    "url": "data/audio_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "age_order": "number",
+        "percent": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "mark": {
+    "type": "rect",
+    "cornerRadius": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "age",
+      "type": "ordinal",
+      "sort": [
+        "18–24",
+        "25–34",
+        "35–44",
+        "45–54",
+        "55–64",
+        "65–74",
+        "75+"
+      ],
+      "axis": {
+        "title": "Age",
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "metric",
+      "type": "ordinal",
+      "sort": [
+        "Music streaming",
+        "Podcasts",
+        "Internet radio",
+        "DAB+ radio",
+        "FM radio",
+        "AM radio"
+      ],
+      "axis": {
+        "title": null
+      }
+    },
+    "color": {
+      "field": "percent",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          80
+        ],
+        "range": [
+          "#eef1ec",
+          "#84cdb2",
+          "#1f6f5b"
+        ]
+      },
+      "legend": {
+        "title": "% in past week",
+        "orient": "top"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "age",
+        "title": "Age"
+      },
+      {
+        "field": "metric",
+        "title": "Format"
+      },
+      {
+        "field": "percent",
+        "type": "quantitative",
+        "format": ".1f",
+        "title": "Share (%)"
+      },
+      {
+        "field": "base_n",
+        "type": "quantitative",
+        "title": "Base n"
+      }
+    ]
+  }
+}

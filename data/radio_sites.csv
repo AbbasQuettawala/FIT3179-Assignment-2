@@ -1,0 +1,1575 @@
+site_id,name,state,longitude,latitude,am,fm,dr,technology,source_id
+1332,Broadcast Australia Site Douglas St LUDMILLA,NT,130.849722,-12.423889,2,0,0,AM,acma-radio
+1365,Broadcast Site Lot 32 Palumpa Comm NGANMARRIYANGA,NT,129.882222,-14.351111,0,2,0,FM,acma-radio
+1369,Broadcast Site Numbulwar Council Office NUMBULWAR,NT,135.740556,-14.278889,0,2,0,FM,acma-radio
+1377,Broadcast Site Wadeye PORT KEATS,NT,129.520278,-14.24,0,1,0,FM,acma-radio
+1386,Broadcast Site Lot 32 Peppimenarti Comm PEPPIMENARTI,NT,130.076667,-14.151111,0,2,0,FM,acma-radio
+1403,BAI Comms Site Lot 103 NAUIYU,NT,130.689444,-13.751111,0,2,0,FM,acma-radio
+1535,Cmty Radio Site 21 Warrk Rd RAMINGINING,NT,134.927222,-12.328889,0,1,0,FM,acma-radio
+1542,Broadcast Site Lot 429 Gumbalanya Comm GUMBALANYA,NT,133.055556,-12.325833,0,2,0,FM,acma-radio
+1582,Broadcast Site Lot 480 MANINGRIDA,NT,134.222778,-12.051667,0,2,0,FM,acma-radio
+1592,BAI Comms Site Lot 1647 Guluwurru St GALIWINKU,NT,135.573611,-12.021667,0,2,0,FM,acma-radio
+1614,Broadcast Site Knocker Bay COBOURG PENINSULA,NT,132.125556,-11.318056,0,1,0,FM,acma-radio
+1615,Broadcast/Comms Site Pearling Site PORT BREMER,NT,132.269167,-11.218611,0,1,0,FM,acma-radio
+1620,Broadcast Site Council Office Yington Street MINJILANG,NT,132.578056,-11.150556,0,2,0,FM,acma-radio
+1707,Batchelor Institute Site 2 Mardango Cres BATCHELOR,NT,131.026667,-13.045556,0,3,0,FM,acma-radio
+1736,Broadcast Australia Site Lot 161 off Dorat Rd (Access Rd) ADELAIDE RIVER,NT,131.109167,-13.244444,0,2,0,FM,acma-radio
+1768,Telstra Site 13 Railway Tce PINE CREEK,NT,131.836667,-13.823056,0,3,0,FM,acma-radio
+1855,Telstra Repeater 8200 Lot 582 Bicentennial Road KATHERINE,NT,132.279167,-14.472222,0,3,0,FM,acma-radio
+1888,adj Water Tank Morris Rd  4km NE of KATHERINE,NT,132.295833,-14.445556,0,2,0,FM,acma-radio
+1890,Broadcast Site off Gorge Rd  2.5 km NNE of KATHERINE,NT,132.273889,-14.444444,0,2,0,FM,acma-radio
+1951,Cmty Radio Site Arts Centre  Rarri St LAJAMANU,NT,130.635278,-18.336389,0,2,0,FM,acma-radio
+1981,Broadcast Site DAGURAGU,NT,130.804444,-17.400278,0,1,0,FM,acma-radio
+2147,Telstra Site 22 Conway Rd MATARANKA,NT,133.059444,-14.935556,0,2,0,FM,acma-radio
+2160,Cmty Radio Site Adj Council Office  Lot 293 Balamurra St NGUKURR,NT,134.732222,-14.734444,0,1,0,FM,acma-radio
+2163,Broadcast Site Community Hall WARMUN,WA,128.212222,-17.030556,0,2,0,FM,acma-radio
+2182,Broadcast Site BARUNGA,NT,132.866944,-14.524722,0,2,0,FM,acma-radio
+2193,Cmty Radio Site Lot 30 BULMAN,NT,134.331389,-13.665278,0,2,0,FM,acma-radio
+2239,BAI Comms Site 374 Robinson Road BORROLOOLA,NT,136.306389,-16.053611,0,2,0,FM,acma-radio
+2267,Telstra Site via Kaczinsky Rd WARUMUNGU,NT,134.223611,-19.634167,0,2,0,FM,acma-radio
+2352,The North Australia Pastoral Co Broadcast Site Alexandria Homestead ALEXANDRIA,NT,136.708611,-19.056111,0,1,0,FM,acma-radio
+2467,Broadcast Site Stuart Hwy  7km SSW of ALICE SPRINGS,NT,133.872222,-23.7675,2,0,0,AM,acma-radio
+2682,Telstra Site  FINKE,NT,134.573333,-25.585,0,2,0,FM,acma-radio
+2715,Broadcast Site 300m N of caravan park YULARA,NT,130.991944,-25.234722,0,8,0,FM,acma-radio
+2850,Broadcast Site 206 km W of Alice Springs HAASTS BLUFF,NT,131.878889,-23.446111,0,1,0,FM,acma-radio
+2871,PAW Media Site 14 Kintore Rd KINTORE,NT,129.390833,-23.273056,0,2,0,FM,acma-radio
+2877,Broadcast Site Pump House PAPUNYA,NT,131.912778,-23.210833,0,1,0,FM,acma-radio
+2944,Broadcast Site One YUENDUMU,NT,131.805278,-22.255833,0,1,0,FM,acma-radio
+3026,Broadcast Site Jungarrayi Street ALI CURUNG,NT,134.407222,-21.0025,0,2,0,FM,acma-radio
+3100,Main AM Mast BAI Comms Site  40 Eugenia Ave NHULUNBUY,NT,136.793056,-12.189167,1,0,0,AM,acma-radio
+3104,BAI Comms Mast Mt Saunders NHULUNBUY,NT,136.776944,-12.181389,0,2,0,FM,acma-radio
+3110,Nabalco Radio Hut Mt Saunders NHULUNBUY,NT,136.776944,-12.181389,0,3,0,FM,acma-radio
+3138,BAI Comms Site Cypress Road ALYANGULA,NT,136.425278,-13.850278,0,4,0,FM,acma-radio
+3169,Telstra Site 9 Gregory Place JABIRU,NT,132.834444,-12.669444,0,3,0,FM,acma-radio
+3424,University of Technology ULTIMO,NSW,151.199722,-33.882778,0,1,0,FM,acma-radio
+3453,Broadcast/Comms Tower  Rooftop Tower 1 GCA Building  1 Lawson Square REDFERN,NSW,151.199722,-33.892222,0,1,0,FM,acma-radio
+4024,Optus Towr Corner Miller Pacific Hwy NORTH SYDNEY,NSW,151.206944,-33.839444,0,1,0,FM,acma-radio
+4045,TXA Artarmon Site Tower 192-196 Hampden Road ARTARMON,NSW,151.180833,-33.805556,0,8,3,FM,acma-radio
+4189,Broadcast Site 10 Romsey St WAITARA,NSW,151.1025,-33.71,0,1,0,FM,acma-radio
+4613,Broadcast Site Bicentennial Park W End of Victoria Ave CONCORD WEST,NSW,151.081389,-33.847778,1,0,0,AM,acma-radio
+4617,2UE Main AM Mast Bennelong Parkway SYDNEY OLYMPIC PARK,NSW,151.071111,-33.832222,1,0,0,AM,acma-radio
+4624,AM Mast SBS Site  off Bennelong Parkway SYDNEY OLYMPIC PARK,NSW,151.077778,-33.840278,2,0,0,AM,acma-radio
+4902,Broadcast Site Seven Hills Rd BAULKHAM HILLS,NSW,150.980833,-33.765833,0,1,0,FM,acma-radio
+5027,Waterboard Tower Villiers Road HORSLEY PARK,NSW,150.850556,-33.861944,0,1,0,FM,acma-radio
+5110,Comms Tower  Council Site Cnr Elizabeth Drv & Reservoir Rd MOUNT PRITCHARD,NSW,150.899167,-33.908056,0,1,0,FM,acma-radio
+5838,NBN TV Site Mt Sugarloaf  3A Mount Sugarloaf Rd WEST WALLSEND,NSW,151.538889,-32.890278,0,3,0,FM,acma-radio
+5839,BAI Comms Site  Mt Sugarloaf  5A Mount Sugarloaf Rd WEST WALLSEND,NSW,151.538333,-32.891944,0,4,0,FM,acma-radio
+5981,Broadcaster Site Off Maitland Rd  1km NW of SANDGATE,NSW,151.7025,-32.864444,1,0,0,AM,acma-radio
+6112,Gencom Site 1 Sugarloaf  Range  Sugarloaf Dam Access Rd SUGARLOAF STATE CONSERVATION AREA,NSW,151.515833,-32.944722,0,1,0,FM,acma-radio
+6171,Council Site Bimbadeen Lookout Mount View Via CESSNOCK,NSW,151.281667,-32.855,0,1,0,FM,acma-radio
+6323,Broadcast Australia Site 179 McCullys Gap Rd MUSWELLBROOK,NSW,150.919167,-32.231667,1,0,0,AM,acma-radio
+6361,Broadcast Australia Site Rossgole Lookout ABERDEEN,NSW,150.782778,-32.141667,0,3,0,FM,acma-radio
+6401,Telstra Site Mount Helen off New England Hwy MURRURUNDI,NSW,150.843889,-31.7275,0,2,0,FM,acma-radio
+6405,Murrurundi Council Site Mount Helen off New England Hwy MURRURUNDI,NSW,150.843889,-31.728056,0,1,0,FM,acma-radio
+6477,Broadcast Australia Site Bald Hill  Daruka Rd DARUKA,NSW,150.9575,-31.075833,0,1,0,FM,acma-radio
+6481,Country Energy Site Bald Hill TAMWORTH,NSW,150.958611,-31.075556,0,1,0,FM,acma-radio
+6531,Prime Site  SOMA MOUNTAIN,NSW,150.749722,-31.321389,0,4,0,FM,acma-radio
+6532,Broadcast Operations Tower Soma Mountain WERRIS CREEK,NSW,150.750278,-31.321389,0,2,0,FM,acma-radio
+6553,Liverpool Plains Shire Council 30m Lattice Tower Who-Da-Thought-It Lookout 47 Ray Carter Dr QUIRINDI,NSW,150.666667,-31.514722,0,1,0,FM,acma-radio
+6684,Prime Mast Little Duval Mtn  Exmouth Rd DUMARESQ,NSW,151.601389,-30.376111,0,3,0,FM,acma-radio
+6833,Broadcast Site off Gwydir Hwy  11km E of INVERELL,NSW,151.225833,-29.772778,1,0,0,AM,acma-radio
+6855,Broadcast Australia Site Swanbrook Road INVERELL,NSW,151.149444,-29.770833,0,1,0,FM,acma-radio
+6881,Broadcast Australia site Ashford-Bukkulla Rd  2.4km ESE of ASHFORD,NSW,151.118889,-29.329722,0,1,0,FM,acma-radio
+6941,Main Mast  Broadcast Australia Site Glen Legh Rd  6km SSE of GLEN INNES,NSW,151.764167,-29.79,1,0,0,AM,acma-radio
+6955,Commercial Site 4 km NW of Glenn Innes CARPENTERS HILL,NSW,151.691111,-29.717222,0,1,0,FM,acma-radio
+6987,Telstra Tower Mt McKenzie  via Mt McKenzie Lookout Rd TENTERFIELD,NSW,151.966389,-29.086389,0,2,0,FM,acma-radio
+6996,2MO AM Site Oxley Highway GUNNEDAH,NSW,150.2125,-30.984444,1,0,0,AM,acma-radio
+7193,Broadcast Site off Gwydir Hwy  5km ESE of MOREE,NSW,149.891667,-29.485278,1,0,0,AM,acma-radio
+7372,Broadcast Site 124 Merriwa Street BOGGABILLA,NSW,150.359444,-28.602778,0,2,0,FM,acma-radio
+7445,Super Radio Monopole Kia Ora Lookout  Kia Ora Hill Rd BARRINGTON,NSW,151.946667,-31.9625,0,2,0,FM,acma-radio
+7460,NBN Broadcasting Site Cabbage Tree Mountain via BULAHDELAH,NSW,152.120833,-32.257778,0,2,0,FM,acma-radio
+7463,CountryTell & Great Lakes FM 40m Lattice Tower Cabbage Tree Mtn  off Cabbage Tree Rd UPPER MYALL,NSW,152.120556,-32.258611,0,1,0,FM,acma-radio
+7469,Broadcast Site Mount Ganghat  Somerset Rd KIMBRIKI,NSW,152.181667,-31.922222,0,2,0,FM,acma-radio
+7594,Broadcast Site Greenhills Reservoir WEST KEMPSEY,NSW,152.797778,-31.057778,0,2,0,FM,acma-radio
+7646,N.R.E. Tower Building on Southern Edge  21 km SSW of Nambucca Heads MOUNT YARRAHAPINNI,NSW,152.919444,-30.813889,0,1,0,FM,acma-radio
+7648,Ten TV Tower on Western Edge of Lookout  21 km SSW of Nambucca Heads MOUNT YARRAHAPINNI,NSW,152.919444,-30.813611,0,2,0,FM,acma-radio
+7658,Main Broadcast Tower MIDDLE BROTHER,NSW,152.678611,-31.702222,0,5,0,FM,acma-radio
+7744,Essential Energy 21m Monopole Mt Cairncross Tower Trail Rd CAIRNCROSS,NSW,152.6825,-31.341389,0,1,0,FM,acma-radio
+7759,ROX FM Site G167  24 km WNW of Port Macquarie MT CAIRNCROSS,NSW,152.6825,-31.341389,0,3,0,FM,acma-radio
+7833,Broadcast/Comms Site Bruxner Park COFFS HARBOUR,NSW,153.109167,-30.256389,0,4,0,FM,acma-radio
+7949,Axicom 32.3m Monopole Sealy Lookout Orara East State Forest  off 115 Bruxner Park Rd KORORA,NSW,153.118611,-30.263056,0,1,0,FM,acma-radio
+7952,Broadcast Mast 26 km WSW of Coffs Harbour MOUNT MOOMBIL,NSW,152.859722,-30.3175,0,5,0,FM,acma-radio
+7991,FM Station Francis Lookout DORRIGO,NSW,152.688333,-30.396667,0,1,0,FM,acma-radio
+8002,Reservoir Casuarina St DORRIGO,NSW,152.713889,-30.35,0,1,0,FM,acma-radio
+8011,Broadcast Site 1 km West of BELLINGEN,NSW,152.886389,-30.451389,0,1,0,FM,acma-radio
+8014,Broadcast Site 331 Yellow Rock Rd RALEIGH,NSW,153.0325,-30.471944,1,0,0,AM,acma-radio
+8129,Water Reservoir Pilot Hill  Wooli St YAMBA,NSW,153.362222,-29.433333,0,1,0,FM,acma-radio
+8391,Pine Avenue Site 1 BALLINA,NSW,153.583333,-28.863056,0,1,0,FM,acma-radio
+8481,LCC Nimbin Reservoir NIMBIN,NSW,153.224167,-28.601667,0,1,0,FM,acma-radio
+8523,Broadcast Site 48 Unara Rd BEXHILL,NSW,153.358333,-28.764722,1,0,0,AM,acma-radio
+8532,North Coast Radio Site Parrots Nest Rd 7km SE of LISMORE,NSW,153.228889,-28.857222,0,1,0,FM,acma-radio
+8533,Broadcast Australia Tower 30 km N of Lismore MT NARDI,NSW,153.2875,-28.545556,0,5,0,FM,acma-radio
+8535,NRN8 TV Tower 30 km N of Lismore MT NARDI,NSW,153.290278,-28.542778,0,1,0,FM,acma-radio
+8561,Broadcast Site Telstra Tower Byron View Saint Helena BYRON BAY,NSW,153.560833,-28.661389,0,1,0,FM,acma-radio
+8955,Tower 2  Kiama Council 22m Monopole Saddleback Mountain Rd SADDLEBACK MOUNTAIN,NSW,150.792222,-34.698333,0,1,0,FM,acma-radio
+8979,Broadcast Site 18km WSW of Batemans Bay MT WANDERA,NSW,150.005556,-35.796111,0,7,0,FM,acma-radio
+9080,Broadcast Planning Site Water Reservoir VINCENTIA,NSW,150.678611,-35.084722,0,1,0,FM,acma-radio
+9120,Broadcast Site BUCKERIDGE LOOKOUT,NSW,150.083611,-36.195556,0,1,0,FM,acma-radio
+9145,Broadcast Australia Site Bimmil Hill  Bimmil Firetrail EDEN,NSW,149.889722,-37.011111,0,3,0,FM,acma-radio
+9162,Broadcast Site 14.5 km N of Bega MUMBULLA MOUNTAIN,NSW,149.866111,-36.545,0,2,0,FM,acma-radio
+9164,Commsite 5.8 km ENE of Bega DOCTOR GEORGE MOUNTAIN,NSW,149.905278,-36.659167,0,1,0,FM,acma-radio
+9362,Wingecarribee Shire Council 40m Lattice Tower Mt Gibraltar off Oxley Dr BOWRAL,NSW,150.428333,-34.464444,0,2,0,FM,acma-radio
+9468,WIN television tower  KNIGHTS HILL,NSW,150.697222,-34.618333,0,2,0,FM,acma-radio
+9493,Telstra Tower Mount Gray  247 Mount Gray Rd BOXERS CREEK,NSW,149.763611,-34.757222,0,6,0,FM,acma-radio
+9561,Broadcast Site Reservoir Hill YOUNG,NSW,148.306667,-34.298889,0,4,0,FM,acma-radio
+9564,FM mast 2LF site Moppity Rd  5km SE of YOUNG,NSW,148.336111,-34.341667,0,1,0,FM,acma-radio
+9580,Telecom Tower BLACK MOUNTAIN,ACT,149.097778,-35.275556,0,10,2,FM,acma-radio
+9621,Electronic Services/Philips Site ISAACS RIDGE,ACT,149.125278,-35.381111,0,1,0,FM,acma-radio
+9651,Broadcast Australia Site Mt Taylor  off Waldock St (Chifley) TORRENS,ACT,149.075278,-35.372778,0,1,0,FM,acma-radio
+9723,Services Site 2.8 km SW of Braidwood MT GILLAMATONG,NSW,149.771389,-35.455278,0,2,0,FM,acma-radio
+9734,Eagles Nest Restaurant  MT CRACKENBACK,NSW,148.2875,-36.493056,0,1,0,FM,acma-radio
+9741,BAI Comms Tower Jinderboine Hill  5149 Kosciuszko Rd East EAST JINDABYNE,NSW,148.664722,-36.401111,0,5,0,FM,acma-radio
+9742,RTA Site KALKITE,NSW,148.663611,-36.335556,0,1,0,FM,acma-radio
+9793,Council Tower Emerald Hill  Lot 1  Old Bega Rd WINIFRED,NSW,149.343889,-36.519722,0,1,0,FM,acma-radio
+9814,ANM Site One Tree Hill ALBURY,NSW,146.961944,-36.020278,0,1,0,FM,acma-radio
+9816,Broadcast Site Pendergast Road KHANCOBAN,NSW,148.128056,-36.211389,0,3,0,FM,acma-radio
+9883,Axicom 44m Lattice Tower Wagga/Willans Hill Captain Cook Dr TURVEY PARK,NSW,147.371944,-35.1325,0,5,0,FM,acma-radio
+9885,NSWTA 30m Lattice Tower Wagga/Willans Hill Captain Cook Dr TURVEY PARK,NSW,147.371944,-35.132778,0,1,0,FM,acma-radio
+9899,NSW Police Site Mt Ikes  Ikes Mountain Rd TOOMA,NSW,147.949167,-35.898056,0,2,0,FM,acma-radio
+9900,Council Site 90 Power St TUMBARUMBA,NSW,148.021389,-35.776111,0,4,0,FM,acma-radio
+9914,NSWTA 45m Lattice Tower Mt Bowen off Lachlan Valley Way LAKE CARGELLIGO,NSW,146.216111,-33.365556,0,1,0,FM,acma-radio
+9921,BAI Site Mount Bingar Rd YENDA,NSW,146.235,-34.121667,0,6,0,FM,acma-radio
+9935,Broadcast Site Midwestern Hwy 15km NE HAY,NSW,144.986389,-34.452222,0,2,0,FM,acma-radio
+9941,BAI Comms Site Conargo Rd JERILDERIE,NSW,145.660833,-35.342778,0,1,0,FM,acma-radio
+9949,NSWPF 33m Lattice Tower Wereboldera Trig  off Stony Creek Trial WEREBOLDERA,NSW,148.216389,-35.360556,0,1,0,FM,acma-radio
+9950,Broadcast Site Webbs Hill TUMUT,NSW,148.247778,-35.293333,0,5,0,FM,acma-radio
+9951,Broadcast Site Boraig Station TALBINGO,NSW,148.288611,-35.594444,0,2,0,FM,acma-radio
+9957,Broadcast Mast Broadcast Australia Site Mt Ulandra Bethungra Rd BETHUNGRA,NSW,147.901389,-34.820278,0,5,0,FM,acma-radio
+10341,Comms Mast  City Council Bldg 2-6 Civic Place KATOOMBA,NSW,150.312778,-33.710833,0,1,0,FM,acma-radio
+10479,Broadcast Site Reservoir Hill LITHGOW,NSW,150.146111,-33.493889,0,3,0,FM,acma-radio
+10579,North East Mast Broadcast Site GARLANDS HILL,NSW,149.9475,-33.405,0,2,0,FM,acma-radio
+10611,Vertel Site Reid Park MT PANORAMA,NSW,149.5475,-33.450278,0,2,0,FM,acma-radio
+10621,Telstra Site Reid Park MT PANORAMA / WAHLUU,NSW,149.547222,-33.450556,0,4,0,FM,acma-radio
+10635,Dubbo Radio Cabs Reservoir Narromine Road DUBBO,NSW,148.580556,-32.237222,0,1,0,FM,acma-radio
+10643,43 Gartholme Ln FOREST REEFS,NSW,149.123611,-33.460278,1,0,0,AM,acma-radio
+10685,Vertical Telecoms Site Mount Canobolas  Mount Canobolas Rd CANOBOLAS,NSW,148.983056,-33.343056,0,2,0,FM,acma-radio
+10729,Water Plant Icely Road ORANGE,NSW,149.125278,-33.286111,0,1,0,FM,acma-radio
+10734,2LVR Community FM Hut 20 km SE of Parkes MOUNT COONAMBRO,NSW,148.336944,-33.249722,0,1,0,FM,acma-radio
+10792,Sappa Bulga Trig off Newell Hwy YARRABA,NSW,148.381389,-32.344722,0,1,0,FM,acma-radio
+10824,BAI Comms Site Lot 95 Tottenham Road NYNGAN,NSW,147.180833,-31.587222,0,1,0,FM,acma-radio
+10941,2DU AM Site Railway Lane EULOMOGO,NSW,148.674722,-32.271111,1,0,0,AM,acma-radio
+10943,Telstra Radio Terminal Buninyong Hill Near DUBBO,NSW,148.6775,-32.236667,0,1,0,FM,acma-radio
+11067,Broadcast Australia Site Lot 1  DP611828  Castlereagh Hwy WALGETT,NSW,148.132778,-30.008056,0,3,0,FM,acma-radio
+11087,Collarenebri Trig & Broadcast Site COLLARENEBRI,NSW,148.544444,-29.570278,0,1,0,FM,acma-radio
+11093,Broadcast Site Tattersalls Hotel cnr Wilson & Walgett Sts COLLARENEBRI,NSW,148.577222,-29.544167,0,1,0,FM,acma-radio
+11107,Broadcast Australia Site Off Wooloroo Rd  3km N of LIGHTNING RIDGE,NSW,147.972222,-29.406111,0,2,0,FM,acma-radio
+11114,Super Radio Site Off Wooloroo Rd  3km N of LIGHTNING RIDGE,NSW,147.971389,-29.404722,0,2,0,FM,acma-radio
+11141,Broadcast Site off Kidman Way  2km S of COBAR,NSW,145.837222,-31.515,1,0,0,AM,acma-radio
+11153,Water Treatment Plant Fort Bourke Hill COBAR,NSW,145.856667,-31.516111,0,3,0,FM,acma-radio
+11157,Broadcast Mast Rear of Cmty Hall  Lot 5 Johnston St WHITE CLIFFS,NSW,143.088889,-30.851389,0,1,0,FM,acma-radio
+11194,Water Treatment Plant Bokhara Street BREWARRINA,NSW,146.865278,-29.963333,0,1,0,FM,acma-radio
+11232,Broadcast Mast  Council Site Water Treatment Plant  Wortumertie Street BOURKE,NSW,145.946111,-30.082778,0,1,0,FM,acma-radio
+11282,Comms Tower Adj Oakey Trig  Off Mullaley-Coolah Rd COOLAH,NSW,149.838889,-31.681667,0,1,0,FM,acma-radio
+11345,Translator Site Endicott Hill (Lower Mount Misery) Near MUDGEE,NSW,149.565278,-32.61,0,3,0,FM,acma-radio
+11361,Council Site Water Reservoir off Frazer Ave PEAK HILL,NSW,148.197778,-32.721111,0,1,0,FM,acma-radio
+11394,Broadcast Australia Site Reservoir Hill  Brady St CONDOBOLIN,NSW,147.156667,-33.078056,0,2,0,FM,acma-radio
+11395,Telstra Site Lot 1 Balranald Rd IVANHOE,NSW,144.277222,-32.920833,0,2,0,FM,acma-radio
+11399,FM Mast Council Depot  Perry St MENINDEE,NSW,142.414722,-32.388889,0,2,0,FM,acma-radio
+11564,TV Monopole  Broadcast Australia Site Tuggeranong Hill  off Callister Cres THEODORE,ACT,149.107778,-35.453333,0,1,0,FM,acma-radio
+11597,Broadcast/Comms Tower  Roof 101 Collins Street MELBOURNE,VIC,144.970556,-37.815,0,2,3,FM,acma-radio
+11644,Water Tower Cnr Elgar Road & Canterbury Road SURREY HILLS,VIC,145.112222,-37.828611,0,1,0,FM,acma-radio
+11700,Broadcast Australia Site Warrion Hill  off Warrion Hill Rd WARRION,VIC,143.529444,-38.223889,0,3,0,FM,acma-radio
+11703,Comms Tower  Ace Radio Site Mt Baimbridge  off Mt Baimbridge Rd  6km N of HAMILTON,VIC,142.019722,-37.683333,0,1,0,FM,acma-radio
+11727,Vertel Tower Mt Warrenheip  Lot 2045  Mt Warrenheip Rd DUNNSTOWN,VIC,143.9575,-37.576667,0,3,0,FM,acma-radio
+11729,Telstra Radio Terminal Site One Tree Hill Rd ARARAT,VIC,142.891944,-37.270278,0,1,0,FM,acma-radio
+11737,Police Tower Mt Macedon  MT MACEDON,VIC,144.576667,-37.383333,0,1,0,FM,acma-radio
+11742,BA Site Mt Alexander Joseph Young Dr HARCORT NORTH,VIC,144.308889,-36.9925,0,8,0,FM,acma-radio
+11763,Broadcast Mast BAI Comms Site Calder Hwy CARWARP,VIC,142.188333,-34.379722,0,7,0,FM,acma-radio
+11885,Broadcast Australia Site Ultima-Lake Boga Rd GOSCHEN,VIC,143.455833,-35.472778,0,4,0,FM,acma-radio
+11913,Comm Site Mt Broughton via Newells Rd GHIN GHIN,VIC,145.413056,-37.120556,0,2,0,FM,acma-radio
+11926,Emoleum Site 3km North of TAMINICK GAP,VIC,146.205278,-36.384444,0,1,0,FM,acma-radio
+11949,Broadcast Australia Tower Mt Baranduda  623 Ewarts Rd LENEVA,VIC,146.855,-36.253611,0,6,0,FM,acma-radio
+11959,Telstra CMTS Site BIG HILL,VIC,147.1975,-36.785,0,1,0,FM,acma-radio
+11981,Com Site The Paps via 2820 Maroondah Hwy MAINDAMPLE,VIC,145.984722,-37.043333,0,3,0,FM,acma-radio
+11983,RMR monopole The Paps via Paps Road off Maroondah Highway MAINDAMPLE,VIC,145.984722,-37.042778,0,2,0,FM,acma-radio
+12002,Allcom Site 14.5 km SE of Beechworth MT STANLEY,VIC,146.803056,-36.445,0,2,0,FM,acma-radio
+12003,Comms Tower  SP Ausnet Site Mt Stanley  off Mt Stanley Rd STANLEY,VIC,146.803056,-36.451111,0,1,0,FM,acma-radio
+12010,TXA Observatory Road Site Tower 20-24 Observatory Road MT DANDENONG,VIC,145.353333,-37.828333,0,6,0,FM,acma-radio
+12013,TXA Ornata Road Site Tower 12 Ornata Road MOUNT DANDENONG,VIC,145.346667,-37.8375,0,7,2,FM,acma-radio
+12014,BAI Comms Site 116-118 Ridge Rd MOUNT DANDENONG,VIC,145.348611,-37.835,0,11,1,FM,acma-radio
+12042,Commercial Broadcast Site off Traralgon-Balook Rd MT TASSIE,VIC,146.559167,-38.393611,0,1,0,FM,acma-radio
+12044,Broadcast Australia Site off Traralgon-Balook Rd MT TASSIE,VIC,146.564722,-38.399167,0,5,0,FM,acma-radio
+12062,Main Mast  Broadcast Australia Site Seaspray Rd  3km SSE of LONGFORD,VIC,147.095278,-38.188333,1,0,0,AM,acma-radio
+12067,Broadcast Australia Site off Tower Rd MT TAYLOR,VIC,147.560556,-37.705556,0,4,0,FM,acma-radio
+12090,Telstra RT/Police/SMR Site Mt Raymond 12 km E of ORBOST,VIC,148.6,-37.711667,0,3,0,FM,acma-radio
+12096,Telstra Radio Terminal 49 km ENE of Orbost DONALD KNOB,VIC,148.994722,-37.593889,0,2,0,FM,acma-radio
+12106,Police Site MARAMINGO HILL,VIC,149.5475,-37.410556,0,1,0,FM,acma-radio
+12113,Mallacoota Radio Terminal Site MALLACOOTA,VIC,149.751111,-37.546389,0,3,0,FM,acma-radio
+12127,RPP Site Pindara Rd ARTHURS SEAT,VIC,144.951389,-38.356111,0,1,0,FM,acma-radio
+12661,Broadcast Australia site Kluver St BALD HILLS,QLD,153.0175,-27.311667,2,0,0,AM,acma-radio
+12749,TXA T-Site Tower 445 Sir Samuel Griffith Drive MOUNT COOT-THA,QLD,152.948056,-27.463056,0,3,3,FM,acma-radio
+12752,BAI Comms Site 620 Sir Samuel Griffith Drive MOUNT COOT-THA,QLD,152.9475,-27.464444,0,6,0,FM,acma-radio
+12757,TXA B-Site Tower 560 Sir Samuel Griffith Drive MOUNT COOT-THA,QLD,152.943333,-27.466389,0,2,0,FM,acma-radio
+13165,Water Tower Karawatha St SPRINGWOOD,QLD,153.147222,-27.623333,0,1,0,FM,acma-radio
+13352,Broadcast Australia site off Fleming Rd TINGALPA,QLD,153.122222,-27.4625,1,0,0,AM,acma-radio
+13410,North Point ST HELENA ISLAND,QLD,153.236111,-27.379722,1,0,0,AM,acma-radio
+13419,Broadcast site 1871 Wynnum Rd WYNNUM WEST,QLD,153.146389,-27.463611,2,0,0,AM,acma-radio
+13564,NTL Broadcast Site cnr North & Freemans Rds LOWER BEECHMONT,QLD,153.242222,-28.033611,0,5,1,FM,acma-radio
+13995,Telstra Site 185-187 Long Rd TAMBORINE MOUNTAIN,QLD,153.2,-27.926111,0,2,0,FM,acma-radio
+14001,GCT Mt Tamborine Site 40m Tower Golf Course Road MOUNT TAMBORINE,QLD,153.213611,-27.969722,0,3,0,FM,acma-radio
+14187,Broadcast Site THE KNOBBY,QLD,152.591667,-27.502222,0,1,0,FM,acma-radio
+14541,Comtel Tower Mount Kynoch  36 Hilltop Crescent BLUE MOUNTAIN HEIGHTS,QLD,151.956389,-27.506111,0,3,0,FM,acma-radio
+14542,Vertel Tower Mount Kynoch  1 Blue Meadow Court BLUE MOUNTAIN HEIGHTS,QLD,151.955833,-27.506111,0,1,0,FM,acma-radio
+14689,Radio 4AK Site Oakey 4AK Road  4km SE of OAKEY,QLD,151.755833,-27.458333,1,0,0,AM,acma-radio
+14705,Gold Radio Site Karingal Hill 297 Hustons Road PIRRINUAN,QLD,151.269444,-27.069444,0,1,0,FM,acma-radio
+14706,Broadcast Australia Site Bunya Hwy  6km NE of DALBY,QLD,151.302778,-27.144167,1,0,0,AM,acma-radio
+14794,Water Tower cnr Middle & Colamba Sts CHINCHILLA,QLD,150.625556,-26.742222,0,2,0,FM,acma-radio
+14809,Telstra Site 8 km east of Miles via Warrego Hwy COLUMBOOLA,QLD,150.270556,-26.649444,0,1,0,FM,acma-radio
+14811,Comms Tower 8 km east of Miles via Warrego Hwy COLUMBOOLA,QLD,150.270278,-26.650556,0,2,0,FM,acma-radio
+14835,Surat Water Tower SURAT,QLD,149.069444,-27.158333,0,1,0,FM,acma-radio
+14905,Water Tower cnr Fry and Smallcombe Streets TARA,QLD,150.46,-27.278056,0,1,0,FM,acma-radio
+14917,Telstra Site Yellowcap Ridge R/T 331 Hurst Road COOMRITH,QLD,149.641944,-27.491111,0,1,0,FM,acma-radio
+14943,Santos Site BALLERA,QLD,141.804722,-27.399722,0,2,0,FM,acma-radio
+14984,Water Tower YULEBA,QLD,149.383333,-26.611389,0,1,0,FM,acma-radio
+15080,4ZR Radio Site Timbury Hills off Warrego Hwy 6 km E of ROMA,QLD,148.848056,-26.574444,0,2,0,FM,acma-radio
+15082,Telstra Radio Terminal Timbury Hills off Warrego Hwy 6 km E of ROMA,QLD,148.85,-26.5725,0,3,0,FM,acma-radio
+15136,Broadcast Australia Site Mitchell Escarpment  off Warrego Hwy 15km SE of MITCHELL,QLD,148.111389,-26.542778,0,2,0,FM,acma-radio
+15169,Broadcast Site 10 km South of MORVEN,QLD,147.133889,-26.505556,0,1,0,FM,acma-radio
+15193,Water Tower Parry St CHARLEVILLE,QLD,146.244444,-26.404444,0,2,0,FM,acma-radio
+15254,Shire Depot Rose Street BLACKALL,QLD,145.465278,-24.420278,0,3,0,FM,acma-radio
+15260,Broadcast Site 3 km ESE of BLACKALL,QLD,145.496111,-24.431389,0,1,0,FM,acma-radio
+15272,Broadcast/Telstra Site 13 km E of JERICHO,QLD,146.256111,-23.625,0,1,0,FM,acma-radio
+15322,BA Site 1 km SE of AUGATHELLA,QLD,146.588889,-25.806389,0,1,0,FM,acma-radio
+15368,SES Site Lot 301 Webber street EROMANGA,QLD,143.269444,-26.668889,0,1,0,FM,acma-radio
+15427,Broadcast Site Water Tower cnr Diamantina Development Rd and cecil St WINDORAH,QLD,142.659444,-25.419722,0,1,0,FM,acma-radio
+15452,Telstra Site Lot 1 Vaughan St BIRDSVILLE,QLD,139.355278,-25.896389,0,2,0,FM,acma-radio
+15491,Broadcast Australia Site 5.6 km NNW of ST GEORGE,QLD,148.566944,-27.994722,0,2,0,FM,acma-radio
+15493,BA Site Moonie Hwy 10 km NE of ST GEORGE,QLD,148.675556,-27.997222,1,0,0,AM,acma-radio
+15839,ComGroup Site Clear Mountain Rd CLEAR MOUNTAIN,QLD,152.884722,-27.304722,0,1,0,FM,acma-radio
+15891,Radio Rhema Site 18 Eagles Nest Court BALD KNOB,QLD,152.913889,-26.778611,0,1,0,FM,acma-radio
+15894,Regional broadcaster tower Cnr Bald Knob Road and Landsborough-Maleny Road BALD KNOB,QLD,152.918333,-26.79,0,1,0,FM,acma-radio
+16046,Broadcast Australia Site 93 Dulong Road DULONG,QLD,152.911111,-26.632222,0,4,0,FM,acma-radio
+16179,Radio 4GM AM 37m Mast  Broadcast Australia Site Noosa Rd  500m E of MONKLAND,QLD,152.689167,-26.210833,1,0,0,AM,acma-radio
+16320,Broadcast Site Hoggs Road  1.5km NE of WOOROOLIN,QLD,151.827222,-26.400833,1,0,0,AM,acma-radio
+16343,Forsby Site  Ushers Hill off Peterson Drv  7km SSE of KINGAROY,QLD,151.868611,-26.600278,0,1,0,FM,acma-radio
+16355,Broadcast Australia Site Lot 13 Bunya Mountains Road MT MOWBULLAN,QLD,151.608056,-26.892222,0,3,0,FM,acma-radio
+16377,Main Tower Meandu Mine TARONG,QLD,151.91,-26.8025,0,6,0,FM,acma-radio
+16500,BAI Comms Site 78 Plateau Road MULGILDIE,QLD,151.186389,-24.989167,0,1,0,FM,acma-radio
+16573,Tattsbet Site Hervey Bay Rd DUNDATHU,QLD,152.729167,-25.463611,1,0,0,AM,acma-radio
+16641,Community Radio Site GHOST HILL,QLD,152.835,-25.310556,0,1,0,FM,acma-radio
+16801,SE AM Mast Lot 224 Bargara Road RUBYANNA,QLD,152.406944,-24.844722,1,0,0,AM,acma-radio
+16827,Bundaberg Bcasters Site Sloping Hummock  11 Bowden St QUNABA,QLD,152.426111,-24.845,0,4,0,FM,acma-radio
+16831,Broadcast Australia Site Sloping Hummock  Heathwood Cres QUNABA,QLD,152.426944,-24.843056,0,1,0,FM,acma-radio
+16893,Nixon Site Reservoir Seaspray Drive AGNES WATER,QLD,151.895833,-24.216111,0,1,0,FM,acma-radio
+16904,Telstra Radio Terminal WESTWOOD RANGE,QLD,151.624167,-24.312222,0,2,0,FM,acma-radio
+17085,Broadcast Site Boles St Round Hill GLADSTONE,QLD,151.255278,-23.868611,0,6,0,FM,acma-radio
+17121,Nixon Site Boles St Round Hill GLADSTONE,QLD,151.255556,-23.868611,0,1,0,FM,acma-radio
+17124,2491 Bajool-Port Alma Rd PORT ALMA,QLD,150.845,-23.583056,1,0,0,AM,acma-radio
+17152,Broadcast Australia site off Breakspear St GRACEMERE,QLD,150.457222,-23.452222,1,0,0,AM,acma-radio
+17321,Ramp 32 BLACKWATER MINE,QLD,148.803889,-23.724444,0,1,0,FM,acma-radio
+17347,Broadcast Site CAPELLA,QLD,148.040278,-23.118333,0,1,0,FM,acma-radio
+17361,Telstra Site CUTLERS HILL,QLD,149.032778,-23.574167,0,2,0,FM,acma-radio
+17362,Win TV Site CUTLERS HILL,QLD,149.0325,-23.573611,0,1,0,FM,acma-radio
+17430,Capricorn Comms Site MT ARCHER,QLD,150.576944,-23.337222,0,1,0,FM,acma-radio
+17433,Nixons Site MT ARCHER,QLD,150.576944,-23.3375,0,1,0,FM,acma-radio
+17437,Bcast / Comms Tower  Southern Cross Austereo Site Pilbeam Drv MOUNT ARCHER,QLD,150.578056,-23.338889,0,3,0,FM,acma-radio
+17442,Broadcast Australia Site 1046 Mt Hopeful Rd MOUNT HOPEFUL,QLD,150.536111,-23.729722,0,4,0,FM,acma-radio
+17511,Telstra Radio Terminal WOORABINDA,QLD,149.505833,-24.144722,0,1,0,FM,acma-radio
+17622,Nixon Site MEIKLEVILLE HILL,QLD,150.744167,-23.1175,0,2,0,FM,acma-radio
+17719,Telstra Radio Terminal BILOELA,QLD,150.531111,-24.392222,0,1,0,FM,acma-radio
+17734,Comms Site Callide Mine MOUNT MURCHISON,QLD,150.595556,-24.306389,0,2,0,FM,acma-radio
+17759,Rehab Site Curragh Mine BLACKWATER,QLD,148.843889,-23.495556,0,1,0,FM,acma-radio
+17768,Ramp 48 BLACKWATER MINE,QLD,148.862222,-23.785556,0,2,0,FM,acma-radio
+17819,Broadcast Site lane off Moura-Bindaree Rd MOURA,QLD,149.975278,-24.563611,0,2,0,FM,acma-radio
+17878,Broadcast Australia Site Gregory Hwy  7km N of EMERALD,QLD,148.149167,-23.459444,1,0,0,AM,acma-radio
+17879,Commercial TV site Between Caringal Road and Gregory Hwy EMERALD,QLD,148.150278,-23.476111,0,1,0,FM,acma-radio
+17881,Telstra Radio Terminal EMERALD,QLD,148.151111,-23.474444,0,4,0,FM,acma-radio
+17942,Water Tower 104 Carina Crescent CLERMONT,QLD,147.6275,-22.838611,0,3,0,FM,acma-radio
+17956,Broadcast Site McDonald Flat Rd CLERMONT,QLD,147.644167,-22.856111,0,3,0,FM,acma-radio
+17973,Mine Water Tower BLAIR ATHOL MINE,QLD,147.538611,-22.691944,0,1,0,FM,acma-radio
+18023,Telstra Radio Terminal RODDAS LOOKOUT,QLD,148.150278,-24.141667,0,1,0,FM,acma-radio
+18056,Shire Council Site RODDAS LOOKOUT,QLD,148.154167,-24.142222,0,1,0,FM,acma-radio
+18083,Broadcast Site BARCALDINE,QLD,145.259167,-23.528333,0,2,0,FM,acma-radio
+18096,Water Tower cnr Pine and Yew Streets BARCALDINE,QLD,145.293056,-23.556667,0,1,0,FM,acma-radio
+18185,Broadcast Site 10km E of LONGREACH,QLD,144.351667,-23.456111,0,1,0,FM,acma-radio
+18298,Water Tower Werna St WINTON,QLD,143.0375,-22.386389,0,3,0,FM,acma-radio
+18330,Broadcast Site 7 km NE of Railway Siding OLIO,QLD,143.259722,-21.857222,0,1,0,FM,acma-radio
+18427,Telstra Radio Terminal Pollock St Mt Oscar MACKAY,QLD,149.17,-21.116667,0,1,0,FM,acma-radio
+18428,Nixon Comms Site The Black Mountain  Black Mountain Rd HABANA,QLD,149.098333,-21.068611,0,2,0,FM,acma-radio
+18593,4AA AM Site Mt Bassett Cemetery Rd MACKAY,QLD,149.211111,-21.120833,1,0,0,AM,acma-radio
+18651,Broadcast Tower Broadcast Australia Site  Mt Blackwood  Lot 410 Mt Blackwood Access Rd KUTTABUL,QLD,148.943333,-21.0325,0,9,0,FM,acma-radio
+18733,Telstra Radio Terminal Smiths Hill 6km NNE of NEBO,QLD,148.706389,-21.633611,0,2,0,FM,acma-radio
+18762,Main Repeater Site Maintenance Hut NEWLANDS MINE,QLD,147.888889,-21.212778,0,2,0,FM,acma-radio
+18767,RCS Telecoms Site Carborough Range  off Peak Downs Hwy COPPABELLA,QLD,148.3125,-21.9225,0,1,0,FM,acma-radio
+18803,Macquarie Reg Radio Site off Sarchedon Drv  2.5km E of MORANBAH,QLD,148.020833,-22.002222,1,0,0,AM,acma-radio
+18885,Broadcast Australia Site  CARBOROUGH RANGE,QLD,148.318611,-21.925833,0,3,0,FM,acma-radio
+18915,Broadcast/Comms Site Trig Station MIDDLEMOUNT,QLD,148.675,-22.809722,0,1,0,FM,acma-radio
+18918,Telstra Radio Terminal MIDDLEMOUNT,QLD,148.678611,-22.813611,0,3,0,FM,acma-radio
+19134,Council Site Mt Devlin SPRINGLANDS,QLD,147.833056,-20.521667,0,2,0,FM,acma-radio
+19229,Southern Cross Broadcasting Site Bowen Hill BOWEN,QLD,148.238611,-20.006389,0,2,0,FM,acma-radio
+19235,Broadcast Site  SPROLE CASTLE,QLD,148.104722,-19.994722,0,4,0,FM,acma-radio
+19238,Bowen Shire Council Site Bowen Hill BOWEN,QLD,148.235833,-20.004722,0,2,0,FM,acma-radio
+19299,Burdekin Communications Site 12 km SE of Home Hill MT INKERMAN,QLD,147.495833,-19.745556,0,5,0,FM,acma-radio
+19386,Main AM Mast BAI Comms Site  34 Jack Rd BRANDON,QLD,147.341667,-19.51,1,0,0,AM,acma-radio
+19403,Telstra Radio Terminal 8 Sterling Drive CASTLE HILL,QLD,146.799722,-19.249722,0,4,0,FM,acma-radio
+19489,4TTT Site MT STUART,QLD,146.780278,-19.343611,0,1,0,FM,acma-radio
+19490,Axicom Mast 1 - 74m  Axicom Site 828 Mt Stuart Road MOUNT STUART,QLD,146.782222,-19.342778,0,3,0,FM,acma-radio
+19494,Broadcast Australia Site Mount Stuart Road MOUNT STUART,QLD,146.780556,-19.343611,0,5,0,FM,acma-radio
+19673,Telstra Site Twilight Hill  347 Pilcher Rd PENTLAND,QLD,145.408611,-20.485556,0,2,0,FM,acma-radio
+19702,BAI Comms Site 56359 Gregory Developmental Road GREENVALE,QLD,144.989167,-19.002222,0,2,0,FM,acma-radio
+19952,Comms Mast  Pagex Site Towers Hill  off Blackjack Rd CHARTERS TOWERS,QLD,146.2525,-20.089167,0,2,0,FM,acma-radio
+19986,4GC AM Mast 110-118 New Queen Rd QUEENTON,QLD,146.289167,-20.065278,1,0,0,AM,acma-radio
+20018,Council Site Water Reservoir cnr Alyss St & Saleyards Rd HUGHENDEN,QLD,144.186944,-20.845278,0,3,0,FM,acma-radio
+20047,Telstra Radio Terminal Lot 1 Flinders Hwy RICHMOND,QLD,143.1575,-20.75,0,1,0,FM,acma-radio
+20087,Telstra Radio Terminal Lot 30 Old Normanton Road JULIA CREEK,QLD,141.739444,-20.6525,0,1,0,FM,acma-radio
+20107,Water Tower Burke Street JULIA CREEK,QLD,141.740556,-20.657222,0,1,0,FM,acma-radio
+20123,Telstra Radio Terminal Mount Avarice  3.5 km SE of CLONCURRY,QLD,140.539167,-20.722778,0,2,0,FM,acma-radio
+20184,Broadcast Site Transmission St CLONCURRY,QLD,140.5,-20.697222,1,0,0,AM,acma-radio
+20234,Broadcast Site Lethem Street DAJARRA,QLD,139.513056,-21.695556,0,1,0,FM,acma-radio
+20356,Broadcast Site Abel Smith Drv PIONEER,QLD,139.510833,-20.716111,1,0,0,AM,acma-radio
+20432,BA Site 42 Herbert St BEDOURIE,QLD,139.471667,-24.358333,0,2,0,FM,acma-radio
+20647,Telstra Radio Terminal 11.4 km NE of Tully MT MYRTLE,QLD,146.0075,-17.868889,0,2,0,FM,acma-radio
+21158,Radio Terminal 38 km SSE of Cairns MT BELLENDEN KER,QLD,145.853611,-17.264167,0,5,0,FM,acma-radio
+21215,Comms Tower Flagstaff Hill Island Point Rd PORT DOUGLAS,QLD,145.467222,-16.481944,0,2,0,FM,acma-radio
+21276,SCA site Mt Yarrabah YARRABAH,QLD,145.842778,-16.904444,0,3,0,FM,acma-radio
+21284,B&W Site 7.7 km ENE of Cairns MT YARRABAH,QLD,145.843333,-16.904722,0,1,0,FM,acma-radio
+21432,QR Site FORSAYTH,QLD,143.6025,-18.5875,0,3,0,FM,acma-radio
+21433,QR Site  MT SURPRISE,QLD,144.317778,-18.146944,0,3,0,FM,acma-radio
+21455,Telstra Site Lot 196 Terminus St LAURA,QLD,144.445,-15.559167,0,2,0,FM,acma-radio
+21471,Telstra Site 171 Theile McIvor Rd HOPE VALE,QLD,145.105833,-15.2975,0,1,0,FM,acma-radio
+21515,Telstra Site 116 Taylor St COEN,QLD,143.2025,-13.937778,0,2,0,FM,acma-radio
+21542,Telstra Site Lot 1 Mt McLean Rd LAKELAND,QLD,144.846944,-15.900556,0,2,0,FM,acma-radio
+21650,Broadcast Site Yessie St SUE ISLAND,QLD,142.827778,-10.205556,0,1,0,FM,acma-radio
+21714,Telstra Site Lot 39 Onyx St MOUNT GARNET,QLD,145.120278,-17.685278,0,2,0,FM,acma-radio
+21754,Telstra Radio Terminal DAINTREE,QLD,145.322778,-16.249167,0,1,0,FM,acma-radio
+21756,Telstra Radio Terminal 2.2 km SW of Cow Bay and 26.6 km N of Port Douglas MT ALEXANDRA,QLD,145.436944,-16.243889,0,1,0,FM,acma-radio
+21759,Telstra Site off Mossman-Daintree Rd NEWELL,QLD,145.386111,-16.433611,0,2,0,FM,acma-radio
+21955,Telstra Site Buchan Point off Captain Cook Hwy PALM COVE,QLD,145.661667,-16.736944,0,5,0,FM,acma-radio
+22155,Broadcast Site 77 Grenfell Street ADELAIDE,SA,138.602778,-34.924722,0,7,0,FM,acma-radio
+22642,461 Belair Road BELAIR,SA,138.623056,-34.997778,0,1,0,FM,acma-radio
+22946,Adelaide Gun Club Undo Road WATERLOO CORNER,SA,138.578056,-34.739167,0,1,0,FM,acma-radio
+23132,TXA NWS Site Tower 109 Summit Road CRAFERS,SA,138.708333,-34.9825,0,3,0,FM,acma-radio
+23139,Broadcast Australia Site Summit Road CRAFERS,SA,138.708611,-34.978889,0,6,0,FM,acma-radio
+23158,FM tower Broadcast Australia site Summit Road CRAFERS,SA,138.707778,-34.98,0,3,0,FM,acma-radio
+23171,RAA District Council Site Old Mount Barker Road ECHUNGA,SA,138.813333,-35.101111,0,1,0,FM,acma-radio
+23181,TXA Crafers Site Tower 115 Mount Lofty Summit Road CRAFERS,SA,138.708056,-34.981111,0,2,2,FM,acma-radio
+23192,Hall Site Majors Road TROTT PARK,SA,138.539167,-35.055,0,1,0,FM,acma-radio
+23234,Main Mast BAI Comms Site  107 Sherriffs Rd REYNELLA,SA,138.518611,-35.103889,2,0,0,AM,acma-radio
+23304,Broadcast Site Lot 8 Willson Drive YANKALILLA,SA,138.338611,-35.442778,0,1,0,FM,acma-radio
+23483,Major Radio Site Mount Summit Road MOUNT BARKER,SA,138.921389,-35.066667,0,2,0,FM,acma-radio
+23639,Telstra Site Lot 94 Sugarloaf Road KEITH,SA,140.336667,-36.007778,0,1,0,FM,acma-radio
+23643,Community Site Sugarloaf Hill off Sugarloaf Rd  7km NNW of KEITH,SA,140.329167,-36.033056,0,1,0,FM,acma-radio
+23646,Community Radio Site Western Drive 2 km SSE of BORDERTOWN,SA,140.779722,-36.325,0,1,0,FM,acma-radio
+23720,Council Site off Smith St and Wimmera Hwy  3km ENE of NARACOORTE,SA,140.769444,-36.950833,0,2,0,FM,acma-radio
+23800,Broadcast site 11 km E of Millicent MT BURR,SA,140.4825,-37.602222,0,7,0,FM,acma-radio
+23876,Broadcast Australia Site 58 Crouch Street North MOUNT GAMBIER,SA,140.790278,-37.824444,1,0,0,AM,acma-radio
+23959,Austar MDS Site The Bluff (SE) 21 km WNW MOUNT GAMBIER,SA,140.570556,-37.726111,0,1,0,FM,acma-radio
+23994,Telstra site Hermann Road PERPONDA,SA,139.837778,-34.977222,0,1,0,FM,acma-radio
+24041,Water Tower Cliff Street WAIKERIE,SA,139.987778,-34.179444,0,1,0,FM,acma-radio
+24073,Broadcast Site Bookpurnong Terrace 4 km WSW of LOXTON,SA,140.533333,-34.464444,0,7,0,FM,acma-radio
+24148,Broadcast Australia Site Riverview Drv  2.5km NNE of BERRI,SA,140.614444,-34.265556,2,0,0,AM,acma-radio
+24149,Broadcast Site Off Sturt Hwy  12km SW of RENMARK,SA,140.643333,-34.228333,2,0,0,AM,acma-radio
+24182,Major Radio Site Rifle Range Road 7km SE of Tanunda MT KITCHENER,SA,139.005833,-34.571667,0,2,0,FM,acma-radio
+24206,Council Site Water Tank Tappa Pass ANGASTON,SA,139.061944,-34.495278,0,3,0,FM,acma-radio
+24226,Power Comm site Mt Rufus DUTTON,SA,139.126944,-34.315556,0,1,0,FM,acma-radio
+24320,CBRS Repeater site 29 km N of Burra MT BRYAN,SA,138.973611,-33.425278,0,1,0,FM,acma-radio
+24365,Police Tower Stoke Hill MOOCKRA,SA,138.418889,-32.398333,0,1,0,FM,acma-radio
+24375,ETSA Utilities site 23 km north of Quorn MT ARDEN,SA,137.978889,-32.151944,0,1,0,FM,acma-radio
+24383,Telstra/Broadcast Site Yarrah Vale Road QUORN,SA,138.056389,-32.299722,0,1,0,FM,acma-radio
+24385,BAI Comms Site Lot 405 Webb Rd 4 km SE of HAWKER,SA,138.445278,-31.920833,0,1,0,FM,acma-radio
+24408,SAGRN Site Mt Plantagenet WORUMBA,SA,138.681944,-31.883889,0,1,0,FM,acma-radio
+24593,BA Site Huddleston Rd  5km ENE of CRYSTAL BROOK,SA,138.253889,-33.344722,1,0,0,AM,acma-radio
+24650,Broadcast Australia Site TV Track THE BLUFF,SA,138.164167,-33.103889,0,6,0,FM,acma-radio
+24732,SA Water Site via Pistol Club Rd MAITLAND,SA,137.731111,-34.363611,0,1,0,FM,acma-radio
+24879,Lincoln Hwy 8.7km NNE of LIPSON,SA,136.2025,-34.238333,1,0,0,AM,acma-radio
+24886,Telstra Tower 14 km west of Tumby Bay BORTHWICKS HILL,SA,135.955,-34.350278,0,2,0,FM,acma-radio
+24964,Comms Tower  Fisheries Site Winter Hill  Winter Hill Drv  5km NW of PORT LINCOLN,SA,135.828611,-34.699167,0,1,0,FM,acma-radio
+24981,Comm Site 14 km WSW of Tumby Bay PILLAWORTA HILL,SA,135.954167,-34.3925,0,1,0,FM,acma-radio
+25118,Summit 5 km NNE of Cleve MT NIELD,SA,136.518889,-33.658611,0,2,0,FM,acma-radio
+25123,Emergency Services Bldg Cross Street KIMBA,SA,136.419167,-33.138611,0,2,0,FM,acma-radio
+25155,Major Radio Site Pygery Rocks WUDINNA,SA,135.480833,-32.976111,0,1,0,FM,acma-radio
+25162,Broadcast Site McMahon Rd MT DAMPER,SA,135.108889,-33.140556,0,1,0,FM,acma-radio
+25169,Telstra site Lot 12 Talia Road MT DAMPER,SA,135.112778,-33.1425,0,1,0,FM,acma-radio
+25185,Telstra Site Wirrulla Hill  695 Gawler Ranges Road WIRRULLA,SA,134.612778,-32.407778,0,1,0,FM,acma-radio
+25224,NE AM Mast BAI Comms Site  29 Stanley Williams Rd STREAKY BAY,SA,134.1925,-32.756389,0,2,0,FM,acma-radio
+25228,Flow FM Mast Medlingie Hill  941 Medlingie Hill Rd MARYVALE,SA,134.483889,-32.813611,0,1,0,FM,acma-radio
+25256,CAAMA Site 561 Schwarz Hill Rd CEDUNA,SA,133.755833,-32.1525,0,2,0,FM,acma-radio
+25295,Telstra Site Kongwirra Hill  45549A Eyre Hwy MERGHINY,SA,133.789444,-32.138889,0,2,0,FM,acma-radio
+25516,Telstra Site Olympic Dam Hwy WOOMERA,SA,136.814722,-31.191944,0,1,0,FM,acma-radio
+25545,Telstra Site Hallion Hill Rd ANDAMOOKA,SA,137.166667,-30.473333,0,2,0,FM,acma-radio
+25589,Telstra North Site Traeger Street COOBER PEDY,SA,134.759167,-29.011667,0,3,0,FM,acma-radio
+25661,Telstra Site Lot 728 Olympic Way ROXBY DOWNS,SA,136.894722,-30.546389,0,5,0,FM,acma-radio
+25704,Bcast / Comms Mast  Santos Ltd Site Off Moomba - Dullingari Rd DULLINGARI,SA,140.867222,-28.141944,0,2,0,FM,acma-radio
+25767,Link Site 6km NNE of Victor Harbor BROWN HILL,SA,138.646389,-35.505833,0,2,0,FM,acma-radio
+25773,Santos Site Tirrawarra 48 km North of MOOMBA,SA,140.101944,-27.688889,0,1,0,FM,acma-radio
+25815,BAI Comms Site via Boorloo Tce 2km SW of MARREE,SA,138.055,-29.653889,0,2,0,FM,acma-radio
+26184,SES Lot 25 to 26 Le Souef Street MARGARET RIVER,WA,115.076944,-33.950833,0,1,0,FM,acma-radio
+26497,Water Tower Cobham Ave YOKINE,WA,115.854722,-31.881667,0,2,0,FM,acma-radio
+26566,Doss Site High Road WANNEROO,WA,115.816111,-31.756111,0,1,0,FM,acma-radio
+26573,Phillips Group Site Cnr Amos & High Rds WANNEROO,WA,115.819444,-31.755278,0,1,0,FM,acma-radio
+26620,Tower  Broadcast Australia Site Television Road BICKLEY,WA,116.084444,-32.010833,0,9,0,FM,acma-radio
+26624,TXA Carmel Site 255 Welshpool Road East CARMEL,WA,116.061667,-32.012778,0,3,2,FM,acma-radio
+26627,FM Mast  TXA Bickley Site Television Rd BICKLEY,WA,116.083889,-32.007222,0,3,0,FM,acma-radio
+26647,Tower TXA Bickley Site Television Road BICKLEY,WA,116.084167,-32.008333,0,4,0,FM,acma-radio
+26652,Walliston Transfer Station Lawnbrook Road BICKLEY,WA,116.082222,-32.004167,0,1,0,FM,acma-radio
+26800,Broadcast Australia Site Crake St ASCOT,WA,115.915556,-31.934722,4,0,0,AM,acma-radio
+27115,Telstra Marine Gnangara Road LANDSDALE,WA,115.889167,-31.795833,1,0,0,AM,acma-radio
+27499,141/143 Mandurah Tce MANDURAH,WA,115.7275,-32.523333,0,2,0,FM,acma-radio
+27867,Broadcast Mast  Broadcast Australia Site Mt Lennard  River Road BUREKUP,WA,115.915278,-33.396944,0,3,0,FM,acma-radio
+27926,BAI Comms Site 18 Hester Rd BRIDGETOWN,WA,116.121667,-33.921111,1,0,0,AM,acma-radio
+27942,AM Mast  Radio West Site 63 Gommes Lane YORNUP,WA,116.177778,-34.054167,1,0,0,AM,acma-radio
+27951,Pipe Clay Gully Rd 2km W of MIDDLESEX,WA,116.145278,-34.321111,1,0,0,AM,acma-radio
+28008,Telstra Exchange NORTHCLIFFE,WA,116.123056,-34.632222,0,3,0,FM,acma-radio
+28026,Broadcast Site Dunnet Rd NANNUP,WA,115.769167,-33.985556,0,2,0,FM,acma-radio
+28084,Broadcast Australia Site off Caves Rd KEALY,WA,115.229444,-33.66,3,0,0,AM,acma-radio
+28153,Broadcast Australia Site Doodenanning Rd  3km NE of MAWSON,WA,117.189722,-31.984444,0,3,0,FM,acma-radio
+28235,Telstra Microwave Site off Boxsell Road NARROGIN,WA,117.196667,-32.8825,0,1,0,FM,acma-radio
+28250,Broadcast Australia Site Arthur Rd  5km E of ARTHUR RIVER,WA,117.092222,-33.336389,1,0,0,AM,acma-radio
+28287,AM Mast  Radio West Site Lot 1  Cnr Onslow & Warburton Rds MARRACOONDA,WA,117.499722,-33.647222,1,0,0,AM,acma-radio
+28405,AM Mast Southern Cross Austereo Site  198 Hanrahan Rd MOUNT ELPHINSTONE,WA,117.848611,-35.012222,2,0,0,AM,acma-radio
+28446,AM Mast BAI Comms Site  182 Old Elleker Rd GLEDHOW,WA,117.823611,-35.011944,1,0,0,AM,acma-radio
+28477,Telstra Mast  City of Albany Site Mt Melville  off Melville Drv MOUNT MELVILLE,WA,117.870833,-35.017778,0,2,0,FM,acma-radio
+28561,Keating Site Lot 1492 Gairdner Sth Rd  5 km SE of GAIRDNER,WA,118.988889,-34.234167,0,1,0,FM,acma-radio
+28838,Broadcast Site Shire of Kulin Johnston St KULIN,WA,118.154167,-32.671944,0,1,0,FM,acma-radio
+28860,Broadcast Site adj to High School NAREMBEEN,WA,118.39,-32.0625,0,1,0,FM,acma-radio
+28979,South32 BBM Mount Saddleback off Pinjarra-Williams Rd BODDINGTON BAUXITE MINE,WA,116.449722,-32.965833,0,1,0,FM,acma-radio
+29083,Radio 6NM AM Mast  Broadcast Australia Site Throssell St NORTHAM,WA,116.681944,-31.661667,1,0,0,AM,acma-radio
+29197,AM Mast  SCA Site Lot 22541 Great Eastern Hwy NANGEENAN,WA,118.205556,-31.502222,1,0,0,AM,acma-radio
+29198,FM Mast  SCA Site Lot 22541 Great Eastern Hwy NANGEENAN,WA,118.205833,-31.503333,0,1,0,FM,acma-radio
+29232,Telstra Exchange 106 Barrack Street MERREDIN,WA,118.280278,-31.481667,0,1,0,FM,acma-radio
+29306,Broadcast Site 42 Wolfram Street WESTONIA,WA,118.6975,-31.302222,0,3,0,FM,acma-radio
+29358,Telstra Microwave Site Ghooli 18km E of SOUTHERN CROSS,WA,119.509167,-31.276111,0,2,0,FM,acma-radio
+29513,Main Mast BAI Comms Site  Western Rd BINDULI,WA,121.404167,-30.7825,1,0,0,AM,acma-radio
+29526,RFDS Radio Base off St Albans Rd Near and Opposite Killarney Street KALGOORLIE,WA,121.466111,-30.724722,1,0,0,AM,acma-radio
+29739,Telstra Radio Terminal cnr Walsh and Brown Sts MENZIES,WA,121.03,-29.693889,0,2,0,FM,acma-radio
+29744,Broadcast Site Mine Village MOUNT KEITH,WA,120.551389,-27.2825,0,4,0,FM,acma-radio
+29774,Broadcast Site LEINSTER,WA,120.705833,-27.913889,0,6,0,FM,acma-radio
+29850,Telstra Site Laverton-Leonora Rd  3km E of LEONORA,WA,121.365,-28.885833,0,2,0,FM,acma-radio
+29876,Broadcast Australia Site Hawks Place LAVERTON,WA,122.399167,-28.628056,0,2,0,FM,acma-radio
+29943,Telstra/NTA Site  Redhill Lookout Redhill Lookout Rd KAMBALDA,WA,121.673056,-31.21,0,3,0,FM,acma-radio
+30041,Telstra Site 8.5km NW of NORSEMAN,WA,121.7275,-32.1425,0,2,0,FM,acma-radio
+30113,Broadcast/Communal Site Red Lake 15 km S of SALMON GUMS,WA,121.626111,-33.12,0,1,0,FM,acma-radio
+30185,6SE AM Mast Myrup Rd ESPERANCE,WA,121.878611,-33.768056,1,0,0,AM,acma-radio
+30219,Main mast BA Site Coolgardie-Esperance Hwy 12km NNW of ESPERANCE,WA,121.860278,-33.752778,1,0,0,AM,acma-radio
+30253,Telstra Tower Lot 668 Doust St  Wireless Hill WEST BEACH,WA,121.894722,-33.875,0,5,0,FM,acma-radio
+30266,Sonshine Mast Lot 668 Doust St  Wireless Hill WEST BEACH,WA,121.894444,-33.875278,0,1,0,FM,acma-radio
+30599,Broadcast Australia Site Quarrel Range  off Old Geraldton South Rd BERKSHIRE VALLEY,WA,116.159722,-30.635,0,1,0,FM,acma-radio
+30612,Broadcast Site cnr Seville and Aragon Streets CERVANTES,WA,115.071111,-30.501389,0,3,0,FM,acma-radio
+30633,Broadcast Site 1km S of LEEMAN,WA,114.979444,-29.961944,0,1,0,FM,acma-radio
+30635,Broadcast Site Lot 183 Farley St GREEN HEAD,WA,114.968333,-30.073889,0,4,0,FM,acma-radio
+30662,Broadcast Site Shire Office Main St COOROW,WA,116.024722,-29.881389,0,2,0,FM,acma-radio
+30670,Broadcast Site 4 km NE of JURIEN BAY,WA,115.068056,-30.282222,0,1,0,FM,acma-radio
+30714,Broadcast Site Ocean Hill ENEABBA,WA,115.335,-29.832222,0,2,0,FM,acma-radio
+30731,Kadathinna Hill 9km W of THREE SPRINGS,WA,115.674167,-29.543611,0,1,0,FM,acma-radio
+31062,Broadcast Site Community Hall USELESS LOOP,WA,113.4175,-26.126944,0,2,0,FM,acma-radio
+31071,Broadcast Australia Site Moresby Range off Chapman Valley Rd WAGGRAKINE,WA,114.676944,-28.681944,0,4,0,FM,acma-radio
+31148,Northampton Shire Site 12 Rochester St KALBARRI,WA,114.175,-27.705556,0,5,0,FM,acma-radio
+31181,Telstra Radio Terminal Monkey Mia Rd DENHAM,WA,113.543889,-25.924167,0,2,0,FM,acma-radio
+31334,Broadcast Australia Site off Dalwallinu West Rd  5 km WSW of DALWALLINU,WA,116.609444,-30.288889,2,0,0,AM,acma-radio
+31395,Broadcast Site 17 km SW of MORAWA,WA,115.879444,-29.316944,0,1,0,FM,acma-radio
+31413,Commercial TV Site Mt Campbell  1254 Old Three Springs Rd MERKANOOKA,WA,115.882222,-29.318611,0,3,0,FM,acma-radio
+31473,Broadcast Australia Site off Geraldton - Mt Magnet Rd  1.5km SSW of MULLEWA,WA,115.503889,-28.551111,0,1,0,FM,acma-radio
+31536,Broadcast Site YALGOO,WA,116.678889,-28.342222,0,1,0,FM,acma-radio
+31537,Broadcast Site Milligan Street YALGOO,WA,116.680833,-28.342222,0,2,0,FM,acma-radio
+31575,Broadcast Site Irvine Street SANDSTONE,WA,119.298056,-27.990278,0,2,0,FM,acma-radio
+31717,Broadcast Site Kiwirrkurra MT WEBB,WA,127.763889,-22.818056,0,1,0,FM,acma-radio
+31734,Shire Office Cnr Jones and Scotia Streets WILUNA,WA,120.228056,-26.595,0,4,0,FM,acma-radio
+31759,Broadcast Australia Site Lewer Rd CARNARVON,WA,113.67,-24.8725,1,0,0,AM,acma-radio
+31839,Broadcast Australia Site Brown Range off North West Coastal Hwy CARNARVON,WA,113.720556,-24.905833,0,2,0,FM,acma-radio
+31844,Broadcast Site 17 Robinson St CARNARVON,WA,113.657222,-24.883611,0,1,0,FM,acma-radio
+31918,Broadcast Australia Site Lot 43 Murat Rd EXMOUTH,WA,114.121111,-21.918611,0,1,0,FM,acma-radio
+32127,Broadcast Site Bidyadanga Rd LA GRANGE,WA,121.778889,-18.685,0,2,0,FM,acma-radio
+32231,Broadcast Site  BEAGLE BAY,WA,122.664167,-16.986111,0,1,0,FM,acma-radio
+32290,Broadcast Australia Site Derby Hwy  7km SE of DERBY,WA,123.67,-17.354167,1,0,0,AM,acma-radio
+32344,Telstra/Broadcast Site Fletchers via HALLS CREEK,WA,128.065833,-17.348333,0,2,0,FM,acma-radio
+32403,Broadcast Australia Site Mt Albany  23 Radio Hill Rd WYNDHAM,WA,128.103889,-15.463611,0,3,0,FM,acma-radio
+32406,Broadcast Australia Site Great Northern Hwy  2 km SE of WYNDHAM,WA,128.137222,-15.493611,1,0,0,AM,acma-radio
+32420,Broadcast Site  KALUMBURU,WA,126.6425,-14.295556,0,1,0,FM,acma-radio
+32438,Broadcast Site Diamond Mine ARGYLE,WA,128.395556,-16.709722,0,4,0,FM,acma-radio
+32597,Broadcast Site adjacent to ATC Site FITZROY CROSSING,WA,125.568056,-18.190278,0,1,0,FM,acma-radio
+32701,Broadcast Australia Site Great Northern Hwy  1 km NE of HALLS CREEK,WA,127.675,-18.218611,0,3,0,FM,acma-radio
+32830,Broadcast Australia Site Pinnacle Rd MT WELLINGTON,TAS,147.236389,-42.8975,0,8,2,FM,acma-radio
+32901,Marcom Watson Site MT FAULKNER,TAS,147.194167,-42.787222,0,1,0,FM,acma-radio
+32932,Hobart City Council Site DROUGHTY HILL,TAS,147.420556,-42.92,0,1,0,FM,acma-radio
+33051,Fire Service Tower Herringback Ridge  301 Halls Track Rd SANDFLY,TAS,147.139722,-43.006667,0,1,0,FM,acma-radio
+33169,Norske Skoge / Telstra Site BELCHERS LOOKOUT,TAS,146.7375,-42.661111,0,1,0,FM,acma-radio
+33378,Broadcast Site Reservoir Noyes St SWANSEA,TAS,148.073333,-42.125,0,2,0,FM,acma-radio
+33465,Esk Hwy 10 km SW of FINGAL,TAS,147.875278,-41.688333,1,0,0,AM,acma-radio
+33476,Telstra and NTA Site SOUTH SISTER,TAS,148.171667,-41.534167,0,4,0,FM,acma-radio
+33477,Broadcast Australia Site off Tasman Hwy  1 km South of BICHENO,TAS,148.296389,-41.881389,0,2,0,FM,acma-radio
+33490,Tas Ambulance Service Site near TV Translator Site BICHENO,TAS,148.296111,-41.881389,0,1,0,FM,acma-radio
+33506,Broadcast Australia Site off St Helens Point Rd  3km SW of STIEGLITZ,TAS,148.286944,-41.333611,1,1,0,AM + FM,acma-radio
+33507,Tasmanian Ambulance Service Site WELDBOROUGH PASS,TAS,147.947222,-41.235833,0,1,0,FM,acma-radio
+33635,Broadcast Site Reatta Road TREVALLYN,TAS,147.098056,-41.436389,0,2,0,FM,acma-radio
+33781,Radio Terminal Gentle Annie KING ISLAND,TAS,144.016667,-40.036389,0,1,0,FM,acma-radio
+33804,Broadcast Australia Tower  MT BARROW,TAS,147.426111,-41.391667,0,7,0,FM,acma-radio
+33822,Mt Victoria Repeater Association Site  MT HORROR,TAS,147.734444,-41.066667,0,2,0,FM,acma-radio
+33852,7SD Western AM Mast 605 North Scottsdale Rd NORTH SCOTTSDALE,TAS,147.543889,-41.11,1,0,0,AM,acma-radio
+33885,Marcom Watson (northern) Site MT ARTHUR,TAS,147.286667,-41.274722,0,1,0,FM,acma-radio
+34100,Container Near TV Translator Site KELCEY TIER,TAS,146.327778,-41.210556,0,1,0,FM,acma-radio
+34109,Shell Hill Government Site FORTH,TAS,146.279444,-41.193333,0,1,0,FM,acma-radio
+34166,Broadcast Mast 256 Waverley Rd DON,TAS,146.311944,-41.162778,0,3,0,FM,acma-radio
+34204,Telstra and NTA Site ROUND HILL,TAS,145.951667,-41.07,0,3,0,FM,acma-radio
+34258,Broadcast/Comm Site MT CLEVELAND,TAS,145.377778,-41.45,0,1,0,FM,acma-radio
+34260,Telstra/Broadcast Site COMPANION HILL,TAS,145.733611,-41.335278,0,2,0,FM,acma-radio
+34349,Broadcast Australia Site Alcomie Road WILLIS HILL,TAS,145.192778,-40.959167,0,2,0,FM,acma-radio
+34350,Carnac Court SMITHTON,TAS,145.126667,-40.851389,0,1,0,FM,acma-radio
+34399,BAI Comms Site off Lyell Highway MT OWEN,TAS,145.606389,-42.091944,0,3,0,FM,acma-radio
+34400,Works Tasmania Site MT OWEN,TAS,145.606944,-42.084722,0,2,0,FM,acma-radio
+34421,Broadcast Australia Site off Zeehan Hwy  4.5km NNW of QUEENSTOWN,TAS,145.529167,-42.045278,1,0,0,AM,acma-radio
+34450,Broadcast Australia Site  MT READ,TAS,145.542222,-41.844167,0,2,0,FM,acma-radio
+34528,Broadcast Site off Womina-Willowvale Road Eastmans Ridge WARWICK,QLD,152.034722,-28.160278,0,2,0,FM,acma-radio
+34531,Cowra Shire Site BELLEVUE HILL,NSW,148.697778,-33.828889,0,1,0,FM,acma-radio
+34748,Reservoir 126 Merimbula Drive MERIMBULA,NSW,149.893056,-36.883056,0,1,0,FM,acma-radio
+34807,Council Tower Willans Hill  Lot 2 Captain Cook Drive TURVEY PARK,NSW,147.374444,-35.128333,0,3,0,FM,acma-radio
+34876,Comms Site Reeves Rd SOMERSBY,NSW,151.295833,-33.398056,0,1,0,FM,acma-radio
+34902,Young St HOLBROOK,NSW,147.3125,-35.725278,0,1,0,FM,acma-radio
+34904,Wollondilly Council RFS site Lot 3 Mount Hercules Rd RAZORBACK RANGE,NSW,150.670833,-34.147222,0,1,0,FM,acma-radio
+34995,Commercial club Albury 618 Dean St ALBURY,NSW,146.913611,-36.08,0,1,0,FM,acma-radio
+35012,Shire Office Cowabbie St COOLAMON,NSW,147.201944,-34.819167,0,1,0,FM,acma-radio
+35048,Shire Offices 40 Balfour St CULCAIRN,NSW,147.036389,-35.667778,0,1,0,FM,acma-radio
+35066,Prime TV Site  MT CANOBOLAS,NSW,148.983056,-33.341944,0,3,0,FM,acma-radio
+35078,Rebel Media Monopole Mt Marlay  2 Lock St STANTHORPE,QLD,151.946944,-28.653611,0,3,0,FM,acma-radio
+35081,3RIM Site MT KOROROIT,VIC,144.661944,-37.654167,0,1,0,FM,acma-radio
+35087,Community Radio Site The Summit Sir Samuel Griffith Drv MOUNT COOT-THA,QLD,152.947222,-27.463056,0,5,0,FM,acma-radio
+35140,Cmty Radio Site 9 Rose St MORUYA,NSW,150.076667,-35.923056,0,1,0,FM,acma-radio
+35200,Communal Site Mt Bocoble BOCOBLE,NSW,149.750556,-32.806667,0,2,0,FM,acma-radio
+35613,Narrandera Shire Council 51m Lattice Tower Water Reservoir Cnr Gordon & Broad St NARRANDERA,NSW,146.5675,-34.751111,0,2,0,FM,acma-radio
+35648,NRTV Site SOUTH GRAFTON,NSW,152.9325,-29.761667,0,1,0,FM,acma-radio
+35653,Broadcast Australia Site  MOUNT DOWE,NSW,150.1675,-30.284444,0,9,0,FM,acma-radio
+35679,Martins Lookout GLEN INNES,NSW,151.751111,-29.743889,0,1,0,FM,acma-radio
+35685,Telstra Tower Little Duval Mtn  Exmouth Rd DUMARESQ,NSW,151.601944,-30.376944,0,4,0,FM,acma-radio
+35748,Department of Planning Industry and Environment Site 245 Debenham Rd North SOMERSBY,NSW,151.296667,-33.406667,0,7,0,FM,acma-radio
+35877,Water Filtration Plant Fort Bourke COBAR,NSW,145.856667,-31.516111,0,1,0,FM,acma-radio
+35898,Council Site Monkey Hill SOFALA,NSW,149.582778,-33.032222,0,1,0,FM,acma-radio
+36077,Shopping Centre TALBINGO,NSW,148.297222,-35.582778,0,1,0,FM,acma-radio
+36134,Telstra Site 4 km East of JINGELLIC,NSW,147.741944,-35.932222,0,1,0,FM,acma-radio
+36223,Telstra site  MT ST LEONARD,VIC,145.525556,-37.5675,0,1,0,FM,acma-radio
+36240,Broadcast Tower LOOKOUT HILL,VIC,143.247778,-37.2825,0,3,0,FM,acma-radio
+36249,BAI Comms Site Lot 1 Moonee Swamp Rd DENILIQUIN,NSW,145.005,-35.513333,0,2,0,FM,acma-radio
+36269,Telstra Tower Yan Yean Road Joyce Hill YARRAMBAT,VIC,145.130556,-37.639167,0,1,0,FM,acma-radio
+36529,Radio Hill Lookout NEWMAN,WA,119.726111,-23.362778,0,1,0,FM,acma-radio
+36838,Telstra Site Mission Hill  Telstra Access Rd WURRUMIYANGA,NT,130.567778,-11.775833,0,3,0,FM,acma-radio
+36862,TXU Networks/CFA Site Mt Herbert  off Calder Hwy RAVENSWOOD,VIC,144.2425,-36.861389,0,1,0,FM,acma-radio
+36912,Broadcast Site WUDINNA,SA,135.457778,-33.047778,0,2,0,FM,acma-radio
+37157,Radio Relay Station FRENCHMANS GAP,VIC,146.215556,-37.533056,0,1,0,FM,acma-radio
+37271,Broadcast/Telstra Site 80 Mile Beach Caravan Pk WALLAL DOWNS STATION,WA,120.672778,-19.754444,0,1,0,FM,acma-radio
+37310,Main AM Mast BAI Comms Site  94 Warner Rd GORDONVALE,QLD,145.778333,-17.054722,1,0,0,AM,acma-radio
+37499,Telstra Site 52 River St BALRANALD,NSW,143.565556,-34.639722,0,1,0,FM,acma-radio
+37599,Broadcast Australia Mast Television Drive PASSCHENDAELE,QLD,151.832778,-28.535833,0,4,0,FM,acma-radio
+38307,KP5 Robe River Mining Comms Site off Cape Lambert Rd  5km N of Wickham WICKHAM,WA,117.152778,-20.632778,0,1,0,FM,acma-radio
+38531,Broadcast Australia Tower  MT DUNDAS,VIC,141.916111,-37.458889,0,5,0,FM,acma-radio
+38550,Broadcast Australia Site Bulgarra Hill  Off Millstream Road KARRATHA,WA,116.859167,-20.735556,0,5,0,FM,acma-radio
+38846,Main Tower  Rio Tinto Site Mt Misery  4 km SSE of PARABURDOO,WA,117.665833,-23.233056,0,5,0,FM,acma-radio
+39466,Broadcast Site Vohland Rd ALOOMBA,QLD,145.856111,-17.134167,1,0,0,AM,acma-radio
+39520,Caboolture Shire Council Site Opp 139 Pedwell Rd MOUNT MEE,QLD,152.786111,-27.054444,0,1,0,FM,acma-radio
+39621,Broadcast Site Water Tower ELANORA,QLD,153.454444,-28.133889,0,1,0,FM,acma-radio
+39695,Broadcast Tower  Broadcast Australia Site DCA Hill  2.5 km SE of MOUNT ISA,QLD,139.5125,-20.734444,0,6,0,FM,acma-radio
+40354,BAI Comms Site Lot 9 Hospital Road NORMANTON,QLD,141.085833,-17.679444,0,4,0,FM,acma-radio
+40369,Broadcast Site Jane St HERBERTON,QLD,145.38,-17.376944,0,1,0,FM,acma-radio
+40371,3WM AM Site Murtoa-Glenorchy Rd LUBECK,VIC,142.52,-36.742222,1,0,0,AM,acma-radio
+40372,2RPH NW AM Mast BAI Comms Site  Cnr Prospect Hwy and Reservoir Rd PROSPECT,NSW,150.915,-33.807778,1,0,0,AM,acma-radio
+40390,BAI Comms Site 70 Hope Street COOKTOWN,QLD,145.250833,-15.473056,0,3,0,FM,acma-radio
+40403,BAI Comms Site Lot 13 Forsyth Rd GEORGETOWN,QLD,143.545,-18.302222,0,3,0,FM,acma-radio
+40411,Broadcast Australia Site off Paraburdoo-Tom Price Rd TOM PRICE,WA,117.792222,-22.699167,0,2,0,FM,acma-radio
+40414,Broadcast/Comms Tower  Pilbara Iron Site Kangaroo Hill  off Dampier Rd DAMPIER,WA,116.728056,-20.655278,0,2,0,FM,acma-radio
+40421,Bankstown City Radio site Simmat Ave CONDELL PARK,NSW,151.010833,-33.919167,0,1,0,FM,acma-radio
+40427,Community Hall 177 Yalu St PORMPURAAW,QLD,141.620278,-14.899167,0,1,0,FM,acma-radio
+40447,Main Mast BA Site Malanda-Atherton Rd UPPER BARRON,QLD,145.555833,-17.310278,1,0,0,AM,acma-radio
+40463,Broadcast Site Church St BURWOOD,NSW,151.104444,-33.881389,0,1,0,FM,acma-radio
+40467,Broadcast site Rocky Hill BROKEN HILL,NSW,141.440556,-31.951389,0,5,0,FM,acma-radio
+40473,Coastal Broadcasters Site off Jodrell St WEBB,QLD,146.053333,-17.53,2,0,0,AM,acma-radio
+40474,Broadcast Australia Site Cnr Henty Hwy and Dooen school Rd DOOEN,VIC,142.255556,-36.640556,1,2,0,AM + FM,acma-radio
+40478,Opposite cnr of Griffith Rd & Widgelli Settlers Rd WIDGELLI,NSW,146.134167,-34.328056,1,0,0,AM,acma-radio
+40479,AM Tower Ace Radio Site Mt Baimbridge off Mt Baimbridge Rd 6 km N of HAMILTON,VIC,142.019722,-37.684722,1,0,0,AM,acma-radio
+40499,FM/Comms Mast BAI Comms Site  233 Knights Hill Road KNIGHTS HILL,NSW,150.694444,-34.623611,0,4,0,FM,acma-radio
+40502,Broadcast Australia Site Nameless Valley Drv  2 km WSW of TOM PRICE,WA,117.774722,-22.699444,1,0,0,AM,acma-radio
+40503,Broadcast Australia Site off Deep Dale Drv 3 km SE of PANNAWONICA,WA,116.343889,-21.661667,1,0,0,AM,acma-radio
+40504,Main Mast  Broadcast Australia Site Sydenham Road DELAHEY,VIC,144.784167,-37.720556,2,0,0,AM,acma-radio
+40505,Main Mast  Broadcast Australia Site Mossman-Daintree Rd  2km W of NEWELL,QLD,145.390278,-16.425556,1,0,0,AM,acma-radio
+40508,Broadcast Site 407 Tongio Gap Rd OMEO,VIC,147.655,-37.146389,1,0,0,AM,acma-radio
+40523,Broadcast Site LOWER PLENTY,VIC,145.110556,-37.745,1,0,0,AM,acma-radio
+40534,Brandy Ck Rd (cnr of Old Sale Rd) BULN BULN,VIC,145.925833,-38.104167,1,0,0,AM,acma-radio
+40535,Broadcast Australia Site off Rocklea Rd  2km SSW of PARABURDOO,WA,117.665556,-23.216389,1,0,0,AM,acma-radio
+40536,AM Mast Broadcast Australia Site Great Northern Hwy  14km SE of PORT HEDLAND,WA,118.675,-20.399167,1,0,0,AM,acma-radio
+40538,Broadcast Australia Site 167 Richardson Rd DOCKERS PLAINS,VIC,146.311111,-36.271389,1,0,0,AM,acma-radio
+40547,FM Mast  North West Radio Site Finucane Island Rd WEDGEFIELD,WA,118.5775,-20.376111,0,2,0,FM,acma-radio
+40548,Main Mast BAI Comms Site Lot 38 Tonkin Rd ROCKY POINT,QLD,141.89,-12.620556,1,0,0,AM,acma-radio
+40549,BAI Comms Site 1 Stephen Street THURSDAY ISLAND,QLD,142.208056,-10.580556,2,0,0,AM,acma-radio
+40555,Ace Bcasters Site 5055 Murray Valley Hwy CASTLE DONNINGTON,VIC,143.581944,-35.408333,1,2,0,AM + FM,acma-radio
+40561,2RSR Mast Town Hall House  456 Kent St SYDNEY,NSW,151.205278,-33.873056,0,1,0,FM,acma-radio
+40562,Broadcast Site Waverley College Birrell Street WAVERLEY,NSW,151.255556,-33.896944,0,1,0,FM,acma-radio
+40565,BAI Comms Site 23 Currawong Rd TOTTENHAM,NSW,147.333333,-32.218056,0,1,0,FM,acma-radio
+40585,Radio Goulburn Site River Street GOULBURN,NSW,149.696667,-34.745833,1,0,0,AM,acma-radio
+40589,Broadcast Site 5 km NE of GOONDIWINDI,QLD,150.337778,-28.519444,0,3,0,FM,acma-radio
+40607,Broadcast/Optus Site Ocean View Parade LAKES ENTRANCE,VIC,148.023611,-37.866944,0,1,0,FM,acma-radio
+40608,Broadcast Australia Site Parise Rd  5km NW of DIMBULAH,QLD,145.068889,-17.126944,0,2,0,FM,acma-radio
+40625,Broadcast Site  Kelcey Tier 9 Wrendswood Drive QUOIBA,TAS,146.3275,-41.210833,0,2,0,FM,acma-radio
+40632,BA Site Western Highway  2km NNE of LAWLOIT,VIC,141.474444,-36.403889,0,1,0,FM,acma-radio
+40637,Guyed Mast Mt Nameless TOM PRICE,WA,117.761389,-22.72,0,4,0,FM,acma-radio
+40660,Broadcast Site Burgess Rd YARCK,VIC,145.573056,-37.076667,0,2,0,FM,acma-radio
+40664,Broadcast Australia Site  WIGHTMANS HILL,VIC,145.850278,-37.276667,0,2,0,FM,acma-radio
+40701,Council Tower Adj Water Reservoir  Lot 19 Anthony Street BURKETOWN,QLD,139.546111,-17.740278,0,2,0,FM,acma-radio
+40709,QRAM Site 252 Mukakiya St GUNUNA,QLD,139.179167,-16.663889,0,1,0,FM,acma-radio
+40714,Axicom Site off Gunningrach Rd BOMBALA,NSW,149.216389,-36.851111,0,2,0,FM,acma-radio
+40725,Broadcast Australia Site Lot 862 Leeuwin Rd AUGUSTA,WA,115.162222,-34.3275,0,3,0,FM,acma-radio
+40731,Water Tower 16 Hood St WILCANNIA,NSW,143.380833,-31.5525,0,2,0,FM,acma-radio
+40749,Radio 2XL site MT ROBERTS,NSW,149.025556,-35.9825,0,3,0,FM,acma-radio
+40770,W 14 Communications Site Minesite NEWMAN,WA,119.679167,-23.365,0,3,0,FM,acma-radio
+40784,Broadcast Site 2 km S of Swifts Creek FLAGSTAFF HILL,VIC,147.715278,-37.277778,0,1,0,FM,acma-radio
+40802,Broadcast Site Finucane Island Rd BOODARIE,WA,118.559167,-20.367222,0,4,0,FM,acma-radio
+40824,Geelong Broadcasters Site Murradoc Hill 270 Founds Road DRYSDALE,VIC,144.603889,-38.163333,0,4,0,FM,acma-radio
+40833,Broadcast Australia Site  BALDY PEAK,NSW,149.989722,-32.871944,0,2,0,FM,acma-radio
+40858,3-MFM Site MT MISERY,VIC,145.765833,-38.486667,0,1,0,FM,acma-radio
+40859,3-MFM Site MT HODDLE,VIC,146.145556,-38.691667,0,1,0,FM,acma-radio
+40875,Cmty Radio Site 510 McKenzie Drive AURUKUN,QLD,141.729722,-13.355556,0,1,0,FM,acma-radio
+40880,BAI Comms Site 18 Brown St CROYDON,QLD,142.250278,-18.203889,0,2,0,FM,acma-radio
+40898,Broadcast Site Lot 18 MAP st MABUIAG ISLAND,QLD,142.191944,-9.953611,0,1,0,FM,acma-radio
+40901,Broadcast Site Lot 275 Blanket St BADU,QLD,142.167778,-10.158611,0,1,0,FM,acma-radio
+40905,Broadcast Site BADGINGARRA,WA,115.499167,-30.391111,0,1,0,FM,acma-radio
+40914,Broadcast Site Lot 32 Italgua Yabu KUBIN,QLD,142.218611,-10.234167,0,1,0,FM,acma-radio
+40915,Broadcast Site St Pauls MOA ISLAND,QLD,142.331111,-10.186389,0,1,0,FM,acma-radio
+40920,Broadcast Site Sam Hill OMEO,VIC,147.567222,-37.0525,0,2,0,FM,acma-radio
+40926,Broadcast Site Water Reservoir 2 km S of PANNAWONICA,WA,116.325278,-21.65,0,4,0,FM,acma-radio
+40936,Broadcast Site FORTNUM MINE,WA,118.3425,-25.318056,0,1,0,FM,acma-radio
+40938,Broadcast Site Flagstaff Hill SWIFTS CREEK,VIC,147.718056,-37.281667,0,1,0,FM,acma-radio
+40979,Broadcast Australia Site Mt Elliot Ridge Track TOWONG,VIC,147.976667,-36.185556,0,4,0,FM,acma-radio
+40988,Broadcast Site 1km N of MT MOLLOY,QLD,145.323333,-16.659167,0,2,0,FM,acma-radio
+40990,Broadcast Site Ey Kasa Rd YAM ISLAND,QLD,142.768056,-9.899167,0,1,0,FM,acma-radio
+40992,Broadcast Site STEPHENS ISLAND,QLD,143.546944,-9.506111,0,1,0,FM,acma-radio
+41011,Broadcast Site Tania Park BALGOWLAH HEIGHTS,NSW,151.266111,-33.808889,0,1,0,FM,acma-radio
+41033,Broadcast Site Town Water Site ENEABBA,WA,115.2775,-29.818056,0,1,0,FM,acma-radio
+41036,Broadcast Australia Site Tower Road MT BARKER,WA,117.6475,-34.655833,0,5,0,FM,acma-radio
+41042,Broadcast Site Lot 45 Warruwi Comm. WARRUWI,NT,133.388333,-11.651389,0,2,0,FM,acma-radio
+41049,Broadcast/Police Site Banderra Downs MERRIWA,NSW,150.312778,-32.126944,0,2,0,FM,acma-radio
+41050,Council Site  MER ISLAND,QLD,144.048611,-9.912222,0,1,0,FM,acma-radio
+41051,Broadcast Site Olandi St COCONUT ISLAND,QLD,143.063056,-10.050833,0,1,0,FM,acma-radio
+41052,Broadcast Site Massig Island YORKE ISLANDS,QLD,143.411944,-9.751111,0,1,0,FM,acma-radio
+41059,Communications Site Little Forest Trig MILTON,NSW,150.3425,-35.281944,0,1,0,FM,acma-radio
+41077,Broadcast Site 109 George St BATHURST,NSW,149.581111,-33.415278,0,1,0,FM,acma-radio
+41098,The Mount Buffalo Chalet Site MT BUFFALO,VIC,146.819444,-36.723056,0,1,0,FM,acma-radio
+41099,Lookout Hill Lookout Road MYRTLEFORD,VIC,146.735,-36.560833,0,2,0,FM,acma-radio
+41107,Coastal Broadcasters Site Packers Creek  off Captain Cook Hwy PORT DOUGLAS,QLD,145.446667,-16.496667,1,0,0,AM,acma-radio
+41113,Mt Hotham Comms Tower MT HOTHAM,VIC,147.128333,-36.975,0,1,0,FM,acma-radio
+41158,Broadcast Site Casino Meatworks Water Tower CASINO,NSW,153.035833,-28.844167,0,1,0,FM,acma-radio
+41169,Broadcast Mast  Scouts Site Beverley St WENTWORTH,NSW,141.913889,-34.105556,0,1,0,FM,acma-radio
+41186,Broadcast Site 3 km ENE of ADELONG,NSW,148.094722,-35.304722,0,1,0,FM,acma-radio
+41209,BAI Comms Site Clive Blakes Hill  off Ohio Rd WALCHA,NSW,151.630556,-30.965833,0,2,0,FM,acma-radio
+41258,AOG Site Sheraton Road DUBBO,NSW,148.646667,-32.253056,0,1,0,FM,acma-radio
+41262,Broadcast Site  Mt LATHAM,WA,117.278611,-33.314167,0,1,0,FM,acma-radio
+41274,Southern Site Crows Nest Road 2 km NNW of Port Elliot KERBY HILL,SA,138.662778,-35.481944,0,2,0,FM,acma-radio
+41317,Broadcast/Comm Site Emma Smith Vista MOUNT ISA,QLD,139.493611,-20.734167,0,1,0,FM,acma-radio
+41331,Broadcast Site  DUNK ISLAND,QLD,146.144167,-17.935833,0,3,0,FM,acma-radio
+41335,Broadcast Site Moore St ROBINVALE,VIC,142.77,-34.590278,0,1,0,FM,acma-radio
+41336,Broadcast Site Council Water Tank WEILMORINGLE,NSW,146.919722,-29.249722,0,1,0,FM,acma-radio
+41339,WIN Tower Knights Hill WOLLONGONG,NSW,150.6975,-34.618056,0,1,0,FM,acma-radio
+41342,Rete Italia AM 46m Array Midpoint  Gumnut Nominees Site 55 Oherns Rd EPPING,VIC,145.018611,-37.638611,1,0,0,AM,acma-radio
+41360,Grandstand Caulfield Racecourse  Station St CAULFIELD EAST,VIC,145.038611,-37.8775,0,1,0,FM,acma-radio
+41454,Hay Street Reservoir CROOKWELL,NSW,149.483889,-34.453056,0,2,0,FM,acma-radio
+41700,Western AM Mast Malbend P/L  Off George Knox Drive ROWVILLE,VIC,145.217222,-37.933611,1,0,0,AM,acma-radio
+41747,Ace Radio Site Western Highway  2km NNE of LAWLOIT,VIC,141.473889,-36.403889,0,2,0,FM,acma-radio
+41772,Karr Radio Site Henty Hwy HORSHAM,VIC,142.233333,-36.681389,0,1,0,FM,acma-radio
+42163,Dept of Conservation Site DEVILS RIVER,VIC,145.841667,-37.209167,0,2,0,FM,acma-radio
+42211,Secomm Site Briarty Hill  14 Range Rd GRUYERE,VIC,145.476111,-37.731111,0,1,0,FM,acma-radio
+42517,BAI Comms Site Mt Clay  Angelino Rd NARRAWONG,VIC,141.703333,-38.216667,0,4,0,FM,acma-radio
+43425,Council Site Water Tower Cnr Tenth & Orange Streets MILDURA,VIC,142.161389,-34.189167,0,1,0,FM,acma-radio
+43871,SMR Site McDonalds Track MT WORTH,VIC,145.983889,-38.268611,0,1,0,FM,acma-radio
+44203,BHP Freestanding Tower Mt Laura WHYALLA,SA,137.524167,-32.997222,0,1,0,FM,acma-radio
+44228,CFS Site Old Bullock Track KINGSCOTE,SA,137.625,-35.646667,0,1,0,FM,acma-radio
+44338,CFS site Lincoln Highway COWELL,SA,136.921667,-33.682222,0,2,0,FM,acma-radio
+44729,CB Repeater Site Mt Bakewell YORK,WA,116.761389,-31.851111,0,1,0,FM,acma-radio
+44765,Mesa J Workshop RBS PANNAWONICA,WA,116.252778,-21.744722,0,4,0,FM,acma-radio
+45513,Water Tower 7 Nightingale St YARRAM,VIC,146.677778,-38.554444,0,1,0,FM,acma-radio
+47336,Comms Tower McDonalds Track DRIFFIELD,VIC,146.286111,-38.240833,0,1,0,FM,acma-radio
+48307,Channar Mine Site D PARABURDOO,WA,117.786111,-23.291944,0,3,0,FM,acma-radio
+48482,CB Repeater Site Lot 88 Sect D off Sunraysia Hwy ST ARNAUD,VIC,143.237222,-36.598611,0,1,0,FM,acma-radio
+48711,ABC Tower 221 Pacific Highway GORE HILL,NSW,151.185,-33.82,0,10,0,FM,acma-radio
+49584,Southern Ridge Hut TOM PRICE,WA,117.752222,-22.763889,0,3,0,FM,acma-radio
+50350,3NOW Studios 90 Middle Street HADFIELD,VIC,144.942222,-37.709167,0,1,0,FM,acma-radio
+51085,Optus Vodafone Site Panorama Dr DOONAN,QLD,152.979722,-26.456389,0,2,0,FM,acma-radio
+51099,Axicom Site Adj Water Reservoir  117 Violet Town Rd BELMONT NORTH,NSW,151.673611,-33.009167,0,1,0,FM,acma-radio
+51170,Big Hill Rd STAWELL,VIC,142.788889,-37.054444,0,1,0,FM,acma-radio
+51181,Broadcast/Comm Site Spencer Rd TOWER HILL,VIC,142.377778,-38.317222,0,4,0,FM,acma-radio
+51636,Water Tower Splatt St SWAN HILL,VIC,143.559167,-35.345556,0,1,0,FM,acma-radio
+51934,Broadcast Site Lot 991 Cobb Hwy DENILIQUIN,NSW,144.909722,-35.668056,0,2,0,FM,acma-radio
+51935,STL Mast  Rich Rivers Radio Site Radio 2QN Studios  368 George St DENILIQUIN,NSW,144.9625,-35.527222,0,1,0,FM,acma-radio
+52919,Bcast / Comms Mast RBS1  Rio Tinto Site Centre of Rail Loop MARANDOO MINE,WA,118.111944,-22.633611,0,5,0,FM,acma-radio
+53323,Broadcast Site Mt Alexander Golf Course Wimble St CASTLEMAINE,VIC,144.224722,-37.055,0,1,0,FM,acma-radio
+53325,3MA Studio 739 Fifteenth Street MILDURA,VIC,142.145556,-34.2125,0,1,0,FM,acma-radio
+53355,Adj Fleet Car Park Charles Darwin Uni University Drive South BRINKIN,NT,130.867778,-12.373889,0,2,0,FM,acma-radio
+53447,Air Services Tower West Gap ALICE SPRINGS,NT,133.856944,-23.7225,0,7,0,FM,acma-radio
+53509,Broadcast Mast Mercure Inn  2 Louis St (cnr Robinson St) BROOME,WA,122.237222,-17.963611,0,1,0,FM,acma-radio
+53519,Broadcast Site Lot 1 Lukis St PORT HEDLAND,WA,118.612222,-20.308056,0,1,0,FM,acma-radio
+53702,BAI Comms Site Lot 7346 Bangate Rd GOODOOGA,NSW,147.481944,-29.132778,0,2,0,FM,acma-radio
+53707,NW AM Mast BAI Comms Site  190 Westella Rd BYROCK,NSW,146.422778,-30.653056,1,0,0,AM,acma-radio
+53725,Port Stephens Council site Gan Gan Hill NELSON BAY,NSW,152.131389,-32.731944,0,5,0,FM,acma-radio
+53793,Broadcast/Comms Site 31-45 Great Western Hwy (next to plant nursery) WENTWORTH FALLS,NSW,150.385278,-33.723056,0,3,0,FM,acma-radio
+53837,Mining Communications Hut Off Carpentaria Highway MCARTHUR RIVER MINE,NT,136.096667,-16.431944,0,3,0,FM,acma-radio
+53900,Broadcast Australia Site Saleyards Rd HUGHENDEN,QLD,144.185278,-20.847778,0,1,0,FM,acma-radio
+53915,Broadcast Site 26 King St KINGAROY,QLD,151.849722,-26.531944,0,1,0,FM,acma-radio
+54080,Broadcast Site Lot 60 Yuelamu Comm. YUELAMU,NT,132.205278,-22.258333,0,1,0,FM,acma-radio
+55183,Broadcast Site Cambridge St MITCHELL,QLD,147.975278,-26.486389,0,1,0,FM,acma-radio
+55624,Broadcast Site 93 Cullen St NIMBIN,NSW,153.221944,-28.596667,0,1,0,FM,acma-radio
+55649,Ski Patrol Buildings FALLS CREEK,VIC,147.275833,-36.870833,0,2,0,FM,acma-radio
+55783,Water Tower Land Street ROCKY POINT,QLD,141.88,-12.629722,0,4,0,FM,acma-radio
+100043,New 4YOU Site MT ARCHER,QLD,150.578333,-23.338611,0,1,0,FM,acma-radio
+100353,East Mast 3CR Site Old Sneydes Road WERRIBEE,VIC,144.704444,-37.886389,1,0,3,AM,acma-radio
+100805,Council site near Newell Hwy 1km north of town PARKES,NSW,148.173889,-33.117222,0,1,0,FM,acma-radio
+100877,Bathurst Regional Council 40m Lattice Tower Mt Ryan TRIANGLE FLAT,NSW,149.451667,-33.848611,0,1,0,FM,acma-radio
+100994,Vodafone Site Scenic Lookout MT GEORGE,TAS,146.862222,-41.103056,0,1,0,FM,acma-radio
+101219,Optus/Hutchison Site Golf Course Twin Rd NORTH RYDE,NSW,151.120278,-33.8,0,1,0,FM,acma-radio
+101879,Water Reservoir Beach St JUNEE,NSW,147.576667,-34.875278,0,2,0,FM,acma-radio
+102031,Main Mast Broadcast Australia Site Bonds Rd LOWER PLENTY,VIC,145.113056,-37.741944,3,0,0,AM,acma-radio
+102258,East Coast Radio Site Bimmil Hill  Bimmil Firetrail EDEN,NSW,149.889722,-37.011111,0,3,0,FM,acma-radio
+130143,Axicom Site Mt Goonaneman Access Rd MT GOONANEMAN,QLD,152.118056,-25.422778,0,2,0,FM,acma-radio
+130174,Radio 2DU / 2ZOO Studios 33 Carrington Av DUBBO,NSW,148.604722,-32.246111,0,2,0,FM,acma-radio
+130214,Optus/Comtel Site 82 Volker St Darling Heights TOOWOOMBA,QLD,151.924167,-27.610556,0,1,0,FM,acma-radio
+130230,7BU-7SEA Studios 31A Wilson St BURNIE,TAS,145.906944,-41.051389,0,2,0,FM,acma-radio
+130231,7BU-7SEA FM Mast 312 Table Cape Rd TABLE CAPE,TAS,145.723056,-40.962222,0,2,0,FM,acma-radio
+130337,Axicom Tower Mt Marlay  off Lock St STANTHORPE,QLD,151.946944,-28.653611,0,2,0,FM,acma-radio
+131229,Broadcast Site off Illman Rd  6km NW of COMPTON,SA,140.698333,-37.78,0,1,0,FM,acma-radio
+131294,Broadcast Site Lot 666 Brockman Rd WAGIN,WA,117.357778,-33.331667,1,0,0,AM,acma-radio
+131850,Telstra CDMA Allen Rd WALPOLE,WA,116.739444,-34.960833,0,3,0,FM,acma-radio
+132249,HF Site  Anmatjere Community Council Lot 533 Spencer St TI TREE,NT,133.412778,-22.130278,0,1,0,FM,acma-radio
+133262,Council Depot Boundary Road GOONDIWINDI,QLD,150.3025,-28.526111,0,2,0,FM,acma-radio
+133819,UCB Site 21 Pitt St WALGETT,NSW,148.119167,-30.020833,0,1,0,FM,acma-radio
+133890,Council Site Hawks Place LAVERTON,WA,122.399444,-28.628333,0,1,0,FM,acma-radio
+133903,Water Tower Hillcrest Ave NORTH NAROOMA,NSW,150.118333,-36.205833,0,1,0,FM,acma-radio
+133965,Broadcast Site Merriwa Council Water Treatment Site MERRIWA,NSW,150.362778,-32.1475,0,1,0,FM,acma-radio
+134032,Broadcast Mast  Wheatlands District Church Bowman Street WARRACKNABEAL,VIC,142.399722,-36.244444,0,1,0,FM,acma-radio
+134100,Axicom Site One Tree Hill  207 Tower Lane SPRINGDALE HEIGHTS,NSW,146.961944,-36.02,0,2,0,FM,acma-radio
+134422,Kerami Gardens Resort 22 Marysville-Woods Point Rd MARYSVILLE,VIC,145.754167,-37.512222,0,1,0,FM,acma-radio
+134467,Optus Site Yarrawonga 26 Belmore St YARRAWONGA,VIC,146.005,-36.009722,0,1,0,FM,acma-radio
+134697,Northwest Reservoir Hospital Hill  off Maxwell Street WELLINGTON,NSW,148.961389,-32.558889,0,1,0,FM,acma-radio
+135650,Rebel Media Site Kia Ora Lookout Lot 98 Kia Ora Hill Rd BARRINGTON,NSW,151.946389,-31.9625,0,2,0,FM,acma-radio
+135679,Broadcast Australia Site Mt Livingstone Road  6 km SW of OMEO,VIC,147.555556,-37.140833,0,1,0,FM,acma-radio
+136156,Broadcast Planning Site Cleveland 12 km South Morialta Rd  MUNGINDI MUNGINDI,NSW,149.005278,-29.099167,0,2,0,FM,acma-radio
+136202,Radio East Gippsland Site 5 Thorpes Lane LAKES ENTRANCE,VIC,148.006944,-37.858333,0,1,0,FM,acma-radio
+136271,Broadcasting Site 70 Princes Highway TERANG,VIC,142.918056,-38.239167,0,1,0,FM,acma-radio
+136342,Council Water Tank Cnr Gunningrah Rd and Plunkett St  BOMBALA BOMBALA,NSW,149.23,-36.903056,0,1,0,FM,acma-radio
+136344,Rebel Media Site Lot 15 Banana Holdings Rd BANANA,QLD,150.316111,-24.448611,0,2,0,FM,acma-radio
+136444,5AUU Mast  Spencer Gulf Bcers Site 5 Gosse St ROXBY DOWNS,SA,136.894444,-30.553056,0,1,0,FM,acma-radio
+136555,Willans Hill Reserve Lot 18 DP1036173 Wandoo Place WAGGA WAGGA,NSW,147.357778,-35.152222,0,1,0,FM,acma-radio
+136713,2WAR Studio 11 Warren Rd GILGANDRA,NSW,148.663611,-31.711944,0,1,0,FM,acma-radio
+136814,Harvey House KCGM Mine Site Black Street KALGOORLIE,WA,121.512778,-30.781111,0,4,0,FM,acma-radio
+136827,Mining Village off Cape Lambert Road CAPE LAMBERT,WA,117.156944,-20.64,0,2,0,FM,acma-radio
+136887,Box Hill Town Hall 1022 Whitehorse Road BOX HILL,VIC,145.126667,-37.819722,0,1,0,FM,acma-radio
+136908,Broadcast Mast  Lorne Country Club Site Holiday Rd LORNE,VIC,143.972778,-38.525833,0,1,0,FM,acma-radio
+137198,Talison Comms Site Minesite Hill WODGINA,WA,118.676389,-21.185833,0,2,0,FM,acma-radio
+137271,Shire Works Depot Site 17 Welch St EXMOUTH,WA,114.128889,-21.945,0,4,0,FM,acma-radio
+137424,Chairlift Head Kangaroo Ridge CHARLOTTE PASS,NSW,148.324444,-36.437778,0,2,0,FM,acma-radio
+137450,Comms Site Hill 807E WEST ANGELAS MINE,WA,118.78,-23.154722,0,5,0,FM,acma-radio
+137453,Bourke-Brewarrina Rd 4km ESE of BOURKE,NSW,145.981944,-30.099722,1,0,0,AM,acma-radio
+137466,Telstra Tower  Admin Building Accommodation Camp LADY ANNIE MINE,QLD,139.107778,-19.905833,0,3,0,FM,acma-radio
+137476,Moree Broadcasting Site Graincorp Depot  Castlereagh Hwy WALGETT,NSW,148.156389,-29.995833,0,2,0,FM,acma-radio
+137492,Augusta Telecentre Building 66 Allnutt Terrace AUGUSTA,WA,115.156111,-34.314167,0,1,0,FM,acma-radio
+137548,Broadcast Tower Council Site MT GAYNDAH,QLD,151.540278,-25.604722,0,1,0,FM,acma-radio
+137549,Building 3C (Central)  Holmesglen TAFE 488 South Rd MOORABBIN,VIC,145.050278,-37.938611,0,1,0,FM,acma-radio
+137573,Council Depot Cnr Roberts and Drummond St MOORA,WA,116.008056,-30.645556,0,3,0,FM,acma-radio
+137617,Radio 7LA Studio 109 York St LAUNCESTON,TAS,147.137778,-41.439722,0,2,0,FM,acma-radio
+137846,3UGE Studios 37A Perkins Street ALEXANDRA,VIC,145.710278,-37.191111,0,1,0,FM,acma-radio
+137970,Ray Walsh House 437 Peel St TAMWORTH,NSW,150.930833,-31.092778,0,1,0,FM,acma-radio
+138162,Council Site Tower Hill CURRIE,TAS,143.854444,-39.915556,0,3,0,FM,acma-radio
+138229,Comms Tower  Cook Oil Facility 95 km NNW of BALLERA,QLD,141.288056,-26.695278,0,1,0,FM,acma-radio
+138230,Scout Hall Kinglake Memorial Reserve Cnr Extons Road & Kinglake-Whittlesea Road KINGLAKE,VIC,145.316111,-37.51,0,1,0,FM,acma-radio
+138243,Lot 159 Duncan Highway HALLS CREEK,WA,127.671389,-18.225278,0,1,0,FM,acma-radio
+138266,Majestic Arcade 78 Church St GLOUCESTER,NSW,151.958333,-32.007778,0,1,0,FM,acma-radio
+138270,Cmty Radio Mast  Council Site Water Reservoir  Gwydir Hwy  3km SE of INVERELL,NSW,151.143611,-29.781389,0,1,0,FM,acma-radio
+138397,3RUM Studio 38 Towong Rd CORRYONG,VIC,147.910278,-36.192222,0,1,0,FM,acma-radio
+138453,Shire Works Depot 19 Carmella St JURIEN BAY,WA,115.050556,-30.294444,0,5,0,FM,acma-radio
+138475,Central Goldfields Shire Office 12-22 Nolan Street MARYBOROUGH,VIC,143.741111,-37.051389,0,1,0,FM,acma-radio
+138507,Metwide 2MCR Razorback Mt Prudhoe RAZORBACK RANGE,NSW,150.664722,-34.138611,0,1,0,FM,acma-radio
+138612,Broadcast Mast  Managers Office Jundee Mine Accommodation Village JUNDEE MINE,WA,120.6375,-26.394722,0,4,0,FM,acma-radio
+138726,Broadcast Site Indian Ocean Drive LEEMAN,WA,114.980556,-29.953889,0,2,0,FM,acma-radio
+139001,Broadcast Mast  Glendell Mine Off Hebden Rd HEBDEN,NSW,151.0775,-32.416944,0,2,0,FM,acma-radio
+139088,Flow FM Site Keith Golf Course Emu Flat Rd KEITH,SA,140.3975,-36.085,0,1,0,FM,acma-radio
+139111,Patterson Street 190 Patterson Street TENNANT CREEK,NT,134.191944,-19.640278,0,1,0,FM,acma-radio
+139204,Casterton Community Church 7-9 Russell St CASTERTON,VIC,141.392222,-37.595833,0,1,0,FM,acma-radio
+139205,Broadcast Site 9-13 Gladstone St EMERALD,QLD,148.154444,-23.530556,0,1,0,FM,acma-radio
+139298,BAI Comms Site 29 Cleaton Street WILCANNIA,NSW,143.370833,-31.5575,2,0,0,AM,acma-radio
+139351,Broadcast Site 12090 DAguilar Hwy YARRAMAN,QLD,151.980278,-26.832222,0,1,0,FM,acma-radio
+139356,Newcrest Mining Site Adj Main Dome Pit TELFER,WA,122.222778,-21.721389,0,4,0,FM,acma-radio
+139370,Community Site off Careys Rd CAREYS MOUNTAIN,NSW,152.406944,-31.8575,0,1,0,FM,acma-radio
+139393,Broadcast Site Accommodation Village GOLDEN GROVE MINE,WA,116.9375,-28.784722,0,4,0,FM,acma-radio
+139522,Flow FM Site Collins Hill 407 Giles Rd PADTHAWAY,SA,140.583056,-36.586667,0,1,0,FM,acma-radio
+139603,Broadcast Site 120 Russells Plains Rd LAUNCESTON,TAS,147.166389,-41.3925,0,1,0,FM,acma-radio
+139711,Broadcast Australia Site 100 Deloraine Rd SHOAL BAY,NT,130.969167,-12.414444,0,9,2,FM,acma-radio
+139772,Caesars Emporium  Mooreville Homemakers Centre 44-46 Altina St GRIFFITH,NSW,146.068056,-34.291667,0,1,0,FM,acma-radio
+139850,3MCR Site 60 Marchese Lane ARCHERTON,VIC,146.258889,-36.906944,0,1,0,FM,acma-radio
+139855,Sunrise Dam 50 km S of LAVERTON,WA,122.408333,-29.081111,0,2,0,FM,acma-radio
+139916,East Mast BAI Comms Site  2-30 Rafferty St WINGFIELD,SA,138.570833,-34.837222,1,0,0,AM,acma-radio
+139917,West Mast BAI Comms Site  2-30 Rafferty St WINGFIELD,SA,138.569722,-34.8375,1,0,0,AM,acma-radio
+139918,Gumnut Nominees Site South Terrace WINGFIELD,SA,138.574444,-34.837222,1,0,0,AM,acma-radio
+139919,South Terrace (East tower - near Wyatt St) WINGFIELD,SA,138.575556,-34.837222,1,0,0,AM,acma-radio
+139977,Kidner Contracting Pty Ltd Tumoulin Road RAVENSHOE,QLD,145.483889,-17.596944,0,1,0,FM,acma-radio
+139978,ABC Studios 45 Ann St LAUNCESTON,TAS,147.146667,-41.440556,0,1,1,FM,acma-radio
+140012,BAI Comms Site Lot 117 via Clermont Alpha Road ALPHA,QLD,146.63,-23.617778,0,2,0,FM,acma-radio
+140125,Council Site Centenary Hill  off Stoneham Dr MARYBOROUGH,VIC,143.738056,-37.075278,0,1,0,FM,acma-radio
+140169,Broadcast Mast  Council Site Airport  off Aerodrome Rd THEODORE,QLD,150.096389,-24.993611,0,4,0,FM,acma-radio
+140223,BAI Comms Site 30 Roberts Rd MARENGO,VIC,143.651389,-38.78,0,2,0,FM,acma-radio
+140233,HPON AM Tower  adj Facilities Building Gosford Race Course  2 Blackett St GOSFORD,NSW,151.325556,-33.420556,1,0,0,AM,acma-radio
+140255,SES site Cornish Street MUTTABURRA,QLD,144.548333,-22.594444,0,1,0,FM,acma-radio
+140256,SES site cnr of Porter Street and Aramac-Muttaburra Road ARAMAC,QLD,145.243056,-22.968056,0,1,0,FM,acma-radio
+140284,Geelong Broadcasters Site Portalington Rd LEOPOLD,VIC,144.461111,-38.171389,1,0,0,AM,acma-radio
+140285,Dysart Connect Rd 3km NE of DYSART,QLD,148.367778,-22.568889,1,0,0,AM,acma-radio
+140290,Northwest AM Mast Radio 3AW P/L Site  Cnr Boundary Rd and Shanahans Rd MT COTTRELL,VIC,144.616389,-37.798611,1,0,0,AM,acma-radio
+140317,SES Site 68 Hill Street MEEKATHARRA,WA,118.496944,-26.591944,0,2,0,FM,acma-radio
+140332,Bellenden St near cnr of Gungahlin Drv GUNGAHLIN,ACT,149.125,-35.216667,1,0,0,AM,acma-radio
+140333,Radio 2CC AM 61m Array NE Mast  Radio Canberra Site 2 Bellenden St GUNGAHLIN,ACT,149.126389,-35.216389,1,0,0,AM,acma-radio
+140337,808 Barton Hwy GUNGAHLIN,ACT,149.117222,-35.214444,1,0,0,AM,acma-radio
+140355,Broadcast Australia Site Stuart Hwy 12 km NW of KATHERINE,NT,132.180278,-14.396111,1,0,0,AM,acma-radio
+140364,Forest Hill Rd (near cnr of South Arm Rd) SANDFORD,TAS,147.497222,-42.925556,1,0,0,AM,acma-radio
+140378,Maffra-Sale Rd (near cnr of Myrtlebank Rd) MYRTLEBANK,VIC,147.028889,-38.06,1,0,0,AM,acma-radio
+140381,HPON AM 143m Array Midpoint  Unitab Site off Cape Cleveland Rd  13km NW of CUNGULLA,QLD,147.035556,-19.305,1,0,0,AM,acma-radio
+140382,Standby Mast Broadcast Australia Site Mossman-Daintree Rd  2km W of NEWELL,QLD,145.389167,-16.424722,1,0,0,AM,acma-radio
+140383,HPON AM 46m Mast  Radio Hellas Site off Dohertys Rd TRUGANINA,VIC,144.758889,-37.828333,1,0,0,AM,acma-radio
+140384,Broadcast Site Windang Rd  1.6km NNE of WINDANG,NSW,150.874444,-34.5175,1,0,0,AM,acma-radio
+140385,Broadcast Site off Shellharbour Rd  2km NNE of WINDANG,NSW,150.879167,-34.513611,2,0,0,AM,acma-radio
+140387,Standby Mast  Broadcast Australia Site Sydenham Road DELAHEY,VIC,144.785,-37.718333,1,0,0,AM,acma-radio
+140388,Standby Mast  Broadcast Australia Site Sydenham Road DELAHEY,VIC,144.786944,-37.721111,1,0,0,AM,acma-radio
+140455,Comms Mast Hill 838 WEST ANGELAS DEP E MINE,WA,118.783611,-23.193889,0,5,0,FM,acma-radio
+140497,BAI Comms Site Yellowcap Ridge via Hurst Rd 30 km SW of MEANDARRA,QLD,149.6425,-27.491667,0,1,0,FM,acma-radio
+140516,Broadcast Monopole  Council Site Strahan Airport  Macquarie Heads Rd STRAHAN,TAS,145.2925,-42.152778,0,4,0,FM,acma-radio
+140522,5KIX Broadcast Site Stars Road MACGILLIVRAY,SA,137.516111,-35.773611,0,1,0,FM,acma-radio
+140575,Standby Mast  Broadcast Australia Site Derby Hwy  7km SE of DERBY,WA,123.67,-17.356111,1,0,0,AM,acma-radio
+140588,HPON AM Mast  Racing & Wagering WA Site Utakarra Racecourse  Eastward Rd UTAKARRA,WA,114.634444,-28.775833,1,0,0,AM,acma-radio
+140617,Council Water Tower cnr Deering and Camden streets ULLADULLA,NSW,150.468611,-35.361389,0,1,0,FM,acma-radio
+140666,Flow FM Site 1109 Desert Rd TURRIFF,VIC,142.367778,-35.476389,0,1,0,FM,acma-radio
+140667,Flow FM Site Yarrara South Rd YARRARA,VIC,141.426389,-34.418056,0,1,0,FM,acma-radio
+140668,Flow FM Site Lot 104 Tantonan Rd TANTONAN,NSW,144.7075,-35.755556,0,1,0,FM,acma-radio
+140684,Copley Caravan Park Balcanoona Rd COPLEY,SA,138.423333,-30.557778,0,1,0,FM,acma-radio
+140733,Mekah Electrical 4 Hakea St TEMORA,NSW,147.551944,-34.446389,0,1,0,FM,acma-radio
+140745,Broadcast Mast  Derby Baptist Church 17 Rodgers St DERBY,WA,123.651111,-17.328333,0,1,0,FM,acma-radio
+140786,Standby Mast  Broadcast Australia Site Baldry Rd  4km WSW of CUMNOCK,NSW,148.711389,-32.931389,1,0,0,AM,acma-radio
+140789,Council Site Lot 207 off Dorat Rd (Access Rd) ADELAIDE RIVER,NT,131.109167,-13.244722,0,2,0,FM,acma-radio
+140857,Standby Mast BAI Comms AM Site  Lot 38 Tonkin Rd ROCKY POINT,QLD,141.889444,-12.621944,1,0,0,AM,acma-radio
+140959,Broadcast Tower  Ace Radio Site off Tower Rd MOUNT TAYLOR,VIC,147.560556,-37.706111,0,2,0,FM,acma-radio
+140968,Council Depot 28 Olympic Way ROXBY DOWNS,SA,136.893889,-30.554444,0,3,0,FM,acma-radio
+141000,Standby Mast BA Site off West Dalwallinu Rd  5km WSW of DALWALLINU,WA,116.609444,-30.290556,2,0,0,AM,acma-radio
+141001,Standby Array BA Site off Breakspear St GRACEMERE,QLD,150.456667,-23.450556,1,0,0,AM,acma-radio
+141003,Alexanderson Midpoint  Broadcast Australia Site Wanneroo Rd HAMERSLEY,WA,115.822222,-31.856111,1,0,0,AM,acma-radio
+141004,4JK Standby Mast BAI Comms Site  off Flinders Hwy  8km E of JULIA CREEK,QLD,141.823889,-20.652778,1,0,0,AM,acma-radio
+141011,Standby AM Antenna BAI Comms Site  29 Stanley Williams Rd STREAKY BAY,SA,134.188611,-32.758056,1,0,0,AM,acma-radio
+141032,Broadcast Australia Site 69A Cardiff Rd PORT LINCOLN,SA,135.879444,-34.729444,1,0,0,AM,acma-radio
+141033,Standby array Broadcast Australia Site 69A Cardiff Rd PORT LINCOLN,SA,135.878889,-34.729167,1,0,0,AM,acma-radio
+141034,Broadcast Australia Site cnr Old Sturt Hwy and Riverview Drv BERRI,SA,140.615833,-34.265278,2,0,0,AM,acma-radio
+141035,Broadcast Tower  Seventh Day Adventist Church 400 Bent St SOUTH GRAFTON,NSW,152.923056,-29.729167,0,1,0,FM,acma-radio
+141046,FM Mast  Radio West Site 63 Gommes Lane YORNUP,WA,116.176944,-34.055,0,1,0,FM,acma-radio
+141066,Standby Mast BA Site Coolgardie-Esperance Hwy 12km NNW of ESPERANCE,WA,121.859722,-33.751667,1,0,0,AM,acma-radio
+141069,Sthrn Cross Austereo Site Bones Knob  off Griffin Rd TOLGA,QLD,145.4475,-17.2225,0,1,0,FM,acma-radio
+141072,Broadcast Site 195 Mount Bride Rd THREE BRIDGES,VIC,145.730278,-37.82,0,1,0,FM,acma-radio
+141073,STL Mast  Radio West Site Lot 310  Wireless Rd WATERLOO,WA,115.753611,-33.339722,0,1,0,FM,acma-radio
+141081,Standby mast BA site 1276 Chapman Valley Rd NARRA TARRA,WA,114.709167,-28.659167,1,0,0,AM,acma-radio
+141084,Broadcast Australia site Kluver St BALD HILLS,QLD,153.013611,-27.310278,2,0,0,AM,acma-radio
+141094,Standby Mast BA Site Donohughes Lane off Messamurray Rd STEWART RANGE,SA,140.673056,-36.940278,1,0,0,AM,acma-radio
+141101,2UE Standby AM Mast Bennelong Parkway SYDNEY OLYMPIC PARK,NSW,151.071389,-33.833889,1,0,0,AM,acma-radio
+141103,Broadcast Site Lake Ranfurly off Flora Ave  3km NNW of MILDURA,VIC,142.122222,-34.178611,1,0,0,AM,acma-radio
+141105,Standby2 AM Mast BAI Comms Site  Cnr Wonga & Kurrajong Rds PRESTONS,NSW,150.885833,-33.943611,1,0,0,AM,acma-radio
+141107,Standby Mast Broadcast Australia Site Henty Hwy  9km NNE of HORSHAM,VIC,142.2575,-36.640833,1,0,0,AM,acma-radio
+141114,Main Mast  BA Site adj Water Reservoir Terranora Rd TERRANORA,NSW,153.4875,-28.245556,2,0,0,AM,acma-radio
+141115,Standby Mast BA Site adj Water Reservoir Terranora Rd TERRANORA,NSW,153.487778,-28.245833,1,0,0,AM,acma-radio
+141123,Standby Mast  Broadcast Australia Site off Princes Hwy  5km SSW of BEGA,NSW,149.821944,-36.711389,1,0,0,AM,acma-radio
+141124,HPON AM 66m Array Midpoint  ACT AM 1323 P/L Site off Ellenborough St KALEEN,ACT,149.120278,-35.228889,1,0,0,AM,acma-radio
+141125,Standby mast BA Site Cnr Barton Hwy and Bellenden St CRACE,ACT,149.118611,-35.217778,1,0,0,AM,acma-radio
+141126,Standby Mast BA Site cnr Barton Hwy and Bellenden St CRACE,ACT,149.120556,-35.218056,2,0,0,AM,acma-radio
+141127,Standby Mast Broadcast Australia Site Honour Ave  5km NNE of COROWA,NSW,146.415278,-35.955833,1,0,0,AM,acma-radio
+141140,Bcast / Comms 25m Mast RBS2  Rio Tinto Site  MARANDOO MINE,WA,118.165278,-22.659722,0,5,0,FM,acma-radio
+141154,Radio Mast  Bulloo Shire Council Site Cnr Stafford & Speedy Sts THARGOMINDAH,QLD,143.823333,-27.993056,0,1,0,FM,acma-radio
+141171,BA Site Off Cramsie Muttaburra Rd  6km NNW of LONGREACH,QLD,144.224722,-23.39,1,0,0,AM,acma-radio
+141174,6KAR FM Mast Lot 1 Austral St PARKESTON,WA,121.501111,-30.735556,0,1,0,FM,acma-radio
+141176,Standby Mast  Broadcast Australia Site Seaspray Rd  3km SSE of LONGFORD,VIC,147.093889,-38.186389,1,0,0,AM,acma-radio
+141178,Rete Italia AM 78m Array Centroid  Gumnut Nominees Site Geoffrey Rd CHITTAWAY POINT,NSW,151.466667,-33.328056,1,0,0,AM,acma-radio
+141179,Standby Mast  Broadcast Australia Site Off Boronia Ave WINDANG,NSW,150.864167,-34.528889,1,0,0,AM,acma-radio
+141183,North Stdby Mast BAI Comms Site  107 Sherriffs Rd REYNELLA,SA,138.518056,-35.1025,1,0,0,AM,acma-radio
+141184,East Stdby Mast BAI Comms Site  107 Sherriffs Rd REYNELLA,SA,138.520556,-35.103889,1,0,0,AM,acma-radio
+141187,Stawell Rd LOWER PLENTY,VIC,145.110278,-37.744722,2,0,0,AM,acma-radio
+141198,Broadcast Australia Site Summer Island Rd SMITHTOWN,NSW,152.949167,-31.006667,1,0,0,AM,acma-radio
+141199,Bcast Mast  Rooftop Heavy Vehicle Workshop YARRABEE MINE,QLD,149.017778,-23.274444,0,1,0,FM,acma-radio
+141200,Water Tower 1 Brodie Street NORMANTON,QLD,141.076667,-17.670556,0,2,0,FM,acma-radio
+141203,Standby AM Mast BAI Comms Site  34 Jack Rd BRANDON,QLD,147.343333,-19.511389,1,0,0,AM,acma-radio
+141209,Standby Mast BA Site Huddleston Rd  5km ENE of CRYSTAL BROOK,SA,138.25,-33.345556,1,0,0,AM,acma-radio
+141210,Standby Mast Broadcast Australia Site Merton St  1.5km E of LAWRENCE,NSW,153.114722,-29.492778,1,0,0,AM,acma-radio
+141212,Standby Mast  Broadcast Australia Site Bunya Hwy  6km NE of DALBY,QLD,151.301944,-27.146111,1,0,0,AM,acma-radio
+141215,Standby Mast Broadcast Australia Site Off Eugenia Ave NHULUNBUY,NT,136.792222,-12.189722,1,0,0,AM,acma-radio
+141224,Council Site Lot 696 Payne Way ONSLOW,WA,115.115,-21.645833,0,4,0,FM,acma-radio
+141226,HPON Mast  Church Site 42 McColl Drive LONGFORD,VIC,147.094722,-38.177222,0,1,0,FM,acma-radio
+141246,Standby Mast Broadcast Australia Site Off Caves Rd KEALY,WA,115.2275,-33.658889,2,0,0,AM,acma-radio
+141247,Array Midpoint Broadcast Australia Site Off Caves Rd KEALY,WA,115.228611,-33.659444,1,0,0,AM,acma-radio
+141248,HPON Site Off Wildwood Rd  1km W of CARBUNUP RIVER,WA,115.177222,-33.697778,1,0,0,AM,acma-radio
+141259,Standby Mast Broadcast Australia Site Arthur Rd  5km E of ARTHUR RIVER,WA,117.093889,-33.337222,2,0,0,AM,acma-radio
+141260,Bcast Mast  Rio Tinto Site  NAMMULDI MINE,WA,117.416389,-22.410833,0,5,0,FM,acma-radio
+141307,Standby Mast BAI Comms Site  Western Rd BINDULI,WA,121.406111,-30.781667,1,0,0,AM,acma-radio
+141346,TXA tower Cnr Bald Knob Road and Landsborough-Maleny Road BALD KNOB,QLD,152.918333,-26.79,0,1,0,FM,acma-radio
+141365,Broadcast Mast  Regis Resources Bandya Rd GARDEN WELL MINE,WA,122.365,-27.892778,0,3,0,FM,acma-radio
+141367,Standby Mast Broadcast Australia Site Moonie Hwy  10km NE of ST GEORGE,QLD,148.675556,-28.000278,1,0,0,AM,acma-radio
+141379,4RPH SE AM Mast Broadcast Australia Site  Off Fleming Rd TINGALPA,QLD,153.123611,-27.463889,1,0,0,AM,acma-radio
+141381,Standby AM Mast BAI Comms Site  94 Warner Rd GORDONVALE,QLD,145.7775,-17.054444,1,0,0,AM,acma-radio
+141382,Standby mast BA Site off Eidsvold-Theodore Rd  4km S of EIDSVOLD,QLD,151.123056,-25.409722,1,0,0,AM,acma-radio
+141386,Standby Mast Broadcast Australia Site Glen Legh Rd  6km SSE of GLEN INNES,NSW,151.765,-29.791111,1,0,0,AM,acma-radio
+141421,Bcast / Comms 24m Tower  Telstra Site 9 Weld Drive LAVERTON,WA,122.401111,-28.623889,0,2,0,FM,acma-radio
+141422,5AU Standby AM Mast 1142 Georgetown-Huddleston Rd HUDDLESTON,SA,138.276944,-33.326389,1,0,0,AM,acma-radio
+141439,Standby Mast Broadcast Australia Site 2 Lawson Ave WODBERRY,NSW,151.662778,-32.798611,2,0,0,AM,acma-radio
+141440,Standby Mast Broadcast Australia Site 2 Lawson Ave WOODBERRY,NSW,151.661667,-32.800833,1,0,0,AM,acma-radio
+141451,Standby Mast BA Site Malanda-Atherton Rd UPPER BARRON,QLD,145.554444,-17.310556,1,0,0,AM,acma-radio
+141452,Standby Mast  Broadcast Australia Site Fossickers Way  4.5km SSE of MANILLA,NSW,150.742778,-30.781111,1,0,0,AM,acma-radio
+141498,Cmty Radio Site 400 Telegraph Rd SEYMOUR,VIC,145.176944,-37.051111,0,1,0,FM,acma-radio
+141657,Community Radio Site Kanangra Reservoir  off Kanangra Drive 465 Pacific Hwy CRANGAN BAY,NSW,151.595278,-33.179722,0,1,0,FM,acma-radio
+141682,Amateur Radio Club Tower Blackwell Road NARACOORTE,SA,140.771111,-36.980833,0,1,0,FM,acma-radio
+141746,Council Depot 99 Dampier Road DENHAM,WA,113.534167,-25.919444,0,2,0,FM,acma-radio
+141749,Broadcast Site 35 km west of Wiluna ROSSLYN HILL MINE,WA,119.951111,-26.524167,0,1,0,FM,acma-radio
+141768,Broadcast Site Communications Hut MOUNT BARKER,WA,117.646944,-34.656944,0,1,0,FM,acma-radio
+141885,Broadcast Site Site No.1 YANDI BHP IRON ORE MINE,WA,119.095833,-22.7125,0,4,0,FM,acma-radio
+141886,Broadcast Site Site No.2 YANDI BHP IRON ORE MINE,WA,119.016111,-22.730833,0,4,0,FM,acma-radio
+141961,Broadcast Site 1 13 km NE of SOLOMON MOUNT SHEILA,WA,117.849722,-22.148889,0,4,0,FM,acma-radio
+141963,Broadcast Site 2 18 km NE of SOLOMON MOUNT SHEILA,WA,117.920833,-22.125,0,4,0,FM,acma-radio
+142180,Broadcast Australia site Barcoola Homestead off Kooragan Rd INJUNE,QLD,148.521944,-25.886389,0,3,0,FM,acma-radio
+142273,Community Mast Mt Wellesley off Bushranger Ck Rd WELLINGTON,NSW,148.901667,-32.563333,0,1,0,FM,acma-radio
+142289,Apollo Bay Shire Office 69 Nelson Street APOLLO BAY,VIC,143.664167,-38.759167,0,1,0,FM,acma-radio
+142298,Monopole Old Colac and Lavers Road BEECH FOREST,VIC,143.563333,-38.632778,0,1,0,FM,acma-radio
+142299,Broadcast Site  Wimmera Hill Reserve off Canopus Street SOUTHERN CROSS,WA,119.324167,-31.234167,0,2,0,FM,acma-radio
+142337,Broadcast Site  Browns Hill off Woodenbong Rd 3km SSE of BONALBO,NSW,152.637778,-28.761111,0,2,0,FM,acma-radio
+142344,BA monopole Shingle Beach Hill off Kara Crescent AIRLIE BEACH,QLD,148.710278,-20.273056,0,8,0,FM,acma-radio
+142345,Monopole Council Site Carmila West Rd CARMILA,QLD,149.41,-21.926389,0,3,0,FM,acma-radio
+142425,Broadcast Site adj Eagles Nest Restaurant MT CRACKENBACK,NSW,148.287778,-36.493611,0,4,0,FM,acma-radio
+142462,5AU Repeater Site via Grandview Pde QUORN,SA,138.052222,-32.361944,0,2,0,FM,acma-radio
+142516,Gas and Oil Field Base Camp Mereenie Gas Field Road MEREENIE,NT,131.551667,-23.995556,0,2,0,FM,acma-radio
+142519,Mast Broadcast Australia Site off Snowy Mountains Hwy BROWN MOUNTAIN,NSW,149.383056,-36.598056,0,4,0,FM,acma-radio
+142525,Broadcast Site Lot 275 Loch Street DERBY,WA,123.627222,-17.302222,0,1,0,FM,acma-radio
+142576,Broadcast Site Lot 649 Kadina Road KADINA,SA,137.670556,-33.948333,0,1,0,FM,acma-radio
+142594,Standby Mast  Sky Sports Radio Site off Hill Rd SYDNEY OLYMPIC PARK,NSW,151.062778,-33.839444,2,0,0,AM,acma-radio
+142609,Broadcast Site 42 OLoughlin Terrace CEDUNA,SA,133.672778,-32.125,0,1,0,FM,acma-radio
+142634,Broadcast Site Lot 50 Carnarvon Highway ST GEORGE,QLD,148.599444,-28.045,0,1,0,FM,acma-radio
+142644,Broadcast Site Beacon Drive Table Hill HOPETOUN,WA,120.133611,-33.933056,0,4,0,FM,acma-radio
+142647,2MNO Cooma Studio 3/7 Binalong Street COOMA,NSW,149.130833,-36.218889,0,1,0,FM,acma-radio
+142652,Community Radio Site Mt Yarrabah YARRABAH,QLD,145.843333,-16.904722,0,3,0,FM,acma-radio
+142658,New Tower Cambewarra Lookout CAMBEWARRA MOUNTAIN,NSW,150.577778,-34.799444,0,4,0,FM,acma-radio
+142667,Broadcast Site  Grand Hotel 65 Hepburn Street MOUNT MAGNET,WA,117.848611,-28.064444,0,1,0,FM,acma-radio
+142668,Guyed mast  Moreys Hill off Oakhampton Road TRIABUNNA,TAS,147.950278,-42.5225,0,2,0,FM,acma-radio
+142669,Pole  adj Testra site Lot 2 Pocock Road TEMPLIN,QLD,152.663056,-27.967778,0,1,0,FM,acma-radio
+142677,Broadcast Site 101 Stoney Point Road COONABARABRAN,NSW,149.304167,-31.240278,0,2,0,FM,acma-radio
+142682,Victoria Daly Regional Council Office Building Lot 58 YARRALIN,NT,130.884167,-16.446944,0,1,0,FM,acma-radio
+142698,Broadcast Site 411 Honeymoon Road WARAWARRUP,WA,115.934722,-33.049444,0,1,0,FM,acma-radio
+142704,Broadcast Site 10 Mallee Street TEMORA,NSW,147.550833,-34.446389,0,2,0,FM,acma-radio
+142711,Broadcast Site 34 Weddin Street GRENFELL,NSW,148.162222,-33.900833,0,2,0,FM,acma-radio
+142718,Parkes Bcasting Site Reservoir Hill  Brady St CONDOBOLIN,NSW,147.156667,-33.078056,0,1,0,FM,acma-radio
+142723,Broadcast Site 2.2 km west of Goldfields Highway THUNDERBOX MINE,WA,121.000278,-28.181111,0,2,0,FM,acma-radio
+150016,Broadcast Site Water tower  Forest Street AUGATHELLA,QLD,146.5875,-25.795278,0,2,0,FM,acma-radio
+150017,Council Site Water Tower Butterfly Street LIGHTNING RIDGE,NSW,147.982222,-29.4375,0,3,0,FM,acma-radio
+150032,Council Community Centre 107 Drayton St DALBY,QLD,151.268889,-27.188611,0,1,0,FM,acma-radio
+150102,Water Tower Phillips Street CLONCURRY,QLD,140.500556,-20.715278,0,3,0,FM,acma-radio
+150106,AMP Centre 50 Bridge Street SYDNEY,NSW,151.211667,-33.863056,0,1,0,FM,acma-radio
+150148,Broadcast Site off Scarp Road Near Turner Hill PINJARRA,WA,115.989722,-32.650278,0,2,1,FM,acma-radio
+150174,Council Site Concrete Water Tower  Goldring St RICHMOND,QLD,143.145833,-20.734722,0,4,0,FM,acma-radio
+150190,Western Australian Museum  Kalgoorlie-Boulder 17 Hannan St  Great Eastern Hwy KALGOORLIE,WA,121.4775,-30.743611,0,1,0,FM,acma-radio
+150250,Broadcast Site near Cemetery off Sandgate Rd BRIMINGHAM GARDENS,NSW,151.681111,-32.889444,1,0,0,AM,acma-radio
+150286,Monopole  Broadcast Australia Site off Blackjack Rd TOWERS HILL,QLD,146.252778,-20.089444,0,2,0,FM,acma-radio
+150294,Telstra Site Falls Hill Abercrombie Road OBERON,NSW,149.839444,-33.702778,0,2,0,FM,acma-radio
+150296,Broadcast Site Table Top Mtn McIlveen Park Rd INVERELL,NSW,151.074444,-29.776944,0,2,0,FM,acma-radio
+150339,Broadcast Site MT WOLVI,QLD,152.859444,-26.184722,0,1,0,FM,acma-radio
+150356,Broadcast Australia Site Broome Rd  7km NNE of BROOME,WA,122.263333,-17.888611,1,2,0,AM + FM,acma-radio
+150365,Radio Ballarat Site 9 km E of Ballarat MT WARRENHEIP,VIC,143.960278,-37.575278,0,3,0,FM,acma-radio
+150375,Broadcast Site Borewater Tower Wonga St LONGREACH,QLD,144.259444,-23.441111,0,5,0,FM,acma-radio
+150378,Broadcast Site 26 Summerhill Road STRATHALBYN,SA,138.921667,-35.268889,0,1,0,FM,acma-radio
+150383,Broadcast Site LAVERTON,WA,122.398889,-28.619167,0,2,0,FM,acma-radio
+150392,Sportsground Bldg 1 Railway Pde ST LAWRENCE,QLD,149.526667,-22.346389,0,3,0,FM,acma-radio
+150418,Bathurst Broadcasters Site Gulf Forest Rd  2km North of YETHOLME,NSW,149.805833,-33.431389,0,2,0,FM,acma-radio
+150427,FM Mast Club House  Golf Course  Tawonga Cres MT BEAUTY,VIC,147.175556,-36.740833,0,2,0,FM,acma-radio
+150448,AM Mast  Radio West Site Lot 310  Wireless Rd WATERLOO,WA,115.752778,-33.34,2,0,0,AM,acma-radio
+150509,West Coast Radio Site Cnr Greenlands Rd and Parkhills Lane WEST PINJARRA,WA,115.803333,-32.641944,1,0,0,AM,acma-radio
+150533,Council Site off Nilgen Rd NILGEN,WA,115.385556,-30.985,0,2,0,FM,acma-radio
+150549,Broadcast Site Mt Gordon MARYSVILLE,VIC,145.712222,-37.515833,0,1,0,FM,acma-radio
+150554,Broadcast Site near trig station WELDBOROUGH PASS,TAS,147.945278,-41.233611,0,2,0,FM,acma-radio
+150610,Control Tower ERNEST HENRY MINE,QLD,140.718056,-20.4425,0,1,0,FM,acma-radio
+150616,Lightning Ridge Bowling Club 25-29 Morilla Street LIGHTNING RIDGE,NSW,147.976944,-29.427778,0,1,0,FM,acma-radio
+150628,Broadcast Site Repeater Station Rd ILARWILL,NSW,153.171389,-29.489444,0,2,0,FM,acma-radio
+150683,Print Radio Tas Site South Arm Rd  2km E of SANDFORD,TAS,147.506111,-42.948889,1,0,0,AM,acma-radio
+150715,Broadcast Tower Hydro Tas Site  Mt Claude  Olivers Rd MOUNT ROLAND,TAS,146.184444,-41.490556,0,2,0,FM,acma-radio
+150717,Tasradio site off Tasman Hwy ABELS HILL,TAS,147.215556,-41.451667,1,0,0,AM,acma-radio
+150750,Broadcast Site BASS HILL,VIC,145.545278,-38.482222,0,1,0,FM,acma-radio
+150760,Broadcast Australia Site 143 Mortlake Rd WARRNAMBOOL,VIC,142.497222,-38.361389,1,0,0,AM,acma-radio
+150769,Corangamite Lake Rd ROSSMOYNE,VIC,143.533611,-38.321944,1,0,0,AM,acma-radio
+150806,Standby Mast Broadcast Australia Site Bonds Rd LOWER PLENTY,VIC,145.112222,-37.741389,3,0,0,AM,acma-radio
+150818,226-252 Patullos Ln ROXBURGH PARK,VIC,144.933889,-37.619167,1,0,0,AM,acma-radio
+150827,83 Remembrance Drv CARDIGAN,VIC,143.778333,-37.539722,1,0,0,AM,acma-radio
+150856,Broadcast Site McCallum St CARISBROOK,VIC,143.818611,-37.043889,1,0,0,AM,acma-radio
+150863,Broadcast Australia Site Donohughes Ln off Messamurray Rd STEWART RANGE,SA,140.670278,-36.940278,1,0,0,AM,acma-radio
+150876,Telstra Tower Apex Lookout off Mount Porepunkah Rd  1.5 km NE of BRIGHT,VIC,146.972778,-36.715833,0,6,0,FM,acma-radio
+150877,Broadcast Australia Site off Princes Hwy  5km SSW of BEGA,NSW,149.820833,-36.711667,1,0,0,AM,acma-radio
+150878,Broadcast Site Loddon Valley Hwy  3 km NW of EAGLEHAWK,VIC,144.221944,-36.705833,1,0,0,AM,acma-radio
+150891,Broadcast Site Old Dookie Rd 12 km E of SHEPPARTON,VIC,145.5375,-36.378889,2,0,0,AM,acma-radio
+150894,Broadcast Site TV Access Rd MT MAJOR,VIC,145.6975,-36.362222,0,2,0,FM,acma-radio
+150896,Broadcast Australia Site TV Access Rd MT MAJOR,VIC,145.695,-36.358056,0,4,0,FM,acma-radio
+150907,Broadcast Australia Site off Yareen Rd  1km NE of COOMA,NSW,149.137778,-36.228611,1,0,0,AM,acma-radio
+150923,Broadcast Site Corrys Rd  2.5km WSW of THURGOONA,NSW,146.964722,-36.054444,1,0,0,AM,acma-radio
+150931,Broadcast Australia Site Honour Ave  5km NNE of COROWA,NSW,146.414167,-35.955833,1,0,0,AM,acma-radio
+150954,Broadcast Site Lot 1 Cal Col Rd DENILIQUIN,NSW,144.913333,-35.626111,1,0,0,AM,acma-radio
+150955,Broadcast Site Water Reservoir Old Mines Road CAPTAINS FLAT,NSW,149.441667,-35.5975,0,1,0,FM,acma-radio
+150960,Broadcast Site Snubba Road 4 km SE of BATLOW,NSW,148.199167,-35.545833,0,1,0,FM,acma-radio
+150963,FM Monopole  Broadcast Australia Site Tuggeranong Hill  off Callister Cres THEODORE,ACT,149.107778,-35.453333,0,5,1,FM,acma-radio
+150969,Broadcast Site 6 km S of MURRAYVILLE,VIC,141.174444,-35.322778,0,1,0,FM,acma-radio
+150978,1 Morisset Rd MITCHELL,ACT,149.148056,-35.220278,1,0,0,AM,acma-radio
+150980,Main mast BA Site cnr Barton Hwy and Bellenden St CRACE,ACT,149.120556,-35.216944,2,0,0,AM,acma-radio
+150988,Broadcast Australia Site The Wool Rd 1km NW of BASIN VIEW,NSW,150.555,-35.086944,1,0,0,AM,acma-radio
+150994,Broadcast Pole Mt Parnassus Lookout GUNDAGAI,NSW,148.109167,-35.060556,0,3,0,FM,acma-radio
+150997,Broadcast Site Olympic Hwy  2km SSE of BRUCEDALE,NSW,147.415556,-35.042222,1,0,0,AM,acma-radio
+151018,180 Burton Rd PARALOWIE,SA,138.608611,-34.757778,2,0,0,AM,acma-radio
+151035,Broadcast Australia Site Off Boronia Ave WINDANG,NSW,150.863889,-34.529167,2,0,0,AM,acma-radio
+151037,Broadcast Site Railway Station HAY,NSW,144.843056,-34.499167,0,1,0,FM,acma-radio
+151047,Broadcast Australia Site Wades Hill CROOKWELL,NSW,149.441667,-34.455278,0,2,0,FM,acma-radio
+151054,Broadcast Site Brokers Nose WOLLONGONG,NSW,150.875556,-34.366944,0,3,0,FM,acma-radio
+151055,Array Midpoint  Broadcast Site Moppity Rd  5 km SE of YOUNG,NSW,148.335,-34.343056,1,0,0,AM,acma-radio
+151062,Council Broadcast Site Scenic Drive GRIFFITH,NSW,146.0575,-34.277222,0,1,0,FM,acma-radio
+151082,Broadcast Site Water Tower PENSHURST,NSW,151.090833,-33.967778,0,1,0,FM,acma-radio
+151084,Standby1 AM Mast BAI Comms Site  Cnr Wonga & Kurrajong Rds PRESTONS,NSW,150.8875,-33.941944,2,0,0,AM,acma-radio
+151085,Main AM Mast BAI Comms Site  Cnr Wonga & Kurrajong Rds PRESTONS,NSW,150.885556,-33.942222,2,0,0,AM,acma-radio
+151097,Broadcast Site BELLEVUE HILL LOOKOUT,NSW,148.694722,-33.829167,0,2,0,FM,acma-radio
+151100,AM Mast  Radio West Site 14 Harmans Mill Rd METRICUP,WA,115.120833,-33.803333,2,0,0,AM,acma-radio
+151122,Broadcast Tower  Shire Offices Site 65 Morgans St RAVENSTHORPE,WA,120.046667,-33.581111,0,3,0,FM,acma-radio
+151123,Broadcast Site BRAMFIELD HILL,SA,134.969167,-33.585,0,2,0,FM,acma-radio
+151130,Broadcast Australia Site Bracys Lookout off Hassans Walls Rd LITHGOW,NSW,150.159722,-33.487222,1,0,0,AM,acma-radio
+151140,29 Springvale Lane WALLERAWANG,NSW,150.100556,-33.405,1,0,0,AM,acma-radio
+151142,AM Mast  Radio West Site Lot 4548  Gibbs Rd COLLIE,WA,116.193056,-33.370278,1,0,0,AM,acma-radio
+151148,Parkes Broadcasting Co 56.4m Lattice Tower Mt Coonambro off Amaroo Way COOKAMIDGERA,NSW,148.336944,-33.249722,0,2,0,FM,acma-radio
+151153,Broadcast Site Parkes-Eugowra Rd  4km SE of PARKES,NSW,148.208056,-33.165833,1,0,0,AM,acma-radio
+151163,AM Mast  Radio West Site 219 Narrogin Valley Rd NARROGIN VALLEY,WA,117.216944,-32.961389,1,0,0,AM,acma-radio
+151166,Broadcast Australia Site Baldry Rd  4km WSW of CUMNOCK,NSW,148.711111,-32.934167,1,0,0,AM,acma-radio
+151173,Shire Council Tower Baldy Peak Cumber Melon Range via KANDOS,NSW,149.990278,-32.871944,0,1,0,FM,acma-radio
+151175,Broadcast Site 97 Maitland Rd SANDGATE,NSW,151.702222,-32.856111,1,0,0,AM,acma-radio
+151182,SW AM Mast BAI Comms Site  29 Stanley Williams Rd STREAKY BAY,SA,134.190833,-32.758056,1,0,0,AM,acma-radio
+151198,Broadcast/Country Energy Site Magpie Hill Gulgong MUDGEE,NSW,149.561944,-32.443333,0,2,0,FM,acma-radio
+151202,BAI Comms Site Menindee Rd 7km North of MENINDEE,NSW,142.414167,-32.338333,0,2,0,FM,acma-radio
+151203,Wybong Rd 6km SW of MUSWELLBROOK,NSW,150.831944,-32.294444,1,0,0,AM,acma-radio
+151206,Lift Well Roof CBH Grain Terminal  Rockingham Beach Rd EAST ROCKINGHAM,WA,115.751667,-32.258889,0,1,0,FM,acma-radio
+151225,Community Radio Broadcast Site View Terrace EAST FREMANTLE,WA,115.770556,-32.033333,0,2,0,FM,acma-radio
+151231,BAI Comms Site Kia Ora Lookout  Kia Ora Hill Rd BARRINGTON,NSW,151.946944,-31.9625,0,2,0,FM,acma-radio
+151236,Super Radio Site Nine Mile Rd  3 km NW of BROKEN HILL,NSW,141.443333,-31.939722,1,2,0,AM + FM,acma-radio
+151237,Broadcast Australia Site Cnr Racecourse Rd & Silver City Hwy BROKEN HILL,NSW,141.482778,-31.93,1,0,0,AM,acma-radio
+151238,Broadcast Site via Eyre Highway 8 km west of PENONG,SA,132.919167,-31.925278,0,1,0,FM,acma-radio
+151246,Council Telecoms and Broadcast Site  CAREYS MOUNTAIN,NSW,152.406944,-31.857222,0,2,0,FM,acma-radio
+151247,Broadcast Australia Site 760 Cedar Party Rd CEDAR PARTY,NSW,152.414444,-31.821667,1,0,0,AM,acma-radio
+151257,6AM AM Mast  SCA Site Lot 6346 Great Eastern Hwy BURLONG,WA,116.611389,-31.675,1,1,0,AM + FM,acma-radio
+151261,Broadcast Site Water Tank Terangion St. NYNGAN,NSW,147.191667,-31.564444,0,1,0,FM,acma-radio
+151262,Broadcast Site WILCANNIA,NSW,143.381111,-31.551389,0,1,0,FM,acma-radio
+151269,Broadcast Site 58 Bates St MERREDIN,WA,118.278333,-31.477222,0,1,0,FM,acma-radio
+151278,Broadcast Tower BAI Comms Site  Mt Cenn Cruaich Access Road MT CENN CRUAICH,NSW,149.023333,-31.342778,0,5,0,FM,acma-radio
+151284,Nominal Planning site Antares St SOUTHERN CROSS,WA,119.328056,-31.232778,0,1,0,FM,acma-radio
+151286,Dept Defence Site Kotara Cres WOOMERA,SA,136.826944,-31.2,1,0,0,AM,acma-radio
+151292,Pacific Hwy 2 km S of SOUTH KEMPSEY,NSW,152.836667,-31.106111,1,0,0,AM,acma-radio
+151297,Broadcast Australia Site Summer Island Rd  1km N of SMITHTOWN,NSW,152.948056,-31.005833,1,0,0,AM,acma-radio
+151299,NBN Ltd Tower Thee Street Hill  off Legge St WALCHA,NSW,151.584167,-30.988611,0,2,0,FM,acma-radio
+151303,Broadcast Site 140 North of 163 Strugnell Street MUKINBUDIN,WA,118.203611,-30.9125,0,1,0,FM,acma-radio
+151307,Broadcast Site SES EOC Lot 77 cnr Smith St and Ninghan St KOORDA,WA,117.484444,-30.826111,0,1,0,FM,acma-radio
+151310,Broadcast Australia Site Fossickers Wy  4.5km SSE of MANILLA,NSW,150.744444,-30.781111,1,0,0,AM,acma-radio
+151313,6KG AM Mast Lot 1 Austral St PARKESTON,WA,121.500833,-30.735,1,0,0,AM,acma-radio
+151322,BAI Comms Site Lot 373 Leigh Creek Aerodrome Rd LEIGH CREEK,SA,138.404167,-30.599722,1,1,0,AM + FM,acma-radio
+151326,Broadcast site New England Hwy near Kia Ora Rd ARMIDALE,NSW,151.605,-30.544444,1,0,0,AM,acma-radio
+151332,Broadcast Australia Site Monro Place  2km N of ARMIDALE,NSW,151.664722,-30.495833,1,0,0,AM,acma-radio
+151348,Broadcast Australia Site 4 km NW of Glenn Innes CARPENTERS HILL,NSW,151.691667,-29.716944,0,1,0,FM,acma-radio
+151355,Broadcast Australia Site Merton St  1.5km E of LAWRENCE,NSW,153.115278,-29.491944,1,0,0,AM,acma-radio
+151357,Broadcast Site The Gap Range 1.5 km S of EMMAVILLE,NSW,151.605278,-29.455556,0,1,0,FM,acma-radio
+151366,Imparja Site Traeger Street COOBER PEDY,SA,134.759444,-29.010556,0,1,0,FM,acma-radio
+151370,Broadcast Tower  Council Site 29 Hoover St LEONORA,WA,121.334167,-28.881944,0,6,0,FM,acma-radio
+151372,Broadcast Monopole  Council Site Robinsons Ave. GIRARDS HILL,NSW,153.276389,-28.819167,0,1,0,FM,acma-radio
+151378,Main mast BA site 1276 Chapman Valley Rd NARRA TARRA,WA,114.71,-28.658333,1,0,0,AM,acma-radio
+151382,BAI Comms Site Lot 12 Whyenbah Road DIRRANBANDI,QLD,148.250278,-28.557778,0,1,0,FM,acma-radio
+151391,894 Clothiers Creek Rd CLOTHIERS CREEK,NSW,153.508611,-28.324722,1,0,0,AM,acma-radio
+151395,Broadcast site MOOMBA,SA,140.21,-28.118333,0,1,0,FM,acma-radio
+151396,Macquarie Site Burrenbilla Rd  5km S of CUNNAMULLA,QLD,145.691944,-28.111667,1,1,0,AM + FM,acma-radio
+151399,Broadcast Australia Site Lot 405 Criddle St MT MAGNET,WA,117.8425,-28.056389,0,4,0,FM,acma-radio
+151401,Broadcast Australia Site off Mitchell Hwy  3km NE of CUNNAMULLA,QLD,145.701944,-28.047778,0,2,0,FM,acma-radio
+151406,Allora-Clifton Rd (cnr of Elphinstone Rd) ALLORA,QLD,151.976667,-28.0225,1,0,0,AM,acma-radio
+151414,Broadcast Site DARLOT,WA,121.290278,-27.898611,0,1,0,FM,acma-radio
+151427,Cmty Radio Site off Mount View Road MOUNT COTTON,QLD,153.213611,-27.615278,0,1,0,FM,acma-radio
+151428,Gold Radio Site Glennie St DRAYTON,QLD,151.912222,-27.6,1,0,0,AM,acma-radio
+151436,Broadcast site Meiers Rd LONG POCKET,QLD,152.997778,-27.515278,1,0,0,AM,acma-radio
+151447,Broadcast Site end of Foster St CUE,WA,117.900556,-27.428889,0,4,0,FM,acma-radio
+151457,Town Hall 9-13 Macks Street WYANDRA,QLD,145.978611,-27.248611,0,2,0,FM,acma-radio
+151460,BA Site Mt Walpanara NOORINDOO,QLD,149.135556,-27.143333,0,1,0,FM,acma-radio
+151471,Broadcast Site BALD KNOB,QLD,152.918611,-26.790278,0,2,0,FM,acma-radio
+151472,PY Media Studio 13 Tjuntun Place KALTJITI,SA,132.028056,-26.763889,0,1,0,FM,acma-radio
+151479,Broadcast Site cnr Roberts St and Oliver St MEEKATHARRA,WA,118.497778,-26.596944,0,4,0,FM,acma-radio
+151483,4ZR Broadcast Site Clayton Rd ROMA,QLD,148.819167,-26.566389,1,0,0,AM,acma-radio
+151485,Broadcast Australia Site  BLACK MOUNTAIN,QLD,152.854167,-26.422778,0,4,0,FM,acma-radio
+151487,Broadcast Australia Tower Warrego Hwy 11 km E of CHARLEVILLE,QLD,146.355556,-26.416111,0,2,0,FM,acma-radio
+151491,Broadcast Site Cnr Frawley St and Cook St CHARLEVILLE,QLD,146.221667,-26.396667,1,0,0,AM,acma-radio
+151496,Mitchell Hwy 18km NNE of CHARLEVILLE,QLD,146.303056,-26.254444,1,0,0,AM,acma-radio
+151502,Neusavale Rd 2.5km S of WOLVI,QLD,152.824444,-26.171944,1,0,0,AM,acma-radio
+151506,Broadcast Site adjacent to Community Office WARBURTON,WA,126.58,-26.134167,0,3,0,FM,acma-radio
+151509,Broadcast Site adj NG Media Bldg Lot 37 Wanatjukutju St WINGELLINA,WA,128.930556,-26.066667,0,1,0,FM,acma-radio
+151510,BAI Comms Site 412 Nathan Rd WANDOAN,QLD,149.96,-26.048056,0,2,0,FM,acma-radio
+151511,Broadcast Site  TJIRRKARLI,WA,125.473333,-26.000833,0,1,0,FM,acma-radio
+151514,Southeast Water Tower 1 Frew St BIRDSVILLE,QLD,139.3525,-25.896667,0,2,0,FM,acma-radio
+151518,BAI Comms Site Cranmer Street TAROOM,QLD,149.805,-25.643889,0,2,0,FM,acma-radio
+151525,BAI Comms Site Mt Goonaneman Access Rd MT GOONANEMAN,QLD,152.116944,-25.426944,0,5,0,FM,acma-radio
+151526,BA Site off Eidsvold-Theodore Road 4km S of EIDSVOLD,QLD,151.122778,-25.407778,1,0,0,AM,acma-radio
+151527,Broadcast Australia Site Hospital Hill  Reservoir Road EIDSVOLD,QLD,151.123056,-25.385,0,1,0,FM,acma-radio
+151529,Broadcast Site Rangerville Comm Road MUTITJULU,NT,131.071389,-25.351389,0,1,0,FM,acma-radio
+151539,Broadcast Site Mt Ebenezer Station IMANPA,NT,132.571389,-25.127222,0,1,0,FM,acma-radio
+151541,BAI Comms Site 16782 Leichhardt Hwy ISLA,QLD,150.061667,-24.951944,0,2,0,FM,acma-radio
+151544,Broadcast Australia Site Dawson Developmental Rd  4km NNE of TAMBO,QLD,146.267222,-24.848611,0,2,0,FM,acma-radio
+151553,299 Burnett Hwy PROSPECT,QLD,150.490833,-24.392222,1,0,0,AM,acma-radio
+151558,Broadcast Australia Site cnr Bicentennial Drive and St Ann Street ISISFORD,QLD,144.435556,-24.253056,0,1,0,FM,acma-radio
+151564,Cmty Radio Site Lot 220 Keringke Cres SANTA TERESA,NT,134.375278,-24.131944,0,2,0,FM,acma-radio
+151570,Cmty Radio Site Adj Council Bldg  82 Raberaba Cct HERMANNSBURG,NT,132.776944,-23.9425,0,2,0,FM,acma-radio
+151574,Blain Drive 2km SW of GLADSTONE,QLD,151.240556,-23.859722,1,0,0,AM,acma-radio
+151591,Capricorn Hwy 5 km SE of EMERALD,QLD,148.198333,-23.541667,1,0,0,AM,acma-radio
+151602,Broadcast Site Cramsie Muttaburra Rd  6km NNW of LONGREACH,QLD,144.221111,-23.393333,1,1,0,AM + FM,acma-radio
+151603,BA Site Off Cramsie Muttaburra Rd  6km NNW of LONGREACH,QLD,144.223611,-23.389167,1,0,0,AM,acma-radio
+151607,Broadcast Site  JIGALONG,WA,120.780278,-23.358889,0,1,0,FM,acma-radio
+151608,Prime Radio Site Six Mile Rd  1km NNW of PINK LILY,QLD,150.470278,-23.351111,1,0,0,AM,acma-radio
+151609,Broadcast Australia Site TV Hill  off Giles Ave  1km NW of NEWMAN,WA,119.725,-23.349167,1,3,0,AM + FM,acma-radio
+151611,Broadcast Site KINTORE,NT,129.388611,-23.275278,0,1,0,FM,acma-radio
+151613,Broadcast Site Pump House PAPUNYA,NT,131.91,-23.210833,0,1,0,FM,acma-radio
+151621,Broadcast Australia Site McAuliffe Street ARAMAC,QLD,145.247778,-22.965556,0,1,0,FM,acma-radio
+151622,Main Mast Broadcast Australia Site Murat Rd  3km SSE of EXMOUTH,WA,114.129167,-21.957778,1,0,0,AM,acma-radio
+151624,Broadcast Site Burke Street opp.School BOULIA,QLD,139.910833,-22.906944,0,2,0,FM,acma-radio
+151637,BAI Comms Site Hospital Hill MUTTABURRA,QLD,144.535833,-22.598333,0,1,0,FM,acma-radio
+151639,Broadcast Australia site off Dysart Rd DENHAM RANGE,QLD,148.318333,-22.58,0,2,0,FM,acma-radio
+151643,Cmty Radio Site Conniston Rd and Walpiri Ave YUENDUMU,NT,131.795,-22.254444,0,1,0,FM,acma-radio
+151644,Broadcast Site Rangelands 16km N of WINTON,QLD,143.051111,-22.241111,0,1,0,FM,acma-radio
+151649,Council TV Site Colonial Drive CLAIRVIEW,QLD,149.527222,-22.105278,0,1,0,FM,acma-radio
+151650,Broadcast Site Water Tower Clements St & Mills Ave MORANBAH,QLD,148.060556,-22.000556,0,1,0,FM,acma-radio
+151654,Standby Mast  Broadcast Australia Site Murat Rd  3km SSE of EXMOUTH,WA,114.129167,-21.959167,1,0,0,AM,acma-radio
+151663,Broadcast Australia Site Lot 598 Payne Way ONSLOW,WA,115.115556,-21.645,0,1,0,FM,acma-radio
+151667,Broadcast Site North Goonyella Village BURTON GORGE,QLD,148.1275,-21.619444,0,1,0,FM,acma-radio
+151669,Water Treatment Plant Usher Terrace GLENDEN,QLD,148.109444,-21.358056,0,4,0,FM,acma-radio
+151670,Broadcast Site Lot 126 Willowra Comm. WILLOWRA,NT,132.617222,-21.246389,0,1,0,FM,acma-radio
+151671,Broadcast Site 67 Augusta St MARBLE BAR,WA,119.748889,-21.171111,0,2,0,FM,acma-radio
+151676,Broadcast Site off Flinders Hwy  3km W of HUGHENDEN,QLD,144.172222,-20.844444,1,0,0,AM,acma-radio
+151677,Broadcast Australia Site Cnr Flinders Hwy & Saleyards Rd HUGHENDEN,QLD,144.185833,-20.842778,1,0,0,AM,acma-radio
+151680,Broadcast Australia Site off Fisher Drive MOUNT WELCOME,WA,117.141944,-20.771944,0,3,0,FM,acma-radio
+151684,Broadcast Australia Site North West Coastal Hwy 8 km SE of KARRATHA,WA,116.893611,-20.791944,1,0,0,AM,acma-radio
+151687,Radio 4MIC Tower  Nth Qld Bcing Site City Lookout  off Hilary St MOUNT ISA,QLD,139.497778,-20.723333,0,1,0,FM,acma-radio
+151698,BAI Comms Mast Mt Devlin  Lot 84 Mount Devlin Rd COLLINSVILLE,QLD,147.838611,-20.524167,0,3,0,FM,acma-radio
+151708,Shire Office Bldg cnr Yakai St and Marwuntu St BALGO,WA,127.982778,-20.141944,0,1,0,FM,acma-radio
+151715,Telstra Site Lot 18 Plan 17 Barkly Hwy CAMOOWEAL,QLD,138.175833,-19.920556,0,2,0,FM,acma-radio
+151717,BAI Comms Site 816 Peko Rd WARUMUNGU,NT,134.260556,-19.669167,1,0,0,AM,acma-radio
+151719,Imparja Site via Kaczinsky Rd WARUMUNGU,NT,134.221389,-19.633889,0,2,0,FM,acma-radio
+151729,Broadcast Site YIYILI,WA,126.755556,-18.716389,0,1,0,FM,acma-radio
+151730,Broadcast Site MT MERCER,QLD,146.214722,-18.689722,0,1,0,FM,acma-radio
+151732,Broadcast Site  YUNGNGORA,WA,124.827778,-18.503611,0,1,0,FM,acma-radio
+151740,Telstra Site 97 Fallon Rd FITZROY CROSSING,WA,125.565556,-18.189722,0,2,0,FM,acma-radio
+151758,Telstra Site 17 km NNW of Elliot Stuart Hwy PAMAYU,NT,133.448056,-17.425,0,2,0,FM,acma-radio
+151774,Western AM Mast 4AM Site  116 Cobra Rd MAREEBA,QLD,145.475556,-17.023889,1,0,0,AM,acma-radio
+151778,Broadcast site Pine Creek-Yarrabah Rd EAST TRINITY,QLD,145.82,-16.903333,1,0,0,AM,acma-radio
+151800,Broadcast Site Intersect Button Drv & Mulga St KUNUNURRA,WA,128.733889,-15.763889,2,0,0,AM,acma-radio
+151801,Broadcast Australia Site off Kelly Rd KELLYS KNOB,WA,128.740556,-15.763056,0,3,0,FM,acma-radio
+151812,Council Site Lot 3135 (13) Chardon Street KATHERINE,NT,132.285556,-14.474167,0,1,0,FM,acma-radio
+151820,AM Mast BAI Comms Site Lot 964 Elsherana Rd JABIRU,NT,132.849722,-12.656111,1,0,0,AM,acma-radio
+151823,BAI Comms Site Lot 17 Transmission St ROCKY POINT,QLD,141.887778,-12.625556,0,2,0,FM,acma-radio
+151838,Broadcast Site  DARNLEY ISLAND,QLD,143.768056,-9.589444,0,1,0,FM,acma-radio
+151840,Broadcast Site Main St DAUAN ISLAND,QLD,142.538889,-9.412778,0,1,0,FM,acma-radio
+151842,Broadcast Site Main Rd SAIBAI ISLAND,QLD,142.620278,-9.379444,0,1,0,FM,acma-radio
+151843,Broadcast Site Army st BOIGU ISLAND,QLD,142.220833,-9.230833,0,1,0,FM,acma-radio
+152310,Broadcast Australia Site Cnr Chipu & Winchu Sts QUILPIE,QLD,144.264722,-26.619167,0,3,0,FM,acma-radio
+152325,Broadcast and RFS Mount Lambie via LITHGOW,NSW,149.988056,-33.471111,0,1,0,FM,acma-radio
+152339,Broadcast Site Railway Station Gough St DEEPWATER,NSW,151.850833,-29.442222,0,1,0,FM,acma-radio
+152342,Ericsson Site MT KOONYA,TAS,147.808889,-43.104444,0,1,0,FM,acma-radio
+152469,FM Mast ESS Building CANNINGTON MINE,QLD,140.911667,-21.834722,0,1,0,FM,acma-radio
+152493,Broadcast/Comm Site Cowley Hill COWLEY,QLD,146.056111,-17.699167,0,1,0,FM,acma-radio
+152495,Broadcast Site Bruce Hwy EURAMO,QLD,145.938056,-17.995833,1,1,0,AM + FM,acma-radio
+152524,Broadcast Site Riverina Hotel 131 Albury St HOLBROOK,NSW,147.316389,-35.723333,0,1,0,FM,acma-radio
+152574,Broadcast Site GRANNY SMITH GOLDMINE,WA,122.405833,-28.812222,0,3,0,FM,acma-radio
+152602,Telstra NTA Site Table Hill HOPETOUN,WA,120.133611,-33.933056,0,2,0,FM,acma-radio
+152608,1142 Georgetown-Huddleston Rd HUDDLESTON,SA,138.276944,-33.326111,1,0,0,AM,acma-radio
+152610,North AM Mast BAI Comms Site via Flinders Hwy  8km E of JULIA CREEK,QLD,141.820833,-20.650556,1,0,0,AM,acma-radio
+152635,Broadcast Site TIERI,QLD,148.367778,-23.031667,0,1,0,FM,acma-radio
+152654,Broadcast Site MURRIN MURRIN,WA,121.871944,-28.709444,0,1,0,FM,acma-radio
+152662,Broadcast Site 63 Sanger St COROWA,NSW,146.388889,-35.997222,0,1,0,FM,acma-radio
+152676,Rich Rivers Radio Site 104A Racecourse Rd COBRAM,VIC,145.636944,-35.904167,0,2,0,FM,acma-radio
+152689,PCYC Site Dormitory Drive GREAT PALM ISLAND,QLD,146.579722,-18.735278,0,1,0,FM,acma-radio
+152695,Broadcast Site Water Tower Wodonga St BEDOURIE,QLD,139.468333,-24.361667,0,2,0,FM,acma-radio
+152715,TAB Site 21 Lily St INNISFAIL,QLD,146.029167,-17.525833,0,1,0,FM,acma-radio
+152716,Broadcast Site 5 Butler St TULLY,QLD,145.922778,-17.934167,0,1,0,FM,acma-radio
+152741,Broadcast Site 20 Stratford st STONEHENGE,QLD,143.2875,-24.354722,0,1,0,FM,acma-radio
+152801,2KY Broadcasters Site Gulf Forest Rd  2km North of YETHOLME,NSW,149.808611,-33.431667,0,1,0,FM,acma-radio
+152887,Coastal Broadcasters Site Bones Knob  off Griffin Rd TOLGA,QLD,145.447222,-17.223056,0,2,0,FM,acma-radio
+152888,Broadcast Site River Heads Rd BOORAL,QLD,152.89,-25.359444,0,1,0,FM,acma-radio
+152913,Country Club Hotel 151 Cunningham St (Cnr Drayton St) DALBY,QLD,151.263889,-27.183333,0,1,0,FM,acma-radio
+152914,Broadcast Site Grafton St WARWICK,QLD,152.033333,-28.216111,0,1,0,FM,acma-radio
+152915,Central Hotel 140 High St STANTHORPE,QLD,151.934722,-28.655,0,1,0,FM,acma-radio
+152916,Broadcast Site cnr Kingaroy & Alford Sts KINGAROY,QLD,151.838333,-26.54,0,1,0,FM,acma-radio
+152917,Broadcast Site Bacchus Marsh Rifle Club Dog Trap Rd GORROCK,VIC,144.376944,-37.689167,0,1,0,FM,acma-radio
+152931,Broadcast Site Village OSBORNE MINE,QLD,140.568889,-22.126944,0,1,0,FM,acma-radio
+152947,Paroo Council Site Water Tower  5 Watson St cnr Mabel St CUNNAMULLA,QLD,145.687222,-28.065833,0,2,0,FM,acma-radio
+152949,Community Centre 16 Harlequin Drive YOWAH,QLD,144.634722,-27.970278,0,2,0,FM,acma-radio
+152955,Council Broadcast Site Burbridge Road MARVEL LOCH,WA,119.490833,-31.469444,0,2,0,FM,acma-radio
+152956,Broadcast Site Graincorp Wheat Silo Tycannah St MOREE,NSW,149.855278,-29.499444,0,1,0,FM,acma-radio
+152957,FM Mast  Valley FM Studios 2 Grattan Court WANNIASSA,ACT,149.098889,-35.401944,0,1,0,FM,acma-radio
+152958,Broadcast Site Water Tower CENTURY MINE,QLD,138.616944,-18.730556,0,3,0,FM,acma-radio
+152959,3-WAY-FM Studio 71 Hyland Street WARRNAMBOOL,VIC,142.472222,-38.374444,0,1,0,FM,acma-radio
+152971,Burnie Bcing Site 31-33 Massey St SMITHTON,TAS,145.130556,-40.843056,0,2,0,FM,acma-radio
+152973,Broadcast Site 1 Bews Tce LAMEROO,SA,140.517222,-35.330556,0,1,0,FM,acma-radio
+152981,Commercial Site Moresby Range off Chapman Valley Rd WAGGRAKINE,WA,114.676111,-28.683889,0,2,0,FM,acma-radio
+152987,Broadcast Site Lot 301 The Esplanade ESPERANCE,WA,121.892222,-33.8625,0,1,0,FM,acma-radio
+152988,Broadcast Site Somerset cnr Overport Rd Overport Park FRANKSTON,VIC,145.120833,-38.179722,0,1,0,FM,acma-radio
+153004,Broadcast Site Area School COOBER PEDY,SA,134.755278,-29.012222,0,3,0,FM,acma-radio
+153006,Broadcast Site Mt Prudhoe RAZORBACK RANGE,NSW,150.665278,-34.138611,0,1,0,FM,acma-radio
+153007,Broadcast Monopole  Aust Radio Network Site 754-768 Hawkesbury Rd HAWKESBURY HEIGHTS,NSW,150.639722,-33.6675,0,1,3,FM,acma-radio
+153008,Water tower 68 Bowen Street ROMA,QLD,148.778889,-26.5725,0,1,0,FM,acma-radio
+153016,Austin Hospital Boiler House Burgundy Street HEIDELBERG,VIC,145.056944,-37.756667,0,1,0,FM,acma-radio
+153019,Broadcast Site Phillips Reserve Corner of Swan Tce and Robin Road. SEMAPHORE,SA,138.488056,-34.842222,0,1,0,FM,acma-radio
+153026,Broadcast/Comms Site off Veresdale Scrub Sch Rd MT DUNSINANE,QLD,153.040556,-27.926389,0,3,0,FM,acma-radio
+153030,2KY Broadcast site Avon Valley Hotel 82 Church St GLOUCESTER,NSW,151.958333,-32.007778,0,1,0,FM,acma-radio
+153032,2KY Broadcast site Barham Hotel 34 Murray St BARHAM,NSW,144.125278,-35.625,0,1,0,FM,acma-radio
+153034,2KY Broadcast site New England Hotel 51E Fitzroy St WALCHA,NSW,151.594167,-30.984722,0,1,0,FM,acma-radio
+153039,Imparja Site Mitchell Escarp Warrego Hwy 15km ESE of MITCHELL,QLD,148.1125,-26.541944,0,1,0,FM,acma-radio
+153040,Broadcast Site Saleyards WALGETT,NSW,148.135,-30.008611,0,1,0,FM,acma-radio
+153044,Council Site Karumba Water Storage Rd KARUMBA,QLD,140.838333,-17.497778,0,4,0,FM,acma-radio
+153046,Broadcast Site Council Depot cnr West & Roma Sts MORVEN,QLD,147.110556,-26.418056,0,1,0,FM,acma-radio
+153057,Broadcast Site Railway Hotel 48 Haydon St MURRURUNDI,NSW,150.838611,-31.7675,0,1,0,FM,acma-radio
+153070,Broadcast Site adj water reservoir Rifle Range Road DUBBO,NSW,148.553611,-32.280278,0,1,0,FM,acma-radio
+153075,BA Site 1010 Rosebery-Rainbow Rd BEAULAH,VIC,142.290278,-35.853056,0,1,0,FM,acma-radio
+153103,Broadcast Site Village B TI TREE,WA,117.605833,-21.831667,0,3,0,FM,acma-radio
+153105,Council Site Shire Depot  Walgett Street GOODOOGA,NSW,147.452222,-29.115,0,1,0,FM,acma-radio
+153115,Broadcast Site Cavalier Spur  4km N of HARRIETVILLE,VIC,147.056667,-36.856389,0,1,0,FM,acma-radio
+153126,3HCR Studio Sebastopol Hill Road OMEO,VIC,147.601111,-37.098889,0,1,0,FM,acma-radio
+153133,Broadcast Site MT LIEBIG,NT,131.272222,-23.266111,0,3,0,FM,acma-radio
+153140,Broadcast Site  Sport and Rec Hall Lot 460  Perdjert St WADEYE,NT,129.519722,-14.238333,0,2,0,FM,acma-radio
+153150,Broadcast Australia Site Fort Bourke Hill  North Rd COBAR,NSW,145.856389,-31.517222,0,3,0,FM,acma-radio
+153168,Broadcast Site Bimbadeen Water Tower COOTAMUNDRA,NSW,148.049444,-34.643333,0,3,0,FM,acma-radio
+153176,ACE Broadcast Site MT WARRNAMBOOL,VIC,142.7375,-38.304722,0,3,0,FM,acma-radio
+153198,Broadcast Site Scrub Hill NIKENBAH,QLD,152.808889,-25.309722,0,3,0,FM,acma-radio
+153200,Main Roads Site Deacon St DALWALLINU,WA,116.669167,-30.277222,0,2,0,FM,acma-radio
+153227,Broadcast Site Reservoir Golden St GOLDSBOROUGH VALLEY,QLD,145.746667,-17.160833,0,1,0,FM,acma-radio
+153247,Broadcast Site Showground off Pilliga Rd WALGETT,NSW,148.145556,-30.024722,0,1,0,FM,acma-radio
+153280,Broadcast Site Mt Keith Nickel Operation via Leinster Goldfields Hwy MOUNT KEITH,WA,120.556667,-27.215556,0,3,0,FM,acma-radio
+153284,Broadcast Site Racecourse WANGARATTA,VIC,146.2875,-36.356944,0,1,0,FM,acma-radio
+153286,Water Tower Dryden St ALPHA,QLD,146.630833,-23.651111,0,2,0,FM,acma-radio
+153304,PY Media Studio 9 Indulkana Blvd INDULKANA,SA,133.309444,-26.966389,0,1,0,FM,acma-radio
+153305,PY Media Site Adj Water Reservoirs via Kali Cres PUKATJA,SA,132.131667,-26.279722,0,2,0,FM,acma-radio
+153308,PY Media Site 54 Purara St AMATA,SA,131.146111,-26.15,0,1,0,FM,acma-radio
+153326,Broadcasting Planning Site Mt Pleasant BODDINGTON,WA,116.475278,-32.789722,0,1,0,FM,acma-radio
+153349,Broadcast Site Willows Road WILLOWS GEMFIELDS,QLD,147.537778,-23.738056,0,1,0,FM,acma-radio
+153356,Broadcast Site Mt Pederson LONG FLAT,NSW,152.476944,-31.446111,0,1,0,FM,acma-radio
+153369,2WEB 12 Wilga St COONAMBLE,NSW,148.391667,-30.960278,0,1,0,FM,acma-radio
+153375,Rebel Media Site Golf Course Rd TAMBORINE MOUNTAIN,QLD,153.213611,-27.97,0,2,0,FM,acma-radio
+153380,Elan Apartments 30m Tower on Rooftop of 100m Building 1 Kings Cross Rd DARLINGHURST,NSW,151.222778,-33.875833,0,1,0,FM,acma-radio
+153381,Broadcast Site Truscott Memorial Club Payne St EXMOUTH,WA,114.125278,-21.929444,0,1,0,FM,acma-radio
+153385,Coorong Council Tower Binnie Lookout Coonalpyn Road MENINGIE,SA,139.651111,-35.673889,0,1,0,FM,acma-radio
+153387,Council Site Lovedays Hill  246 Lovedays Rd BUKALI,QLD,151.179722,-24.827222,0,2,0,FM,acma-radio
+153394,Broadcast Site South Sister ST MARYS,TAS,148.171667,-41.534444,0,1,0,FM,acma-radio
+153475,Broadcast Site Ouyen Hospital Britt St OUYEN,VIC,142.311389,-35.073611,0,1,0,FM,acma-radio
+153477,Broadcast Site Sewage Complex  off Gibbons Rd MOSS VALE,NSW,150.353611,-34.541944,1,0,0,AM,acma-radio
+153479,Council Site Mt Clay Angelino Rd NARRAWONG,VIC,141.703611,-38.216389,0,2,0,FM,acma-radio
+153490,Broadcast Site 48-50 Gray Street HAMILTON,VIC,142.020556,-37.745556,0,1,0,FM,acma-radio
+153495,Vision Radio 60m Mast  U.C.B. Site Lot 1 Hynes Rd WATERLOO,WA,115.737222,-33.338056,1,0,0,AM,acma-radio
+153513,Pinecam Site MORVEN,QLD,147.120278,-26.413056,0,1,0,FM,acma-radio
+153538,Broadcast Mast  Assembly Site Lot 437 Bridge St HALLS CREEK,WA,127.673056,-18.222778,0,1,0,FM,acma-radio
+153566,Mast  Regional Comms Site 134 Blighs Rd PURNIM,VIC,142.613611,-38.240556,1,0,0,AM,acma-radio
+153578,Flow FM Site Thomas Tank Hill  234 Hamilton Rd PINNAROO,SA,140.950833,-35.3675,0,1,0,FM,acma-radio
+153579,Broadcast Australia Site Harris Rd  2.6km NNE of WODONGA,VIC,146.9025,-36.101944,1,0,0,AM,acma-radio
+153593,Broadcast Site Council Works Depot TAMBO,QLD,146.254167,-24.882222,0,4,0,FM,acma-radio
+153597,Council Works Depot Site 30 Winchu street QUILPIE,QLD,144.270833,-26.618611,0,1,0,FM,acma-radio
+153599,Three Rivers Radio Mast Reservoir  off Rhodes St DUNEDOO,NSW,149.398333,-32.028611,0,1,0,FM,acma-radio
+153603,Flow FM Site Pump Hill  273 Murra Up Rd MOUNT BENSON,SA,139.824444,-37.050833,0,1,0,FM,acma-radio
+153610,SA Water Site Lot 5 Minlaton-Stansbury Rd RAMSAY,SA,137.673611,-34.794444,0,1,0,FM,acma-radio
+153620,Water Tower Warren Rd GILGANDRA,NSW,148.6475,-31.710278,0,1,0,FM,acma-radio
+153621,Water Tower 6 Cranmer St TAROOM,QLD,149.803889,-25.644722,0,4,0,FM,acma-radio
+153631,Sorrensons Rd HERVEY BAY,QLD,152.785556,-25.303889,1,0,0,AM,acma-radio
+153632,Broadcast Site Shire of Broome Lot 1816 Farrell Street BROOME,WA,122.22,-17.9675,0,1,0,FM,acma-radio
+153642,Broadcast Site Casual Cassowary Tea House Bruce Hwy HINCHINBROOK,QLD,146.176944,-18.485833,0,1,0,FM,acma-radio
+153651,Shire Depot Site Lot 486 Quinlan Street WONGAN HILLS,WA,116.724722,-30.890556,0,4,0,FM,acma-radio
+153654,Hume Municipal Offices Main Street BROADMEADOWS,VIC,144.918056,-37.681944,0,1,0,FM,acma-radio
+198299,Main Mast  Sky Sports Radio Site off Hill Rd SYDNEY OLYMPIC PARK,NSW,151.062778,-33.838056,3,0,0,AM,acma-radio
+199023,Melbourne Central 360 Elizabeth Street MELBOURNE,VIC,144.962222,-37.810278,0,1,0,FM,acma-radio
+199236,Broadcast Site Railway Station EINASLEIGH,QLD,144.089722,-18.514722,0,3,0,FM,acma-radio
+199243,Broadcast Australia Site off Ocean Beach Rd STRAHAN,TAS,145.3025,-42.149167,0,2,0,FM,acma-radio
+199245,Broadcast Australia Site Forest Hill Rd  1.6km SSE of LAUDERDALE,TAS,147.498611,-42.925278,2,0,0,AM,acma-radio
+199251,7XS-7AUS Mast Mt Read  Mount Read Rd ROSEBERY,TAS,145.541389,-41.844444,0,4,0,FM,acma-radio
+199268,Broadcast Australia Site 2 Lawson Ave WOODBERRY,NSW,151.6625,-32.8,2,0,0,AM,acma-radio
+199273,Cmty Site TV Access Rd MT MAJOR,VIC,145.698333,-36.362222,0,2,0,FM,acma-radio
+199293,Broadcast Tower  Broadcast Australia Site 2 Queen St RAVENSTHORPE,WA,120.045,-33.586389,0,3,0,FM,acma-radio
+200731,Broadcast Site Baptist Church Brownie St KATANNING,WA,117.568056,-33.681111,0,1,0,FM,acma-radio
+200745,Anglican Church Ashburton Ave PARABURDOO,WA,117.670556,-23.200833,0,1,0,FM,acma-radio
+201534,Optus Site Church Hill  Lowe St BLAYNEY,NSW,149.251389,-33.520556,0,1,0,FM,acma-radio
+201687,Monopole  Council Site Moeyan Hill  off 370 Agars Lane BERRY,NSW,150.719444,-34.800278,0,1,0,FM,acma-radio
+201689,Quad Chairlift Top Terminal Back Perisher Mtn PERISHER,NSW,148.393056,-36.400556,0,2,0,FM,acma-radio
+201984,Council Tower Warks Hill Rd KURRAJONG HEIGHTS,NSW,150.620556,-33.520278,0,1,0,FM,acma-radio
+202747,Central Coast Radio Site Lot 32 Debenham Rd SOMERSBY,NSW,151.2975,-33.410556,0,1,0,FM,acma-radio
+203459,Main Comms Hut Cadia Minesite CADIA,NSW,148.986389,-33.455833,0,4,0,FM,acma-radio
+204131,Lot 199 18 Walter Road INGLESIDE,NSW,151.277778,-33.671389,0,1,0,FM,acma-radio
+204909,Council Tower  adj Water Reservoir Beach St JUNEE,NSW,147.576389,-34.875278,0,1,0,FM,acma-radio
+205385,Sutherland Council Chambers Eton Street SUTHERLAND,NSW,151.059722,-34.030556,0,1,0,FM,acma-radio
+205912,LPON site Short Street BOURKE,NSW,145.948611,-30.085833,0,1,0,FM,acma-radio
+250177,Power-FM Broadcast Site Mount Arthur Near MUSWELLBROOK,NSW,150.858333,-32.363333,0,1,0,FM,acma-radio
+250472,Broadcast Site CB Newling Bldg Mossman St ARMIDALE,NSW,151.663333,-30.523333,0,1,0,FM,acma-radio
+250628,NSWRFS 20m Lattice Tower Mt Oxley off Kamilaroi Hwy BOURKE,NSW,146.239722,-30.198611,0,1,0,FM,acma-radio
+250660,Radio 2WCR Monopole 963 Bingie Grumble Rd TANNABAR,NSW,149.190278,-31.321667,0,1,0,FM,acma-radio
+250704,Bowling Club cnr Mitchell and Riichard Streets BOURKE,NSW,145.938333,-30.089167,0,1,0,FM,acma-radio
+250713,Council Site Mt Toolimbah  369 Toolimbah Rd WARIALDA,NSW,150.458611,-29.563056,0,1,0,FM,acma-radio
+280078,NSWRFS 25m Lattice Tower  Homeleigh Mountain  Whites Rd HOMELEIGH,NSW,153.070833,-28.571111,0,1,0,FM,acma-radio
+280127,Moree Broadcasters site MT BRANDON,NSW,148.4925,-29.589167,0,1,0,FM,acma-radio
+280165,Indara 50m Lattice Tower Mt Cairncross Tower Trail Rd CAIRNCROSS,NSW,152.6825,-31.341389,0,3,0,FM,acma-radio
+280229,Community Radio Site 118 Lynland Drive ARMIDALE,NSW,151.651667,-30.544167,0,1,0,FM,acma-radio
+280256,New Council Tower Mt Mackenzie via Mt McKenzie Lookout Rd TENTERFIELD,NSW,151.971667,-29.086667,0,3,0,FM,acma-radio
+300440,Comms Site Specimen Hill Reservoir BENDIGO,VIC,144.244444,-36.766389,0,3,0,FM,acma-radio
+302508,Yarra Valley Water Tank Velma Grove RINGWOOD EAST,VIC,145.256111,-37.805556,0,1,0,FM,acma-radio
+304515,Radio Mast Midland Highway 2 km NE of OATLANDS,TAS,147.398333,-42.289444,0,1,0,FM,acma-radio
+305178,Cleggett Farm Cnr Cleggett Rd & Rosella Crt LITTLEHAMPTON,SA,138.853333,-35.049722,0,1,0,FM,acma-radio
+305423,Snow Making Factory Summit Rd MT BULLER,VIC,146.436667,-37.1475,0,1,0,FM,acma-radio
+305532,Broadcast/Comms Tower Castlemaine Smallgoods Site via Daws Road CASTLEMAINE,VIC,144.196944,-37.049444,0,1,0,FM,acma-radio
+305536,Broadcast/Comms Mast  Pirie Cmty Radio Bcers Site TV Track THE BLUFF,SA,138.164444,-33.105833,0,1,0,FM,acma-radio
+306271,Water Reservoir Cnr Nymagee and Temoin Streets NARROMINE,NSW,148.242778,-32.232778,0,1,0,FM,acma-radio
+370253,Axicom 50m Lattice Tower Mudges Quarry  Banana Rd off 2362 Coolamon Scenic Dr OCEAN SHORES,NSW,153.522778,-28.521667,0,1,0,FM,acma-radio
+370283,Water Reserve Adjacent To 96 Vista Ave BATEMANS BAY,NSW,150.186389,-35.73,0,1,0,FM,acma-radio
+400311,WIN Site 2A Heller St RANGEVILLE,QLD,151.987778,-27.58,0,1,0,FM,acma-radio
+400413,Council Site Cushnie Hill  Lot 3  McAllisters Road CUSHNIE,QLD,151.764444,-26.334722,0,2,0,FM,acma-radio
+400524,Vodafone/Optus/Telstra Site off Old Maryborough Rd MT CORELLA,QLD,152.614722,-26.115,0,1,0,FM,acma-radio
+401200,Optus Site Reservoir Grey St & Klinge La ST GEORGE,QLD,148.581389,-28.0375,0,2,0,FM,acma-radio
+402174,Shire Council Site Yelarbon Tower Rd via Inglewood-Texas Rd YELARBON STATE FOREST,QLD,151.0925,-28.535,0,1,0,FM,acma-radio
+402418,Array Midpoint  Broadcast Site 273 Queens Rd NUDGEE,QLD,153.089722,-27.358889,1,0,0,AM,acma-radio
+402505,Jellinbah Central Mine BLUFF,QLD,148.953889,-23.387222,0,3,0,FM,acma-radio
+402714,Council Tower Laheys Lookout Lot 137 Lahey Lookout Rd TAMBORINE MOUNTAIN,QLD,153.1825,-27.997222,0,2,0,FM,acma-radio
+402937,Water Tower NEBO,QLD,148.696389,-21.696389,0,1,0,FM,acma-radio
+403248,SCA Site off Mirboo-Yarragon Rd ALLAMBEE,VIC,146.046389,-38.261667,0,2,0,FM,acma-radio
+403362,Charlton Ridge Comms Site MT Warkworth Mine Lot 272 Putty Rd BULGA,NSW,151.069444,-32.635,0,3,0,FM,acma-radio
+403573,GCT Mt Tamborine Site 103m Tower Golf Course Road MOUNT TAMBORINE,QLD,153.213333,-27.969722,0,3,1,FM,acma-radio
+403753,Fettel Site Camp Ridge Rd  19 km SSW of Port Macquarie JOLLY NOSE HILL,NSW,152.798889,-31.579167,0,1,0,FM,acma-radio
+404233,Broadcast Site Wooroi Forest drive TEWANTIN,QLD,153.002222,-26.416667,0,2,0,FM,acma-radio
+404672,Mine Repeater Site HAIL CREEK,QLD,148.366111,-21.489167,0,4,0,FM,acma-radio
+404745,Rock FM Site CARBOROUGH RANGE,QLD,148.318611,-21.925278,0,1,0,FM,acma-radio
+404976,Telstra Radio Terminal Mine Site via ROLLESTON,QLD,148.416667,-24.441111,0,4,0,FM,acma-radio
+405072,Walker Pit Site Coal Mine SOUTH WALKER CREEK,QLD,148.474167,-21.784444,0,1,0,FM,acma-radio
+405146,Council Tower Shire Depot Site  15 Farrell St (Cnr Blackman St) BROOME,WA,122.218333,-17.968889,0,1,0,FM,acma-radio
+440422,Broadcast Site Palmerston Highway East PALMERSTON,QLD,145.846389,-17.608333,0,1,0,FM,acma-radio
+440464,Telstra site Mulleys Hill CARDWELL,QLD,145.991667,-18.248333,0,2,0,FM,acma-radio
+440569,Ergon Enrgy Site TV Site GRAHAM RANGE,QLD,146.003056,-17.383056,0,4,0,FM,acma-radio
+441105,Axicom Site adj Water Reservoir  Lot 2 Gorge View Cres MOSSMAN GORGE,QLD,145.363611,-16.470556,0,2,0,FM,acma-radio
+460332,Comms Site  BLAIR ATHOL MINE,QLD,147.520556,-22.691111,0,1,0,FM,acma-radio
+461264,Broadcast Site 124 Rainbow St BILOELA,QLD,150.510833,-24.392778,0,1,0,FM,acma-radio
+480225,Axicom Mast 2 - 63m  Axicom Site 828 Mt Stuart Road MT STUART,QLD,146.7825,-19.3425,0,3,0,FM,acma-radio
+480317,Crusher Control Room ERNEST HENRY MINE,QLD,140.713889,-20.44,0,2,0,FM,acma-radio
+480703,Shire Rubbish Tip Site  PEMBERTON,WA,116.011389,-34.466389,0,1,0,FM,acma-radio
+500313,Eyre Peninsula Broadcasters Site Lot 2 Winter Hill Drv PORT LINCOLN,SA,135.828056,-34.701667,0,3,0,FM,acma-radio
+500755,Cmty Radio Site Lot 134 Stuart Hwy ELLIOTT,NT,133.544444,-17.555278,0,1,0,FM,acma-radio
+500823,Police site off Southern Ports Hwy MOUNT BENSON,SA,139.811389,-37.032778,0,1,0,FM,acma-radio
+501694,Santos Communications Mast MOOMBA,SA,140.211667,-28.118056,0,1,0,FM,acma-radio
+501707,Broadcast Tower Off Koehler Rd GIFFORD HILL,SA,139.214167,-35.151944,0,2,0,FM,acma-radio
+502343,Community Radio Site 6 Byrne Court MILDURA,VIC,142.1725,-34.199167,1,2,0,AM + FM,acma-radio
+502467,Northern Site Crows Nest Rd 2 km NNW of Port Elliot KERBY HILL,SA,138.662778,-35.481667,0,1,0,FM,acma-radio
+570486,Optus Site West Gap ALICE SPRINGS,NT,133.8575,-23.7225,0,2,0,FM,acma-radio
+570600,Broadcast Site 7 Blackman Street BROOME,WA,122.221389,-17.964167,0,3,0,FM,acma-radio
+570680,Broadcast Site Great Northern Hwy 20 km SE of FITZROY CROSSING,WA,125.680556,-18.330278,1,0,0,AM,acma-radio
+600447,Optus Tower Jaburara Heritage Trail Lookout Site KARRATHA,WA,116.831944,-20.749167,0,1,0,FM,acma-radio
+600678,Shire Office Shenton Street MENZIES,WA,121.029444,-29.694444,0,1,0,FM,acma-radio
+600767,Tower  Telstra Site Lot 6 Dampier Tce DERBY,WA,123.655556,-17.313056,0,3,0,FM,acma-radio
+601320,FM Mast  Radio West Site 219 Narrogin Valley Road NARROGIN VALLEY,WA,117.216111,-32.960556,0,1,0,FM,acma-radio
+601322,Ningaloo Reef Resort CORAL BAY,WA,113.767778,-23.143056,0,1,0,FM,acma-radio
+601361,Yandi RBS NEWMAN,WA,119.231667,-22.77,0,3,0,FM,acma-radio
+601436,WABFB Site Tooreburrup Hill BREMER BAY,WA,119.372222,-34.441389,0,1,0,FM,acma-radio
+601474,Pit Control 50km NE of Wiluna JUNDEE MINE,WA,120.605556,-26.360833,0,1,0,FM,acma-radio
+601609,Broadcast Site Brown Range Lot 256 North West Coastal Hwy CARNARVON,WA,113.721111,-24.911389,1,1,0,AM + FM,acma-radio
+601882,Community Radio Site Mt Clarence  off Apex Drv MOUNT CLARENCE,WA,117.894722,-35.024722,0,1,0,FM,acma-radio
+700555,Community FM Site TABLE CAPE,TAS,145.720833,-40.952222,0,1,0,FM,acma-radio
+700657,State Government Trunking Site Brougham Street WEST LAUNCESTON,TAS,147.125556,-41.454444,0,1,0,FM,acma-radio
+700695,Comms Site Lookout FLAGSTAFF HILL,TAS,148.237222,-41.3575,0,3,0,FM,acma-radio
+8000005,Broadcast Site Brownhill Heights Reserve CERES,VIC,144.300278,-38.173611,0,2,0,FM,acma-radio
+8000009,Building 19 Former Victoria University Campus  Circular Drive SUNBURY,VIC,144.730278,-37.595833,0,1,0,FM,acma-radio
+9000265,TXA Tower off Mount Donna Buang Rd MT VICTORIA,VIC,145.697222,-37.725,0,1,0,FM,acma-radio
+9000392,Santos Site Tarbat 26 km South EROMANGA,QLD,143.291944,-26.905556,0,3,0,FM,acma-radio
+9000581,HaleNet Tower Lock St Mt Marlay STANTHORPE,QLD,151.946944,-28.653611,0,2,0,FM,acma-radio
+9001078,Broadcast/Comms Mast  Pilbara Iron Site Hope Downs 1 RBS HOPE DOWNS 1 MINE,WA,119.099444,-22.955556,0,5,0,FM,acma-radio
+9001123,Calibre Hill RBS Hope Downs Mine HOPE DOWNS,WA,119.032222,-23.041111,0,5,0,FM,acma-radio
+9001537,Broadcast/Comms Tower  Telstra Site Quarry Rd NARRE WARREN,VIC,145.328611,-38.003889,0,1,0,FM,acma-radio
+9001585,Broadcast Site Jack Hills Mine 138 km NW of MEEKATHARRA,WA,117.268611,-26.021389,0,4,0,FM,acma-radio
+9001606,South Gippsland Shire Offices Smith Street LEONGATHA,VIC,145.945278,-38.476111,0,1,0,FM,acma-radio
+9001655,Yandi RBS - 3 Yandi Mine 78 Km North East of NEWMAN,WA,119.247222,-22.801111,0,3,0,FM,acma-radio
+9001677,Ace Bcasters Site Murray Valley Highway 5km SE of KERANG,VIC,143.960556,-35.764444,0,1,0,FM,acma-radio
+9001927,BAI Comms Site Peters Hill  Graeme St KARLKURLA,WA,121.440278,-30.717222,0,5,0,FM,acma-radio
+9003133,Kogan Creek Mine Smiths Road  via BRIGALOW,QLD,150.780833,-26.927222,0,1,0,FM,acma-radio
+9003763,Mt Rawdon Minesite 17 km SE of Township MOUNT PERRY,QLD,151.763889,-25.272778,0,2,0,FM,acma-radio
+9004054,RBS-1 Brockman 4 Mine 56 km NW of TOM PRICE,WA,117.231389,-22.593333,0,5,0,FM,acma-radio
+9007015,WiFi Hill Boddington Gold Mine Soldiers Road 13 km WNW of BODDINGTON,WA,116.344444,-32.752222,0,4,0,FM,acma-radio
+9007136,Comms / Broadcast Mast 15km NE of Dysart LAKE VERMONT MINE,QLD,148.412222,-22.459444,0,4,0,FM,acma-radio
+9007739,Telstra Site  Radio Hill Off Polo Flat Rd COOMA,NSW,149.140833,-36.234722,0,1,0,FM,acma-radio
+9009007,RBS-1 Great North Western Highway MESA A MINE PILBARA,WA,115.913333,-21.665833,0,5,0,FM,acma-radio
+9009827,Origin Energy Repeater Site 52km ESE of Injune SPRING GULLY GASFIELD,QLD,149.064444,-25.953333,0,2,0,FM,acma-radio
+9010170,Monopole Crown Castle Site 43b Saye Close EMERALD HEIGHTS,NSW,153.183333,-30.156667,0,1,0,FM,acma-radio
+9010301,Construction Village Barrow Island BARROW ISLAND,WA,115.438333,-20.817778,0,6,0,FM,acma-radio
+9010584,Radio Goulburn Broadcast Tower  MT GRAY,NSW,149.763056,-34.758333,0,4,0,FM,acma-radio
+9011128,Karara Mine Village off Perenjori-Rothsay Road ROTHSAY,WA,116.704444,-29.181389,0,5,0,FM,acma-radio
+9011167,Mine Tower TWR79501 80km SW of KARRATHA,WA,116.150833,-21.073889,0,4,0,FM,acma-radio
+9011556,Harridan Hill RBS TPI RBS Christmas Creek Mine 285km SSE of PORT HEDLAND,WA,119.681389,-22.343889,0,4,0,FM,acma-radio
+9011620,Eastern Creek Repeater Site NEWLANDS MINE,QLD,148.003889,-21.205556,0,1,0,FM,acma-radio
+9011622,New Wollombi Repeater Site NEWLANDS MINE,QLD,147.88,-21.355833,0,1,0,FM,acma-radio
+9012058,Jellinbah North Mine Site 38 km N of BLACKWATER,QLD,148.9025,-23.230556,0,2,0,FM,acma-radio
+9012230,DGPS Site Mangoola Mine Wybong Rd 10 km W of MUSWELLBROOK,NSW,150.701667,-32.286667,0,3,0,FM,acma-radio
+9012367,SR North  SARAJI MINE,QLD,148.276667,-22.3475,0,4,0,FM,acma-radio
+9012368,SR Admin  SARAJI MINE,QLD,148.280556,-22.419722,0,1,0,FM,acma-radio
+9012369,SR South  SARAJI MINE,QLD,148.329167,-22.4675,0,4,0,FM,acma-radio
+9013342,Hope Downs 4 Mine RBS 30 km NW of NEWMAN,WA,119.533056,-23.154722,0,5,0,FM,acma-radio
+9013451,Jimblebar Hub Rail Loop RBS 33km East of NEWMAN,WA,120.0525,-23.379444,0,6,0,FM,acma-radio
+9013610,Bcast / Comms Mast  Newcrest Mining Site Adj West Dome Pit TELFER MINE WEST DOME,WA,122.179167,-21.715833,0,4,0,FM,acma-radio
+9013685,BAI Comms Site Green Hill THURSDAY ISLAND,QLD,142.2125,-10.5825,0,2,0,FM,acma-radio
+9013911,Axicom Site Mt Manton  255 Lucernvale Rd MANTON,NSW,148.971667,-34.851111,0,1,0,FM,acma-radio
+9014785,Comms Tower  BM Alliance Site off Peak Downs Hwy CAVAL RIDGE MINE,QLD,148.059444,-22.154444,0,1,0,FM,acma-radio
+9015032,Yandi Junction SW 1.2 km S of Yandi Lump Camp via NEWMAN,WA,119.159722,-22.796111,0,5,0,FM,acma-radio
+9015266,Site 3 Riverside Mine 22 km NNW of MORANBAH,QLD,147.975556,-21.811111,0,1,0,FM,acma-radio
+9015471,Santos Site Gas Plant BALLERA,QLD,141.809722,-27.389167,0,1,0,FM,acma-radio
+9015766,Roy Hill Mine RBS Via Marble Bar Road 14.5 km NNE of ROY HILL STATION AIRPORT,WA,120.001667,-22.500556,0,5,0,FM,acma-radio
+9017286,Telstra RT  DUGALD RIVER MINE,QLD,140.141111,-20.231389,0,4,0,FM,acma-radio
+9017751,RBS1 Rio Tinto Site 2km WNW of Haulage Office WESTERN TURNER SYNCLINE MINE,WA,117.581111,-22.666667,0,5,0,FM,acma-radio
+9017828,APLNG Lattice Tower Reedy Creek IOC Off Yuleba Taroom Road YULEBA NORTH,QLD,149.393889,-26.332222,0,1,0,FM,acma-radio
+9017859,Nammuldi Mine RBS East 7 km NE of MT BROCKMAN,WA,117.346667,-22.407222,0,5,0,FM,acma-radio
+9018065,St Lawrence WTP St Lawrence North Road ST LAWRENCE,QLD,149.486389,-22.330278,0,1,0,FM,acma-radio
+9018798,Orebody 24 Mine RBS 9 km Northeast of NEWMAN,WA,119.796389,-23.298333,0,6,0,FM,acma-radio
+9018860,Comms Tower RBS-7 Site WEST ANGELAS DEP B MINE,WA,118.781944,-23.113611,0,5,0,FM,acma-radio
+9018967,Water Tower Manning St (Lot 196 Rieck St) GIN GIN,QLD,151.955556,-24.998611,0,1,0,FM,acma-radio
+9020765,North Star FMG Graet Northern Highway 106 km S of Port Hedland STRELLEY,WA,119.033889,-21.257778,0,4,0,FM,acma-radio
+9020967,Central Hub 26.5km NE of MOUNT MARSH MULGA DOWNS,WA,119.402778,-22.334722,0,6,0,FM,acma-radio
+9021342,John Perry Tower RBS Tropicana Mine Area 200 km ENE of PINJIN,WA,124.551667,-29.241944,0,4,0,FM,acma-radio
+9021397,Kangaroo Pit RBS Cloudbreak Mine 130 km NNW NEWMAN,WA,119.302778,-22.284722,0,6,0,FM,acma-radio
+9021797,WTS 2 B1 Admin 32km west of Tom Price WESTERN TURNER 2,WA,117.481667,-22.689167,0,3,0,FM,acma-radio
+9021849,Comms Mast Millennium Minerals Site NULLAGINE GOLD MINE,WA,120.418056,-21.809167,0,1,0,FM,acma-radio
+9022327,Ramp A Mine Site COLLINSVILLE,QLD,147.791944,-20.544444,0,1,0,FM,acma-radio
+9022869,Radio Base Station No 2 Tower nearby Open Cut Mine SILVERGRASS MINE,WA,117.306944,-22.322222,0,5,0,FM,acma-radio
+9024286,Southern Cross Austereo 70 Franklin Street ADELAIDE,SA,138.596944,-34.927778,0,2,0,FM,acma-radio
+9026962,Comms Mast RBS-9  Hill 853 WEST ANGELAS DEP F MINE,WA,118.851667,-23.191389,0,5,0,FM,acma-radio
+10000105,Mining Area C Terminal  NEWMAN,WA,118.9225,-22.905833,0,10,0,FM,acma-radio
+10000469,Telstra Site 34 Broome Road FLOWERDALE,VIC,145.281944,-37.3425,0,3,0,FM,acma-radio
+10000915,Kimberley Communications Tristania Street KUNUNURRA,WA,128.741389,-15.772778,0,1,0,FM,acma-radio
+10001094,Flow FM Site 20 Inkerman St WATCHEM,VIC,142.863611,-36.150278,0,1,0,FM,acma-radio
+10001580,Ravensworth Open Cut Mine Site off Lemington Road RAVENSWORTH,NSW,151.004167,-32.434722,0,3,0,FM,acma-radio
+10001591,Amrun MIA Tower Hey River Amrun Road AMRUN,QLD,141.633889,-12.928611,0,7,0,FM,acma-radio
+10001666,Comms Mast Moolarben Coal Mine  4250 Ulan Rd ULAN,NSW,149.782778,-32.292778,0,3,0,FM,acma-radio
+10001789,BHP 50m tower WRC RBS2 WESTERN RIDGE MINE,WA,119.619167,-23.400556,0,6,0,FM,acma-radio
+10002029,Council Site Golf Course Road PORT DENISON,WA,114.931667,-29.271111,0,2,0,FM,acma-radio
+10002139,ABC Studio  Cavanagh Street DARWIN,NT,130.844444,-12.463611,0,1,0,FM,acma-radio
+10002156,Resonate Site Lot 25 Warrego Hwy 4km SE of DALBY,QLD,151.292778,-27.206667,0,1,0,FM,acma-radio
+10002199,Council Services Site Lot 263 Rarrapul St GALIWINKU,NT,135.565833,-12.024167,0,1,0,FM,acma-radio
+10002287,Radio Base Station No 7 Tower nearby Open Cut Pit YANDI BILLIARD S MINE,WA,119.274722,-22.812778,0,5,0,FM,acma-radio
+10002513,Ramp 7 North nearby Open Cut Pit PEAK DOWNS MINE,QLD,148.136667,-22.191111,0,3,0,FM,acma-radio
+10002515,Ramp 3 South nearby Open Cut Pit PEAK DOWNS MINE,QLD,148.226944,-22.275556,0,3,0,FM,acma-radio
+10002516,Ramp 12 South nearby Open Cut Pit PEAK DOWNS MINE,QLD,148.244167,-22.338889,0,3,0,FM,acma-radio
+10002544,Radio 6HFM Mast Cmty Radio Site off Mills Road East MARTIN,WA,116.034722,-32.0925,0,1,0,FM,acma-radio
+10002637,Council Office Lot 97 KALKARINDJI,NT,130.836944,-17.445556,0,1,0,FM,acma-radio
+10002860,Horsham CBD 41m Lattice Tower 19 McLachlan Street HORSHAM,VIC,142.200833,-36.713611,0,2,0,FM,acma-radio
+10003270,FM Mast  Radio West Site 103 Warburton Rd MARRACOONDA,WA,117.500556,-33.649444,0,1,0,FM,acma-radio
+10004218,New Central Tower Mine Site GOONYELLA MINE,QLD,147.978889,-21.764444,0,4,0,FM,acma-radio
+10004439,Carpenters Hill Broadcast Site via Abbotts Road GLEN INNES,NSW,151.6925,-29.716389,0,1,0,FM,acma-radio
+10004482,Main FM Tower BAI Comms Site  Mt Canobolas  Lot 119 Mt Canobolas Rd CANOBOLAS,NSW,148.983611,-33.343056,0,4,0,FM,acma-radio
+10004483,Standby FM Tower BAI Comms Site  Mt Canobolas  Lot 119  Mt Canobolas Rd CANOBOLAS,NSW,148.983333,-33.342778,0,1,0,FM,acma-radio
+10004551,2MTM Studios 30 Maule St COONAMBLE,NSW,148.390833,-30.953333,0,1,0,FM,acma-radio
+10004556,Council Building Gym Puti Drive BATHURST ISLAND,NT,130.638611,-11.760556,0,1,0,FM,acma-radio
+10004560,Broadcast Building Pirlangimpi Street PULARUMPI,NT,130.418056,-11.403611,0,1,0,FM,acma-radio
+10004712,Nominal Planning Site Lot 12 corner Elizabeth Drive and Luddenham Rd LUDDENHAM,NSW,150.721389,-33.866111,1,0,0,AM,acma-radio
+10004776,FM Mast  Radio West Site Lot 4548 Gibbs Rd COLLIE,WA,116.193611,-33.369444,0,1,0,FM,acma-radio
+10004838,Council Tower Shire Works Depot  Lot 220  Kearney St NANNUP,WA,115.760556,-33.981667,0,2,0,FM,acma-radio
+10005031,2GZFM Studio 3/2 Gateway Crescent ORANGE,NSW,149.121944,-33.300278,0,2,0,FM,acma-radio
+10006118,Meriton Serviced Apartment Building 11 Albert Lane CHATSWOOD,NSW,151.179444,-33.798611,0,1,0,FM,acma-radio
+10006356,Telstra Site Trust Reserve Grounds  94 Whittlesea-Kinglake Rd KINGLAKE,VIC,145.336389,-37.525278,0,1,0,FM,acma-radio
+10006571,Repeater Site Byerwen Mine off Wollombi Rd SUTTOR,QLD,147.865278,-21.289444,0,2,0,FM,acma-radio
+10006788,Broadcast site Hillcrest Rd MINIMBAH,NSW,152.376111,-32.158056,0,1,0,FM,acma-radio
+10006828,2DBO STL Tower 47-59 Wingewarra St DUBBO,NSW,148.602222,-32.249722,0,1,0,FM,acma-radio
+10006841,SCA Site Old Boola Rd TYERS,VIC,146.471389,-38.130833,0,1,0,FM,acma-radio
+10006963,Broadcast Site 10 Bank Place  MANSFIELD,VIC,146.088889,-37.053611,0,1,0,FM,acma-radio
+10007121,5AU Mast  Spencer Gulf Bcers Site 5 Gosse St ROXBY DOWNS,SA,136.894444,-30.552778,0,1,0,FM,acma-radio
+10007240,Woodie Woodie Mine Site Admin Off Woodie Woodie Rd WOODIE WOODIE,WA,121.222778,-21.653056,0,2,0,FM,acma-radio
+10007340,Palm Island Bakery 432 Farm Rd GREAT PALM ISLAND,QLD,146.5875,-18.721389,0,1,0,FM,acma-radio
+10007437,3GCR Tower off Haunted Hills Rd HERNES OAK,VIC,146.313333,-38.201667,0,1,0,FM,acma-radio
+10007448,Broadcast Site Small Bay Rd GREAT PALM ISLAND,QLD,146.585556,-18.758611,0,1,0,FM,acma-radio
+10007642,Skid 05 Channar H Mine Site PARABURDOO,WA,117.855556,-23.304722,0,3,0,FM,acma-radio
+10007952,EARC Office 52 Maduimungun Rd MILINGIMBI,NT,134.922778,-12.104444,0,1,0,FM,acma-radio
+10007954,EARC Building 81 Galipu Rd YIRRKALA,NT,136.888611,-12.251944,0,1,0,FM,acma-radio
+10008113,BHP WH05 Tower  JIMBLEBAR MINE EAST,WA,120.153889,-23.377222,0,6,0,FM,acma-radio
+10008393,Darley Community Hub Building 3 182 Halletts Way DARLEY,VIC,144.4225,-37.653333,0,1,0,FM,acma-radio
+10008897,Santos Castle Hill RT off Arcadia Valley South Rd CASTLE HILL GASFIELD,QLD,148.887222,-25.348056,0,2,0,FM,acma-radio
+10009035,52 Sholl Street ROEBOURNE,WA,117.144722,-20.774722,0,1,0,FM,acma-radio
+10009040,60 Jane Street CUNNAMULLA,QLD,145.685278,-28.067222,0,1,0,FM,acma-radio
+10009172,Woodlands Rd 3km NE of SANDFORD,TAS,147.511389,-42.938056,1,0,0,AM,acma-radio
+10009483,Eastern light tower Memorial Oval William Street BROKEN HILL,NSW,141.450278,-31.955556,0,1,0,FM,acma-radio
+10009801,Broadcast/Comm Site 31.5 km SE of  PERENJORI,WA,116.541111,-29.580556,0,2,0,FM,acma-radio
+10009940,BHP 50m tower Grand Central South Flank Mining Area NEWMAN,WA,118.903056,-22.978889,0,10,0,FM,acma-radio
+10010522,Amateur Tower Mount Manton 5.5 km East of YASS,NSW,148.971667,-34.851111,0,1,0,FM,acma-radio
+10010554,2QN-2MOR Office 250 Anstruther St ECHUCA,VIC,144.748611,-36.126389,0,2,0,FM,acma-radio
+10010564,Culcairn Hotel 37 Railway Pde CULCAIRN,NSW,147.036944,-35.666944,0,1,0,FM,acma-radio
+10010565,HPON Mast Water Ski Club  156 Melbourne St MULWALA,NSW,146.001667,-35.995,0,1,0,FM,acma-radio
+10010939,Shamrock Hotel 35-37 Mayall St BALRANALD,NSW,143.562778,-34.64,0,1,0,FM,acma-radio
+10010941,Brewarrina RSL Club 21 Bourke St BREWARRINA,NSW,146.856389,-29.962222,0,1,0,FM,acma-radio
+10010987,Snow FM Site off Gunningrach Rd BOMBALA,NSW,149.216389,-36.851111,0,2,0,FM,acma-radio
+10011035,Rebel Site 200-204 Walker Drive KOORALBYN,QLD,152.823333,-28.093333,0,2,0,FM,acma-radio
+10011314,Council Mast Mt Tully  Lot 1 Endeavour Valley Rd COOKTOWN,QLD,145.195833,-15.483056,0,2,0,FM,acma-radio
+10011668,Heritage Centre Cnr Ettridge and Dearman St LOCK,SA,135.756111,-33.568333,0,2,0,FM,acma-radio
+10012070,Yakabindie Mine Site off Goldfields Highway 55 km N of LEINSTER,WA,120.583333,-27.423333,0,1,0,FM,acma-radio
+10012299,Broadcast Site 135 Byrnes Street MAREEBA,QLD,145.423056,-16.993333,0,1,0,FM,acma-radio
+10012459,Top Station Chairlift Kings Cross Road MOUNT SELWYN,NSW,148.455278,-35.906111,0,1,0,FM,acma-radio
+10012955,Bulga Open Cut Mine Site 1 km West of Paynes Crossing Road SINGLETON,NSW,151.098056,-32.671111,0,3,0,FM,acma-radio
+10013267,Santos Bottle Tree RT off Arcadia Valley South Rd BOTTLE TREE GASFIELD,QLD,148.801389,-25.216944,0,2,0,FM,acma-radio
+10013572,SCA Studio 10 Russell Street TOOWOOMBA,QLD,151.954722,-27.559722,0,1,0,FM,acma-radio
+10013586,Burnie Bcing Site The Nut  Browns Rd STANLEY,TAS,145.300556,-40.761389,0,2,0,FM,acma-radio
+10014157,FM Radio Mast Rail Loop  Wilpinjong Coal Mine WILPINJONG,NSW,149.875556,-32.341667,0,2,0,FM,acma-radio
+10014447,Jacinth Ambrosia Mine site 5 km NE of YELLABINNA,SA,132.216944,-30.870556,0,3,0,FM,acma-radio
+10014563,Outback Communities Authority Site Leigh Creek Aerodrome Road LEIGH CREEK,SA,138.404444,-30.599167,0,1,0,FM,acma-radio
+10014755,TEABBA Mast 35 Mamarika Rd UMBAKUMBA,NT,136.813333,-13.858889,0,1,0,FM,acma-radio
+10015846,Cmty Radio Mast Doody's Hill Lookout  Doody's Hill Rd PORT HUON,TAS,146.938333,-43.148056,0,1,0,FM,acma-radio
+10015912,Broadcast Site 2 Wodehouse St DERBY,WA,123.641667,-17.313889,0,1,0,FM,acma-radio
+10016137,FM Mast Council Offices  104 Hovell St WODONGA,VIC,146.89,-36.122778,0,1,0,FM,acma-radio
+10016201,Bills Bar Robinson Street CORAL BAY,WA,113.773889,-23.141389,0,1,0,FM,acma-radio
+10016203,Jettech Site Stanfields Hill 2 km SW of ACTON PARK,TAS,147.468333,-42.893889,0,1,0,FM,acma-radio
+10016420,RBS1  Koodaideri Mine KOODAIDERI,WA,119.048056,-22.521667,0,5,0,FM,acma-radio
+10017424,Karlawinda Gold Mine 57.8 km SE of NEWMAN,WA,120.096667,-23.761944,0,1,0,FM,acma-radio
+10017570,Council Mast   Council Works Depot  Bradford St DYSART,QLD,148.34,-22.591111,0,1,0,FM,acma-radio
+10017884,Riverina Bcasters Site adj Wheel of Fortune Trig  464 Bozzers Rd OURA,NSW,147.559444,-35.049167,0,2,0,FM,acma-radio
+10018390,Rio Tinto Winu Repeater Site 335 km E of  PORT HEDLAND,WA,121.759444,-20.7325,0,1,0,FM,acma-radio
+10018801,Broadcast Site Roberts St BEMM RIVER,VIC,148.968333,-37.756111,0,1,0,FM,acma-radio
+10019048,Southern Mine Site HAIL CREEK,QLD,148.406389,-21.512222,0,4,0,FM,acma-radio
+10019183,Flow FM Site Cullivel Rd URANA,NSW,146.379722,-35.279444,0,1,0,FM,acma-radio
+10019235,Comms Mast  CORUNNA DOWNS MINE,WA,119.673889,-21.443889,0,3,0,FM,acma-radio
+10020025,RBS001 Ore Processing Facility ELIWANA MINE,WA,116.829722,-22.4725,0,6,0,FM,acma-radio
+10020501,Comms Mast RBS-13 WEST ANGELAS DEP C MINE,WA,118.656111,-23.144167,0,5,0,FM,acma-radio
+10020502,Comms Mast RBS-14 WEST ANGELAS DEP D MINE,WA,118.646389,-23.178056,0,5,0,FM,acma-radio
+10020758,New Ramp 26 Blackwater Mine BLACKWATER,QLD,148.804444,-23.7125,0,2,0,FM,acma-radio
+10021558,Telstra Tower Mt Oxley  Lot 13 Tarcoon Rd BOURKE,NSW,146.24,-30.198889,0,3,0,FM,acma-radio
+10021741,Boggabri Coal Mine Site 386 Leards Forrest Road BOGGABRI,NSW,150.145,-30.597778,0,3,0,FM,acma-radio
+10021744,Fletcher International Abattoir Factory Lot 5216 Settlement Road NARRIKUP,WA,117.791389,-34.835556,0,1,0,FM,acma-radio
+10021922,RBS1 Western Range  16.8 km 284TN of MOUNT PARABURDOO,WA,117.505833,-23.196111,0,5,0,FM,acma-radio
+10021927,RBS2 Western Range  23.4 km 287TN of MOUNT PARABURDOO,WA,117.445,-23.175278,0,5,0,FM,acma-radio
+10021980,GEMCO Site Cypress Rd ALYANGULA,NT,136.425278,-13.850556,0,1,0,FM,acma-radio
+10022072,8SAT Mast Cmty Radio Studios  Dardurr St WOOMERA,SA,136.824722,-31.200833,0,1,0,FM,acma-radio
+10022700,Ariah Park Memorial Hall 17 Pitt Street ARIAH PARK,NSW,147.22,-34.347778,0,1,0,FM,acma-radio
+10022962,Kirkwood Site off 12541 Gregory Developmental Rd DISNEY,QLD,146.970556,-21.791111,0,1,0,FM,acma-radio
+10023126,ACE Broadcast Site One Tree Hill Road ARARAT,VIC,142.89,-37.265,0,2,0,FM,acma-radio
+10023396,Radio Site adjacent to pool off Balamurra St NGUKURR,NT,134.733333,-14.73,0,2,0,FM,acma-radio
+10023476,Tetra Tower off Peak Downs Hwy CLERMONT MINE,QLD,147.648611,-22.722222,0,6,0,FM,acma-radio
+10023639,Telstra Mast Poitrel Mine Rd POITREL MINE,QLD,148.249722,-22.043889,0,4,0,FM,acma-radio
+10025059,Bigge Borefield  Cloudbreak Mine MULGA DOWNS,WA,119.224167,-22.299167,0,6,0,FM,acma-radio
+10026624,2 North New Peak Downs Mine Site WINCHESTER,QLD,148.1975,-22.210556,0,3,0,FM,acma-radio
+10026681,UWJV-TA803-TWR 03 Wambo Mine 8km WNW WARKWORTH,NSW,150.938611,-32.5425,0,3,0,FM,acma-radio
+10027985,Broadcast Site 13 Mars Street TULLY,QLD,145.920278,-17.9375,0,1,0,FM,acma-radio
+10028217,Caval Ridge North Tower  6.5 km SSE of MORANBAH,QLD,148.057778,-22.062222,0,4,0,FM,acma-radio
+10028341,FM Broadcast Trailer near processing plant GRUYERE GOLD MINE,WA,123.849444,-27.991667,0,2,0,FM,acma-radio
+10028422,FF02  18.7 km WSW of Mount Brockman HAMERSLEY RANGE,WA,117.133333,-22.516111,0,4,0,FM,acma-radio
+10028480,Community broadcast site Marsh State Forest via Upper Lansdowne KILLABAKH,NSW,152.416944,-31.6875,0,1,0,FM,acma-radio
+10028560,Ramp 10 Comms Tower Caval Ridge Mine MORANBAH,QLD,148.114444,-22.181667,0,4,0,FM,acma-radio
+10028561,Ramp 30 Comms Tower Caval Ridge Mine MORANBAH,QLD,148.050833,-22.124167,0,4,0,FM,acma-radio
+10028928,UCB Mast Rock Church  91 Learmonth St PORTLAND,VIC,141.592222,-38.3275,0,1,0,FM,acma-radio
+10029331,Broadcast Site Milikapiti Internal  MELVILLE ISLAND,NT,130.674167,-11.426111,0,1,0,FM,acma-radio
+10031066,Ops Mast site 28.5 km WSW of BELYANDO,QLD,146.37,-22.029167,0,4,0,FM,acma-radio
+10031795,Broadcast Mast Offices  MacMahon Contractors KING OF THE HILLS MINE,WA,121.163611,-28.683056,0,3,0,FM,acma-radio
+10032288,Dispatch Hut off Gibihi Road DAWSON MINE,QLD,150.051111,-24.5975,0,3,0,FM,acma-radio
+10032635,Batchelor Institute Training Centre Mara St BORROLOOLA,NT,136.303889,-16.051111,0,1,0,FM,acma-radio
+10033338,UWJV-TA805-TWR 05 Wambo Mine 2 km NNW WARKWORTH,NSW,151.015833,-32.561111,0,3,0,FM,acma-radio
+10033632,Tamworth Regional Council GPoV - Bald Hill TAMWORTH,NSW,150.958333,-31.075556,0,1,0,FM,acma-radio
+10034328,Mine Central Tower Mcphee Mine Site  31 km SSE of Horrigan Peak NULLAGINE,WA,120.098889,-21.590833,0,3,0,FM,acma-radio
+10035784,Goldfields Highway LEONORA,WA,121.372222,-29.198889,0,1,0,FM,acma-radio
+10035787,Queensland Police Site Lattice Tower Shuttlewood Ct Mount Kynoch TOOWOOMBA,QLD,151.954167,-27.509444,0,1,0,FM,acma-radio
+10035890,3GRR Tower Echuca Rec Reserve  36 Sutton St ECHUCA,VIC,144.761944,-36.135833,0,1,0,FM,acma-radio
+10035934,Council Depot Cnr Depot and Yangan Rd WARWICK,QLD,152.055556,-28.209167,0,1,0,FM,acma-radio
+10035942,Kens Bore NPI  Kens Bore Mine HAMERSLEY RANGE,WA,116.224444,-22.095278,0,4,0,FM,acma-radio
+10036307,Broadcast Site BertBert St BESWICK,NT,133.117222,-14.559722,0,3,0,FM,acma-radio
+10036789,HPON Mast 5 McCourt Rd YARRAWONGA,NT,130.991944,-12.4725,0,1,0,FM,acma-radio
+10036924,3SEY Standby Site 57 Pollard Street SEYMOUR,VIC,145.150278,-37.031389,0,1,0,FM,acma-radio
+10038071,BS1 RBS1 Rio Tinto Brockman Syncline 1 Minesite  19.8 km WSW of Mt Brockman NANUTARRA,WA,117.129167,-22.533889,0,5,0,FM,acma-radio
+10038312,Comms Tower SES Site  20 Cook St IVANHOE,NSW,144.300278,-32.898056,0,1,0,FM,acma-radio
+10038431,Redcliffe Tower Lenora-Nambi Rd LAVERTON,WA,121.564167,-28.466667,0,1,0,FM,acma-radio
+10038632,Comms Tower Ulan Coal Mine 4505 Ulan Rd ULAN,NSW,149.753611,-32.256389,0,3,0,FM,acma-radio
+10038709,Cmty Radio Monopole Kia Ora Lookout  Kia Ora Hill Rd BARRINGTON,NSW,151.946389,-31.962222,0,1,0,FM,acma-radio
+10039645,FlowFM Site Sansons Ridge  1966 Lake Cargelligo Rd LAKE CARGELLIGO,NSW,146.533889,-33.272222,0,1,0,FM,acma-radio
+10039671,30m Tower Seven Qld Site  Wooroi Forest Drive TEWANTIN,QLD,153.002222,-26.416667,0,2,0,FM,acma-radio
+10039735,FlowFM Site 923 Brikkle Rd WILLENABRINA,VIC,142.278889,-36.091389,0,1,0,FM,acma-radio
+10039872,Lattice Tower Central Pit Pilgangoora Lithium Mine 89km SSE PORT HEDLAND,WA,118.901389,-21.059722,0,3,0,FM,acma-radio
+10040221,Tarrawonga in Pit Office Site 14 km NE of BOGGABRI,NSW,150.171111,-30.636944,0,3,0,FM,acma-radio
+10040398,Bruno Lewis 13km N of Laverton-Leonora Rd LEONORA,WA,121.613889,-28.801111,0,1,0,FM,acma-radio
+10040589,Ace Radio Mast 21 Great Ocean Rd APOLLO BAY,VIC,143.671389,-38.76,0,1,0,FM,acma-radio
+10040622,HPON Mast NT Broadcasters Studios  30 Daly St DARWIN,NT,130.836667,-12.457222,0,1,0,FM,acma-radio
+10041200,Comms Site RBS-19 WEST ANGELAS DEP H MINE,WA,118.872778,-23.13,0,5,0,FM,acma-radio
+10041201,Comms Mast RBS-21 WEST ANGELAS WEST HILL MINE,WA,118.584444,-23.116944,0,5,0,FM,acma-radio
+10041399,BS1 RBS2 Brockman Syncline 1 Minesite 62 km WNW TOM PRICE,WA,117.210278,-22.510556,0,5,0,FM,acma-radio
+10041840,Cowal Mine North Wall Lake Cowal Road WEST WYALONG,NSW,147.408333,-33.631389,0,4,0,FM,acma-radio
+10041954,Kostera Reserve Lighting Tower cnr Recreation Rd and Canning Rd KALAMUNDA,WA,116.055833,-31.976111,0,1,0,FM,acma-radio
+10041995,Pit 28 - P25 Dawson Mine MOURA,QLD,150.038056,-24.881389,0,3,0,FM,acma-radio
+10042804,Upper Cane NPI  33 km NE of Mt Stuart HAMERSLEY RANGE,WA,116.250556,-22.187778,0,4,0,FM,acma-radio
+10042823,Broadcast Site 131 Crocker Road GOLDEN HEIGHTS,SA,139.931389,-34.184167,0,2,0,FM,acma-radio
+10043319,Mount Morgans Gold Mine Workshop Dome Mt Margaret  Mt Morgans Rd LAVERTON,WA,122.206389,-28.814444,0,1,0,FM,acma-radio
+10044210,Council Water Tower School Street MUNGALLALA,QLD,147.544167,-26.443889,0,1,0,FM,acma-radio
