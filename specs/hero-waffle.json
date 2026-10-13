@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 210,
+  "height": 500,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -42,7 +42,7 @@
       "titleFont": "Inter"
     }
   },
-  "description": "A 100-cell waffle showing online video reach in Australia in 2025.",
+  "description": "100 video tiles represent Australian adults. 95 filled tiles show the rounded share who used online video in the six months before the 2025 survey. Outlined tiles show the remaining share.",
   "data": {
     "sequence": {
       "start": 0,
@@ -57,37 +57,189 @@
       "as": "column"
     },
     {
-      "calculate": "9 - floor(datum.cell / 10)",
+      "calculate": "floor(datum.cell / 10)",
       "as": "row"
+    },
+    {
+      "calculate": "datum.cell < 95 ? 'Used online video' : 'Remaining adults'",
+      "as": "group"
+    },
+    {
+      "calculate": "datum.cell < 95 ? 95 : 5",
+      "as": "share"
     }
   ],
-  "mark": {
-    "type": "square",
-    "filled": true,
-    "size": 310,
-    "cornerRadius": 2
-  },
-  "encoding": {
-    "x": {
-      "field": "column",
-      "type": "ordinal",
-      "axis": null
-    },
-    "y": {
-      "field": "row",
-      "type": "ordinal",
-      "axis": null
-    },
-    "color": {
-      "condition": {
-        "test": "datum.cell < 95",
-        "value": "#1f6f5b"
+  "layer": [
+    {
+      "name": "hero_tiles",
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 3,
+        "strokeWidth": 1,
+        "opacity": 1
       },
-      "value": "#d8ded8",
-      "legend": null
+      "encoding": {
+        "x": {
+          "field": "column",
+          "type": "ordinal",
+          "axis": null,
+          "scale": {
+            "type": "band",
+            "padding": 0.15
+          }
+        },
+        "y": {
+          "field": "row",
+          "type": "ordinal",
+          "axis": null,
+          "scale": {
+            "type": "band",
+            "padding": 0.15,
+            "range": [
+              95,
+              {
+                "expr": "height"
+              }
+            ]
+          }
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Used online video",
+              "Remaining adults"
+            ],
+            "range": [
+              "#1f6f5b",
+              "#f7f3e8"
+            ]
+          },
+          "legend": {
+            "title": "One tile = 1 in 100 adults (rounded)",
+            "titleLimit": 300,
+            "orient": "bottom",
+            "columns": 1,
+            "symbolType": "square",
+            "symbolStrokeColor": "#63736f"
+          }
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum.cell < 95",
+            "value": "#1f6f5b"
+          },
+          "value": "#63736f"
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "title": "Group"
+          },
+          {
+            "field": "share",
+            "type": "quantitative",
+            "title": "Share of adults (%)",
+            "format": ".0f"
+          }
+        ]
+      }
     },
-    "tooltip": {
-      "value": "95 in every 100 Australians used online video in the past six months"
+    {
+      "name": "hero_play_icons",
+      "transform": [
+        {
+          "filter": "datum.cell < 95"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "shape": "triangle-right",
+        "filled": true,
+        "color": "white",
+        "opacity": 1,
+        "size": {
+          "expr": "pow(min(width / 35, (height - 95) / 18), 2)"
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "column",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "row",
+          "type": "ordinal"
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "title": "Group"
+          },
+          {
+            "field": "share",
+            "type": "quantitative",
+            "title": "Share of adults (%)",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "name": "hero_total",
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "95 in 100",
+        "font": "Fraunces",
+        "fontSize": {
+          "expr": "width < 360 ? 28 : 36"
+        },
+        "fontWeight": 700,
+        "align": "left",
+        "baseline": "top",
+        "color": "#1f6f5b"
+      },
+      "encoding": {
+        "x": {
+          "value": 0
+        },
+        "y": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "name": "hero_context",
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "used online video in the past six months",
+        "font": "Inter",
+        "fontSize": {
+          "expr": "width < 360 ? 11 : 13"
+        },
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": 0
+        },
+        "y": {
+          "value": 55
+        }
+      }
     }
-  }
+  ]
 }

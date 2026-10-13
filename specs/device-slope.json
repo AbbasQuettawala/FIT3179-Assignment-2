@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 470,
+  "height": 640,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -45,7 +45,7 @@
       "grid": false
     }
   },
-  "description": "A slopegraph showing how online video devices changed between 2021 and 2025.",
+  "description": "Lines comparing devices used to watch online video at home in 2021 and 2025.",
   "data": {
     "url": "data/video_devices.csv",
     "format": {
@@ -122,7 +122,7 @@
             "field": "percent",
             "type": "quantitative",
             "format": ".1f",
-            "title": "Share (%)"
+            "title": "Used (%)"
           }
         ]
       }
@@ -131,7 +131,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 85
+        "size": 136
       },
       "encoding": {
         "x": {
@@ -187,7 +187,7 @@
           "expr": "datum.device === 'Games console' ? -5 : datum.device === 'Apple TV' ? 5 : 0"
         },
         "font": "Inter",
-        "fontSize": 11,
+        "fontSize": 13,
         "fontWeight": 650
       },
       "encoding": {
@@ -261,7 +261,7 @@
         },
         "y2": {
           "value": {
-            "expr": "10 + 15 * length(split((width < 360 ? \"Smart TVs gain more than\\nphones here: online video is\\nalso a living-room habit, not\\njust a mobile one.\" : \"Smart TVs gain more than phones here: online video is also\\na living-room habit, not just a mobile one.\"), '\\n'))"
+            "expr": "10 + 15 * length(split((width < 360 ? \"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\" : \"Smart-TV use grew more than phone use. Streaming is part\\nof watching TV at home, not just on the go.\"), '\\n'))"
           }
         },
         "tooltip": {
@@ -279,7 +279,7 @@
       "mark": {
         "type": "text",
         "text": {
-          "expr": "width < 360 ? \"Smart TVs gain more than\\nphones here: online video is\\nalso a living-room habit, not\\njust a mobile one.\" : \"Smart TVs gain more than phones here: online video is also\\na living-room habit, not just a mobile one.\""
+          "expr": "width < 360 ? \"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\" : \"Smart-TV use grew more than phone use. Streaming is part\\nof watching TV at home, not just on the go.\""
         },
         "font": "Inter",
         "fontSize": 11,

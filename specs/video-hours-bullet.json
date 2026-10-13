@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 430,
+  "height": 600,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -45,7 +45,7 @@
       "grid": false
     }
   },
-  "description": "Bullet bars comparing reported weekly video hours by age with the national benchmark.",
+  "description": "Average weekly viewing hours by age, with short vertical lines showing the national average for the chosen format.",
   "data": {
     "url": "data/video_hours_age.csv",
     "format": {
@@ -72,7 +72,15 @@
           "Pay TV",
           "Pay-per-view"
         ],
-        "name": "Compare format  "
+        "labels": [
+          "Free-to-air TV",
+          "Paid streaming",
+          "Short-form video",
+          "Catch-up TV",
+          "Pay TV",
+          "Pay-per-view"
+        ],
+        "name": "Video type  "
       }
     }
   ],
@@ -85,7 +93,7 @@
     {
       "mark": {
         "type": "bar",
-        "height": 30,
+        "height": 42,
         "color": "#dfe7df"
       },
       "encoding": {
@@ -120,7 +128,7 @@
       "mark": {
         "type": "bar",
         "cornerRadiusEnd": 4,
-        "height": 22
+        "height": 32
       },
       "encoding": {
         "y": {
@@ -182,12 +190,12 @@
             "field": "national_hours",
             "type": "quantitative",
             "format": ".1f",
-            "title": "National"
+            "title": "National average (hours)"
           },
           {
             "field": "base_n",
             "type": "quantitative",
-            "title": "Respondents (base n)"
+            "title": "Survey participants"
           },
           {
             "field": "metric",
@@ -201,7 +209,7 @@
         "type": "tick",
         "color": "#d94d72",
         "thickness": 3,
-        "size": 28
+        "size": 40
       },
       "encoding": {
         "y": {
@@ -328,7 +336,7 @@
         },
         "y2": {
           "value": {
-            "expr": "10 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (width < 360 ? \"Older adults spend longer\\nwith broadcast TV. Reach\\nalone misses how much viewing\\ntime this medium occupies.\" : \"Older adults spend longer with broadcast TV. Reach alone\\nmisses how much viewing time this medium occupies.\") : (width < 360 ? \"The longest bar shows heavier\\nviewing, not a larger\\naudience: hours are averaged\\nacross each age-group base.\" : \"The longest bar shows heavier viewing, not a larger\\naudience: hours are averaged across each age-group base.\")), '\\n'))"
+            "expr": "10 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (width < 360 ? \"Older adults spend longer\\nwatching free-to-air TV.\\nCounting viewers alone misses\\nhow much time they spend.\" : \"Older adults spend longer watching free-to-air TV.\\nCounting viewers alone misses how much time they spend.\") : (width < 360 ? \"The longest bar means more\\ntime watching, not more\\nviewers. These are averages\\nfor each survey group.\" : \"The longest bar means more time watching, not more\\nviewers. These are averages for each survey group.\")), '\\n'))"
           }
         },
         "tooltip": {
@@ -360,7 +368,7 @@
       "mark": {
         "type": "text",
         "text": {
-          "expr": "(videoFormat === 'Free-to-air TV') ? (width < 360 ? \"Older adults spend longer\\nwith broadcast TV. Reach\\nalone misses how much viewing\\ntime this medium occupies.\" : \"Older adults spend longer with broadcast TV. Reach alone\\nmisses how much viewing time this medium occupies.\") : (width < 360 ? \"The longest bar shows heavier\\nviewing, not a larger\\naudience: hours are averaged\\nacross each age-group base.\" : \"The longest bar shows heavier viewing, not a larger\\naudience: hours are averaged across each age-group base.\")"
+          "expr": "(videoFormat === 'Free-to-air TV') ? (width < 360 ? \"Older adults spend longer\\nwatching free-to-air TV.\\nCounting viewers alone misses\\nhow much time they spend.\" : \"Older adults spend longer watching free-to-air TV.\\nCounting viewers alone misses how much time they spend.\") : (width < 360 ? \"The longest bar means more\\ntime watching, not more\\nviewers. These are averages\\nfor each survey group.\" : \"The longest bar means more time watching, not more\\nviewers. These are averages for each survey group.\")"
         },
         "font": "Inter",
         "fontSize": 11,

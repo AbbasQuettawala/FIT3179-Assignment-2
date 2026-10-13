@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="An interactive visual essay about how Australians watch, listen to and access digital media.">
-    <meta name="theme-color" content="#10231f">
-    <title>One Country, Different Feeds — Australian Digital Media</title>
+    <meta name="description" content="Explore how Australians watch video, listen to audio and use online news, and how age and internet access shape the picture.">
+    <meta name="theme-color" content="#172a3a">
+    <title>One Country, Different Feeds | Australian Digital Media</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css?v=20261013-2">
     <script src="https://cdn.jsdelivr.net/npm/vega@6.2.0" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.1.0" defer></script>
-    <script src="assets/main.js" defer></script>
+    <script src="assets/main.js?v=20261013-2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#story">Skip to the story</a>
@@ -22,11 +22,20 @@
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Return to the top">Different Feeds</a>
       <nav aria-label="Story sections">
-        <a href="#shift">The shift</a>
-        <a href="#generations">Generations</a>
-        <a href="#ears-eyes">Ears &amp; eyes</a>
-        <a href="#access">Access</a>
+        <a href="#shift">Viewing</a>
+        <a href="#generations">Age groups</a>
+        <a href="#ears-eyes">Audio &amp; news</a>
+        <a href="#access">Getting online</a>
       </nav>
+      <label class="palette-control" for="palette-choice">
+        Try a colour palette
+        <select id="palette-choice" aria-label="Colour palette for the page and charts">
+          <option value="ocean">Ocean &amp; amber</option>
+          <option value="editorial">Ink &amp; coral</option>
+          <option value="plum">Plum &amp; gold</option>
+          <option value="original">Original green &amp; pink</option>
+        </select>
+      </label>
     </header>
 
     <main id="story">
@@ -34,197 +43,199 @@
         <div class="hero-copy reveal">
           <p class="eyebrow">Australia · 2017–2026</p>
           <h1 id="hero-title">One country.<br><em>Different feeds.</em></h1>
-          <p class="dek">Streaming has become ordinary. What Australians watch and hear has not become uniform: the mix varies by age, habit and access.</p>
-          <div class="hero-stat">
-            <strong>95%</strong>
-            <span>of Australian adults used an online video service in the previous six months in 2025.</span>
-          </div>
-          <p class="micro">Weighted survey estimate · ACMA 2025 · Hover or tap charts for detail</p>
+          <p class="dek">Online video is part of everyday life in Australia. Look beyond the national average to see how viewing and listening habits differ by age and place.</p>
+          <p class="micro">Explore the charts below. Hover or tap for details.</p>
         </div>
         <div class="hero-visual reveal" data-delay="1">
-          <div class="chart chart-hero" id="hero-waffle" aria-label="Waffle chart showing 95 of 100 Australians used online video in the previous six months"></div>
-          <p class="annotation">Online video is now a common starting point, not a niche activity. The remaining charts show why that shared access does not translate into a single set of viewing habits.</p>
-          <p class="chart-source">Source: <a href="#source-acma-watch">ACMA, How we watch and listen to content [1]</a>, QF7, 2025. This measure excludes free-to-air catch-up and free ad-supported streaming TV.</p>
+          <div class="viz-heading">
+            <div>
+              <p class="chart-kicker">Australian adults · 2025</p>
+              <h3>How common is online video?</h3>
+            </div>
+          </div>
+          <div class="chart chart-hero" id="hero-waffle" aria-label="100 video tiles represent Australian adults. 95 filled tiles show the rounded share who used online video in the six months before the 2025 survey. The other five tiles are outlined."></div>
+          <p class="annotation"><span>Using a service is not the same as watching often.</span> This counts adults who used online video at least once in six months. It does not show daily use or which services they chose.</p>
+          <p class="chart-source">Source: <a href="#source-acma-watch">ACMA, 2025 survey, QF7 [1]</a>. Rounded percentage. Excludes catch-up TV and free, ad-supported streaming TV channels.</p>
         </div>
         <a class="scroll-cue" href="#shift">Begin the story <span aria-hidden="true">↓</span></a>
       </section>
 
       <section class="chapter" id="shift" aria-labelledby="shift-title">
         <div class="chapter-heading reveal">
-          <p class="chapter-number">01 / The great unbundling</p>
-          <h2 id="shift-title">The television did not disappear.<br><em>Its centre of gravity moved.</em></h2>
-          <p>In 2017, free-to-air television reached seven in ten Australians each week while paid streaming reached fewer than three in ten. By 2025, those positions had crossed.</p>
+          <p class="chapter-number">01 / How viewing has changed</p>
+          <h2 id="shift-title">Streaming grew.<br><em>Free-to-air TV stayed.</em></h2>
+          <p>In 2017, weekly free-to-air TV viewing was far more common than paid streaming. By 2025, the order had reversed. Streaming had grown, but free-to-air TV still reached about half of Australian adults each week.</p>
         </div>
 
         <article class="viz-card viz-wide reveal">
           <div class="viz-heading">
             <div>
-              <p class="chart-kicker">Horizon chart · 10-point bands</p>
-              <h3>Paid streaming made the largest climb</h3>
+              <p class="chart-kicker">Weekly viewing · horizon chart</p>
+              <h3>Paid streaming grew the most</h3>
             </div>
-            <p class="chart-summary"><strong>+38.4 points</strong> from 2017 to 2025</p>
+            <p class="chart-summary"><strong>+38.4</strong> percentage points from 2017 to 2025</p>
           </div>
-          <div class="chart" id="media-horizon" aria-label="Horizon chart of change in four video viewing behaviours from 2017 to 2025"></div>
-          <p class="annotation"><span>The transition is uneven:</span> paid streaming expands while broadcast viewing contracts, but catch-up services also grow. That combination suggests a shift in delivery rather than the disappearance of television content. Darker bands fold another 10 percentage points into a row; green means an increase and pink a decrease. Short-form video starts in 2022, so its shorter window is not directly comparable with the full-period changes.</p>
-            <p class="chart-source">Source: ACMA QF4, 2017–2025. Each measure covers the past seven days. The free-to-air definition included self-recorded content through 2021; interpret the longer trend with that change in mind. <a href="#source-acma-watch">[1]</a></p>
+          <div class="chart" id="media-horizon" aria-label="Four rows showing changes in weekly video use. In the legend, + means growth and − means a fall; darker bands add 10 percentage points."></div>
+          <p class="annotation"><span>TV viewing can move online rather than disappear.</span> Paid streaming grew while free-to-air viewing fell, and catch-up TV also grew. Each darker band adds 10 percentage points of change. In the legend, + means growth and − means a fall. Short videos are measured from 2022, not 2017, so their change covers a shorter time.</p>
+          <p class="chart-source">Source: ACMA QF4, 2017–2025. Use in the past seven days. Until 2021, the free-to-air TV figure also included shows people recorded themselves; the later figures do not. A rise from 20% to 30%, for example, is a rise of 10 percentage points. <a href="#source-acma-watch">[1]</a></p>
         </article>
 
         <div class="viz-grid">
           <article class="viz-card reveal">
             <div class="viz-heading">
               <div>
-                <p class="chart-kicker">Connected scatterplot</p>
-                <h3>The crossover, traced year by year</h3>
+                <p class="chart-kicker">Viewing trends · connected scatterplot</p>
+                <h3>Streaming overtakes free-to-air TV</h3>
               </div>
             </div>
-            <div class="chart chart-tall" id="streaming-fta-connected" aria-label="Connected scatterplot comparing paid streaming and free-to-air television viewing"></div>
-            <p class="annotation"><span>Opposite national trends do not prove individual switching.</span> Moving right and down shows streaming becoming more widespread while free-to-air reach falls. People can use both, so this path is not a count of viewers moving from one service to another.</p>
-            <p class="chart-source">Source: ACMA, QF4, 2017–2025. Past-seven-day use. <a href="#source-acma-watch">[1]</a></p>
+            <div class="chart chart-tall" id="streaming-fta-connected" aria-label="A line connecting yearly percentages for paid streaming and free-to-air TV use"></div>
+            <p class="annotation"><span>A national trend is not the same as one person switching.</span> Following the line right and down shows more adults using paid streaming and fewer watching free-to-air TV. People can use both; the chart does not track viewers moving between services.</p>
+            <p class="chart-source">Source: ACMA QF4, 2017–2025. Use in the past seven days. <a href="#source-acma-watch">[1]</a></p>
           </article>
 
           <article class="viz-card dark-card reveal" data-delay="1">
             <div class="viz-heading">
               <div>
-                <p class="chart-kicker">Age × service matrix</p>
-                <h3>Shared access, different platform choices</h3>
+                <p class="chart-kicker">Services by age · heatmap</p>
+                <h3>Different ages choose different services</h3>
               </div>
             </div>
-            <div class="chart" id="age-media-heatmap" aria-label="Heatmap comparing six-month reach of eight selected video services across age groups"></div>
-            <p class="annotation"><span>Online video is not one interchangeable audience.</span> Comparing the service rows reveals how age patterns differ across platforms. A broad-reach service and a strongly age-skewed service need different audience strategies; the weekly profiles below show whether those differences extend beyond video.</p>
-            <p class="chart-source">Source: ACMA QF7, 2025, previous six months. The same eight selected services appear in the bump chart. Each cell uses its age-group respondent base; percentages overlap and must not be added. <a href="#source-acma-watch">[1]</a></p>
+            <div class="chart" id="age-media-heatmap" aria-label="A colour-coded grid comparing use of eight video services by age group in the past six months"></div>
+            <p class="annotation"><span>A popular service does not appeal equally to every age group.</span> Compare each row to see which ages use that service most. Some services attract a wider range of ages than others, so one national figure can hide important differences.</p>
+            <p class="chart-source">Source: ACMA QF7, 2025. Use in the past six months. The same eight services appear in the ranking chart below. Each percentage refers to people in that age group who answered the question. People can use several services, so percentages must not be added. <a href="#source-acma-watch">[1]</a></p>
           </article>
         </div>
       </section>
 
       <section class="chapter chapter-tint" id="generations" aria-labelledby="generations-title">
         <div class="chapter-heading reveal">
-          <p class="chapter-number">02 / Seven generations, seven mixes</p>
+          <p class="chapter-number">02 / Seven age groups, different habits</p>
           <h2 id="generations-title">Different ages,<br><em>different media mixes.</em></h2>
-          <p>Younger Australians combine social video, subscriptions and streamed audio. Older adults spend more time watching free-to-air television. Change the format below to see how the age pattern shifts.</p>
+          <p>Younger adults often use short online videos, paid streaming and streamed music. Older adults spend more time watching free-to-air TV. Explore the charts to see how these habits differ by age.</p>
         </div>
 
         <article class="viz-card viz-wide reveal">
           <div class="viz-heading split-heading">
             <div>
-              <p class="chart-kicker">Interactive parallel coordinates</p>
-              <h3>Choose an age. Follow its whole profile.</h3>
+              <p class="chart-kicker">Weekly habits · parallel coordinates</p>
+              <h3>Pick an age group. Follow its line.</h3>
             </div>
-            <p class="interaction-cue">Use the selector inside the chart</p>
+            <p class="interaction-cue">Choose an age group below</p>
           </div>
-          <div class="chart" id="age-parallel-profile" aria-label="Interactive parallel coordinates chart comparing age-group media profiles"></div>
-          <p class="annotation"><span>Age changes the mix, not simply how “digital” someone is.</span> The younger profile favours streamed music and short-form video, while the older profile leans towards broadcast formats. Selecting an age highlights its entire weekly mix; these are group differences, not a prediction of how today’s young people will behave as they grow older.</p>
-          <p class="chart-source">Source: ACMA QF4 and QH3, 2025. All axes show past-seven-day use within each age group. The profiles describe groups, not individual listeners or changes as people age. <a href="#source-acma-watch">[1]</a></p>
+          <div class="chart" id="age-parallel-profile" aria-label="Choose an age group to follow its line across six weekly viewing and listening activities"></div>
+          <p class="annotation"><span>Age groups mix old and new media.</span> Younger adults use more streamed music and short videos, while older adults use more TV and radio. Select an age group to compare its weekly habits. This is a snapshot of different people, not a prediction of how their habits will change as they get older.</p>
+          <p class="chart-source">Source: ACMA QF4 and QH3, 2025. All percentages show use in the past seven days within each age group. These are group averages, not the habits of one person. <a href="#source-acma-watch">[1]</a></p>
         </article>
 
         <div class="viz-grid asymmetrical">
           <article class="viz-card reveal">
             <div class="viz-heading">
               <div>
-                <p class="chart-kicker">Bullet chart</p>
+                <p class="chart-kicker">Viewing hours · bullet chart</p>
                 <h3>Viewing time depends on age and format</h3>
               </div>
-              <p class="chart-summary small"><strong>Choose a format</strong> compare like with like</p>
+              <p class="chart-summary small"><strong>Choose a format</strong> compare age groups</p>
             </div>
-            <div class="chart" id="video-hours-bullet" aria-label="Bullet chart of reported weekly video hours by age"></div>
-            <p class="annotation"><span>Reach and time spent answer different questions.</span> The older groups’ longer free-to-air viewing means that widespread streaming access does not make broadcast viewing time irrelevant. Switch formats to see why one national “screen-time average” would hide distinct habits. Pink ticks mark the matching national mean; the separate means cannot be summed.</p>
-            <p class="chart-source">Source: ACMA QF5 average hours, 2025, among past-week video viewers in the source table. Each format has its own respondent base. Means are shown separately and never added into a total. <a href="#source-acma-watch">[1]</a></p>
+            <div class="chart" id="video-hours-bullet" aria-label="Average weekly viewing hours by age, with short vertical lines showing the national average for the selected format"></div>
+            <p class="annotation"><span>How many people watch is different from how long they watch.</span> Older adults spend longer watching free-to-air TV, so it still takes up a sizeable part of their week. Choose another format to compare the pattern. Each short vertical line marks the national average for that format.</p>
+            <p class="chart-source">Source: ACMA QF5, 2025. Average hours reported by people who watched video in the past week. Each format uses its own group of survey participants, so the averages must not be added together. <a href="#source-acma-watch">[1]</a></p>
           </article>
 
           <aside class="pull-quote reveal" data-delay="1">
-            <p>“Digital” is not a generation. It is a layer added to different lives.</p>
-            <span>Reading the age profiles</span>
+            <p>Being online does not mean leaving TV and radio behind.</p>
+            <span>What the age groups show</span>
           </aside>
         </div>
 
         <article class="viz-card viz-wide reveal">
           <div class="viz-heading">
             <div>
-              <p class="chart-kicker">Bump chart</p>
+              <p class="chart-kicker">Service rankings · bump chart</p>
               <h3>YouTube and Netflix lead this selection</h3>
             </div>
             <p class="chart-summary"><strong>70% / 65%</strong> used them in 2025</p>
           </div>
-          <div class="chart chart-tall" id="video-service-bump" aria-label="Bump chart ranking eight selected online video services from 2021 to 2025"></div>
-          <p class="annotation"><span>Stable leaders can hide a changing market.</span> YouTube and Netflix remain prominent within this selection, but rank alone conceals the distance between services. Read the percentage in each tooltip alongside its position: a change in reach need not produce a change in rank.</p>
-          <p class="chart-source">Source: ACMA QF7, past-six-month use, 2021–2025. Ranks compare the same eight selected services every year; these are not ranks across all platforms. Facebook and Instagram are outside this selection. <a href="#source-acma-watch">[1]</a></p>
+          <div class="chart chart-tall" id="video-service-bump" aria-label="Lines showing the popularity ranking of eight selected video services from 2021 to 2025"></div>
+          <p class="annotation"><span>Rank does not tell the whole story.</span> YouTube and Netflix lead these eight services, but their positions do not show how far apart they are. Hover or tap to see the percentage: a service can gain users without moving up a place.</p>
+          <p class="chart-source">Source: ACMA QF7, 2021–2025. Use in the past six months. The ranking compares the same eight services each year, not every service on the market. Facebook and Instagram are not included. <a href="#source-acma-watch">[1]</a></p>
         </article>
 
         <article class="viz-card viz-wide reveal">
           <div class="viz-heading">
             <div>
-              <p class="chart-kicker">Slopegraph</p>
-              <h3>The smart TV became the streaming hub</h3>
+              <p class="chart-kicker">Devices · slopegraph</p>
+              <h3>More people stream through smart TVs</h3>
             </div>
           </div>
-          <div class="chart" id="device-slope" aria-label="Slopegraph showing changes in devices used for online video between 2021 and 2025"></div>
-          <p class="annotation"><span>Streaming increasingly belongs in the living room.</span> Smart-TV use rises while computer use falls, showing that internet-delivered video is not confined to a personal computer or phone. Because respondents could choose several devices, the slopes do not establish that one device replaced another.</p>
+          <div class="chart" id="device-slope" aria-label="Lines comparing the devices people used to watch online video at home in 2021 and 2025"></div>
+          <p class="annotation"><span>Streaming is not just for phones and computers.</span> The rise in smart-TV use shows how online video has become part of watching TV at home. People could select several devices, so these lines do not show that one device replaced another.</p>
           <p class="chart-source">Source: ACMA QF1, devices used to watch online video at home, 2021 and 2025. Multiple devices could be selected. <a href="#source-acma-watch">[1]</a></p>
         </article>
       </section>
 
       <section class="chapter" id="ears-eyes" aria-labelledby="ears-title">
         <div class="chapter-heading reveal">
-          <p class="chapter-number">03 / Ears, eyes and trust</p>
-          <h2 id="ears-title">Audio travels with us.<br><em>Trust does not.</em></h2>
-          <p>Music streaming is more common among younger adults; radio remains prominent later in life and in transit. Online news and information reach extends across ages, but access and trust are different questions.</p>
+          <p class="chapter-number">03 / Listening and keeping informed</p>
+          <h2 id="ears-title">What we listen to.<br><em>Which news we trust.</em></h2>
+          <p>Younger adults are more likely to stream music, while radio remains popular among older adults and while travelling. People of all ages find news online. Using it does not necessarily mean trusting it.</p>
         </div>
 
         <div class="viz-grid">
           <article class="viz-card reveal">
             <div class="viz-heading">
               <div>
-                <p class="chart-kicker">Audio age heatmap</p>
-                <h3>The dial and the playlist trade places</h3>
+                <p class="chart-kicker">Listening by age · heatmap</p>
+                <h3>Different ages tune in differently</h3>
               </div>
             </div>
-            <div class="chart" id="audio-age-heatmap" aria-label="Heatmap of audio format use by age in 2025"></div>
-            <p class="annotation"><span>“Audio audience” hides distinct listening habits.</span> Streamed music is stronger among younger adults, whereas AM radio has a much older audience. Treating all audio as one market would obscure the different groups reached by each delivery format; this survey does not identify the reasons behind their choices.</p>
-            <p class="chart-source">Source: ACMA QH3, listened in previous seven days, 2025. Base n available on hover. <a href="#source-acma-watch">[1]</a></p>
+            <div class="chart" id="audio-age-heatmap" aria-label="A colour-coded grid comparing weekly listening habits by age in 2025"></div>
+            <p class="annotation"><span>There is no single listening habit shared by everyone.</span> Younger adults are more likely to stream music, while AM radio is more common among older adults. Grouping all listening together would hide these differences. The survey shows what people use, not why they choose it.</p>
+            <p class="chart-source">Source: ACMA QH3, 2025. Listening in the past seven days. DAB+ is digital radio broadcast over the air, not internet radio. Hover or tap to see how many people answered each question. <a href="#source-acma-watch">[1]</a></p>
           </article>
 
           <article class="viz-card reveal" data-delay="1">
             <div class="viz-heading">
               <div>
-                <p class="chart-kicker">Bipartite network</p>
-              <h3>Radio is closely tied to travel</h3>
+                <p class="chart-kicker">Listening locations · network</p>
+                <h3>FM radio is often heard on the move</h3>
               </div>
             </div>
-            <div class="chart" id="audio-location-network" aria-label="Network connecting audio formats with listening locations"></div>
-            <p class="annotation"><span>Listening context helps distinguish otherwise similar formats.</span> FM’s strong connection with travel contrasts with the broader locations used for streamed audio. This makes “where people listen” useful alongside “what they use”, but does not prove that commuting causes a format preference. Choose “Trace a format” to follow just its three links and reveal each location’s percentage. Width uses that format’s listeners as the base; links overlap and are not flows of people.</p>
-            <p class="chart-source">Source: ACMA QH16, 2025. Location percentages use each format’s listeners as the base; they are not parts of a whole. <a href="#source-acma-watch">[1]</a></p>
+            <div class="chart" id="audio-location-network" aria-label="Lines linking six types of audio to three listening locations; thicker lines mean a larger share of that format's listeners"></div>
+            <p class="annotation"><span>Where people listen matters too.</span> FM radio is closely linked with travelling, while streamed audio is used in a wider mix of places. Choose a format to highlight its three lines. A thicker line means more of that format’s listeners use it there, not that more people listen to it overall.</p>
+            <p class="chart-source">Source: ACMA QH16, 2025. Each percentage is based on listeners of that format. Someone can listen in several places, so the lines do not represent separate groups and must not be added together. <a href="#source-acma-watch">[1]</a></p>
           </article>
         </div>
 
         <article class="viz-card viz-wide news-card reveal">
           <div class="viz-heading">
             <div>
-              <p class="chart-kicker">News use and trust</p>
-              <h3>Online reach is high. Confidence is conditional.</h3>
+              <p class="chart-kicker">Online news · dot plot</p>
+              <h3>Finding news online does not mean trusting it</h3>
             </div>
-            <p class="chart-summary"><strong>94%</strong> accessed news and information online in 2025</p>
+            <p class="chart-summary"><strong>94%</strong> used online news and information in the six months before the 2025 survey</p>
           </div>
-          <div class="chart" id="news-age" aria-label="Dot plot of six-month online news and information reach by age"></div>
-          <p class="annotation"><span>Online news and information reaches beyond younger audiences.</span> Even the oldest groups report widespread use, so the sharper age differences in entertainment should not be generalised to every online activity. This question measures access at least once in six months—not daily news use, preferred brands or trust.</p>
+          <div class="chart" id="news-age" aria-label="Dots showing the percentage of each age group that used online news and information in the past six months"></div>
+          <p class="annotation"><span>Older adults go online for news and information too.</span> The age gap here is smaller than for many entertainment services. But this only shows whether people used online news and information in the past six months, not how often, which sources they chose or whether they trusted them.</p>
           <div class="takeaway-row">
-            <p><strong>54%</strong><span>trust the news they personally use</span></p>
-            <p><strong>21%</strong><span>trust news encountered on social media</span></p>
+            <p><strong>54%</strong><span>trust the news they use</span></p>
+            <p><strong>21%</strong><span>trust news on social media</span></p>
             <p><strong>19%</strong><span>trust news from AI chatbots</span></p>
           </div>
-          <p class="chart-source">Sources: chart: ACMA QD8, 2025 <a href="#source-acma-internet">[2]</a>. Separate headline findings below the chart: University of Canberra, Digital News Report Australia 2026 <a href="#source-news-report">[4]</a>. Those trust questions have their own survey base and are not plotted on the reach chart.</p>
+          <p class="chart-source">Sources: age chart: ACMA QD8, 2025 <a href="#source-acma-internet">[2]</a>. Trust figures: University of Canberra, Digital News Report Australia 2026 <a href="#source-news-report">[4]</a>. These come from a separate survey with different participants; they are not part of the age chart.</p>
         </article>
       </section>
 
       <section class="chapter chapter-dark" id="access" aria-labelledby="access-title">
         <div class="chapter-heading reveal">
-          <p class="chapter-number">04 / Access sets the ceiling</p>
-          <h2 id="access-title">Before a feed can compete<br><em>a connection must work.</em></h2>
-          <p>Content choice sits on top of affordability, connectivity and digital ability. Australia’s national inclusion score is 73.6, but place still changes the room people have to participate.</p>
+          <p class="chapter-number">04 / Taking part online</p>
+          <h2 id="access-title">Access means more<br><em>than a connection.</em></h2>
+          <p>People also need affordable internet and the skills to use it. Australia’s digital inclusion score is 73.6 out of 100, but the barriers people face differ from place to place.</p>
         </div>
 
         <div class="map-intro reveal">
           <p class="big-number">5.9</p>
-          <p><strong>index points</strong> separate capital-city and regional digital inclusion scores.</p>
-          <p class="map-note">Digital inclusion combines access, affordability and digital ability on a 0–100 scale. A higher score means fewer barriers. State averages describe access conditions; they do not measure media consumption or explain individual preferences.</p>
+          <p><strong>points</strong> separate the digital inclusion scores for capital cities and regional areas.</p>
+          <p class="map-note">The Australian Digital Inclusion Index (ADII) scores internet access, affordability and digital skills from 0 to 100. A higher score means fewer barriers to taking part online. A state’s average score does not tell us what people watch or listen to.</p>
         </div>
         <label class="map-control" for="state-focus">Highlight your state or territory
           <select id="state-focus">
@@ -238,85 +249,85 @@
         <article class="viz-card map-card reveal">
           <div class="viz-heading">
             <div>
-              <p class="chart-kicker">Map 1 · Choropleth</p>
-              <h3>Digital inclusion across physical Australia</h3>
+              <p class="chart-kicker">Map 1 · Shaded states</p>
+              <h3>Where is it easier to take part online?</h3>
             </div>
           </div>
-          <div class="chart map-chart" id="adii-choropleth" aria-label="Choropleth map of Australian Digital Inclusion Index scores by state and territory"></div>
-          <p class="annotation"><span>Land area can dominate the impression of inequality.</span> A large state occupies more ink without necessarily representing more people. Tasmania’s lower score and ACT’s higher score are easy to overlook geographically; the population cartogram changes the visual emphasis without changing the index values.</p>
-          <p class="chart-source">Sources: ADII 2025, 2024 fieldwork <a href="#source-adii">[3]</a>; ABS boundaries <a href="#source-abs-boundaries">[5]</a>. Scores are on a 0–100 index, not percentages. Both inclusion maps use the same 68–80 colour domain.</p>
+          <div class="chart map-chart" id="adii-choropleth" aria-label="A shaded map showing digital inclusion scores for each state and territory; darker shading means a higher score"></div>
+          <p class="annotation"><span>A bigger state does not always mean more people.</span> Large areas draw the eye, while Tasmania’s lower score and the ACT’s higher score can be harder to spot. The next map uses population to set the size of each state’s circle, making smaller places easier to compare.</p>
+          <p class="chart-source">Sources: ADII 2025, using data collected in 2024 <a href="#source-adii">[3]</a>; ABS map boundaries <a href="#source-abs-boundaries">[5]</a>. Scores are out of 100, not percentages. Both inclusion maps use the same colour scale, from 68 to 80. This type of shaded map is called a choropleth.</p>
         </article>
 
         <article class="viz-card map-card reveal">
           <div class="viz-heading"><div>
-            <p class="chart-kicker">Map 2 · Dorling cartogram</p>
-            <h3>Give people—not land—the space</h3>
+            <p class="chart-kicker">Map 2 · Population circles</p>
+            <h3>Size shows people, not land</h3>
           </div></div>
-          <div class="chart map-chart" id="adii-cartogram" aria-label="Population cartogram: circle areas represent residents and colour represents digital inclusion"></div>
-          <p class="annotation"><span>Population changes which places dominate the picture.</span> NSW and Victoria gain prominence because they contain many more residents than the geographically larger western and northern jurisdictions. Colour still describes inclusion conditions, not how many people are excluded. This view deliberately separates the scale of a population from its average index score.</p>
-          <p class="chart-source">Sources: ADII 2025, 2024 fieldwork <a href="#source-adii">[3]</a>; ABS March 2026 population <a href="#source-abs-population">[7]</a>. The outlined reference circle represents one million residents at the same scale. Circle area is proportional to residents; positions are displaced to prevent overlap and preserve approximate geography, not distance. Area and colour have different reference periods: March 2026 residents versus ADII 2024 fieldwork. Population includes all ages and is not an estimate of adult media audiences.</p>
+          <div class="chart map-chart" id="adii-cartogram" aria-label="A map of population circles: bigger circles mean more residents, while darker shading means a higher digital inclusion score"></div>
+          <p class="annotation"><span>Population gives a different picture from land area.</span> NSW and Victoria stand out because they have more residents than the much larger areas of WA and the NT. Colour still shows how easy it is to take part online, on average. It does not count how many people are left out.</p>
+          <p class="chart-source">Sources: ADII 2025, using 2024 data <a href="#source-adii">[3]</a>; ABS March 2026 population <a href="#source-abs-population">[7]</a>. In this circle map (a Dorling cartogram), circle area grows in proportion to population. The outlined circle shows one million people at the same scale. Circles are moved slightly to avoid overlap, so positions are not exact. Size and colour describe different years. Population includes all ages, not just adult media users.</p>
         </article>
 
         </div>
 
         <article class="viz-card viz-wide reveal">
           <div class="viz-heading"><div>
-            <p class="chart-kicker">Paired comparison · Metro and regional Australia</p>
-            <h3>Broadcast habits remain stronger outside the metros</h3>
+            <p class="chart-kicker">City and regional habits · dumbbell chart</p>
+            <h3>Regional audiences use more free-to-air TV and FM</h3>
           </div></div>
-          <div class="chart" id="metro-regional" aria-label="Dumbbell chart comparing six weekly media behaviours between metro and regional respondents"></div>
-          <p class="annotation"><span>The geographic difference depends on the medium.</span> Regional respondents report more free-to-air and FM use, while the metro–regional podcast estimates sit much closer together. That makes a blanket “regional audiences are offline” claim misleading. These descriptive gaps do not control for age, income or other population differences, and no significance claim is made.</p>
-          <p class="chart-source">Source: ACMA QF4 and QH3, 2025, past-week use; source-defined Metro/Regional groups <a href="#source-acma-watch">[1]</a>. Tooltips give both respondent bases and regional-minus-metro percentage-point gaps. This geography is not a state breakdown or an ADII remoteness classification.</p>
+          <div class="chart" id="metro-regional" aria-label="Pairs of dots comparing six weekly media habits in ACMA's city and regional groups"></div>
+          <p class="annotation"><span>Regional does not mean offline.</span> Regional participants report more free-to-air TV and FM listening, yet podcast use is similar in both groups. The chart does not adjust for differences in age, income or other factors, so these gaps do not tell us why habits differ.</p>
+          <p class="chart-source">Source: ACMA QF4 and QH3, 2025. Use in the past week, using ACMA’s city (“Metro”) and “Regional” groups <a href="#source-acma-watch">[1]</a>. Hover or tap for participant counts and the regional percentage minus the city percentage. Small gaps may reflect who was surveyed. These groups differ from the areas used in the digital inclusion study.</p>
         </article>
 
-        <p class="map-note">Supporting context: broadcast radio also depends on physical infrastructure. The next two maps show licensed facilities—not listening figures, signal coverage, reception quality or proof that a transmitter is operating. DAB+ broadcast radio is distinct from internet radio and streaming.</p>
+        <p class="map-note">Radio needs broadcast sites too. The next two maps show licensed transmitter sites. They do not show who is listening, where a signal can be received or whether a transmitter is operating. DAB+ is digital radio broadcast over the air, rather than through an internet connection.</p>
 
         <div class="viz-grid maps-grid">
         <article class="viz-card map-card reveal">
           <div class="viz-heading"><div>
-            <p class="chart-kicker">Map 3 · Proportional symbols</p>
-            <h3>Digital radio has a concentrated physical footprint</h3>
+            <p class="chart-kicker">Map 3 · Sized circles</p>
+            <h3>Digital-radio sites cluster around cities</h3>
           </div></div>
-          <div class="chart map-chart" id="radio-symbol-map" aria-label="Proportional-symbol map of issued digital-radio licence records at actual transmitter sites"></div>
-          <p class="annotation"><span>“Digital” does not always mean delivered over the internet.</span> DAB+ relies on broadcast sites, which cluster around a relatively small set of urban areas in this register. Larger circles mean more licence records at a site, not a larger audience or stronger reception. Use the city views to separate nearby facilities; the register cannot tell us whether a particular household can receive them.</p>
-          <p class="chart-source">State labels orient the national view; city views are labelled close-ups. Sources: ACMA Broadcast Transmitter Excel, DR sheet, 13 July 2026 <a href="#source-acma-radio">[6]</a>; ABS boundaries <a href="#source-abs-boundaries">[5]</a>. Issued records only, grouped by Site Id. Symbol area starts at zero and is proportional to the record count.</p>
+          <div class="chart map-chart" id="radio-symbol-map" aria-label="Circles at digital-radio transmitter sites; a larger circle means more issued licence records at that site"></div>
+          <p class="annotation"><span>Digital radio still needs transmitters.</span> Registered DAB+ sites cluster around a small number of cities. A bigger circle means more licence records at that site, not more listeners or better reception. Choose a city for a closer view; these records cannot tell us whether a particular home receives a signal.</p>
+          <p class="chart-source">Sources: ACMA Broadcast Transmitter Excel, DR sheet, 13 July 2026 <a href="#source-acma-radio">[6]</a>; ABS boundaries <a href="#source-abs-boundaries">[5]</a>. Only issued licences are included, grouped by site ID. Circle area grows in proportion to the number of records: two records use twice the area of one. This is a proportional-symbol map.</p>
         </article>
 
         <article class="viz-card map-card reveal">
           <div class="viz-heading"><div>
             <p class="chart-kicker">Map 4 · Dot map</p>
-            <h3>AM/FM facilities extend beyond the capitals</h3>
+            <h3>AM and FM sites are spread more widely</h3>
           </div></div>
-          <div class="chart map-chart" id="radio-dot-map" aria-label="Dot map of unique sites with issued AM and FM transmitter licences"></div>
-          <p class="annotation"><span>AM/FM infrastructure is more geographically dispersed than DAB+ sites.</span> The inland facilities are an important contrast with the urban concentrations in the preceding map. This gives context to the continued role of broadcast formats, but cannot explain the metro–regional listening gap by itself. One dot represents a real registered site, not a randomly placed listener; empty areas do not necessarily lack reception.</p>
-          <p class="chart-source">Sources: ACMA Broadcast Transmitter Excel, AM and FM sheets, 13 July 2026 <a href="#source-acma-radio">[6]</a>; ABS boundaries <a href="#source-abs-boundaries">[5]</a>. Issued licences only. AM/FM records sharing a Site Id become one dot; different IDs remain separate even when co-located. City views reveal overlapping sites.</p>
+          <div class="chart map-chart" id="radio-dot-map" aria-label="One dot for each registered site with an issued AM or FM radio licence"></div>
+          <p class="annotation"><span>AM and FM sites extend well beyond the city clusters above.</span> Their wider spread adds background to the story of radio use, but cannot explain the city–regional listening gap on its own. Each dot is a registered site, not a listener. A blank area does not necessarily mean there is no reception.</p>
+          <p class="chart-source">Sources: ACMA Broadcast Transmitter Excel, AM and FM sheets, 13 July 2026 <a href="#source-acma-radio">[6]</a>; ABS boundaries <a href="#source-abs-boundaries">[5]</a>. Issued licences only. Records with the same site ID share one dot. Different IDs stay separate, even at the same location. Choose a city to see nearby sites more clearly.</p>
         </article>
 
         </div>
 
         <div class="closing reveal">
           <p class="eyebrow">The takeaway</p>
-          <h2>The future of Australian media is not one platform winning.</h2>
-          <p>It is a common digital layer carrying very different habits—and an access gap deciding who can take part fully.</p>
+          <h2>Australians do not all follow the same feed.</h2>
+          <p>Streaming is common, but TV, radio and online services still play different roles. Age, location and the ability to get online are all part of the story.</p>
           <a href="#top">Read again ↑</a>
         </div>
       </section>
     </main>
 
     <section class="source-notes" id="sources" aria-labelledby="sources-title">
-      <h2 id="sources-title">Sources &amp; reading notes</h2>
-      <p>ACMA is the Australian Communications and Media Authority. Its figures estimate behaviour among Australian adults; percentages are weighted to represent the population. A person can use several services, so their percentages can overlap. ADII is the Australian Digital Inclusion Index: higher scores indicate better access, affordability and digital ability.</p>
+      <h2 id="sources-title">Where the data comes from</h2>
+      <p>ACMA is the Australian Communications and Media Authority. Its survey results are adjusted, or “weighted”, to better represent Australian adults. A person can use several services, so the percentages do not form a single total. ADII is the Australian Digital Inclusion Index: a higher score means better internet access, affordability and digital skills.</p>
       <ol>
-        <li id="source-acma-watch"><a href="https://www.acma.gov.au/sites/default/files/2026-02/How%20we%20watch%20and%20listen%20to%20content%20data%20tables.xlsx">ACMA — How we watch and listen to content (XLSX)</a>. 2025 survey; report released 5 March 2026 (the workbook URL is dated February); trends use the labelled 2017–2025 waves. QF4: weekly viewing; QF5: separate mean hours by format; QF7: six-month service reach; QF1: devices used for online video at home; QH3: weekly audio; QH16: locations among each format’s listeners. Weighted percentages are multiplied by 100; base n is read from “Column n”, not positive responses. Age and Metro/Regional groups come from PBI BANNER sheets. Ranks use a fixed eight-service selection; horizon bands show percentage-point change from the first measured wave. The FTA definition included self-recorded content through 2021. Multiple-response percentages overlap; small differences are not claimed to be statistically significant. Rights: <a href="https://www.acma.gov.au/copyright">ACMA copyright policy</a>; consult source-specific notices.</li>
-        <li id="source-acma-internet"><a href="https://www.acma.gov.au/sites/default/files/2026-02/How%20we%20use%20the%20internet%20data%20tables.xlsx">ACMA — How we use the internet (XLSX)</a>. 2025 survey, published February 2026. QD8: news and information online during the previous six months, using the source’s survey filter and age-specific respondent denominators. Percentages are weighted, not simple respondent ratios. Broad information access is not equivalent to daily news use or trust. Rights: <a href="https://www.acma.gov.au/copyright">ACMA copyright policy</a>.</li>
-        <li id="source-adii"><a href="https://digitalinclusionindex.org.au/wp-content/uploads/2025/10/ADII-Report-2025_V6-Remediated.pdf">RMIT / Swinburne / Telstra — Australian Digital Inclusion Index 2025 (PDF)</a>. State scores and capital–regional comparison: page 11; methods: page 10; collection: 2024. Index scores run from 0–100 and are not percentages or media-use estimates. State values are transcribed without averaging them into a national score. See the <a href="https://dashboard.digitalinclusionindex.org.au/Total.aspx">official dashboard and its CC BY-NC-SA 4.0 terms</a>. The 2025 affordability methodology changed; this page does not compare it with previous editions.</li>
-        <li id="source-news-report"><a href="https://www.canberra.edu.au/research/centres/nmrc/digital-news-report-australia">University of Canberra — Digital News Report: Australia 2026</a>. Separate headline findings on trust in personally used news, social-media news and AI-chatbot news. These refer to the report’s Australian news-consumer survey, not ACMA’s age-group sample. They are supporting text, not part of the ACMA reach plot. Publisher attribution retained; consult the report for reuse terms.</li>
-        <li id="source-abs-boundaries"><a href="https://geo.abs.gov.au/arcgis/rest/services/ASGS2026/STE/MapServer">ABS — ASGS 2026 state and territory boundaries</a>. Released 22 July 2026. The eight states/territories are retained; Other Territories are excluded. Geometry is generalised at 0.05 degrees. Polygon rings are repaired by containment to preserve NSW and the ACT hole, then cleaned and simplified to 30% retained vertices using <a href="https://mapshaper.org/">Mapshaper 0.6.113</a>, then exported as TopoJSON. Geographic maps use Australian Albers equal-area; the cartogram intentionally displaces circles. State-label anchors are approximate cartographic positions, not facility coordinates; the ACT label is displaced with a leader. Boundaries are for presentation, not site-level spatial analysis. <a href="https://www.abs.gov.au/website-privacy-copyright-and-disclaimer">ABS copyright and attribution</a>.</li>
-        <li id="source-acma-radio"><a href="https://www.acma.gov.au/list-transmitters-licence-broadcast">ACMA — licensed broadcast transmitter register</a> (<a href="https://www.acma.gov.au/sites/default/files/2026-07/BroadcastTransmitterExcel.zip">Excel ZIP download</a>). Snapshot: 13 July 2026. AM, FM and DR sheets; only “Issued” records in the eight states/territories, excluding the Temporary Licences sheet. Repeated day/night assignments are deduplicated by band, licence, technical specification and Site Id; sites are then grouped by Site Id. GDA94 degrees/minutes/seconds are converted to decimal degrees, including rounded 60-second entries. Datum differences are below the display scale; no reception or coverage model is derived. Licence records do not guarantee operation. Licensed under <a href="https://creativecommons.org/licenses/by/2.5/au/">CC BY 2.5 AU</a>; adapted from ACMA.</li>
-        <li id="source-abs-population"><a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/mar-2026">ABS — National, state and territory population, March 2026</a>. Released 17 September 2026. <a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/mar-2026/310104.xlsx">Table 4 (XLSX)</a>, Data1: persons series for March 2026, extracted directly from the workbook. These latest available estimates at review are subject to revision. Area uses March 2026 population; colour uses ADII 2024 fieldwork, not a contemporaneous relationship. All ages are included; Other Territories are excluded. Circle radii use the square root of population and a deterministic collision layout. Population is not multiplied by ADII to estimate excluded people. <a href="https://www.abs.gov.au/website-privacy-copyright-and-disclaimer">ABS CC BY 4.0 attribution terms</a>.</li>
+        <li id="source-acma-watch"><a href="https://www.acma.gov.au/sites/default/files/2026-02/How%20we%20watch%20and%20listen%20to%20content%20data%20tables.xlsx">ACMA: How we watch and listen to content (Excel)</a>. Survey year: 2025. Report released 5 March 2026; the file’s web address is dated February. Earlier surveys provide the 2017–2025 trends. The questions cover weekly viewing (QF4), average hours for each format (QF5), video services used in six months (QF7), devices used at home (QF1), weekly listening (QH3) and listening locations (QH16). Workbook proportions are multiplied by 100 to show percentages. Participant counts come from “Column n”, not the number of people who answered yes. Age and city/regional groups come from the PBI BANNER sheets. Rankings use the same eight services each year. The horizon chart compares each activity with its first measured year. Free-to-air TV included self-recorded shows until 2021. People could choose several answers; small differences may reflect who was surveyed. See <a href="https://www.acma.gov.au/copyright">ACMA’s copyright policy</a> and any notices on the source files.</li>
+        <li id="source-acma-internet"><a href="https://www.acma.gov.au/sites/default/files/2026-02/How%20we%20use%20the%20internet%20data%20tables.xlsx">ACMA: How we use the internet (Excel)</a>. Survey year: 2025; published February 2026. Question QD8 asks about online news and information in the past six months. The chart keeps the survey’s rules about who was asked and uses the participant count for each age group. Percentages are weighted, rather than calculated directly from participant counts. Using online information does not necessarily mean reading news daily or trusting it. See <a href="https://www.acma.gov.au/copyright">ACMA’s copyright policy</a>.</li>
+        <li id="source-adii"><a href="https://digitalinclusionindex.org.au/wp-content/uploads/2025/10/ADII-Report-2025_V6-Remediated.pdf">RMIT / Swinburne / Telstra: Australian Digital Inclusion Index 2025 (PDF)</a>. Data collected in 2024. State scores and the capital-city/regional comparison are on page 11; the method is on page 10. Scores run from 0 to 100. They are not percentages and do not measure media use. State scores are copied from the source, not averaged to make a new national score. The way affordability is measured changed in 2025, so this page does not compare scores with earlier editions. See the <a href="https://dashboard.digitalinclusionindex.org.au/Total.aspx">official dashboard and its CC BY-NC-SA 4.0 licence terms</a>.</li>
+        <li id="source-news-report"><a href="https://www.canberra.edu.au/research/centres/nmrc/digital-news-report-australia">University of Canberra: Digital News Report: Australia 2026</a>. The three trust figures describe news people use, news on social media and news from AI chatbots. They come from this report’s survey of Australian news consumers, not the ACMA participants in the age chart. They are shown separately to avoid mixing the two surveys. See the report for permission to reuse its findings.</li>
+        <li id="source-abs-boundaries"><a href="https://geo.abs.gov.au/arcgis/rest/services/ASGS2026/STE/MapServer">Australian Bureau of Statistics (ABS): ASGS 2026 state and territory boundaries</a>. Released 22 July 2026. Maps include the eight states and territories, but not the ABS category “Other Territories”. The outlines are simplified at 0.05 degrees. <a href="https://mapshaper.org/">Mapshaper 0.6.113</a> repairs the outlines around NSW and the ACT, removes small errors, keeps 30% of the outline points and saves them as TopoJSON map files. The geographic maps use Australian Albers equal-area projection, which keeps land areas in proportion. Labels are placed for readability; the ACT label has a line pointing to its location. Population circles are moved to avoid overlap. These simplified maps are for display, not precise measurements of individual sites. See <a href="https://www.abs.gov.au/website-privacy-copyright-and-disclaimer">ABS copyright and credit requirements</a>.</li>
+        <li id="source-acma-radio"><a href="https://www.acma.gov.au/list-transmitters-licence-broadcast">ACMA: licensed broadcast transmitter register</a> (<a href="https://www.acma.gov.au/sites/default/files/2026-07/BroadcastTransmitterExcel.zip">download the Excel files as a ZIP</a>). Data dated 13 July 2026. Only records marked “Issued” in the AM, FM and DR sheets are used, within the eight states and territories. Temporary licences are excluded. Duplicate day/night entries are removed using the band, licence, technical specification and site ID; records are then grouped by site ID. Coordinates in degrees, minutes and seconds (GDA94) are converted to decimal degrees, including entries rounded to 60 seconds. Small differences between coordinate systems are not visible at this map scale. No signal coverage is calculated, and a licence does not prove a transmitter is operating. Adapted from ACMA under <a href="https://creativecommons.org/licenses/by/2.5/au/">CC BY 2.5 AU</a>.</li>
+        <li id="source-abs-population"><a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/mar-2026">ABS: National, state and territory population, March 2026</a>. Released 17 September 2026. Figures come directly from the March 2026 population entries in the Data1 sheet of <a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/mar-2026/310104.xlsx">Table 4 (Excel)</a>. These estimates may be revised. Circle size shows March 2026 population; colour shows digital inclusion from 2024, so the two measures describe different years. Population includes all ages in the eight states and territories, excluding “Other Territories”. Circle areas, not widths, grow in proportion to population; circles are moved apart so they do not overlap. Population is not multiplied by the inclusion score to count people left out, and it is not a count of media users. See <a href="https://www.abs.gov.au/website-privacy-copyright-and-disclaimer">ABS CC BY 4.0 licence terms</a>.</li>
       </ol>
-      <p>Sources checked and page updated <time datetime="2026-10-06">6 October 2026</time>. Hover or tap marks for values; use the labelled controls for age, video format, audio format, state and city comparisons. Charts show descriptive patterns, not causal effects. Processed data and source references are available in the <a href="data/sources.csv">downloadable source register</a>.</p>
-      <p>External assets: <a href="https://fonts.google.com/specimen/Inter">Inter</a> and <a href="https://fonts.google.com/specimen/Fraunces">Fraunces</a> typefaces via Google Fonts; <a href="https://vega.github.io/">Vega, Vega-Lite and Vega-Embed</a> render the charts. No externally supplied decorative images are used.</p>
+      <p>Sources last checked <time datetime="2026-10-06">6 October 2026</time>. Page updated <time datetime="2026-10-13">13 October 2026</time>. Hover or tap for values, and use the menus to compare ages, formats and places. The charts show patterns, not what caused them. Download the <a href="data/sources.csv">list of data sources and preparation notes</a>.</p>
+      <p>Fonts: <a href="https://fonts.google.com/specimen/Inter">Inter</a> and <a href="https://fonts.google.com/specimen/Fraunces">Fraunces</a> from Google Fonts. Charts use <a href="https://vega.github.io/">Vega, Vega-Lite and Vega-Embed</a>. No decorative images from other sources are used.</p>
     </section>
 
     <footer>
@@ -325,16 +336,16 @@
         <p>Created by Abbas Quettawala for FIT3179 Data Visualisation 2 · October 2026</p>
       </div>
       <div>
-        <p class="footer-title">Method &amp; ethics</p>
-        <p>Survey estimates are weighted and rounded for display. “Base n” is the respondent denominator. Survey waves in which a selected category was not measured are omitted. Multiple-response answers are separate percentages and must not be added. State inclusion scores are contextual evidence, not a causal explanation of media habits.</p>
+        <p class="footer-title">How to read the numbers</p>
+        <p>Survey results are adjusted to better represent the population, then rounded for display. Tooltips show how many people answered the question. Missing years are left out, not shown as zero. People can choose more than one answer, so percentages must not be added. State scores describe internet access, affordability and skills, not the reasons for someone’s media choices.</p>
       </div>
       <div>
         <p class="footer-title">AI acknowledgement</p>
-        <p>Generative AI assisted with code, data extraction, source checking, narrative drafting, design and debugging. Abbas is responsible for reviewing the final submission and understanding its data and design decisions.</p>
+        <p>Generative AI helped with code, extracting and checking data, writing, design and fixing errors. Abbas is responsible for reviewing the work and understanding the data and design choices.</p>
       </div>
       <div class="footer-links">
-        <a href="data/sources.csv">Source register</a>
-        <a href="specs/manifest.json">Chart manifest</a>
+        <a href="data/sources.csv">Data sources</a>
+        <a href="specs/manifest.json">Chart list</a>
       </div>
     </footer>
   </body>

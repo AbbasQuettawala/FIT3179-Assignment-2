@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 615,
+  "height": 900,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -45,7 +45,7 @@
       "grid": false
     }
   },
-  "description": "Dorling cartogram: area represents March 2026 residents; colour separately represents ADII 2024 fieldwork.",
+  "description": "A map of population circles: area shows March 2026 residents, while colour shows digital inclusion based on 2024 data.",
   "data": {
     "url": "data/population_cartogram.csv",
     "format": {
@@ -122,7 +122,7 @@
             ]
           },
           "legend": {
-            "title": "ADII score",
+            "title": "Digital inclusion score",
             "orient": "top"
           }
         },
@@ -141,7 +141,7 @@
             "field": "score",
             "type": "quantitative",
             "format": ".1f",
-            "title": "ADII index score"
+            "title": "Digital inclusion score (out of 100)"
           }
         ],
         "opacity": {
@@ -157,7 +157,7 @@
       "mark": {
         "type": "text",
         "font": "Inter",
-        "fontSize": 12,
+        "fontSize": 14,
         "fontWeight": 750
       },
       "encoding": {
@@ -166,10 +166,10 @@
         },
         "color": {
           "condition": {
-            "test": "datum.score >= 75",
+            "test": "contrast('white', scale('color', datum.score)) > contrast('#000000', scale('color', datum.score))",
             "value": "white"
           },
-          "value": "#10231f"
+          "value": "#000000"
         },
         "opacity": {
           "condition": {
@@ -210,7 +210,7 @@
           }
         },
         "tooltip": {
-          "value": "Area reference: one million residents"
+          "value": "This circle represents one million residents"
         }
       }
     },
@@ -225,11 +225,11 @@
         "type": "text",
         "text": [
           "1 million residents",
-          "Area key · March 2026"
+          "Circle size · March 2026"
         ],
         "align": "left",
         "font": "Inter",
-        "fontSize": 11,
+        "fontSize": 13,
         "lineHeight": 15,
         "color": "#10231f"
       },
@@ -289,7 +289,7 @@
         },
         "y2": {
           "value": {
-            "expr": "10 + 15 * length(split((width < 360 ? \"NSW gains visual weight when\\nresidents, not land,\\ndetermine area. Colour still\\nmeasures inclusion, not\\naudience size.\" : \"NSW gains visual weight when residents, not land,\\ndetermine area. Colour still measures inclusion, not\\naudience size.\"), '\\n'))"
+            "expr": "10 + 15 * length(split((width < 360 ? \"NSW stands out when size\\nshows people rather than\\nland. Colour shows digital\\ninclusion, not how many\\npeople use media.\" : \"NSW stands out when size shows people rather than land.\\nColour shows digital inclusion, not how many people use\\nmedia.\"), '\\n'))"
           }
         },
         "tooltip": {
@@ -311,7 +311,7 @@
       "mark": {
         "type": "text",
         "text": {
-          "expr": "width < 360 ? \"NSW gains visual weight when\\nresidents, not land,\\ndetermine area. Colour still\\nmeasures inclusion, not\\naudience size.\" : \"NSW gains visual weight when residents, not land,\\ndetermine area. Colour still measures inclusion, not\\naudience size.\""
+          "expr": "width < 360 ? \"NSW stands out when size\\nshows people rather than\\nland. Colour shows digital\\ninclusion, not how many\\npeople use media.\" : \"NSW stands out when size shows people rather than land.\\nColour shows digital inclusion, not how many people use\\nmedia.\""
         },
         "font": "Inter",
         "fontSize": 11,

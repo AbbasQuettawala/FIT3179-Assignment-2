@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 370,
+  "height": 680,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -42,7 +42,7 @@
       "titleFont": "Inter"
     }
   },
-  "description": "Four horizon rows with 10-percentage-point bands folded onto a shared baseline.",
+  "description": "Four rows showing changes in weekly video use. Each darker band adds 10 percentage points; in the legend, + means growth and − means a fall.",
   "data": {
     "url": "data/horizon_trends.csv",
     "format": {
@@ -137,7 +137,7 @@
           },
           "legend": {
             "title": [
-              "Change vs first measured year",
+              "Change since first year shown",
               "(percentage points)"
             ],
             "titleLimit": 290,
@@ -150,7 +150,7 @@
         "tooltip": [
           {
             "field": "metric",
-            "title": "Medium"
+            "title": "Activity"
           },
           {
             "field": "year",
@@ -248,7 +248,7 @@
           },
           "legend": {
             "title": [
-              "Change vs first measured year",
+              "Change since first year shown",
               "(percentage points)"
             ],
             "titleLimit": 290,
@@ -261,7 +261,7 @@
         "tooltip": [
           {
             "field": "metric",
-            "title": "Medium"
+            "title": "Activity"
           },
           {
             "field": "year",
@@ -359,7 +359,7 @@
           },
           "legend": {
             "title": [
-              "Change vs first measured year",
+              "Change since first year shown",
               "(percentage points)"
             ],
             "titleLimit": 290,
@@ -372,7 +372,7 @@
         "tooltip": [
           {
             "field": "metric",
-            "title": "Medium"
+            "title": "Activity"
           },
           {
             "field": "year",
@@ -470,7 +470,7 @@
           },
           "legend": {
             "title": [
-              "Change vs first measured year",
+              "Change since first year shown",
               "(percentage points)"
             ],
             "titleLimit": 290,
@@ -483,7 +483,7 @@
         "tooltip": [
           {
             "field": "metric",
-            "title": "Medium"
+            "title": "Activity"
           },
           {
             "field": "year",
@@ -545,7 +545,7 @@
         "tooltip": [
           {
             "field": "metric",
-            "title": "Medium"
+            "title": "Activity"
           },
           {
             "field": "year",
@@ -577,7 +577,7 @@
           "as": "label_y"
         },
         {
-          "calculate": "datum.metric + '  ' + format(datum.change, '+.1f') + ' pp · since ' + (datum.metric === 'Short-form video' ? '2022' : '2017')",
+          "calculate": "(datum.metric === 'FTA catch-up' ? 'Catch-up TV' : datum.metric) + ' · ' + format(datum.change, '+.1f') + ' points · since ' + (datum.metric === 'Short-form video' ? '2022' : '2017')",
           "as": "label"
         }
       ],
@@ -585,7 +585,7 @@
         "type": "text",
         "align": "left",
         "font": "Inter",
-        "fontSize": 11,
+        "fontSize": 13,
         "fontWeight": 700,
         "color": "#10231f"
       },

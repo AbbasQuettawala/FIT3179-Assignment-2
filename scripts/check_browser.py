@@ -33,10 +33,37 @@ def main():
                 )
             assert page.locator('.chart[data-status="ready"]').count() == 16, page.locator(".chart-error").all_text_contents()
             assert not failures, failures
+            assert page.locator('#hero-waffle .hero_tiles_marks path').count() == 100
+            assert page.locator('#hero-waffle .hero_play_icons_marks path').count() == 95
+            assert page.locator('#hero-waffle .hero_total_marks text').text_content() == '95 in 100'
+            assert page.locator('#hero-waffle .hero_tiles_marks path').evaluate_all("""tiles => {
+                const counts = new Map();
+                for (const tile of tiles) {
+                    const fill = tile.getAttribute('fill');
+                    counts.set(fill, (counts.get(fill) || 0) + 1);
+                }
+                return JSON.stringify([...counts.values()].sort((left, right) => left - right)) === '[5,95]';
+            }""")
+            assert page.evaluate("""() => {
+                const size = selector => parseFloat(getComputedStyle(document.querySelector(selector)).fontSize);
+                return size('h1') <= 36 && size('.chapter-heading h2') <= 28 && size('.viz-heading h3') <= 16 &&
+                    size('.chart-source') < size('.annotation');
+            }"""), 'Headings or sources overwhelm the chart narrative'
+            assert page.locator('#media-horizon svg.marks').bounding_box()['height'] >= 680
+            if width >= 1024:
+                assert page.locator('.hero-visual').bounding_box()['width'] >= 2 * page.locator('.hero-copy').bounding_box()['width']
+                assert page.locator('.viz-grid .chart').evaluate_all("charts => charts.every(chart => chart.clientWidth >= innerWidth * 0.75)")
+                assert page.locator('#video-hours-bullet .mark-rect.role-mark path').evaluate_all(
+                    "bars => bars.every(bar => bar.getBBox().height >= 32)"
+                )
+                assert page.locator('#age-media-heatmap .mark-text.role-mark text').evaluate_all(
+                    "labels => labels.every(label => parseFloat(getComputedStyle(label).fontSize) >= 13)"
+                )
             areas = page.locator('#media-horizon .mark-area path').evaluate_all(
                 "paths => paths.filter(path => path.getBBox().height > 1 && path.getBBox().width > 1).length"
             )
             assert areas >= 8, f"Horizon has only {areas} visible bands"
+            assert "Catch-up TV" in page.locator("#media-horizon svg.marks").text_content()
             overflow = page.evaluate("""() => [...document.querySelectorAll('.chart svg')]
                 .filter(svg => svg.closest('.vega-embed') && svg.getBoundingClientRect().width > 50)
                 .filter(svg => svg.getBoundingClientRect().right > innerWidth + 2)
@@ -55,10 +82,13 @@ def main():
                 callout = page.locator(f"#{chart_id} .callout_text_marks text")
                 assert callout.count() == 1, f"Missing or duplicated annotation: {chart_id}"
                 assert len(callout.text_content()) > 60, f"Non-explanatory annotation: {chart_id}"
-            assert "Paid video leads" in page.locator("#age-parallel-profile .callout_text_marks").text_content()
+            assert "Paid video is most common" in page.locator("#age-parallel-profile .callout_text_marks").text_content()
             page.locator('#age-parallel-profile select').select_option("75+")
             assert page.evaluate("chartViews.get('age-parallel-profile').signal('selectedAge')") == "75+"
-            page.wait_for_function("document.querySelector('#age-parallel-profile .callout_text_marks').textContent.includes('Free-to-air leads')")
+            page.wait_for_function("document.querySelector('#age-parallel-profile .callout_text_marks').textContent.includes('Free-to-air TV leads')")
+            assert page.locator('#video-hours-bullet option[value="FTA catch-up"]').inner_text() == "Catch-up TV"
+            page.locator('#video-hours-bullet select').select_option("FTA catch-up")
+            assert page.evaluate("chartViews.get('video-hours-bullet').signal('videoFormat')") == "FTA catch-up"
             page.locator('#video-hours-bullet select').select_option("Paid streaming")
             assert page.evaluate("chartViews.get('video-hours-bullet').signal('videoFormat')") == "Paid streaming"
             page.wait_for_function("document.querySelector('#video-hours-bullet .callout_text_marks').textContent.includes('longest bar')")

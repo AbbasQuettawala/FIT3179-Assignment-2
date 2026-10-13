@@ -22,6 +22,12 @@ def records(filename):
 
 def main():
     watch = XlsxWorkbook(ROOT / ".cache/watch_listen.xlsx")
+    headline = json.loads((ROOT / "data/headline_metrics.json").read_text())
+    video_use = next(row for row in study_year_records(watch, "QF7. Now, thi by Study year")
+                     if row["year"] == 2025 and row["category"] == "NET (excludes FTA-CATCH UP & FAST)")
+    assert headline["online_video_past_six_months"] == round(video_use["value"] * 100) == 95
+    for path in [ROOT / "index.html", ROOT / "data/sources.csv", *(ROOT / "specs").glob("*.json")]:
+        assert "\u2014" not in path.read_text(encoding="utf-8"), f"Em dash remains in {path.name}"
     national = study_year_records(watch, "QF4. Which of by Study year")
     paid = next(row for row in national if row["year"] == 2025 and row["category"].startswith("Paid subscription"))
     assert paid["base_n"] == 5990, "Base must use Column n (5990), not positive responses (4046)"

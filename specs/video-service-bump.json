@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 390,
+  "height": 580,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -42,7 +42,7 @@
       "titleFont": "Inter"
     }
   },
-  "description": "Ranks within eight selected video services, all measured from 2021 to 2025.",
+  "description": "Lines showing the popularity ranking of eight selected video services from 2021 to 2025.",
   "data": {
     "url": "data/video_services.csv",
     "format": {
@@ -79,7 +79,7 @@
         "type": "line",
         "point": {
           "filled": true,
-          "size": 68
+          "size": 110
         },
         "strokeWidth": 2.6
       },
@@ -103,7 +103,7 @@
             "reverse": true
           },
           "axis": {
-            "title": "Rank among selected services",
+            "title": "Rank among these 8 services",
             "tickMinStep": 1
           }
         },
@@ -168,7 +168,7 @@
         "dx": 7,
         "dy": -8,
         "font": "Inter",
-        "fontSize": 10,
+        "fontSize": 13,
         "fontWeight": 700
       },
       "encoding": {

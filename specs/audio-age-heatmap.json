@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 320,
+  "height": 500,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -42,7 +42,7 @@
       "titleFont": "Inter"
     }
   },
-  "description": "A heatmap of weekly audio format use by age.",
+  "description": "A colour-coded grid comparing weekly listening habits by age.",
   "data": {
     "url": "data/audio_age.csv",
     "format": {
@@ -106,7 +106,7 @@
         ]
       },
       "legend": {
-        "title": "% in past week",
+        "title": "Listened in past week (%)",
         "orient": "top"
       }
     },
@@ -123,12 +123,12 @@
         "field": "percent",
         "type": "quantitative",
         "format": ".1f",
-        "title": "Share (%)"
+        "title": "Used (%)"
       },
       {
         "field": "base_n",
         "type": "quantitative",
-        "title": "Base n"
+        "title": "Survey participants"
       }
     ]
   }

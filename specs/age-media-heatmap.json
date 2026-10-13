@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 330,
+  "height": 500,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -42,7 +42,7 @@
       "titleFont": "Inter"
     }
   },
-  "description": "Six-month reach of eight selected video services across seven age groups.",
+  "description": "A colour-coded grid showing use of eight video services by age group in the past six months.",
   "data": {
     "url": "data/video_services_age.csv",
     "format": {
@@ -109,7 +109,7 @@
             ]
           },
           "legend": {
-            "title": "% over six months",
+            "title": "Used in past 6 months (%)",
             "orient": "top"
           }
         },
@@ -126,12 +126,12 @@
             "field": "percent",
             "type": "quantitative",
             "format": ".1f",
-            "title": "Share (%)"
+            "title": "Used (%)"
           },
           {
             "field": "base_n",
             "type": "quantitative",
-            "title": "Base n"
+            "title": "Survey participants"
           }
         ]
       }
@@ -140,7 +140,7 @@
       "mark": {
         "type": "text",
         "font": "Inter",
-        "fontSize": 10,
+        "fontSize": 13,
         "fontWeight": 650
       },
       "encoding": {
@@ -178,7 +178,7 @@
         },
         "color": {
           "condition": {
-            "test": "datum.percent > 86",
+            "test": "contrast('white', scale('color', datum.percent)) > contrast('#000000', scale('color', datum.percent))",
             "value": "white"
           },
           "value": "#000000"

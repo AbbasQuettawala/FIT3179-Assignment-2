@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 400,
+  "height": 580,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -45,7 +45,7 @@
       "grid": false
     }
   },
-  "description": "Six-month online news and information reach among ACMA survey age groups, 2025.",
+  "description": "Dots showing the percentage of each age group that used online news and information in the past six months, in 2025.",
   "data": {
     "url": "data/news_age.csv",
     "format": {
@@ -92,7 +92,7 @@
         ]
       },
       "axis": {
-        "title": "Accessed news and information online (%)"
+        "title": "Used online news and information (%)"
       }
     },
     "tooltip": [
@@ -104,12 +104,12 @@
         "field": "percent",
         "type": "quantitative",
         "format": ".1f",
-        "title": "Six-month reach (%)"
+        "title": "Used in past 6 months (%)"
       },
       {
         "field": "base_n",
         "type": "quantitative",
-        "title": "Respondent base"
+        "title": "Survey participants"
       }
     ]
   },
@@ -117,7 +117,7 @@
     {
       "mark": {
         "type": "circle",
-        "size": 125,
+        "size": 200,
         "color": "#1f6f5b",
         "opacity": 1
       }
@@ -195,7 +195,7 @@
       "mark": {
         "type": "text",
         "text": {
-          "expr": "width < 360 ? \"Older respondents still\\nreport broad online reach.\\nThis question measures news\\nand information access, not\\ntrust.\" : \"Older respondents still report broad online reach. This\\nquestion measures news and information access, not trust.\""
+          "expr": "width < 360 ? \"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\" : \"Most older adults use online news and information too.\\nUsing it does not tell us whether they trust it.\""
         },
         "font": "Inter",
         "fontSize": 11,
@@ -259,7 +259,7 @@
         },
         "y2": {
           "value": {
-            "expr": "10 + 15 * length(split((width < 360 ? \"Older respondents still\\nreport broad online reach.\\nThis question measures news\\nand information access, not\\ntrust.\" : \"Older respondents still report broad online reach. This\\nquestion measures news and information access, not trust.\"), '\\n'))"
+            "expr": "10 + 15 * length(split((width < 360 ? \"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\" : \"Most older adults use online news and information too.\\nUsing it does not tell us whether they trust it.\"), '\\n'))"
           }
         },
         "tooltip": {

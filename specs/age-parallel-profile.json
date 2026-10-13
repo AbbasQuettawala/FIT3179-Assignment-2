@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 460,
+  "height": 620,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -45,7 +45,7 @@
       "grid": false
     }
   },
-  "description": "Interactive parallel coordinates showing each age group's cross-media profile.",
+  "description": "Choose an age group to follow its line across six weekly viewing and listening activities.",
   "data": {
     "url": "data/age_media.csv",
     "format": {
@@ -78,7 +78,7 @@
           "65–74",
           "75+"
         ],
-        "name": "Highlight age  "
+        "name": "Age group  "
       }
     }
   ],
@@ -88,7 +88,7 @@
         "type": "line",
         "point": {
           "filled": true,
-          "size": 45
+          "size": 72
         }
       },
       "encoding": {
@@ -125,7 +125,7 @@
             ]
           },
           "axis": {
-            "title": "Past-week use (%)"
+            "title": "Used in past week (%)"
           }
         },
         "detail": {
@@ -163,13 +163,13 @@
           },
           {
             "field": "metric",
-            "title": "Medium"
+            "title": "Activity"
           },
           {
             "field": "percent",
             "type": "quantitative",
             "format": ".1f",
-            "title": "Share (%)"
+            "title": "Used (%)"
           }
         ]
       }
@@ -231,7 +231,7 @@
         },
         "y2": {
           "value": {
-            "expr": "10 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (width < 360 ? \"Free-to-air leads this age\\nprofile, yet digital formats\\nstill reach some of the same\\nage group. Habits overlap.\" : \"Free-to-air leads this age profile, yet digital formats\\nstill reach some of the same age group. Habits overlap.\") : (width < 360 ? \"Paid video leads this age\\nprofile, but broadcast\\nformats still reach part of\\nthe group. Media habits\\noverlap.\" : \"Paid video leads this age profile, but broadcast formats\\nstill reach part of the group. Media habits overlap.\")), '\\n'))"
+            "expr": "10 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (width < 360 ? \"Free-to-air TV leads for this\\nage group. Online media still\\nhas users here, so older\\naudiences are not all\\noffline.\" : \"Free-to-air TV leads for this age group. Online media\\nstill has users here, so older audiences are not all\\noffline.\") : (width < 360 ? \"Paid video is most common at\\nthis age. TV and radio still\\nhave users, so these habits\\nare not all online.\" : \"Paid video is most common at this age. TV and radio still\\nhave users, so these habits are not all online.\")), '\\n'))"
           }
         },
         "tooltip": {
@@ -266,7 +266,7 @@
       "mark": {
         "type": "text",
         "text": {
-          "expr": "(datum.metric === 'Free-to-air TV') ? (width < 360 ? \"Free-to-air leads this age\\nprofile, yet digital formats\\nstill reach some of the same\\nage group. Habits overlap.\" : \"Free-to-air leads this age profile, yet digital formats\\nstill reach some of the same age group. Habits overlap.\") : (width < 360 ? \"Paid video leads this age\\nprofile, but broadcast\\nformats still reach part of\\nthe group. Media habits\\noverlap.\" : \"Paid video leads this age profile, but broadcast formats\\nstill reach part of the group. Media habits overlap.\")"
+          "expr": "(datum.metric === 'Free-to-air TV') ? (width < 360 ? \"Free-to-air TV leads for this\\nage group. Online media still\\nhas users here, so older\\naudiences are not all\\noffline.\" : \"Free-to-air TV leads for this age group. Online media\\nstill has users here, so older audiences are not all\\noffline.\") : (width < 360 ? \"Paid video is most common at\\nthis age. TV and radio still\\nhave users, so these habits\\nare not all online.\" : \"Paid video is most common at this age. TV and radio still\\nhave users, so these habits are not all online.\")"
         },
         "font": "Inter",
         "fontSize": 11,

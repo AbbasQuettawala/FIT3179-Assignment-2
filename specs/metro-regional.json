@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
-  "height": 440,
+  "height": 620,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -17,7 +17,7 @@
       "gridOpacity": 0.65,
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 14,
       "labelPadding": 7,
       "tickColor": "#a8b3ad",
       "titleColor": "#10231f",
@@ -29,7 +29,7 @@
     "legend": {
       "labelColor": "#10231f",
       "labelFont": "Inter",
-      "labelFontSize": 11,
+      "labelFontSize": 13,
       "symbolStrokeWidth": 3,
       "titleColor": "#10231f",
       "titleFont": "Inter",
@@ -45,7 +45,7 @@
       "grid": false
     }
   },
-  "description": "Paired weekly media-use estimates for metro and regional respondents in 2025.",
+  "description": "Pairs of dots comparing weekly media use in ACMA's city and regional groups in 2025.",
   "data": {
     "url": "data/metro_regional.csv",
     "format": {
@@ -93,7 +93,7 @@
         ]
       },
       "axis": {
-        "title": "Past-week use (%)"
+        "title": "Used in past week (%)"
       }
     }
   },
@@ -129,7 +129,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 100,
+        "size": 160,
         "opacity": 1
       },
       "encoding": {
@@ -151,7 +151,8 @@
           },
           "legend": {
             "title": "Location",
-            "orient": "top"
+            "orient": "top",
+            "labelExpr": "datum.label === 'metro' ? 'City (metro)' : 'Regional'"
           }
         },
         "shape": {
@@ -171,13 +172,13 @@
         "tooltip": [
           {
             "field": "metric",
-            "title": "Weekly behaviour"
+            "title": "Activity"
           },
           {
             "field": "metro",
             "format": ".1f",
             "type": "quantitative",
-            "title": "Metro (%)"
+            "title": "City (metro) (%)"
           },
           {
             "field": "regional",
@@ -189,15 +190,15 @@
             "field": "gap",
             "format": "+.1f",
             "type": "quantitative",
-            "title": "Regional minus metro (points)"
+            "title": "Regional minus city (percentage points)"
           },
           {
             "field": "metro_base_n",
-            "title": "Metro base"
+            "title": "City survey participants"
           },
           {
             "field": "regional_base_n",
-            "title": "Regional base"
+            "title": "Regional survey participants"
           }
         ]
       }
@@ -242,7 +243,7 @@
         },
         "y2": {
           "value": {
-            "expr": "10 + 15 * length(split((width < 360 ? \"Regional audiences lean more\\ntowards FM and broadcast TV;\\nthe tiny podcast gap\\nchallenges a simple\\nonline/offline divide.\" : \"Regional audiences lean more towards FM and broadcast TV;\\nthe tiny podcast gap challenges a simple online/offline\\ndivide.\"), '\\n'))"
+            "expr": "10 + 15 * length(split((width < 360 ? \"Regional groups use more FM\\nradio and free-to-air TV.\\nSimilar podcast use shows\\nthey are not simply offline.\" : \"Regional groups use more FM radio and free-to-air TV.\\nSimilar podcast use shows they are not simply offline.\"), '\\n'))"
           }
         },
         "tooltip": {
@@ -260,7 +261,7 @@
       "mark": {
         "type": "text",
         "text": {
-          "expr": "width < 360 ? \"Regional audiences lean more\\ntowards FM and broadcast TV;\\nthe tiny podcast gap\\nchallenges a simple\\nonline/offline divide.\" : \"Regional audiences lean more towards FM and broadcast TV;\\nthe tiny podcast gap challenges a simple online/offline\\ndivide.\""
+          "expr": "width < 360 ? \"Regional groups use more FM\\nradio and free-to-air TV.\\nSimilar podcast use shows\\nthey are not simply offline.\" : \"Regional groups use more FM radio and free-to-air TV.\\nSimilar podcast use shows they are not simply offline.\""
         },
         "font": "Inter",
         "fontSize": 11,

@@ -40,7 +40,7 @@ def config():
             "gridOpacity": 0.65,
             "labelColor": INK,
             "labelFont": "Inter",
-            "labelFontSize": 12,
+            "labelFontSize": 14,
             "labelPadding": 7,
             "tickColor": "#a8b3ad",
             "titleColor": INK,
@@ -52,7 +52,7 @@ def config():
         "legend": {
             "labelColor": INK,
             "labelFont": "Inter",
-            "labelFontSize": 11,
+            "labelFontSize": 13,
             "symbolStrokeWidth": 3,
             "titleColor": INK,
             "titleFont": "Inter",
@@ -168,34 +168,72 @@ def add_callout(spec, message, transforms, anchor, alternate=None, reserve=True)
 
 
 def waffle():
-    spec = base(210)
+    with (ROOT / "data/headline_metrics.json").open(encoding="utf-8") as handle:
+        share = json.load(handle)["online_video_past_six_months"]
+    spec = base(500)
     spec.update(
         {
-            "description": "A 100-cell waffle showing online video reach in Australia in 2025.",
+            "description": f"100 video tiles represent Australian adults. {share} filled tiles show the rounded share who used online video in the six months before the 2025 survey. Outlined tiles show the remaining share.",
             "data": {"sequence": {"start": 0, "stop": 100, "step": 1, "as": "cell"}},
             "transform": [
                 {"calculate": "datum.cell % 10", "as": "column"},
-                {"calculate": "9 - floor(datum.cell / 10)", "as": "row"},
+                {"calculate": "floor(datum.cell / 10)", "as": "row"},
+                {"calculate": f"datum.cell < {share} ? 'Used online video' : 'Remaining adults'", "as": "group"},
+                {"calculate": f"datum.cell < {share} ? {share} : {100 - share}", "as": "share"},
             ],
-            "mark": {"type": "square", "filled": True, "size": 310, "cornerRadius": 2},
-            "encoding": {
-                "x": {"field": "column", "type": "ordinal", "axis": None},
-                "y": {"field": "row", "type": "ordinal", "axis": None},
-                "color": {
-                    "condition": {"test": "datum.cell < 95", "value": GREEN},
-                    "value": "#d8ded8",
-                    "legend": None,
+            "layer": [
+                {
+                    "name": "hero_tiles",
+                    "mark": {"type": "rect", "cornerRadius": 3, "strokeWidth": 1, "opacity": 1},
+                    "encoding": {
+                        "x": {"field": "column", "type": "ordinal", "axis": None, "scale": {"type": "band", "padding": 0.15}},
+                        "y": {"field": "row", "type": "ordinal", "axis": None, "scale": {"type": "band", "padding": 0.15, "range": [95, {"expr": "height"}]}},
+                        "color": {
+                            "field": "group", "type": "nominal",
+                            "scale": {"domain": ["Used online video", "Remaining adults"], "range": [GREEN, CREAM]},
+                            "legend": {"title": "One tile = 1 in 100 adults (rounded)", "titleLimit": 300, "orient": "bottom", "columns": 1, "symbolType": "square", "symbolStrokeColor": SLATE},
+                        },
+                        "stroke": {"condition": {"test": f"datum.cell < {share}", "value": GREEN}, "value": SLATE},
+                        "tooltip": [
+                            {"field": "group", "title": "Group"},
+                            {"field": "share", "type": "quantitative", "title": "Share of adults (%)", "format": ".0f"},
+                        ],
+                    },
                 },
-                "tooltip": {"value": "95 in every 100 Australians used online video in the past six months"},
-            },
+                {
+                    "name": "hero_play_icons",
+                    "transform": [{"filter": f"datum.cell < {share}"}],
+                    "mark": {"type": "point", "shape": "triangle-right", "filled": True, "color": "white", "opacity": 1, "size": {"expr": "pow(min(width / 35, (height - 95) / 18), 2)"}},
+                    "encoding": {
+                        "x": {"field": "column", "type": "ordinal"},
+                        "y": {"field": "row", "type": "ordinal"},
+                        "tooltip": [
+                            {"field": "group", "title": "Group"},
+                            {"field": "share", "type": "quantitative", "title": "Share of adults (%)", "format": ".0f"},
+                        ],
+                    },
+                },
+                {
+                    "name": "hero_total",
+                    "data": {"values": [{}]},
+                    "mark": {"type": "text", "text": f"{share} in 100", "font": "Fraunces", "fontSize": {"expr": "width < 360 ? 28 : 36"}, "fontWeight": 700, "align": "left", "baseline": "top", "color": GREEN},
+                    "encoding": {"x": {"value": 0}, "y": {"value": 0}},
+                },
+                {
+                    "name": "hero_context",
+                    "data": {"values": [{}]},
+                    "mark": {"type": "text", "text": "used online video in the past six months", "font": "Inter", "fontSize": {"expr": "width < 360 ? 11 : 13"}, "align": "left", "baseline": "top", "color": INK},
+                    "encoding": {"x": {"value": 0}, "y": {"value": 55}},
+                },
+            ],
         }
     )
     return spec
 
 
 def horizon():
-    spec = base(370)
-    spec["description"] = "Four horizon rows with 10-percentage-point bands folded onto a shared baseline."
+    spec = base(680)
+    spec["description"] = "Four rows showing changes in weekly video use. Each darker band adds 10 percentage points; in the legend, + means growth and − means a fall."
     spec["data"] = {"url": "data/horizon_trends.csv"}
     spec["layer"] = []
     for band in [1, 2, 3, 4]:
@@ -216,13 +254,13 @@ def horizon():
                                   "#bcd8ca", "#79ad99", "#40856f", "#155641"],
                     },
                     "legend": {
-                        "title": ["Change vs first measured year", "(percentage points)"], "titleLimit": 290,
+                        "title": ["Change since first year shown", "(percentage points)"], "titleLimit": 290,
                         "orient": "top", "columns": 4, "symbolType": "square",
                         "labelExpr": "datum.value < 0 ? format(datum.value * 10, '+d') + ' to ' + format((datum.value + 1) * 10, '+d') : format((datum.value - 1) * 10, '+d') + ' to ' + format(datum.value * 10, '+d')",
                     },
                 },
                 "tooltip": [
-                    {"field": "metric", "title": "Medium"},
+                    {"field": "metric", "title": "Activity"},
                     {"field": "year", "type": "ordinal", "title": "Year"},
                     {"field": "change", "type": "quantitative", "format": "+.1f", "title": "Change (percentage points)"},
                     {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Weekly use (%)"},
@@ -243,7 +281,7 @@ def horizon():
             "y": {"field": "y0", "type": "quantitative"},
             "y2": {"field": "hover_top"},
             "tooltip": [
-                {"field": "metric", "title": "Medium"},
+                {"field": "metric", "title": "Activity"},
                 {"field": "year", "type": "ordinal", "title": "Year"},
                 {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Weekly use (%)"},
                 {"field": "change", "type": "quantitative", "format": "+.1f", "title": "Change (percentage points)"},
@@ -251,18 +289,18 @@ def horizon():
         },
     })
     spec["layer"].append({
-        "transform": [{"filter": "datum.year === 2025 && datum.band === 1"}, {"calculate": "datum.y0 + 11.5", "as": "label_y"}, {"calculate": "datum.metric + '  ' + format(datum.change, '+.1f') + ' pp · since ' + (datum.metric === 'Short-form video' ? '2022' : '2017')", "as": "label"}],
-        "mark": {"type": "text", "align": "left", "font": "Inter", "fontSize": 11, "fontWeight": 700, "color": INK},
+        "transform": [{"filter": "datum.year === 2025 && datum.band === 1"}, {"calculate": "datum.y0 + 11.5", "as": "label_y"}, {"calculate": "(datum.metric === 'FTA catch-up' ? 'Catch-up TV' : datum.metric) + ' · ' + format(datum.change, '+.1f') + ' points · since ' + (datum.metric === 'Short-form video' ? '2022' : '2017')", "as": "label"}],
+        "mark": {"type": "text", "align": "left", "font": "Inter", "fontSize": 13, "fontWeight": 700, "color": INK},
         "encoding": {"x": {"datum": 2017}, "y": {"field": "label_y", "type": "quantitative"}, "text": {"field": "label"}},
     })
     return spec
 
 
 def connected_scatter():
-    spec = base(390)
+    spec = base(560)
     spec.update(
         {
-            "description": "A connected scatterplot contrasting paid streaming and free-to-air viewing.",
+            "description": "A line connecting yearly percentages for paid streaming and free-to-air TV use.",
             "data": {"url": "data/streaming_fta.csv", "format": {"type": "csv", "parse": {"year": "number"}}},
             "layer": [
                 {
@@ -274,7 +312,7 @@ def connected_scatter():
                     },
                 },
                 {
-                    "mark": {"type": "circle", "size": 125, "stroke": CREAM, "strokeWidth": 2},
+                    "mark": {"type": "circle", "size": 200, "stroke": CREAM, "strokeWidth": 2},
                     "encoding": {
                         "x": {"field": "paid_streaming", "type": "quantitative"},
                         "y": {"field": "free_to_air", "type": "quantitative"},
@@ -302,10 +340,10 @@ def connected_scatter():
 
 
 def age_heatmap():
-    spec = base(330)
+    spec = base(500)
     spec.update(
         {
-            "description": "Six-month reach of eight selected video services across seven age groups.",
+            "description": "A colour-coded grid showing use of eight video services by age group in the past six months.",
             "data": {"url": "data/video_services_age.csv"},
             "layer": [
                 {
@@ -313,22 +351,22 @@ def age_heatmap():
                     "encoding": {
                         "x": {"field": "age", "type": "ordinal", "sort": AGE_ORDER, "axis": {"title": "Age", "labelAngle": 0}},
                         "y": {"field": "service", "type": "ordinal", "sort": ["YouTube", "Netflix", "Prime Video", "Disney+", "TikTok", "Stan", "Kayo", "Binge"], "axis": {"title": None}},
-                        "color": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 100], "range": ["#edf5ef", GREEN]}, "legend": {"title": "% over six months", "orient": "top"}},
+                        "color": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 100], "range": ["#edf5ef", GREEN]}, "legend": {"title": "Used in past 6 months (%)", "orient": "top"}},
                         "tooltip": [
                             {"field": "age", "title": "Age"},
                             {"field": "service", "title": "Service"},
-                            {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Share (%)"},
-                            {"field": "base_n", "type": "quantitative", "title": "Base n"},
+                            {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Used (%)"},
+                            {"field": "base_n", "type": "quantitative", "title": "Survey participants"},
                         ],
                     },
                 },
                 {
-                    "mark": {"type": "text", "font": "Inter", "fontSize": 10, "fontWeight": 650},
+                    "mark": {"type": "text", "font": "Inter", "fontSize": 13, "fontWeight": 650},
                     "encoding": {
                         "x": {"field": "age", "type": "ordinal", "sort": AGE_ORDER},
                         "y": {"field": "service", "type": "ordinal", "sort": ["YouTube", "Netflix", "Prime Video", "Disney+", "TikTok", "Stan", "Kayo", "Binge"]},
                         "text": {"field": "percent", "type": "quantitative", "format": ".0f"},
-                        "color": {"condition": {"test": "datum.percent > 86", "value": "white"}, "value": "#000000"},
+                        "color": {"condition": {"test": "contrast('white', scale('color', datum.percent)) > contrast('#000000', scale('color', datum.percent))", "value": "white"}, "value": "#000000"},
                     },
                 },
             ],
@@ -338,19 +376,19 @@ def age_heatmap():
 
 
 def parallel_profiles():
-    spec = base(360)
+    spec = base(520)
     spec.update(
         {
-            "description": "Interactive parallel coordinates showing each age group's cross-media profile.",
+            "description": "Choose an age group to follow its line across six weekly viewing and listening activities.",
             "data": {"url": "data/age_media.csv"},
             "transform": [{"calculate": "indexof(" + json.dumps(MEDIA_ORDER) + ", datum.metric)", "as": "metric_position"}],
-            "params": [{"name": "selectedAge", "value": "18–24", "bind": {"input": "select", "options": AGE_ORDER, "name": "Highlight age  "}}],
+            "params": [{"name": "selectedAge", "value": "18–24", "bind": {"input": "select", "options": AGE_ORDER, "name": "Age group  "}}],
             "layer": [
                 {
-                    "mark": {"type": "line", "point": {"filled": True, "size": 45}},
+                    "mark": {"type": "line", "point": {"filled": True, "size": 72}},
                     "encoding": {
                         "x": {"field": "metric", "type": "ordinal", "sort": MEDIA_ORDER, "axis": {"title": None, "labelAngle": -28, "labelLimit": 110}},
-                        "y": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 100]}, "axis": {"title": "Past-week use (%)"}},
+                        "y": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 100]}, "axis": {"title": "Used in past week (%)"}},
                         "detail": {"field": "age"},
                         "color": {"condition": {"test": "datum.age === selectedAge", "value": MAGENTA}, "value": SLATE},
                         "opacity": {"condition": {"test": "datum.age === selectedAge", "value": 1}, "value": 0.16},
@@ -358,8 +396,8 @@ def parallel_profiles():
                         "order": {"field": "metric_position", "type": "quantitative"},
                         "tooltip": [
                             {"field": "age", "title": "Age"},
-                            {"field": "metric", "title": "Medium"},
-                            {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Share (%)"},
+                            {"field": "metric", "title": "Activity"},
+                            {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Used (%)"},
                         ],
                     },
                 }
@@ -370,23 +408,23 @@ def parallel_profiles():
 
 
 def bullet_hours():
-    spec = base(330)
+    spec = base(500)
     spec.update(
         {
-            "description": "Bullet bars comparing reported weekly video hours by age with the national benchmark.",
+            "description": "Average weekly viewing hours by age, with short vertical lines showing the national average for the chosen format.",
             "data": {"url": "data/video_hours_age.csv"},
-            "params": [{"name": "videoFormat", "value": "Free-to-air TV", "bind": {"input": "select", "options": ["Free-to-air TV", "Paid streaming", "Short-form video", "FTA catch-up", "Pay TV", "Pay-per-view"], "name": "Compare format  "}}],
+            "params": [{"name": "videoFormat", "value": "Free-to-air TV", "bind": {"input": "select", "options": ["Free-to-air TV", "Paid streaming", "Short-form video", "FTA catch-up", "Pay TV", "Pay-per-view"], "labels": ["Free-to-air TV", "Paid streaming", "Short-form video", "Catch-up TV", "Pay TV", "Pay-per-view"], "name": "Video type  "}}],
             "transform": [{"filter": "datum.metric === videoFormat"}],
             "layer": [
                 {
-                    "mark": {"type": "bar", "height": 30, "color": PALE},
+                    "mark": {"type": "bar", "height": 42, "color": PALE},
                     "encoding": {
                         "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER},
                         "x": {"field": "national_hours", "type": "quantitative"},
                     },
                 },
                 {
-                    "mark": {"type": "bar", "cornerRadiusEnd": 4, "height": 22},
+                    "mark": {"type": "bar", "cornerRadiusEnd": 4, "height": 32},
                     "encoding": {
                         "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER, "axis": {"title": "Age"}},
                         "x": {"field": "hours", "type": "quantitative", "scale": {"domain": [0, 16]}, "axis": {"title": "Average hours in past 7 days"}},
@@ -394,14 +432,14 @@ def bullet_hours():
                         "tooltip": [
                             {"field": "age", "title": "Age"},
                             {"field": "hours", "type": "quantitative", "format": ".1f", "title": "Hours"},
-                            {"field": "national_hours", "type": "quantitative", "format": ".1f", "title": "National"},
-                            {"field": "base_n", "type": "quantitative", "title": "Respondents (base n)"},
+                            {"field": "national_hours", "type": "quantitative", "format": ".1f", "title": "National average (hours)"},
+                            {"field": "base_n", "type": "quantitative", "title": "Survey participants"},
                             {"field": "metric", "title": "Video format"},
                         ],
                     },
                 },
                 {
-                    "mark": {"type": "tick", "color": MAGENTA, "thickness": 3, "size": 28},
+                    "mark": {"type": "tick", "color": MAGENTA, "thickness": 3, "size": 40},
                     "encoding": {
                         "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER},
                         "x": {"field": "national_hours", "type": "quantitative"},
@@ -422,20 +460,20 @@ def bullet_hours():
 
 
 def service_bump():
-    spec = base(390)
+    spec = base(580)
     spec.update(
         {
-            "description": "Ranks within eight selected video services, all measured from 2021 to 2025.",
+            "description": "Lines showing the popularity ranking of eight selected video services from 2021 to 2025.",
             "data": {"url": "data/video_services.csv", "format": {"type": "csv", "parse": {"year": "number"}}},
             "transform": [
                 {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "percent", "order": "descending"}], "groupby": ["year"]},
             ],
             "layer": [
                 {
-                    "mark": {"type": "line", "point": {"filled": True, "size": 68}, "strokeWidth": 2.6},
+                    "mark": {"type": "line", "point": {"filled": True, "size": 110}, "strokeWidth": 2.6},
                     "encoding": {
                         "x": {"field": "year", "type": "ordinal", "axis": {"title": None, "labelAngle": 0}},
-                        "y": {"field": "rank", "type": "quantitative", "scale": {"domain": [1, 8], "reverse": True}, "axis": {"title": "Rank among selected services", "tickMinStep": 1}},
+                        "y": {"field": "rank", "type": "quantitative", "scale": {"domain": [1, 8], "reverse": True}, "axis": {"title": "Rank among these 8 services", "tickMinStep": 1}},
                         "color": {"field": "service", "type": "nominal", "scale": {"range": CATEGORICAL}, "legend": {"title": None, "orient": "top", "columns": 4}},
                         "detail": {"field": "service"},
                         "order": {"field": "year"},
@@ -449,7 +487,7 @@ def service_bump():
                 },
                 {
                     "transform": [{"filter": "datum.year === 2025"}],
-                    "mark": {"type": "text", "align": "left", "dx": 7, "dy": -8, "font": "Inter", "fontSize": 10, "fontWeight": 700},
+                    "mark": {"type": "text", "align": "left", "dx": 7, "dy": -8, "font": "Inter", "fontSize": 13, "fontWeight": 700},
                     "encoding": {
                         "x": {"field": "year", "type": "ordinal"},
                         "y": {"field": "rank", "type": "quantitative", "scale": {"reverse": True}},
@@ -464,10 +502,10 @@ def service_bump():
 
 
 def device_slope():
-    spec = base(370)
+    spec = base(540)
     spec.update(
         {
-            "description": "A slopegraph showing how online video devices changed between 2021 and 2025.",
+            "description": "Lines comparing devices used to watch online video at home in 2021 and 2025.",
             "data": {"url": "data/video_devices.csv", "format": {"type": "csv", "parse": {"year": "number"}}},
             "layer": [
                 {
@@ -480,12 +518,12 @@ def device_slope():
                         "tooltip": [
                             {"field": "device", "title": "Device"},
                             {"field": "year", "title": "Year"},
-                            {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Share (%)"},
+                            {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Used (%)"},
                         ],
                     },
                 },
                 {
-                    "mark": {"type": "point", "filled": True, "size": 85},
+                    "mark": {"type": "point", "filled": True, "size": 136},
                     "encoding": {
                         "x": {"field": "year", "type": "ordinal"},
                         "y": {"field": "percent", "type": "quantitative"},
@@ -494,7 +532,7 @@ def device_slope():
                 },
                 {
                     "transform": [{"filter": "datum.year === 2025"}, {"calculate": "(datum.device === 'Chromecast / Google TV' ? 'Google TV' : datum.device === 'Games console' ? 'Console' : datum.device) + ' ' + format(datum.percent, '.0f') + '%'", "as": "label"}],
-                    "mark": {"type": "text", "align": "left", "dx": 7, "dy": {"expr": "datum.device === 'Games console' ? -5 : datum.device === 'Apple TV' ? 5 : 0"}, "font": "Inter", "fontSize": 11, "fontWeight": 650},
+                    "mark": {"type": "text", "align": "left", "dx": 7, "dy": {"expr": "datum.device === 'Games console' ? -5 : datum.device === 'Apple TV' ? 5 : 0"}, "font": "Inter", "fontSize": 13, "fontWeight": 650},
                     "encoding": {
                         "x": {"field": "year", "type": "ordinal"},
                         "y": {"field": "percent", "type": "quantitative"},
@@ -509,21 +547,21 @@ def device_slope():
 
 
 def audio_heatmap():
-    spec = base(320)
+    spec = base(500)
     spec.update(
         {
-            "description": "A heatmap of weekly audio format use by age.",
+            "description": "A colour-coded grid comparing weekly listening habits by age.",
             "data": {"url": "data/audio_age.csv"},
             "mark": {"type": "rect", "cornerRadius": 3},
             "encoding": {
                 "x": {"field": "age", "type": "ordinal", "sort": AGE_ORDER, "axis": {"title": "Age", "labelAngle": 0}},
                 "y": {"field": "metric", "type": "ordinal", "sort": AUDIO_ORDER, "axis": {"title": None}},
-                "color": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 80], "range": ["#eef1ec", MINT, GREEN]}, "legend": {"title": "% in past week", "orient": "top"}},
+                "color": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 80], "range": ["#eef1ec", MINT, GREEN]}, "legend": {"title": "Listened in past week (%)", "orient": "top"}},
                 "tooltip": [
                     {"field": "age", "title": "Age"},
                     {"field": "metric", "title": "Format"},
-                    {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Share (%)"},
-                    {"field": "base_n", "type": "quantitative", "title": "Base n"},
+                    {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Used (%)"},
+                    {"field": "base_n", "type": "quantitative", "title": "Survey participants"},
                 ],
             },
         }
@@ -541,13 +579,13 @@ def audio_network():
         {"name": "In transit", "y": 2.5, "x": 0.86},
         {"name": "Elsewhere", "y": 4.3, "x": 0.86},
     ]
-    spec = base(350)
+    spec = base(540)
     spec.update(
         {
-            "description": "A bipartite network linking audio formats to the places Australians listen.",
+            "description": "Lines linking six types of audio to three listening locations. Thicker lines mean more of that format's listeners use it there.",
             "data": {"url": "data/audio_locations.csv"},
             "params": [{"name": "audioFocus", "value": "All formats", "bind": {
-                "input": "select", "options": ["All formats", *AUDIO_ORDER], "name": "Trace a format  ",
+                "input": "select", "options": ["All formats", *AUDIO_ORDER], "name": "Choose audio  ",
             }}],
             "transform": [
                 {"calculate": "indexof(['Music streaming','Podcasts','Internet radio','DAB+ radio','FM radio','AM radio'], datum.format)", "as": "format_y"},
@@ -571,14 +609,14 @@ def audio_network():
                         "tooltip": [
                             {"field": "format", "title": "Format"},
                             {"field": "location", "title": "Location"},
-                            {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Share (%)"},
-                            {"field": "base_n", "type": "quantitative", "title": "Base n"},
+                            {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Used (%)"},
+                            {"field": "base_n", "type": "quantitative", "title": "Survey participants"},
                         ],
                     },
                 },
                 {
                     "data": {"values": formats},
-                    "mark": {"type": "circle", "size": 155, "stroke": CREAM, "strokeWidth": 2},
+                    "mark": {"type": "circle", "size": 248, "stroke": CREAM, "strokeWidth": 2},
                     "encoding": {
                         "x": {"field": "x", "type": "quantitative"},
                         "y": {"field": "y", "type": "quantitative"},
@@ -588,17 +626,17 @@ def audio_network():
                 },
                 {
                     "data": {"values": formats},
-                    "mark": {"type": "text", "align": "right", "dx": -10, "font": "Inter", "fontSize": 11, "fontWeight": 650, "color": INK},
+                    "mark": {"type": "text", "align": "right", "dx": -10, "font": "Inter", "fontSize": 13, "fontWeight": 650, "color": INK},
                     "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}, "text": {"field": "name"}},
                 },
                 {
                     "data": {"values": locations},
-                    "mark": {"type": "circle", "size": 180, "color": INK, "stroke": CREAM, "strokeWidth": 2},
+                    "mark": {"type": "circle", "size": 288, "color": INK, "stroke": CREAM, "strokeWidth": 2},
                     "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}},
                 },
                 {
                     "data": {"values": locations},
-                    "mark": {"type": "text", "align": "left", "dx": 10, "font": "Inter", "fontSize": 11, "fontWeight": 700, "color": INK},
+                    "mark": {"type": "text", "align": "left", "dx": 10, "font": "Inter", "fontSize": 13, "fontWeight": 700, "color": INK},
                     "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}, "text": {"field": "name"}},
                 },
                 {
@@ -606,7 +644,7 @@ def audio_network():
                     "transform": [{"filter": "datum.format === audioFocus"},
                                   {"calculate": "format(datum.percent, '.1f') + '%'", "as": "reading"}],
                     "mark": {"type": "text", "align": "left", "dx": 10, "dy": 16,
-                             "font": "Inter", "fontSize": 11, "fontWeight": 700, "color": GREEN},
+                             "font": "Inter", "fontSize": 13, "fontWeight": 700, "color": GREEN},
                     "encoding": {
                         "x": {"datum": 0.86}, "y": {"field": "location_y", "type": "quantitative"},
                         "text": {"field": "reading"},
@@ -619,22 +657,22 @@ def audio_network():
 
 
 def news_age():
-    spec = base(300)
+    spec = base(480)
     spec.update({
-        "description": "Six-month online news and information reach among ACMA survey age groups, 2025.",
+        "description": "Dots showing the percentage of each age group that used online news and information in the past six months, in 2025.",
         "data": {"url": "data/news_age.csv"},
         "encoding": {
             "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER, "axis": {"title": "Age"}},
             "x": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 100]},
-                  "axis": {"title": "Accessed news and information online (%)"}},
+                  "axis": {"title": "Used online news and information (%)"}},
             "tooltip": [
                 {"field": "age", "title": "Age"},
-                {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Six-month reach (%)"},
-                {"field": "base_n", "type": "quantitative", "title": "Respondent base"},
+                {"field": "percent", "type": "quantitative", "format": ".1f", "title": "Used in past 6 months (%)"},
+                {"field": "base_n", "type": "quantitative", "title": "Survey participants"},
             ],
         },
         "layer": [
-            {"mark": {"type": "circle", "size": 125, "color": GREEN, "opacity": 1}},
+            {"mark": {"type": "circle", "size": 200, "color": GREEN, "opacity": 1}},
             {"mark": {"type": "text", "dx": -12, "align": "right", "font": "Inter", "color": INK},
              "encoding": {"text": {"field": "percent", "type": "quantitative", "format": ".1f"}}},
         ],
@@ -643,33 +681,33 @@ def news_age():
 
 
 def metro_regional():
-    spec = base(340)
+    spec = base(520)
     spec.update({
-        "description": "Paired weekly media-use estimates for metro and regional respondents in 2025.",
+        "description": "Pairs of dots comparing weekly media use in ACMA's city and regional groups in 2025.",
         "data": {"url": "data/metro_regional.csv"},
         "encoding": {
             "y": {"field": "metric", "type": "nominal", "sort": MEDIA_ORDER, "axis": {"title": None}},
-            "x": {"type": "quantitative", "scale": {"domain": [0, 100]}, "axis": {"title": "Past-week use (%)"}},
+            "x": {"type": "quantitative", "scale": {"domain": [0, 100]}, "axis": {"title": "Used in past week (%)"}},
         },
         "layer": [
             {"mark": {"type": "rule", "strokeWidth": 3, "color": "#bbc9bf"},
              "encoding": {"x": {"field": "metro"}, "x2": {"field": "regional"}}},
             {"transform": [{"fold": ["metro", "regional"], "as": ["region", "percent"]}],
-             "mark": {"type": "point", "filled": True, "size": 100, "opacity": 1},
+             "mark": {"type": "point", "filled": True, "size": 160, "opacity": 1},
              "encoding": {
                  "x": {"field": "percent"},
                  "color": {"field": "region", "type": "nominal",
                            "scale": {"domain": ["metro", "regional"], "range": [BLUE, MAGENTA]},
-                           "legend": {"title": "Location", "orient": "top"}},
+                           "legend": {"title": "Location", "orient": "top", "labelExpr": "datum.label === 'metro' ? 'City (metro)' : 'Regional'"}},
                  "shape": {"field": "region", "type": "nominal",
                            "scale": {"domain": ["metro", "regional"], "range": ["circle", "diamond"]}},
                  "tooltip": [
-                     {"field": "metric", "title": "Weekly behaviour"},
-                     {"field": "metro", "format": ".1f", "type": "quantitative", "title": "Metro (%)"},
+                     {"field": "metric", "title": "Activity"},
+                     {"field": "metro", "format": ".1f", "type": "quantitative", "title": "City (metro) (%)"},
                      {"field": "regional", "format": ".1f", "type": "quantitative", "title": "Regional (%)"},
-                     {"field": "gap", "format": "+.1f", "type": "quantitative", "title": "Regional minus metro (points)"},
-                     {"field": "metro_base_n", "title": "Metro base"},
-                     {"field": "regional_base_n", "title": "Regional base"},
+                     {"field": "gap", "format": "+.1f", "type": "quantitative", "title": "Regional minus city (percentage points)"},
+                     {"field": "metro_base_n", "title": "City survey participants"},
+                     {"field": "regional_base_n", "title": "Regional survey participants"},
                  ],
              }},
         ],
@@ -715,10 +753,10 @@ def state_label_layers():
 
 
 def state_choropleth():
-    spec = base(420)
+    spec = base(720)
     spec.update(
         {
-            "description": "A state choropleth of Australian Digital Inclusion Index scores.",
+            "description": "A shaded map of digital inclusion scores by state and territory. Darker shading means a higher score.",
             "data": {"url": "data/au_states.topojson", "format": {"type": "topojson", "feature": "states"}},
             "transform": [
                 {
@@ -729,11 +767,11 @@ def state_choropleth():
             "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-134, 0, 0], "center": [0, -28]},
             "mark": {"type": "geoshape", "stroke": CREAM, "strokeWidth": 1.2},
             "encoding": {
-                "color": {"field": "score", "type": "quantitative", "scale": {"domain": [68, 80], "range": ["#edf5ef", GREEN]}, "legend": {"title": "ADII score", "orient": "top"}},
+                "color": {"field": "score", "type": "quantitative", "scale": {"domain": [68, 80], "range": ["#edf5ef", GREEN]}, "legend": {"title": "Digital inclusion score", "orient": "top"}},
                 "tooltip": [
                     {"field": "state", "title": "State / territory"},
-                    {"field": "score", "type": "quantitative", "format": ".1f", "title": "ADII score"},
-                    {"field": "gap", "type": "quantitative", "format": "+.1f", "title": "vs national"},
+                    {"field": "score", "type": "quantitative", "format": ".1f", "title": "Digital inclusion score"},
+                    {"field": "gap", "type": "quantitative", "format": "+.1f", "title": "Above/below national score (points)"},
                 ],
             },
         }
@@ -744,12 +782,12 @@ def state_choropleth():
 
 
 def radio_map(digital=False):
-    spec = base(470)
+    spec = base(740)
     spec.update({
-        "description": "Issued digital-radio licence records per site." if digital else "Unique physical sites with issued AM and/or FM licences.",
+        "description": "Digital-radio sites, with larger circles showing more issued licence records." if digital else "One dot for each registered site with an issued AM or FM radio licence.",
         "params": [{"name": "mapRegion", "value": "Australia", "bind": {
             "input": "select", "options": ["Australia", "Sydney", "Melbourne", "Brisbane", "Perth"],
-            "name": "Map view  ",
+            "name": "Show area  ",
         }}],
         "projection": {
             "type": "conicEqualArea", "parallels": [-18, -36],
@@ -763,7 +801,7 @@ def radio_map(digital=False):
              "mark": {"type": "geoshape", "clip": True, "fill": "#e5ebe5", "stroke": "#b9c7be", "strokeWidth": 1}},
             {
                 "data": {"url": "data/digital_radio_sites.csv" if digital else "data/radio_sites.csv"},
-                "mark": {"type": "circle", "clip": True, "stroke": CREAM, "strokeWidth": 0.7, "size": 22},
+                "mark": {"type": "circle", "clip": True, "stroke": CREAM, "strokeWidth": 0.7, "size": 36},
                 "encoding": {
                     "longitude": {"field": "longitude", "type": "quantitative"},
                     "latitude": {"field": "latitude", "type": "quantitative"},
@@ -771,8 +809,8 @@ def radio_map(digital=False):
                         {"field": "name", "title": "Licensed site"},
                         {"field": "site_id", "title": "ACMA site ID"},
                         {"field": "state", "title": "State"},
-                        {"field": "dr" if digital else "am", "type": "quantitative", "title": "Digital-radio records" if digital else "AM assignments"},
-                        *([] if digital else [{"field": "fm", "type": "quantitative", "title": "FM assignments"}]),
+                        {"field": "dr" if digital else "am", "type": "quantitative", "title": "Digital-radio records" if digital else "AM licence records"},
+                        *([] if digital else [{"field": "fm", "type": "quantitative", "title": "FM licence records"}]),
                     ],
                 },
             },
@@ -780,7 +818,7 @@ def radio_map(digital=False):
     })
     marks = spec["layer"][1]["encoding"]
     if digital:
-        marks["size"] = {"field": "dr", "type": "quantitative", "scale": {"domain": [0, 3], "range": [0, 600]},
+        marks["size"] = {"field": "dr", "type": "quantitative", "scale": {"domain": [0, 3], "range": [0, 960]},
                          "legend": {"title": "Licence records per site", "orient": "top", "values": [1, 2, 3], "format": "d"}}
         marks["color"] = {"value": GREEN}
     else:
@@ -794,7 +832,7 @@ def radio_map(digital=False):
         "name": "context_city_label",
         "data": {"values": [{}]},
         "transform": [{"filter": "mapRegion !== 'Australia'"}],
-        "mark": {"type": "text", "font": "Inter", "fontSize": 12, "fontWeight": 700,
+        "mark": {"type": "text", "font": "Inter", "fontSize": 14, "fontWeight": 700,
                  "align": "left", "baseline": "top", "color": INK,
                  "text": {"expr": "mapRegion + ' area · licensed sites'"}},
         "encoding": {"x": {"value": 6}, "y": {"value": 6}},
@@ -807,9 +845,9 @@ def state_cartogram():
         sample = next(csv.DictReader(handle))
     extent_x, extent_y = float(sample["extent_x"]), float(sample["extent_y"])
     scale = f"min(width / {extent_x}, (height - 185) / {extent_y})"
-    spec = base(615)
+    spec = base(900)
     spec.update({
-        "description": "Dorling cartogram: area represents March 2026 residents; colour separately represents ADII 2024 fieldwork.",
+        "description": "A map of population circles: area shows March 2026 residents, while colour shows digital inclusion based on 2024 data.",
         "data": {"url": "data/population_cartogram.csv"},
         "transform": [
             {"calculate": f"datum.cartogram_x * {scale} + (width - datum.extent_x * {scale}) / 2", "as": "pixel_x"},
@@ -827,16 +865,16 @@ def state_cartogram():
                  "size": {"field": "symbol_size", "type": "quantitative", "scale": None},
                  "color": {"field": "score", "type": "quantitative",
                            "scale": {"domain": [68, 80], "range": ["#edf5ef", GREEN]},
-                           "legend": {"title": "ADII score", "orient": "top"}},
+                           "legend": {"title": "Digital inclusion score", "orient": "top"}},
                  "tooltip": [
                      {"field": "state_name", "title": "State / territory"},
                      {"field": "population", "type": "quantitative", "format": ",.0f", "title": "Residents (March 2026 estimate)"},
-                     {"field": "score", "type": "quantitative", "format": ".1f", "title": "ADII index score"},
+                     {"field": "score", "type": "quantitative", "format": ".1f", "title": "Digital inclusion score (out of 100)"},
                  ],
              }},
-            {"mark": {"type": "text", "font": "Inter", "fontSize": 12, "fontWeight": 750},
+            {"mark": {"type": "text", "font": "Inter", "fontSize": 14, "fontWeight": 750},
              "encoding": {"text": {"field": "state"},
-                          "color": {"condition": {"test": "datum.score >= 75", "value": "white"}, "value": INK}}},
+                          "color": {"condition": {"test": "contrast('white', scale('color', datum.score)) > contrast('#000000', scale('color', datum.score))", "value": "white"}, "value": "#000000"}}},
             {"name": "context_population_key",
              "transform": [{"filter": "datum.state === 'NSW'"}],
              "mark": {"type": "circle", "fill": "transparent", "stroke": INK, "strokeWidth": 1.2},
@@ -844,12 +882,12 @@ def state_cartogram():
                  "x": {"value": {"expr": "width / 2 - 80"}},
                  "y": {"value": {"expr": "height - 42"}},
                  "size": {"value": {"expr": f"4 * pow(20 * {scale}, 2)"}},
-                 "tooltip": {"value": "Area reference: one million residents"},
+                 "tooltip": {"value": "This circle represents one million residents"},
              }},
             {"name": "context_population_label",
              "transform": [{"filter": "datum.state === 'NSW'"}],
-             "mark": {"type": "text", "text": ["1 million residents", "Area key · March 2026"],
-                      "align": "left", "font": "Inter", "fontSize": 11, "lineHeight": 15, "color": INK},
+             "mark": {"type": "text", "text": ["1 million residents", "Circle size · March 2026"],
+                      "align": "left", "font": "Inter", "fontSize": 13, "lineHeight": 15, "color": INK},
              "encoding": {
                  "x": {"value": {"expr": f"width / 2 - 68 + 20 * {scale}"}},
                  "y": {"value": {"expr": "height - 48"}},
@@ -882,42 +920,42 @@ def main():
     }
     add_callout(
         charts["streaming-fta-connected"],
-        "The FTA rebound interrupts the longer shift towards streaming: broadcast viewing has not simply disappeared.",
+        "Free-to-air TV use rose again in 2025. Streaming's growth does not mean everyone has left TV behind.",
         [{"filter": "datum.year === 2025"}],
         {"x": {"field": "paid_streaming", "type": "quantitative"},
          "y": {"field": "free_to_air", "type": "quantitative"}},
     )
     add_callout(
         charts["age-parallel-profile"],
-        "Paid video leads this age profile, but broadcast formats still reach part of the group. Media habits overlap.",
+        "Paid video is most common at this age. TV and radio still have users, so these habits are not all online.",
         [{"filter": "datum.age === selectedAge"},
          {"window": [{"op": "row_number", "as": "callout_rank"}], "sort": [{"field": "percent", "order": "descending"}]},
          {"filter": "datum.callout_rank === 1"}],
         {"x": {"field": "metric", "type": "ordinal", "sort": MEDIA_ORDER},
          "y": {"field": "percent", "type": "quantitative"}},
         alternate=("datum.metric === 'Free-to-air TV'",
-                   "Free-to-air leads this age profile, yet digital formats still reach some of the same age group. Habits overlap."),
+                   "Free-to-air TV leads for this age group. Online media still has users here, so older audiences are not all offline."),
     )
     add_callout(
         charts["video-hours-bullet"],
-        "The longest bar shows heavier viewing, not a larger audience: hours are averaged across each age-group base.",
+        "The longest bar means more time watching, not more viewers. These are averages for each survey group.",
         [{"window": [{"op": "row_number", "as": "callout_rank"}], "sort": [{"field": "hours", "order": "descending"}]},
          {"filter": "datum.callout_rank === 1"}],
         {"x": {"field": "hours", "type": "quantitative"},
          "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER}},
         alternate=("videoFormat === 'Free-to-air TV'",
-                   "Older adults spend longer with broadcast TV. Reach alone misses how much viewing time this medium occupies."),
+                   "Older adults spend longer watching free-to-air TV. Counting viewers alone misses how much time they spend."),
     )
     add_callout(
         charts["device-slope"],
-        "Smart TVs gain more than phones here: online video is also a living-room habit, not just a mobile one.",
+        "Smart-TV use grew more than phone use. Streaming is part of watching TV at home, not just on the go.",
         [{"filter": "datum.year === 2025 && datum.device === 'Smart TV'"}],
         {"x": {"field": "year", "type": "ordinal"},
          "y": {"field": "percent", "type": "quantitative"}},
     )
     add_callout(
         charts["news-age"],
-        "Older respondents still report broad online reach. This question measures news and information access, not trust.",
+        "Most older adults use online news and information too. Using it does not tell us whether they trust it.",
         [{"filter": "datum.age === '75+'"}],
         {"x": {"field": "percent", "type": "quantitative"},
          "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER}},
@@ -937,14 +975,14 @@ def main():
     charts["news-age"]["layer"].append(elbow)
     add_callout(
         charts["metro-regional"],
-        "Regional audiences lean more towards FM and broadcast TV; the tiny podcast gap challenges a simple online/offline divide.",
+        "Regional groups use more FM radio and free-to-air TV. Similar podcast use shows they are not simply offline.",
         [{"filter": "datum.metric === 'FM radio'"}],
         {"x": {"field": "regional", "type": "quantitative"},
          "y": {"field": "metric", "type": "nominal", "sort": MEDIA_ORDER}},
     )
     add_callout(
         charts["adii-cartogram"],
-        "NSW gains visual weight when residents, not land, determine area. Colour still measures inclusion, not audience size.",
+        "NSW stands out when size shows people rather than land. Colour shows digital inclusion, not how many people use media.",
         [{"filter": "datum.state === 'NSW'"},
          {"calculate": "datum.pixel_y - sqrt(datum.symbol_size) / 2", "as": "callout_edge_y"}],
         {"x": {"field": "pixel_x", "type": "quantitative", "scale": None, "axis": None},
