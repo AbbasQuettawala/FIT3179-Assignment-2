@@ -170,7 +170,7 @@ def add_callout(spec, message, transforms, anchor, alternate=None, reserve=True)
 def waffle():
     with (ROOT / "data/headline_metrics.json").open(encoding="utf-8") as handle:
         share = json.load(handle)["online_video_past_six_months"]
-    spec = base(500)
+    spec = base(440)
     spec.update(
         {
             "description": f"100 video tiles represent Australian adults. {share} filled tiles show the rounded share who used online video in the six months before the 2025 survey. Outlined tiles show the remaining share.",

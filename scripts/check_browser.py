@@ -46,12 +46,15 @@ def main():
             }""")
             assert page.evaluate("""() => {
                 const size = selector => parseFloat(getComputedStyle(document.querySelector(selector)).fontSize);
-                return size('h1') <= 36 && size('.chapter-heading h2') <= 28 && size('.viz-heading h3') <= 16 &&
+                return size('h1') >= 30 && size('h1') <= 44 && size('.chapter-heading h2') <= 28 && size('.viz-heading h3') <= 16 &&
                     size('.chart-source') < size('.annotation');
             }"""), 'Headings or sources overwhelm the chart narrative'
             assert page.locator('#media-horizon svg.marks').bounding_box()['height'] >= 680
+            assert abs(page.locator('#hero-waffle svg.marks').bounding_box()['height'] - 440) <= 1
             if width >= 1024:
-                assert page.locator('.hero-visual').bounding_box()['width'] >= 2 * page.locator('.hero-copy').bounding_box()['width']
+                hero_ratio = page.locator('.hero-visual').bounding_box()['width'] / page.locator('.hero-copy').bounding_box()['width']
+                assert 1.45 <= hero_ratio <= 1.55
+                assert page.locator('h1').evaluate('heading => parseFloat(getComputedStyle(heading).fontSize)') > 32
                 assert page.locator('.viz-grid .chart').evaluate_all("charts => charts.every(chart => chart.clientWidth >= innerWidth * 0.75)")
                 assert page.locator('#video-hours-bullet .mark-rect.role-mark path').evaluate_all(
                     "bars => bars.every(bar => bar.getBBox().height >= 32)"
