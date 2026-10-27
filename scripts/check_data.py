@@ -122,8 +122,9 @@ def main():
     names = {geometry["properties"]["state_name"] for geometry in geometries}
     assert len(geometries) == 8 and names == {row["state_name"] for row in records("adii_states.csv")}
     manifest = json.loads((ROOT / "specs/manifest.json").read_text())
-    assert len(manifest) == 16 and len(set(manifest)) == 16
-    assert set(manifest) == {path.stem for path in (ROOT / "specs").glob("*.json") if path.stem != "manifest"}
+    assert len(manifest) == 17 and len({entry["id"] for entry in manifest}) == 17
+    assert [entry["number"] for entry in manifest] == list(range(1, 18))
+    assert {entry["file"] for entry in manifest} == {path.name for path in (ROOT / "specs").glob("*.json") if path.stem != "manifest"}
     sources = {row["source_id"] for row in records("sources.csv")}
     assert len(sources) == 7
     for filename in ["news_age.csv", "video_services_age.csv", "metro_regional.csv", "radio_sites.csv", "digital_radio_sites.csv", "population_cartogram.csv"]:
@@ -131,7 +132,7 @@ def main():
     class PageParser(HTMLParser):
         def __init__(self):
             super().__init__()
-            self.ids, self.references, self.charts = [], [], []
+            self.ids, self.references, self.charts, self.specs = [], [], [], []
 
         def handle_starttag(self, tag, attributes):
             attributes = dict(attributes)
@@ -141,12 +142,16 @@ def main():
                 self.references.append(attributes["href"][1:])
             if "chart" in attributes.get("class", "").split():
                 self.charts.append(attributes["id"])
+                self.specs.append(attributes.get("data-spec"))
 
     page = PageParser()
     page.feed((ROOT / "index.html").read_text())
     assert len(page.ids) == len(set(page.ids)), "Duplicate HTML IDs"
     assert set(page.references) <= set(page.ids), "Broken internal footnote/navigation links"
-    assert set(page.charts) == set(manifest), "Manifest and page charts disagree"
+    # Spec numbers remain stable when the story moves a chart to a different section.
+    expected_specs = {entry["id"]: f"specs/{entry['file']}" for entry in manifest}
+    assert len(page.charts) == len(manifest), "Missing or duplicated chart"
+    assert dict(zip(page.charts, page.specs)) == expected_specs, "Chart IDs and spec paths disagree"
     assets = set()
 
     def find_assets(node):
@@ -159,12 +164,16 @@ def main():
             for value in node:
                 find_assets(value)
 
-    for name in manifest:
-        find_assets(json.loads((ROOT / "specs" / f"{name}.json").read_text()))
+    for entry in manifest:
+        spec = json.loads((ROOT / "specs" / entry["file"]).read_text())
+        notes = spec["usermeta"]["explanations"]
+        assert notes["chart_number"] == entry["number"] and notes["WHAT"] and notes["WHY"]
+        assert all("WHAT:" in layer["description"] and "WHY:" in layer["description"] for layer in spec["layer"])
+        find_assets(spec)
     assert all((ROOT / path).is_file() for path in assets)
     size = sum((ROOT / path).stat().st_size for path in assets)
     assert size < 1_000_000, "Chart data should stay well below a few megabytes"
-    print(f"Data audit passed: source denominators, 16 specs, 8 state joins, radio sites, cartogram areas and footnotes; {size:,} bytes of unique chart data.")
+    print(f"Data audit passed: source denominators, 17 specs, 8 state joins, radio sites, cartogram areas and footnotes; {size:,} bytes of unique chart data.")
 
 
 if __name__ == "__main__":

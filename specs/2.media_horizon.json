@@ -1,5 +1,70 @@
-{
+{"description": "2. Changes in weekly viewing - Horizon chart",
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "media-horizon",
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 2,
+      "source_file": "specs/2.media_horizon.json",
+      "WHAT": "Horizon chart: layered area bands show change from the first year of each series.",
+      "WHY": "Folding change into 10-point bands lets several trends fit into separate compact rows.",
+      "data_preparation_and_limits": "Python already calculated current percentage minus starting percentage and the band heights. Vega-Lite does not normalise the source here. Short-form video starts later than the other series.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "calculate": {
+          "WHAT": "Evaluate an expression and store its result under the name in as.",
+          "WHY": "Derived coordinates and labels prepare data for display without replacing source fields."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      }
+    }
+  },
   "width": "container",
   "height": 680,
   "autosize": {
@@ -42,7 +107,6 @@
       "titleFont": "Inter"
     }
   },
-  "description": "Four rows showing changes in weekly video use. Each darker band adds 10 percentage points; in the legend, + means growth and − means a fall.",
   "data": {
     "url": "data/horizon_trends.csv",
     "format": {
@@ -170,7 +234,8 @@
             "title": "Weekly use (%)"
           }
         ]
-      }
+      },
+      "description": "WHAT: Draw the first 10-point band. WHY: It provides the base band before higher changes are folded over it."
     },
     {
       "transform": [
@@ -281,7 +346,8 @@
             "title": "Weekly use (%)"
           }
         ]
-      }
+      },
+      "description": "WHAT: Draw the second 10-point band. WHY: A darker band indicates change beyond the first ten points."
     },
     {
       "transform": [
@@ -392,7 +458,8 @@
             "title": "Weekly use (%)"
           }
         ]
-      }
+      },
+      "description": "WHAT: Draw the third 10-point band. WHY: Higher changes fit in the same compact row."
     },
     {
       "transform": [
@@ -503,7 +570,8 @@
             "title": "Weekly use (%)"
           }
         ]
-      }
+      },
+      "description": "WHAT: Draw the fourth 10-point band. WHY: The largest changes remain visible without making every row taller."
     },
     {
       "transform": [
@@ -565,7 +633,8 @@
             "title": "Change (percentage points)"
           }
         ]
-      }
+      },
+      "description": "WHAT: Draw invisible hover rectangles around each year. WHY: A wider invisible target makes narrow bands easier to inspect; the values do not change."
     },
     {
       "transform": [
@@ -600,7 +669,8 @@
         "text": {
           "field": "label"
         }
-      }
+      },
+      "description": "WHAT: Label the final change and baseline year. WHY: Readers can interpret the folded bands without estimating the final total."
     }
   ]
 }

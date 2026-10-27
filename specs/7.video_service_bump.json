@@ -1,0 +1,380 @@
+{"description": "7. Video-service rankings over time - Bump chart",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "video-service-bump",
+    "focus": {
+      "field": "service",
+      "parameter": "selectedService",
+      "categories": [
+        "YouTube",
+        "Netflix",
+        "Prime Video",
+        "Disney+",
+        "TikTok",
+        "Stan",
+        "Kayo",
+        "Binge"
+      ],
+      "all": "All"
+    },
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 7,
+      "source_file": "specs/7.video_service_bump.json",
+      "WHAT": "Bump chart: each service's line follows its rank through the years.",
+      "WHY": "Rank makes changes in relative popularity easy to follow; direct endpoint labels identify services.",
+      "data_preparation_and_limits": "The window/rank transform computes rankings within each year. Ranking is not normalisation and does not show the size of percentage gaps.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "sort": {
+          "WHAT": "Set an explicit category or calculation order.",
+          "WHY": "Ages, services and years should not depend on accidental file order."
+        },
+        "condition": {
+          "WHAT": "Use one visual setting when a test is true and another otherwise.",
+          "WHY": "This provides highlighting, readable text contrast and responsive annotations without changing measurements."
+        },
+        "params": {
+          "WHAT": "Store adjustable values such as videoFormat or hoveredSeries.",
+          "WHY": "Controls and JavaScript can update the view without modifying the CSV."
+        },
+        "bind": {
+          "WHAT": "Connect a parameter to an input, such as a select dropdown.",
+          "WHY": "Readers can choose a format, series or city without editing code."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "window": {
+          "WHAT": "Calculate ranks or row numbers across sorted rows.",
+          "WHY": "Rank compares services within each year; row_number selects an observation for a callout. Neither is normalisation."
+        },
+        "groupby": {
+          "WHAT": "Run the calculation separately for each group.",
+          "WHY": "Yearly service ranks must compare services within the same year."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      },
+      "interaction_bridge": "bind creates chart dropdowns. assets/main.js handles custom hover/click events and updates Vega signals; conditions then change appearance. The page's state selector is HTML/JavaScript; the ocean-and-amber theme is fixed."
+    }
+  },
+  "width": "container",
+  "height": 580,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 14,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 13,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    }
+  },
+  "data": {
+    "url": "data/video_services.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "percent": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "percent",
+          "order": "descending"
+        }
+      ],
+      "groupby": [
+        "year"
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 110
+        },
+        "strokeWidth": 2.6
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "title": null,
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              1,
+              8
+            ],
+            "reverse": true
+          },
+          "axis": {
+            "title": "Rank among these 8 services",
+            "tickMinStep": 1
+          }
+        },
+        "color": {
+          "field": "service",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "YouTube",
+              "Netflix",
+              "Prime Video",
+              "Disney+",
+              "TikTok",
+              "Stan",
+              "Kayo",
+              "Binge"
+            ],
+            "range": [
+              "#23658b",
+              "#b05d25",
+              "#267b75",
+              "#a65c86",
+              "#947026",
+              "#4c8ca8",
+              "#78639a",
+              "#454d56"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "columns": 4
+          }
+        },
+        "detail": {
+          "field": "service"
+        },
+        "order": {
+          "field": "year"
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "service",
+            "title": "Service"
+          },
+          {
+            "field": "rank",
+            "title": "Rank"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Used (%)"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": "(selectedService === \"All\" && hoveredSeries === '') || (datum.service === selectedService || datum.service === hoveredSeries)",
+            "value": 1
+          },
+          "value": 0.4
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.service === selectedService || datum.service === hoveredSeries",
+            "value": 4.5
+          },
+          "value": 2.5
+        },
+        "shape": {
+          "field": "service",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "YouTube",
+              "Netflix",
+              "Prime Video",
+              "Disney+",
+              "TikTok",
+              "Stan",
+              "Kayo",
+              "Binge"
+            ],
+            "range": [
+              "circle",
+              "square",
+              "diamond",
+              "triangle-up",
+              "triangle-down",
+              "cross",
+              "triangle-right",
+              "triangle-left"
+            ]
+          },
+          "legend": null
+        }
+      },
+      "description": "WHAT: Connect each service's yearly ranks. WHY: The path shows whether the service moved up or down relative to the others."
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year === 2025"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "dy": -8,
+        "font": "Inter",
+        "fontSize": 13,
+        "fontWeight": 700
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "reverse": true
+          }
+        },
+        "text": {
+          "field": "service"
+        },
+        "color": {
+          "value": "#10231f"
+        },
+        "opacity": {
+          "condition": {
+            "test": "(selectedService === \"All\" && hoveredSeries === '') || (datum.service === selectedService || datum.service === hoveredSeries)",
+            "value": 1
+          },
+          "value": 0.4
+        }
+      },
+      "description": "WHAT: Label services at the final year. WHY: Direct labels reduce repeated trips between a line and its legend."
+    }
+  ],
+  "params": [
+    {
+      "name": "selectedService",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "YouTube",
+          "Netflix",
+          "Prime Video",
+          "Disney+",
+          "TikTok",
+          "Stan",
+          "Kayo",
+          "Binge"
+        ],
+        "name": "Pin service  "
+      }
+    },
+    {
+      "name": "hoveredSeries",
+      "value": ""
+    }
+  ]
+}

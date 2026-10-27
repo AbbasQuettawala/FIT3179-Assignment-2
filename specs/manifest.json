@@ -1,18 +1,87 @@
 [
-  "hero-waffle",
-  "media-horizon",
-  "streaming-fta-connected",
-  "age-media-heatmap",
-  "age-parallel-profile",
-  "video-hours-bullet",
-  "video-service-bump",
-  "device-slope",
-  "audio-age-heatmap",
-  "audio-location-network",
-  "news-age",
-  "metro-regional",
-  "adii-choropleth",
-  "adii-cartogram",
-  "radio-symbol-map",
-  "radio-dot-map"
+  {
+    "number": 1,
+    "id": "hero-waffle",
+    "file": "1.hero_waffle.json"
+  },
+  {
+    "number": 2,
+    "id": "media-horizon",
+    "file": "2.media_horizon.json"
+  },
+  {
+    "number": 3,
+    "id": "streaming-fta-connected",
+    "file": "3.streaming_fta_connected.json"
+  },
+  {
+    "number": 4,
+    "id": "age-media-heatmap",
+    "file": "4.age_media_heatmap.json"
+  },
+  {
+    "number": 5,
+    "id": "age-parallel-profile",
+    "file": "5.age_parallel_profile.json"
+  },
+  {
+    "number": 6,
+    "id": "video-hours-bullet",
+    "file": "6.video_hours_bullet.json"
+  },
+  {
+    "number": 7,
+    "id": "video-service-bump",
+    "file": "7.video_service_bump.json"
+  },
+  {
+    "number": 8,
+    "id": "device-slope",
+    "file": "8.device_slope.json"
+  },
+  {
+    "number": 9,
+    "id": "audio-age-heatmap",
+    "file": "9.audio_age_heatmap.json"
+  },
+  {
+    "number": 10,
+    "id": "audio-location-network",
+    "file": "10.audio_location_network.json"
+  },
+  {
+    "number": 11,
+    "id": "news-age",
+    "file": "11.news_age.json"
+  },
+  {
+    "number": 12,
+    "id": "adii-choropleth",
+    "file": "12.adii_choropleth.json"
+  },
+  {
+    "number": 13,
+    "id": "adii-cartogram",
+    "file": "13.adii_cartogram.json"
+  },
+  {
+    "number": 14,
+    "id": "metro-regional",
+    "file": "14.metro_regional.json"
+  },
+  {
+    "number": 15,
+    "id": "radio-symbol-map",
+    "file": "15.radio_symbol_map.json"
+  },
+  {
+    "number": 16,
+    "id": "radio-dot-map",
+    "file": "16.radio_dot_map.json"
+  },
+  {
+    "number": 17,
+    "id": "news-trust",
+    "file": "17.news_trust.json"
+  }
 ]

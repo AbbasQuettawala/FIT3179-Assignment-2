@@ -1,7 +1,93 @@
-{
+{"description": "16. AM/FM radio-site locations - Point-location dot map",
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "radio-dot-map",
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 16,
+      "source_file": "specs/16.radio_dot_map.json",
+      "WHAT": "Point-location dot map: one equal-sized dot per AM/FM site, coloured by technology.",
+      "WHY": "Equal-sized dots make site distribution the main message; colour distinguishes AM, FM and combined sites.",
+      "data_preparation_and_limits": "Dots use recorded locations, not randomly placed dot-density symbols. A dot is a licensed site, not a listener or a reception-coverage area.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "condition": {
+          "WHAT": "Use one visual setting when a test is true and another otherwise.",
+          "WHY": "This provides highlighting, readable text contrast and responsive annotations without changing measurements."
+        },
+        "params": {
+          "WHAT": "Store adjustable values such as videoFormat or hoveredSeries.",
+          "WHY": "Controls and JavaScript can update the view without modifying the CSV."
+        },
+        "bind": {
+          "WHAT": "Connect a parameter to an input, such as a select dropdown.",
+          "WHY": "Readers can choose a format, series or city without editing code."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "calculate": {
+          "WHAT": "Evaluate an expression and store its result under the name in as.",
+          "WHY": "Derived coordinates and labels prepare data for display without replacing source fields."
+        },
+        "projection": {
+          "WHAT": "Convert geographic coordinates to a flat map using a conic equal-area projection.",
+          "WHY": "The Australian map preserves relative geographic areas, though not all shapes or distances."
+        },
+        "expr": {
+          "WHAT": "Evaluate a dynamic expression instead of using a fixed literal.",
+          "WHY": "Coordinates, sizes or scales can respond to chart dimensions and parameter choices."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      },
+      "interaction_bridge": "bind creates chart dropdowns. assets/main.js handles custom hover/click events and updates Vega signals; conditions then change appearance. The page's state selector is HTML/JavaScript; the ocean-and-amber theme is fixed."
+    }
+  },
   "width": "container",
-  "height": 740,
+  "height": 580,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -42,7 +128,6 @@
       "titleFont": "Inter"
     }
   },
-  "description": "Digital-radio sites, with larger circles showing more issued licence records.",
   "params": [
     {
       "name": "mapRegion",
@@ -95,14 +180,15 @@
       "mark": {
         "type": "geoshape",
         "clip": true,
-        "fill": "#e5ebe5",
-        "stroke": "#b9c7be",
-        "strokeWidth": 1
-      }
+        "fill": "#cbdce3",
+        "stroke": "#526476",
+        "strokeWidth": 1.5
+      },
+      "description": "WHAT: Draw a muted state-boundary background. WHY: It provides context for the site distribution."
     },
     {
       "data": {
-        "url": "data/digital_radio_sites.csv",
+        "url": "data/radio_sites.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -145,37 +231,35 @@
             "title": "State"
           },
           {
-            "field": "dr",
+            "field": "am",
             "type": "quantitative",
-            "title": "Digital-radio records"
+            "title": "AM licence records"
+          },
+          {
+            "field": "fm",
+            "type": "quantitative",
+            "title": "FM licence records"
           }
         ],
-        "size": {
-          "field": "dr",
-          "type": "quantitative",
+        "color": {
+          "field": "technology",
+          "type": "nominal",
           "scale": {
             "domain": [
-              0,
-              3
+              "AM",
+              "FM",
+              "AM + FM"
             ],
             "range": [
-              0,
-              960
+              "#d94d72",
+              "#5279be",
+              "#1f6f5b"
             ]
           },
           "legend": {
-            "title": "Licence records per site",
-            "orient": "top",
-            "values": [
-              1,
-              2,
-              3
-            ],
-            "format": "d"
+            "title": "One dot = one site",
+            "orient": "top"
           }
-        },
-        "color": {
-          "value": "#1f6f5b"
         },
         "opacity": {
           "condition": {
@@ -184,7 +268,8 @@
           },
           "value": 0.22
         }
-      }
+      },
+      "description": "WHAT: Draw an equal-sized dot for each AM/FM site. WHY: Counts are represented by the number of dots, not their individual sizes."
     },
     {
       "name": "state_label_pointer",
@@ -237,7 +322,8 @@
           },
           "value": 0.22
         }
-      }
+      },
+      "description": "WHAT: Draw a pointer from the ACT to its offset label. WHY: The ACT is too small to label clearly inside its boundary at national scale."
     },
     {
       "data": {
@@ -305,7 +391,8 @@
         "stroke": "#f7f3e8",
         "strokeWidth": 3,
         "color": "#f7f3e8"
-      }
+      },
+      "description": "WHAT: Draw a light outline behind state-label text. WHY: The halo separates labels from coloured areas and underlying symbols."
     },
     {
       "data": {
@@ -371,7 +458,8 @@
         "fontSize": 11,
         "fontWeight": 700,
         "color": "#10231f"
-      }
+      },
+      "description": "WHAT: Draw readable state abbreviations. WHY: Viewers can identify locations without relying on shape recognition alone."
     },
     {
       "name": "context_city_label",
@@ -404,7 +492,8 @@
         "y": {
           "value": 6
         }
-      }
+      },
+      "description": "WHAT: Draw the name of the selected city when zoomed in. WHY: It preserves geographic context after the national outline leaves the viewport."
     }
   ]
 }

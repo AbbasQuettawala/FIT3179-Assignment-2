@@ -1,0 +1,572 @@
+{"description": "5. Media habits across age groups - Connected profile chart",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "age-parallel-profile",
+    "callout": true,
+    "focus": {
+      "field": "age",
+      "parameter": "selectedAge",
+      "categories": [
+        "18–24",
+        "25–34",
+        "35–44",
+        "45–54",
+        "55–64",
+        "65–74",
+        "75+"
+      ],
+      "all": "All"
+    },
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 5,
+      "source_file": "specs/5.age_parallel_profile.json",
+      "WHAT": "Connected age profiles: each age group's line links its values across media activities.",
+      "WHY": "Following one coloured line reveals the media mix for an age group; hover and pin help compare groups.",
+      "data_preparation_and_limits": "Activities are categories, not continuous time. Connecting them helps comparison but does not imply measurements between activities.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "sort": {
+          "WHAT": "Set an explicit category or calculation order.",
+          "WHY": "Ages, services and years should not depend on accidental file order."
+        },
+        "condition": {
+          "WHAT": "Use one visual setting when a test is true and another otherwise.",
+          "WHY": "This provides highlighting, readable text contrast and responsive annotations without changing measurements."
+        },
+        "params": {
+          "WHAT": "Store adjustable values such as videoFormat or hoveredSeries.",
+          "WHY": "Controls and JavaScript can update the view without modifying the CSV."
+        },
+        "bind": {
+          "WHAT": "Connect a parameter to an input, such as a select dropdown.",
+          "WHY": "Readers can choose a format, series or city without editing code."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "calculate": {
+          "WHAT": "Evaluate an expression and store its result under the name in as.",
+          "WHY": "Derived coordinates and labels prepare data for display without replacing source fields."
+        },
+        "window": {
+          "WHAT": "Calculate ranks or row numbers across sorted rows.",
+          "WHY": "Rank compares services within each year; row_number selects an observation for a callout. Neither is normalisation."
+        },
+        "expr": {
+          "WHAT": "Evaluate a dynamic expression instead of using a fixed literal.",
+          "WHY": "Coordinates, sizes or scales can respond to chart dimensions and parameter choices."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      },
+      "interaction_bridge": "bind creates chart dropdowns. assets/main.js handles custom hover/click events and updates Vega signals; conditions then change appearance. The page's state selector is HTML/JavaScript; the ocean-and-amber theme is fixed.",
+      "annotation_connectors": "The rule layer uses x/y and x2/y2 as endpoints. Current connectors are short and solid. The earlier strokeDash [3,3] meant 3 pixels of stroke followed by 3 pixels of gap. Compact mode uses the main explanation below the plot."
+    }
+  },
+  "width": "container",
+  "height": 520,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 14,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 13,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "data": {
+    "url": "data/age_media.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "age_order": "number",
+        "percent": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "indexof([\"Paid video\", \"Short-form video\", \"Music streaming\", \"Podcasts\", \"Free-to-air TV\", \"FM radio\"], datum.metric)",
+      "as": "metric_position"
+    }
+  ],
+  "params": [
+    {
+      "name": "compactLayout",
+      "value": false
+    },
+    {
+      "name": "selectedAge",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "18–24",
+          "25–34",
+          "35–44",
+          "45–54",
+          "55–64",
+          "65–74",
+          "75+"
+        ],
+        "name": "Pin age group  "
+      }
+    },
+    {
+      "name": "hoveredSeries",
+      "value": ""
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 72
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "metric",
+          "type": "ordinal",
+          "sort": [
+            "Paid video",
+            "Short-form video",
+            "Music streaming",
+            "Podcasts",
+            "Free-to-air TV",
+            "FM radio"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": -28,
+            "labelLimit": 110
+          }
+        },
+        "y": {
+          "field": "percent",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          },
+          "axis": {
+            "title": "Used in past week (%)"
+          }
+        },
+        "detail": {
+          "field": "age"
+        },
+        "color": {
+          "field": "age",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "18–24",
+              "25–34",
+              "35–44",
+              "45–54",
+              "55–64",
+              "65–74",
+              "75+"
+            ],
+            "range": [
+              "#23658b",
+              "#b05d25",
+              "#267b75",
+              "#a65c86",
+              "#947026",
+              "#4c8ca8",
+              "#78639a"
+            ]
+          },
+          "legend": {
+            "title": "Age group",
+            "orient": "top",
+            "columns": 4
+          }
+        },
+        "order": {
+          "field": "metric_position",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "age",
+            "title": "Age"
+          },
+          {
+            "field": "metric",
+            "title": "Activity"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Used (%)"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": "(selectedAge === \"All\" && hoveredSeries === '') || (datum.age === selectedAge || datum.age === hoveredSeries)",
+            "value": 1
+          },
+          "value": 0.4
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.age === selectedAge || datum.age === hoveredSeries",
+            "value": 4.5
+          },
+          "value": 2.5
+        },
+        "shape": {
+          "field": "age",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "18–24",
+              "25–34",
+              "35–44",
+              "45–54",
+              "55–64",
+              "65–74",
+              "75+"
+            ],
+            "range": [
+              "circle",
+              "square",
+              "diamond",
+              "triangle-up",
+              "triangle-down",
+              "cross",
+              "triangle-right"
+            ]
+          },
+          "legend": null
+        }
+      },
+      "description": "WHAT: Draw a coloured line and point markers for each age group. WHY: Connecting category values helps the viewer follow a group's media profile."
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "filter": "datum.age === (hoveredSeries !== '' ? hoveredSeries : selectedAge === 'All' ? '75+' : selectedAge)"
+        },
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "percent",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "scale('x', datum[\"metric\"]) + bandwidth('x') / 2"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "scale('y', datum[\"percent\"])"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "clamp((scale('x', datum[\"metric\"]) + bandwidth('x') / 2), (clamp((scale('x', datum[\"metric\"]) + bandwidth('x') / 2) + 18, 4, max(4, width - 206))), (clamp((scale('x', datum[\"metric\"]) + bandwidth('x') / 2) + 18, 4, max(4, width - 206))) + 202)"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "clamp((scale('y', datum[\"percent\"])), (clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 4))), (clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 4))) + (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))))"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 1"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw a short solid rule from the highlighted point towards the annotation box. WHY: A nearby connector links the explanation to its evidence without crossing the whole chart."
+    },
+    {
+      "name": "callout_background",
+      "transform": [
+        {
+          "filter": "datum.age === (hoveredSeries !== '' ? hoveredSeries : selectedAge === 'All' ? '75+' : selectedAge)"
+        },
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "percent",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "color": "#f7f3e8",
+        "opacity": 0.96,
+        "cornerRadius": 4
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "clamp((scale('x', datum[\"metric\"]) + bandwidth('x') / 2) + 18, 4, max(4, width - 206))"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 4))"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "(clamp((scale('x', datum[\"metric\"]) + bandwidth('x') / 2) + 18, 4, max(4, width - 206))) + 202"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "(clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 4))) + (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n')))"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 0.96"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw a pale rectangle behind the annotation. WHY: The note stays readable over marks and grid lines."
+    },
+    {
+      "name": "callout_anchor",
+      "transform": [
+        {
+          "filter": "datum.age === (hoveredSeries !== '' ? hoveredSeries : selectedAge === 'All' ? '75+' : selectedAge)"
+        },
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "percent",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "shape": "circle",
+        "filled": false,
+        "size": 180,
+        "color": "#f7f3e8",
+        "stroke": "#1f6f5b",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "metric",
+          "type": "ordinal",
+          "sort": [
+            "Paid video",
+            "Short-form video",
+            "Music streaming",
+            "Podcasts",
+            "Free-to-air TV",
+            "FM radio"
+          ]
+        },
+        "y": {
+          "field": "percent",
+          "type": "quantitative"
+        },
+        "tooltip": {
+          "value": "Paid video leads here. Other formats still have users; the mix is not all online."
+        }
+      },
+      "description": "WHAT: Place a small outlined marker at the selected data point. WHY: It identifies exactly which observation the explanation refers to."
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "filter": "datum.age === (hoveredSeries !== '' ? hoveredSeries : selectedAge === 'All' ? '75+' : selectedAge)"
+        },
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "percent",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "(datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")"
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "(clamp((scale('x', datum[\"metric\"]) + bandwidth('x') / 2) + 18, 4, max(4, width - 206))) + 7"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "(clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((datum.metric === 'Free-to-air TV') ? (\"Free-to-air TV leads here, but\\nonline media still reaches\\nmany in this age group.\") : (\"Paid video leads here. Other\\nformats still have users; the\\nmix is not all online.\")), '\\n'))) - 4))) + 6"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 1"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw the explanatory annotation. WHY: It explains why the highlighted pattern matters, rather than just repeating a value."
+    }
+  ]
+}

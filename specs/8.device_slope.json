@@ -1,0 +1,560 @@
+{"description": "8. Changes in devices used for viewing - Slope chart",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "device-slope",
+    "callout": true,
+    "focus": {
+      "field": "device",
+      "parameter": "selectedDevice",
+      "categories": [
+        "Smart TV",
+        "Mobile phone",
+        "Computer",
+        "Tablet",
+        "Chromecast / Google TV",
+        "Games console",
+        "Apple TV"
+      ],
+      "all": "All"
+    },
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 8,
+      "source_file": "specs/8.device_slope.json",
+      "WHAT": "Slope chart: each device connects its usage percentage in two years.",
+      "WHY": "The direction and steepness of each slope help compare increases and decreases.",
+      "data_preparation_and_limits": "People can use more than one device, so percentages need not sum to 100. These are usage shares, not time spent.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "condition": {
+          "WHAT": "Use one visual setting when a test is true and another otherwise.",
+          "WHY": "This provides highlighting, readable text contrast and responsive annotations without changing measurements."
+        },
+        "params": {
+          "WHAT": "Store adjustable values such as videoFormat or hoveredSeries.",
+          "WHY": "Controls and JavaScript can update the view without modifying the CSV."
+        },
+        "bind": {
+          "WHAT": "Connect a parameter to an input, such as a select dropdown.",
+          "WHY": "Readers can choose a format, series or city without editing code."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "calculate": {
+          "WHAT": "Evaluate an expression and store its result under the name in as.",
+          "WHY": "Derived coordinates and labels prepare data for display without replacing source fields."
+        },
+        "expr": {
+          "WHAT": "Evaluate a dynamic expression instead of using a fixed literal.",
+          "WHY": "Coordinates, sizes or scales can respond to chart dimensions and parameter choices."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      },
+      "interaction_bridge": "bind creates chart dropdowns. assets/main.js handles custom hover/click events and updates Vega signals; conditions then change appearance. The page's state selector is HTML/JavaScript; the ocean-and-amber theme is fixed.",
+      "annotation_connectors": "The rule layer uses x/y and x2/y2 as endpoints. Current connectors are short and solid. The earlier strokeDash [3,3] meant 3 pixels of stroke followed by 3 pixels of gap. Compact mode uses the main explanation below the plot."
+    }
+  },
+  "width": "container",
+  "height": 540,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 14,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 13,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "data": {
+    "url": "data/video_devices.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "percent": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.7
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "title": null,
+            "labelAngle": 0,
+            "labelFontSize": 13,
+            "labelFontWeight": 700
+          }
+        },
+        "y": {
+          "field": "percent",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              80
+            ]
+          },
+          "axis": {
+            "title": "Use for online video at home (%)"
+          }
+        },
+        "detail": {
+          "field": "device"
+        },
+        "color": {
+          "field": "device",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Smart TV",
+              "Mobile phone",
+              "Computer",
+              "Tablet",
+              "Chromecast / Google TV",
+              "Games console",
+              "Apple TV"
+            ],
+            "range": [
+              "#23658b",
+              "#b05d25",
+              "#267b75",
+              "#a65c86",
+              "#947026",
+              "#4c8ca8",
+              "#78639a"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "device",
+            "title": "Device"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Used (%)"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": "(selectedDevice === \"All\" && hoveredSeries === '') || (datum.device === selectedDevice || datum.device === hoveredSeries)",
+            "value": 1
+          },
+          "value": 0.4
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.device === selectedDevice || datum.device === hoveredSeries",
+            "value": 4.5
+          },
+          "value": 2.5
+        }
+      },
+      "description": "WHAT: Connect each device's two yearly values. WHY: Slopes reveal the direction and size of change."
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 136
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "percent",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "device",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Smart TV",
+              "Mobile phone",
+              "Computer",
+              "Tablet",
+              "Chromecast / Google TV",
+              "Games console",
+              "Apple TV"
+            ],
+            "range": [
+              "#23658b",
+              "#b05d25",
+              "#267b75",
+              "#a65c86",
+              "#947026",
+              "#4c8ca8",
+              "#78639a"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": {
+            "test": "(selectedDevice === \"All\" && hoveredSeries === '') || (datum.device === selectedDevice || datum.device === hoveredSeries)",
+            "value": 1
+          },
+          "value": 0.4
+        },
+        "shape": {
+          "field": "device",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Smart TV",
+              "Mobile phone",
+              "Computer",
+              "Tablet",
+              "Chromecast / Google TV",
+              "Games console",
+              "Apple TV"
+            ],
+            "range": [
+              "circle",
+              "square",
+              "diamond",
+              "triangle-up",
+              "triangle-down",
+              "cross",
+              "triangle-right"
+            ]
+          },
+          "legend": null
+        }
+      },
+      "description": "WHAT: Mark each endpoint. WHY: The actual measurements are visible rather than only the connecting line."
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year === 2025"
+        },
+        {
+          "calculate": "(datum.device === 'Chromecast / Google TV' ? 'Google TV' : datum.device === 'Games console' ? 'Console' : datum.device) + ' ' + format(datum.percent, '.0f') + '%'",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "dy": {
+          "expr": "datum.device === 'Games console' ? -5 : datum.device === 'Apple TV' ? 5 : 0"
+        },
+        "font": "Inter",
+        "fontSize": 13,
+        "fontWeight": 650
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "percent",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "value": "#10231f"
+        },
+        "opacity": {
+          "condition": {
+            "test": "(selectedDevice === \"All\" && hoveredSeries === '') || (datum.device === selectedDevice || datum.device === hoveredSeries)",
+            "value": 1
+          },
+          "value": 0.4
+        }
+      },
+      "description": "WHAT: Label the latest device values. WHY: Readers can identify each series and its final percentage directly."
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "filter": "datum.year === 2025 && datum.device === 'Smart TV'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "scale('x', datum[\"year\"]) + bandwidth('x') / 2"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "scale('y', datum[\"percent\"])"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "clamp((scale('x', datum[\"year\"]) + bandwidth('x') / 2), (clamp((scale('x', datum[\"year\"]) + bandwidth('x') / 2) - 247, 4, max(4, width - 206))), (clamp((scale('x', datum[\"year\"]) + bandwidth('x') / 2) - 247, 4, max(4, width - 206))) + 202)"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "clamp((scale('y', datum[\"percent\"])), (clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 4))), (clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 4))) + (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))))"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 1"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw a short solid rule from the highlighted point towards the annotation box. WHY: A nearby connector links the explanation to its evidence without crossing the whole chart."
+    },
+    {
+      "name": "callout_background",
+      "transform": [
+        {
+          "filter": "datum.year === 2025 && datum.device === 'Smart TV'"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "color": "#f7f3e8",
+        "opacity": 0.96,
+        "cornerRadius": 4
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "clamp((scale('x', datum[\"year\"]) + bandwidth('x') / 2) - 247, 4, max(4, width - 206))"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 4))"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "(clamp((scale('x', datum[\"year\"]) + bandwidth('x') / 2) - 247, 4, max(4, width - 206))) + 202"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "(clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 4))) + (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n')))"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 0.96"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw a pale rectangle behind the annotation. WHY: The note stays readable over marks and grid lines."
+    },
+    {
+      "name": "callout_anchor",
+      "transform": [
+        {
+          "filter": "datum.year === 2025 && datum.device === 'Smart TV'"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "shape": "circle",
+        "filled": false,
+        "size": 180,
+        "color": "#f7f3e8",
+        "stroke": "#1f6f5b",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "percent",
+          "type": "quantitative"
+        },
+        "tooltip": {
+          "value": "Smart-TV use grew more than phone use. Streaming is part of watching TV at home, not just on the go."
+        }
+      },
+      "description": "WHAT: Place a small outlined marker at the selected data point. WHY: It identifies exactly which observation the explanation refers to."
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "filter": "datum.year === 2025 && datum.device === 'Smart TV'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\""
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "(clamp((scale('x', datum[\"year\"]) + bandwidth('x') / 2) - 247, 4, max(4, width - 206))) + 7"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "(clamp((scale('y', datum[\"percent\"])) - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Smart-TV use grew more than\\nphone use. Streaming is part\\nof watching TV at home, not\\njust on the go.\"), '\\n'))) - 4))) + 6"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 1"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw the explanatory annotation. WHY: It explains why the highlighted pattern matters, rather than just repeating a value."
+    }
+  ],
+  "params": [
+    {
+      "name": "compactLayout",
+      "value": false
+    },
+    {
+      "name": "selectedDevice",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "Smart TV",
+          "Mobile phone",
+          "Computer",
+          "Tablet",
+          "Chromecast / Google TV",
+          "Games console",
+          "Apple TV"
+        ],
+        "name": "Pin device  "
+      }
+    },
+    {
+      "name": "hoveredSeries",
+      "value": ""
+    }
+  ]
+}

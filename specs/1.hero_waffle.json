@@ -1,7 +1,80 @@
-{
+{"description": "1. How common is online video? - Waffle chart",
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "hero-waffle",
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 1,
+      "source_file": "specs/1.hero_waffle.json",
+      "WHAT": "Waffle chart: one tile represents one in 100 adults.",
+      "WHY": "A 100-tile grid makes the rounded share easy to picture, rather than presenting only a large number.",
+      "data_preparation_and_limits": "The source percentage was read by Python when this specification was generated. These are illustrative tiles, not 100 individual survey records.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "sequence": {
+          "WHAT": "Generate rows from start up to, but not including, stop.",
+          "WHY": "The waffle needs 100 illustrative tiles, not 100 individual survey responses."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "condition": {
+          "WHAT": "Use one visual setting when a test is true and another otherwise.",
+          "WHY": "This provides highlighting, readable text contrast and responsive annotations without changing measurements."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "calculate": {
+          "WHAT": "Evaluate an expression and store its result under the name in as.",
+          "WHY": "Derived coordinates and labels prepare data for display without replacing source fields."
+        },
+        "expr": {
+          "WHAT": "Evaluate a dynamic expression instead of using a fixed literal.",
+          "WHY": "Coordinates, sizes or scales can respond to chart dimensions and parameter choices."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      }
+    }
+  },
   "width": "container",
-  "height": 440,
+  "height": 340,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -42,7 +115,6 @@
       "titleFont": "Inter"
     }
   },
-  "description": "100 video tiles represent Australian adults. 95 filled tiles show the rounded share who used online video in the six months before the 2025 survey. Outlined tiles show the remaining share.",
   "data": {
     "sequence": {
       "start": 0,
@@ -96,7 +168,7 @@
             "type": "band",
             "padding": 0.15,
             "range": [
-              95,
+              80,
               {
                 "expr": "height"
               }
@@ -144,7 +216,8 @@
             "format": ".0f"
           }
         ]
-      }
+      },
+      "description": "WHAT: Draw the 100 rectangles. WHY: One visual unit per percentage point makes the rounded share concrete."
     },
     {
       "name": "hero_play_icons",
@@ -160,7 +233,7 @@
         "color": "white",
         "opacity": 1,
         "size": {
-          "expr": "pow(min(width / 35, (height - 95) / 18), 2)"
+          "expr": "pow(min(width / 35, (height - 80) / 18), 2)"
         }
       },
       "encoding": {
@@ -184,7 +257,8 @@
             "format": ".0f"
           }
         ]
-      }
+      },
+      "description": "WHAT: Overlay a small play triangle on used-video tiles only. WHY: The symbol connects the tiles to video without changing their numerical meaning."
     },
     {
       "name": "hero_total",
@@ -198,7 +272,7 @@
         "text": "95 in 100",
         "font": "Fraunces",
         "fontSize": {
-          "expr": "width < 360 ? 28 : 36"
+          "expr": "width < 360 ? 20 : 24"
         },
         "fontWeight": 700,
         "align": "left",
@@ -212,7 +286,8 @@
         "y": {
           "value": 0
         }
-      }
+      },
+      "description": "WHAT: Draw the headline count as chart text. WHY: Readers get the overall figure before inspecting individual tiles."
     },
     {
       "name": "hero_context",
@@ -237,9 +312,10 @@
           "value": 0
         },
         "y": {
-          "value": 55
+          "value": 40
         }
-      }
+      },
+      "description": "WHAT: Draw the time-window explanation. WHY: The figure should not be mistaken for daily or weekly viewing."
     }
   ]
 }

@@ -1,0 +1,260 @@
+{"description": "9. Audio formats by age - Heatmap",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "audio-age-heatmap",
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 9,
+      "source_file": "specs/9.audio_age_heatmap.json",
+      "WHAT": "Audio heatmap: columns are age groups, rows are audio formats, colour is weekly listening percentage.",
+      "WHY": "The grid reveals age patterns, while a second text layer supplies exact rounded readings.",
+      "data_preparation_and_limits": "The data already contains percentages. The colour domain does not normalise it. The time window differs from the video-service heatmap.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "sort": {
+          "WHAT": "Set an explicit category or calculation order.",
+          "WHY": "Ages, services and years should not depend on accidental file order."
+        },
+        "condition": {
+          "WHAT": "Use one visual setting when a test is true and another otherwise.",
+          "WHY": "This provides highlighting, readable text contrast and responsive annotations without changing measurements."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      }
+    }
+  },
+  "width": "container",
+  "height": 500,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 14,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 13,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    }
+  },
+  "data": {
+    "url": "data/audio_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "age_order": "number",
+        "percent": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "name": "heatmap_tiles",
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ],
+          "axis": {
+            "title": "Age",
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "metric",
+          "type": "ordinal",
+          "sort": [
+            "Music streaming",
+            "Podcasts",
+            "Internet radio",
+            "DAB+ radio",
+            "FM radio",
+            "AM radio"
+          ],
+          "axis": {
+            "title": null
+          }
+        },
+        "color": {
+          "field": "percent",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ],
+            "range": [
+              "#edf5ef",
+              "#1f6f5b"
+            ]
+          },
+          "legend": {
+            "title": "Listened in past week (%)",
+            "orient": "top"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "age",
+            "title": "Age"
+          },
+          {
+            "field": "metric",
+            "title": "Format"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Used (%)"
+          },
+          {
+            "field": "base_n",
+            "type": "quantitative",
+            "title": "Survey participants"
+          }
+        ]
+      },
+      "description": "WHAT: Draw the coloured cells. WHY: Colour reveals broad patterns across rows and columns."
+    },
+    {
+      "name": "heatmap_values",
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 13,
+        "fontWeight": 650
+      },
+      "encoding": {
+        "x": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ],
+          "axis": {
+            "title": "Age",
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "metric",
+          "type": "ordinal",
+          "sort": [
+            "Music streaming",
+            "Podcasts",
+            "Internet radio",
+            "DAB+ radio",
+            "FM radio",
+            "AM radio"
+          ],
+          "axis": {
+            "title": null
+          }
+        },
+        "text": {
+          "field": "percent",
+          "type": "quantitative",
+          "format": ".0f"
+        },
+        "color": {
+          "condition": {
+            "test": "contrast('white', scale('color', datum.percent)) > contrast('#000000', scale('color', datum.percent))",
+            "value": "white"
+          },
+          "value": "#000000"
+        }
+      },
+      "description": "WHAT: Draw numbers over the cells at the same x/y positions. WHY: Readers can read exact rounded values instead of guessing from colour."
+    }
+  ]
+}

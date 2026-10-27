@@ -1,0 +1,236 @@
+{"description": "17. Trust in news from a separate survey - Horizontal bar chart",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "news-trust",
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 17,
+      "source_file": "specs/17.news_trust.json",
+      "WHAT": "Compare three news-trust percentages using horizontal bars.",
+      "WHY": "One shared 0-100 scale makes the gaps visible without separate coloured statistic cards.",
+      "data_preparation_and_limits": "Filter the existing news indicators CSV to Trust rows. These 2026 findings come from a different survey than the ACMA age chart and must not be joined to it.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "sort": {
+          "WHAT": "Set an explicit category or calculation order.",
+          "WHY": "Ages, services and years should not depend on accidental file order."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "calculate": {
+          "WHAT": "Evaluate an expression and store its result under the name in as.",
+          "WHY": "Derived coordinates and labels prepare data for display without replacing source fields."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      }
+    }
+  },
+  "width": "container",
+  "height": 230,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 14,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 13,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    }
+  },
+  "data": {
+    "url": "data/news_indicators.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "percent": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.topic === 'Trust'"
+    },
+    {
+      "calculate": "datum.group === 'News I use' ? 'News they use' : datum.group",
+      "as": "label"
+    },
+    {
+      "calculate": "format(datum.percent, '.0f') + '%'",
+      "as": "value_label"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "group",
+      "type": "ordinal",
+      "axis": null,
+      "sort": [
+        "News I use",
+        "News on social media",
+        "News from AI chatbots"
+      ]
+    },
+    "tooltip": [
+      {
+        "field": "label",
+        "title": "Type of news"
+      },
+      {
+        "field": "percent",
+        "type": "quantitative",
+        "format": ".0f",
+        "title": "Trust (%)"
+      },
+      {
+        "field": "source",
+        "title": "Separate survey"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "name": "trust_bars",
+      "mark": {
+        "type": "bar",
+        "color": "#1f6f5b",
+        "size": 18
+      },
+      "encoding": {
+        "x": {
+          "field": "percent",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "Trust (%)",
+            "values": [
+              0,
+              25,
+              50,
+              75,
+              100
+            ]
+          }
+        }
+      },
+      "description": "WHAT: Draw bars on a shared 0-100 percentage scale. WHY: Common colour and a zero baseline make lengths directly comparable."
+    },
+    {
+      "name": "trust_labels",
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dy": -21,
+        "font": "Inter",
+        "fontSize": 14,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": 0
+        },
+        "text": {
+          "field": "label"
+        }
+      },
+      "description": "WHAT: Write each category above its bar. WHY: Direct labels remain readable on narrow screens without a colour legend."
+    },
+    {
+      "name": "trust_values",
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "font": "Inter",
+        "fontSize": 14,
+        "fontWeight": 700,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "field": "percent",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "value_label"
+        }
+      },
+      "description": "WHAT: Place the exact percentage beside each bar. WHY: Readers can see the values without hovering or estimating from the axis."
+    }
+  ]
+}

@@ -8,6 +8,8 @@ import json
 import textwrap
 from pathlib import Path
 
+from spec_notes import add_spec_notes
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SPECS = ROOT / "specs"
@@ -23,13 +25,17 @@ YELLOW = "#e5c45b"
 BLUE = "#5279be"
 SLATE = "#63736f"
 PALE = "#dfe7df"
-CATEGORICAL = ["#24665a", "#914859", "#355f91", "#854689", "#946218", "#496a31", "#9f4329", "#536069"]
+CATEGORICAL = ["#23658b", "#b05d25", "#267b75", "#a65c86", "#947026", "#4c8ca8", "#78639a", "#454d56"]
+SERVICE_ORDER = ["YouTube", "Netflix", "Prime Video", "Disney+", "TikTok", "Stan", "Kayo", "Binge"]
+DEVICE_ORDER = ["Smart TV", "Mobile phone", "Computer", "Tablet", "Chromecast / Google TV", "Games console", "Apple TV"]
 
 AGE_ORDER = ["18–24", "25–34", "35–44", "45–54", "55–64", "65–74", "75+"]
 MEDIA_ORDER = ["Paid video", "Short-form video", "Music streaming", "Podcasts", "Free-to-air TV", "FM radio"]
 AUDIO_ORDER = ["Music streaming", "Podcasts", "Internet radio", "DAB+ radio", "FM radio", "AM radio"]
 
 
+# WHAT: Define fonts, colours and axis/legend styling shared by charts.
+# WHY: Consistent presentation reduces clutter and keeps the emphasis on comparisons.
 def config():
     return {
         "background": None,
@@ -67,6 +73,8 @@ def config():
     }
 
 
+# WHAT: Create the common responsive chart settings.
+# WHY: Each chart starts with the same sizing and styling conventions.
 def base(height: int = 320):
     return {
         "$schema": SCHEMA,
@@ -77,7 +85,9 @@ def base(height: int = 320):
     }
 
 
-def write(name: str, spec: dict):
+# WHAT: Add map focus, parse CSV numbers, explain the spec and save its numbered JSON file.
+# WHY: The generated file stays valid, readable and linked to its position on the website.
+def write(name: str, spec: dict, number: int):
     if name.startswith(("adii-", "radio-")):
         spec.setdefault("params", []).append({"name": "stateFocus", "value": "All"})
         layers = spec.get("layer", [spec])
@@ -88,6 +98,8 @@ def write(name: str, spec: dict):
                     "value": 0.22,
                 }
 
+    # WHAT: Find numeric CSV columns and declare their parse types.
+    # WHY: Calculations need numbers rather than text; this is parsing, not normalisation.
     def explicit_csv_types(node):
         if isinstance(node, dict):
             if str(node.get("url", "")).endswith(".csv"):
@@ -109,68 +121,139 @@ def write(name: str, spec: dict):
                 explicit_csv_types(value)
 
     explicit_csv_types(spec)
-    with (SPECS / f"{name}.json").open("w", encoding="utf-8") as handle:
-        json.dump(spec, handle, indent=2, ensure_ascii=False)
+    spec = add_spec_notes(name, spec, number)
+    filename = f"{number}.{name.replace('-', '_')}.json"
+    with (SPECS / filename).open("w", encoding="utf-8") as handle:
+        # WHAT: Put the chart number, name and type on the very first line.
+        # WHY: Readers can identify the plot immediately while the file stays valid JSON.
+        handle.write('{"description": ' + json.dumps(spec["description"], ensure_ascii=False) + ',\n')
+        remaining = {key: value for key, value in spec.items() if key != "description"}
+        handle.write(json.dumps(remaining, indent=2, ensure_ascii=False)[2:])
         handle.write("\n")
+    return filename
 
 
+# WHAT: Wrap the explanatory note into short lines.
+# WHY: A short connector associates the unnumbered explanation with the data point.
 def callout_text(message):
-    wide = json.dumps("\n".join(textwrap.wrap(message, width=58)), ensure_ascii=False)
-    narrow = json.dumps("\n".join(textwrap.wrap(message, width=29)), ensure_ascii=False)
-    return f"width < 360 ? {narrow} : {wide}"
+    return json.dumps("\n".join(textwrap.wrap(message, width=30)), ensure_ascii=False)
 
 
-def add_callout(spec, message, transforms, anchor, alternate=None, reserve=True):
+# WHAT: Layer a connector, background, outline marker and explanatory text onto a chart.
+# WHY: A close, readable note connects the pattern to its meaning rather than repeating a value.
+def add_callout(spec, message, transforms, anchor, alternate=None):
+    spec.setdefault("params", []).append({"name": "compactLayout", "value": False})
+    spec.setdefault("usermeta", {})["callout"] = True
     spec["config"]["axisX"] = {"grid": False}
-    if reserve:
-        spec["height"] += 100
-
-        def reserve_header(node):
-            if isinstance(node, dict):
-                vertical = node.get("encoding", {}).get("y")
-                if vertical is not None and "field" in vertical:
-                    scale = vertical.setdefault("scale", {})
-                    if scale is not None:
-                        scale["range"] = [100, {"expr": "height"}] if vertical.get("type") in {"nominal", "ordinal"} else [{"expr": "height"}, 100]
-                for value in node.values():
-                    reserve_header(value)
-            elif isinstance(node, list):
-                for value in node:
-                    reserve_header(value)
-
-        reserve_header(spec)
     expression = callout_text(message)
     if alternate:
         condition, other_message = alternate
         expression = f"({condition}) ? ({callout_text(other_message)}) : ({expression})"
+
+    # WHAT: Convert an anchor's data coordinate into a display coordinate.
+    # WHY: Annotation connectors need pixel positions; band categories also need their cell centre.
+    def position(channel):
+        definition = anchor[channel]
+        field = json.dumps(definition["field"])
+        if definition.get("scale", {}) is None:
+            return f"datum[{field}]"
+        offset = f" + bandwidth('{channel}') / 2" if definition.get("type") in {"ordinal", "nominal"} else ""
+        return f"scale('{channel}', datum[{field}]){offset}"
+
+    anchor_x, anchor_y = position("x"), position("y")
+    chart_id = spec["usermeta"]["chart"]
+    right_side = chart_id in {"streaming-fta-connected", "age-parallel-profile", "video-hours-bullet", "metro-regional", "adii-cartogram"}
+    horizontal = "+ 18" if right_side else "- 247"
+    box_height = f"12 + 15 * length(split(({expression}), '\\n'))"
+    box_x = f"clamp(({anchor_x}) {horizontal}, 4, max(4, width - 206))"
+    box_y = f"clamp(({anchor_y}) - ({box_height}) - 10, 4, max(4, height - ({box_height}) - 4))"
+    if chart_id == "streaming-fta-connected":
+        box_y = f"clamp(({anchor_y}) - ({box_height}) - 32, 4, max(4, height - ({box_height}) - 4))"
     spec["layer"].extend([
         {
-            "name": "callout_leader",
-            "transform": transforms,
-            "mark": {"type": "rule", "color": SLATE, "strokeWidth": 1, "strokeDash": [3, 3]},
+            "name": "callout_leader", "transform": transforms,
+            "mark": {"type": "rule", "color": SLATE, "strokeWidth": 1},
             "encoding": {
-                **anchor, "x2": {"value": {"expr": "min(width * 0.8, 280)"}},
-                "y2": {"value": {"expr": f"10 + 15 * length(split(({expression}), '\\n'))"}},
+                "x": {"value": {"expr": anchor_x}}, "y": {"value": {"expr": anchor_y}},
+                "x2": {"value": {"expr": f"clamp(({anchor_x}), ({box_x}), ({box_x}) + 202)"}},
+                "y2": {"value": {"expr": f"clamp(({anchor_y}), ({box_y}), ({box_y}) + ({box_height}))"}},
+                "opacity": {"value": {"expr": "compactLayout ? 0 : 1"}},
                 "tooltip": {"value": None},
             },
         },
         {
-            "name": "callout_text",
-            "transform": transforms,
-            "mark": {
-                "type": "text", "text": {"expr": expression}, "font": "Inter",
-                "fontSize": 11, "lineHeight": 15, "lineBreak": "\n",
-                "align": "left", "baseline": "top", "color": INK,
+            "name": "callout_background", "transform": transforms,
+            "mark": {"type": "rect", "color": CREAM, "opacity": 0.96, "cornerRadius": 4},
+            "encoding": {
+                "x": {"value": {"expr": box_x}}, "y": {"value": {"expr": box_y}},
+                "x2": {"value": {"expr": f"({box_x}) + 202"}},
+                "y2": {"value": {"expr": f"({box_y}) + ({box_height})"}},
+                "opacity": {"value": {"expr": "compactLayout ? 0 : 0.96"}},
+                "tooltip": {"value": None},
             },
-            "encoding": {"x": {"value": 4}, "y": {"value": 5}, "tooltip": {"value": None}},
+        },
+        {
+            "name": "callout_anchor", "transform": transforms,
+            "mark": {"type": "point", "shape": "circle", "filled": False, "size": 180,
+                     "color": CREAM, "stroke": GREEN, "strokeWidth": 1.5},
+            "encoding": {**anchor, "tooltip": {"value": message}},
+        },
+        {
+            "name": "callout_text", "transform": transforms,
+            "mark": {"type": "text", "text": {"expr": expression}, "font": "Inter",
+                     "fontSize": 11, "lineHeight": 15, "lineBreak": "\n",
+                     "align": "left", "baseline": "top", "color": INK},
+            "encoding": {
+                "x": {"value": {"expr": f"({box_x}) + 7"}},
+                "y": {"value": {"expr": f"({box_y}) + 6"}},
+                "opacity": {"value": {"expr": "compactLayout ? 0 : 1"}},
+                "tooltip": {"value": None},
+            },
         },
     ])
 
 
+# WHAT: Add pinned/hover parameters and conditional opacity, width and shapes.
+# WHY: Readers can compare a hovered series with a pinned one without losing the overview.
+def add_focus(spec, field, parameter, categories, label, all_value="All"):
+    spec.setdefault("params", [])
+    spec["params"] = [entry for entry in spec["params"] if entry["name"] != parameter]
+    spec["params"].extend([
+        {"name": parameter, "value": all_value, "bind": {"input": "select", "options": [all_value, *categories], "name": label}},
+        {"name": "hoveredSeries", "value": ""},
+    ])
+    spec.setdefault("usermeta", {})["focus"] = {
+        "field": field, "parameter": parameter, "categories": categories, "all": all_value,
+    }
+    for layer in spec["layer"]:
+        if layer.get("name", "").startswith("callout_"):
+            continue
+        encoding = layer.get("encoding", {})
+        colour = encoding.get("color", {})
+        category_field = colour.get("field")
+        if category_field != field and not (field == "format" and category_field == "name"):
+            continue
+        colour["scale"] = {"domain": categories, "range": CATEGORICAL[:len(categories)]}
+        focused = f"datum.{category_field} === {parameter} || datum.{category_field} === hoveredSeries"
+        overview = f"{parameter} === {json.dumps(all_value)} && hoveredSeries === ''"
+        encoding["opacity"] = {"condition": {"test": f"({overview}) || ({focused})", "value": 1}, "value": 0.4}
+        mark_type = layer.get("mark", {}).get("type")
+        if mark_type == "line":
+            encoding["strokeWidth"] = {"condition": {"test": focused, "value": 4.5}, "value": 2.5}
+        if mark_type == "point" or layer.get("mark", {}).get("point"):
+            encoding["shape"] = {"field": category_field, "type": "nominal",
+                                 "scale": {"domain": categories, "range": ["circle", "square", "diamond", "triangle-up", "triangle-down", "cross", "triangle-right", "triangle-left"][:len(categories)]},
+                                 "legend": None}
+        if mark_type == "text":
+            encoding["color"] = {"value": INK}
+
+
+# WHAT: Waffle chart: one tile represents one in 100 adults.
+# WHY: A 100-tile grid makes the rounded share easy to picture, rather than presenting only a large number.
 def waffle():
     with (ROOT / "data/headline_metrics.json").open(encoding="utf-8") as handle:
         share = json.load(handle)["online_video_past_six_months"]
-    spec = base(440)
+    spec = base(340)
     spec.update(
         {
             "description": f"100 video tiles represent Australian adults. {share} filled tiles show the rounded share who used online video in the six months before the 2025 survey. Outlined tiles show the remaining share.",
@@ -187,7 +270,7 @@ def waffle():
                     "mark": {"type": "rect", "cornerRadius": 3, "strokeWidth": 1, "opacity": 1},
                     "encoding": {
                         "x": {"field": "column", "type": "ordinal", "axis": None, "scale": {"type": "band", "padding": 0.15}},
-                        "y": {"field": "row", "type": "ordinal", "axis": None, "scale": {"type": "band", "padding": 0.15, "range": [95, {"expr": "height"}]}},
+                        "y": {"field": "row", "type": "ordinal", "axis": None, "scale": {"type": "band", "padding": 0.15, "range": [80, {"expr": "height"}]}},
                         "color": {
                             "field": "group", "type": "nominal",
                             "scale": {"domain": ["Used online video", "Remaining adults"], "range": [GREEN, CREAM]},
@@ -203,7 +286,7 @@ def waffle():
                 {
                     "name": "hero_play_icons",
                     "transform": [{"filter": f"datum.cell < {share}"}],
-                    "mark": {"type": "point", "shape": "triangle-right", "filled": True, "color": "white", "opacity": 1, "size": {"expr": "pow(min(width / 35, (height - 95) / 18), 2)"}},
+                    "mark": {"type": "point", "shape": "triangle-right", "filled": True, "color": "white", "opacity": 1, "size": {"expr": "pow(min(width / 35, (height - 80) / 18), 2)"}},
                     "encoding": {
                         "x": {"field": "column", "type": "ordinal"},
                         "y": {"field": "row", "type": "ordinal"},
@@ -216,14 +299,14 @@ def waffle():
                 {
                     "name": "hero_total",
                     "data": {"values": [{}]},
-                    "mark": {"type": "text", "text": f"{share} in 100", "font": "Fraunces", "fontSize": {"expr": "width < 360 ? 28 : 36"}, "fontWeight": 700, "align": "left", "baseline": "top", "color": GREEN},
+                    "mark": {"type": "text", "text": f"{share} in 100", "font": "Fraunces", "fontSize": {"expr": "width < 360 ? 20 : 24"}, "fontWeight": 700, "align": "left", "baseline": "top", "color": GREEN},
                     "encoding": {"x": {"value": 0}, "y": {"value": 0}},
                 },
                 {
                     "name": "hero_context",
                     "data": {"values": [{}]},
                     "mark": {"type": "text", "text": "used online video in the past six months", "font": "Inter", "fontSize": {"expr": "width < 360 ? 11 : 13"}, "align": "left", "baseline": "top", "color": INK},
-                    "encoding": {"x": {"value": 0}, "y": {"value": 55}},
+                    "encoding": {"x": {"value": 0}, "y": {"value": 40}},
                 },
             ],
         }
@@ -231,6 +314,8 @@ def waffle():
     return spec
 
 
+# WHAT: Horizon chart: layered area bands show change from the first year of each series.
+# WHY: Folding change into 10-point bands lets several trends fit into separate compact rows.
 def horizon():
     spec = base(680)
     spec["description"] = "Four rows showing changes in weekly video use. Each darker band adds 10 percentage points; in the legend, + means growth and − means a fall."
@@ -296,6 +381,8 @@ def horizon():
     return spec
 
 
+# WHAT: Connected scatterplot: x is paid streaming use, y is free-to-air use, and the path follows years.
+# WHY: This shows how two measurements move together over time without using two unrelated vertical scales.
 def connected_scatter():
     spec = base(560)
     spec.update(
@@ -306,7 +393,7 @@ def connected_scatter():
                 {
                     "mark": {"type": "line", "stroke": INK, "strokeWidth": 2.5, "interpolate": "linear"},
                     "encoding": {
-                        "x": {"field": "paid_streaming", "type": "quantitative", "scale": {"zero": False}, "axis": {"title": "Used paid streaming in past 7 days (%)"}},
+                        "x": {"field": "paid_streaming", "type": "quantitative", "scale": {"domain": [25, 83], "zero": False}, "axis": {"title": "Used paid streaming in past 7 days (%)"}},
                         "y": {"field": "free_to_air", "type": "quantitative", "scale": {"zero": False}, "axis": {"title": "Watched free-to-air TV in past 7 days (%)"}},
                         "order": {"field": "year", "type": "ordinal"},
                     },
@@ -316,7 +403,7 @@ def connected_scatter():
                     "encoding": {
                         "x": {"field": "paid_streaming", "type": "quantitative"},
                         "y": {"field": "free_to_air", "type": "quantitative"},
-                        "color": {"field": "year", "type": "quantitative", "scale": {"scheme": "viridis"}, "legend": {"title": "Year", "orient": "top", "format": "d"}},
+                        "color": {"field": "year", "type": "quantitative", "scale": {"range": ["#5d849f", "#174d77"]}, "legend": {"title": "Year", "orient": "top", "format": "d"}},
                         "tooltip": [
                             {"field": "year", "type": "ordinal", "title": "Year"},
                             {"field": "paid_streaming", "type": "quantitative", "format": ".1f", "title": "Paid streaming (%)"},
@@ -339,6 +426,8 @@ def connected_scatter():
     return spec
 
 
+# WHAT: Video-service heatmap: columns are age groups, rows are services, colour is percentage.
+# WHY: A grid makes many age-by-service comparisons easier to scan than dozens of separate charts.
 def age_heatmap():
     spec = base(500)
     spec.update(
@@ -375,14 +464,16 @@ def age_heatmap():
     return spec
 
 
+# WHAT: Connected age profiles: each age group's line links its values across media activities.
+# WHY: Following one coloured line reveals the media mix for an age group; hover and pin help compare groups.
 def parallel_profiles():
     spec = base(520)
     spec.update(
         {
-            "description": "Choose an age group to follow its line across six weekly viewing and listening activities.",
+            "description": "Compare age groups across weekly activities. Hover to highlight; click or tap to pin a line.",
             "data": {"url": "data/age_media.csv"},
             "transform": [{"calculate": "indexof(" + json.dumps(MEDIA_ORDER) + ", datum.metric)", "as": "metric_position"}],
-            "params": [{"name": "selectedAge", "value": "18–24", "bind": {"input": "select", "options": AGE_ORDER, "name": "Age group  "}}],
+            "params": [],
             "layer": [
                 {
                     "mark": {"type": "line", "point": {"filled": True, "size": 72}},
@@ -390,9 +481,7 @@ def parallel_profiles():
                         "x": {"field": "metric", "type": "ordinal", "sort": MEDIA_ORDER, "axis": {"title": None, "labelAngle": -28, "labelLimit": 110}},
                         "y": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 100]}, "axis": {"title": "Used in past week (%)"}},
                         "detail": {"field": "age"},
-                        "color": {"condition": {"test": "datum.age === selectedAge", "value": MAGENTA}, "value": SLATE},
-                        "opacity": {"condition": {"test": "datum.age === selectedAge", "value": 1}, "value": 0.16},
-                        "strokeWidth": {"condition": {"test": "datum.age === selectedAge", "value": 4}, "value": 1.2},
+                        "color": {"field": "age", "type": "nominal", "scale": {"domain": AGE_ORDER, "range": CATEGORICAL[:7]}, "legend": {"title": "Age group", "orient": "top", "columns": 4}},
                         "order": {"field": "metric_position", "type": "quantitative"},
                         "tooltip": [
                             {"field": "age", "title": "Age"},
@@ -407,6 +496,8 @@ def parallel_profiles():
     return spec
 
 
+# WHAT: Bullet chart: bars show age-group viewing hours; ticks show the national average for the selected format.
+# WHY: A shared reference tick makes it easy to see which groups watch more or less than the national average.
 def bullet_hours():
     spec = base(500)
     spec.update(
@@ -417,18 +508,12 @@ def bullet_hours():
             "transform": [{"filter": "datum.metric === videoFormat"}],
             "layer": [
                 {
-                    "mark": {"type": "bar", "height": 42, "color": PALE},
-                    "encoding": {
-                        "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER},
-                        "x": {"field": "national_hours", "type": "quantitative"},
-                    },
-                },
-                {
+                    "name": "bullet_bars",
                     "mark": {"type": "bar", "cornerRadiusEnd": 4, "height": 32},
                     "encoding": {
                         "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER, "axis": {"title": "Age"}},
-                        "x": {"field": "hours", "type": "quantitative", "scale": {"domain": [0, 16]}, "axis": {"title": "Average hours in past 7 days"}},
-                        "color": {"condition": {"test": "datum.hours >= datum.national_hours", "value": GREEN}, "value": MINT},
+                        "x": {"field": "hours", "type": "quantitative", "scale": {"domain": {"expr": "[0, videoFormat === 'Free-to-air TV' ? 20 : videoFormat === 'Paid streaming' ? 10 : videoFormat === 'Short-form video' ? 11 : videoFormat === 'FTA catch-up' ? 6 : videoFormat === 'Pay TV' ? 5 : 0.6]"}}, "axis": {"title": "Average hours in past 7 days"}},
+                        "color": {"datum": "Age-group average", "type": "nominal", "scale": {"domain": ["Age-group average", "National average"], "range": [GREEN, MAGENTA]}, "legend": {"title": "Bar length = average hours", "orient": "top", "columns": 1, "symbolType": "square", "labelExpr": "datum.label === 'Age-group average' ? 'Bar: age-group average' : 'Tick: national average'"}},
                         "tooltip": [
                             {"field": "age", "title": "Age"},
                             {"field": "hours", "type": "quantitative", "format": ".1f", "title": "Hours"},
@@ -439,14 +524,17 @@ def bullet_hours():
                     },
                 },
                 {
+                    "name": "bullet_average",
                     "mark": {"type": "tick", "color": MAGENTA, "thickness": 3, "size": 40},
                     "encoding": {
                         "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER},
                         "x": {"field": "national_hours", "type": "quantitative"},
+                        "color": {"datum": "National average", "type": "nominal"},
                     },
                 },
                 {
-                    "mark": {"type": "text", "align": "left", "dx": 6, "font": "Inter", "fontWeight": 700, "color": INK},
+                    "name": "bullet_values",
+                    "mark": {"type": "text", "align": "left", "dx": 12, "font": "Inter", "fontWeight": 700, "color": INK},
                     "encoding": {
                         "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER},
                         "x": {"field": "hours", "type": "quantitative"},
@@ -459,6 +547,8 @@ def bullet_hours():
     return spec
 
 
+# WHAT: Bump chart: each service's line follows its rank through the years.
+# WHY: Rank makes changes in relative popularity easy to follow; direct endpoint labels identify services.
 def service_bump():
     spec = base(580)
     spec.update(
@@ -501,6 +591,8 @@ def service_bump():
     return spec
 
 
+# WHAT: Slope chart: each device connects its usage percentage in two years.
+# WHY: The direction and steepness of each slope help compare increases and decreases.
 def device_slope():
     spec = base(540)
     spec.update(
@@ -512,7 +604,7 @@ def device_slope():
                     "mark": {"type": "line", "strokeWidth": 2.7},
                     "encoding": {
                         "x": {"field": "year", "type": "ordinal", "axis": {"title": None, "labelAngle": 0, "labelFontSize": 13, "labelFontWeight": 700}},
-                        "y": {"field": "percent", "type": "quantitative", "axis": {"title": "Use for online video at home (%)"}},
+                        "y": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 80]}, "axis": {"title": "Use for online video at home (%)"}},
                         "detail": {"field": "device"},
                         "color": {"field": "device", "type": "nominal", "scale": {"range": CATEGORICAL}, "legend": None},
                         "tooltip": [
@@ -546,6 +638,8 @@ def device_slope():
     return spec
 
 
+# WHAT: Audio heatmap: columns are age groups, rows are audio formats, colour is weekly listening percentage.
+# WHY: The grid reveals age patterns, while a second text layer supplies exact rounded readings.
 def audio_heatmap():
     spec = base(500)
     spec.update(
@@ -556,7 +650,7 @@ def audio_heatmap():
             "encoding": {
                 "x": {"field": "age", "type": "ordinal", "sort": AGE_ORDER, "axis": {"title": "Age", "labelAngle": 0}},
                 "y": {"field": "metric", "type": "ordinal", "sort": AUDIO_ORDER, "axis": {"title": None}},
-                "color": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 80], "range": ["#eef1ec", MINT, GREEN]}, "legend": {"title": "Listened in past week (%)", "orient": "top"}},
+                "color": {"field": "percent", "type": "quantitative", "scale": {"domain": [0, 100], "range": ["#edf5ef", GREEN]}, "legend": {"title": "Listened in past week (%)", "orient": "top"}},
                 "tooltip": [
                     {"field": "age", "title": "Age"},
                     {"field": "metric", "title": "Format"},
@@ -566,9 +660,21 @@ def audio_heatmap():
             },
         }
     )
+    tile = {"name": "heatmap_tiles", "mark": spec.pop("mark"), "encoding": spec.pop("encoding")}
+    spec["layer"] = [tile, {
+        "name": "heatmap_values",
+        "mark": {"type": "text", "font": "Inter", "fontSize": 13, "fontWeight": 650},
+        "encoding": {
+            "x": tile["encoding"]["x"], "y": tile["encoding"]["y"],
+            "text": {"field": "percent", "type": "quantitative", "format": ".0f"},
+            "color": {"condition": {"test": "contrast('white', scale('color', datum.percent)) > contrast('#000000', scale('color', datum.percent))", "value": "white"}, "value": "#000000"},
+        },
+    }]
     return spec
 
 
+# WHAT: Listening network: left nodes are audio formats, right nodes are locations, and link thickness is percentage.
+# WHY: Links make format-to-location relationships visible; thickness expresses the strength of each relationship.
 def audio_network():
     formats = [
         {"name": name, "y": index, "x": 0.14}
@@ -641,7 +747,7 @@ def audio_network():
                 },
                 {
                     "name": "audio_readout",
-                    "transform": [{"filter": "datum.format === audioFocus"},
+                    "transform": [{"filter": "datum.format === (hoveredSeries !== '' ? hoveredSeries : audioFocus)"},
                                   {"calculate": "format(datum.percent, '.1f') + '%'", "as": "reading"}],
                     "mark": {"type": "text", "align": "left", "dx": 10, "dy": 16,
                              "font": "Inter", "fontSize": 13, "fontWeight": 700, "color": GREEN},
@@ -656,6 +762,8 @@ def audio_network():
     return spec
 
 
+# WHAT: News dot plot: each dot shows online news and information use for one age group.
+# WHY: Aligned positions make small differences easier to compare than differently sized areas.
 def news_age():
     spec = base(480)
     spec.update({
@@ -680,6 +788,8 @@ def news_age():
     return spec
 
 
+# WHAT: Dumbbell chart: two points per activity compare city and regional use, joined by a rule.
+# WHY: The connecting segment makes the direction and size of the city-regional difference visible.
 def metro_regional():
     spec = base(520)
     spec.update({
@@ -715,6 +825,8 @@ def metro_regional():
     return spec
 
 
+# WHAT: Draw state labels, halos and an offset ACT pointer.
+# WHY: Small regions need readable labels without covering nearby marks.
 def state_label_layers():
     labels = {
         "data": {"url": "data/adii_states.csv"},
@@ -752,6 +864,8 @@ def state_label_layers():
     return [pointer, halo, foreground]
 
 
+# WHAT: Choropleth: state shapes are coloured by digital inclusion score.
+# WHY: Keeping geographic outlines supports regional comparison and helps viewers locate familiar states.
 def state_choropleth():
     spec = base(720)
     spec.update(
@@ -781,8 +895,10 @@ def state_choropleth():
     return spec
 
 
+# WHAT: Build a radio-site map with either equal-sized dots or count-scaled circles.
+# WHY: The AM/FM version emphasises distribution; the digital-radio version also shows records per site.
 def radio_map(digital=False):
-    spec = base(740)
+    spec = base(580)
     spec.update({
         "description": "Digital-radio sites, with larger circles showing more issued licence records." if digital else "One dot for each registered site with an issued AM or FM radio licence.",
         "params": [{"name": "mapRegion", "value": "Australia", "bind": {
@@ -798,7 +914,7 @@ def radio_map(digital=False):
         },
         "layer": [
             {"data": {"url": "data/au_states.topojson", "format": {"type": "topojson", "feature": "states"}},
-             "mark": {"type": "geoshape", "clip": True, "fill": "#e5ebe5", "stroke": "#b9c7be", "strokeWidth": 1}},
+             "mark": {"type": "geoshape", "clip": True, "fill": "#cbdce3", "stroke": "#526476", "strokeWidth": 1.5}},
             {
                 "data": {"url": "data/digital_radio_sites.csv" if digital else "data/radio_sites.csv"},
                 "mark": {"type": "circle", "clip": True, "stroke": CREAM, "strokeWidth": 0.7, "size": 36},
@@ -840,6 +956,8 @@ def radio_map(digital=False):
     return spec
 
 
+# WHAT: Dorling cartogram: circle area represents population and colour represents inclusion score.
+# WHY: Replacing land area with population reduces the visual dominance of large, sparsely populated states.
 def state_cartogram():
     with (ROOT / "data/population_cartogram.csv").open(encoding="utf-8") as handle:
         sample = next(csv.DictReader(handle))
@@ -898,6 +1016,44 @@ def state_cartogram():
     return spec
 
 
+# WHAT: Compare the three trust findings from their own survey on one percentage scale.
+# WHY: Aligned bar lengths are easier to compare than separate large-number cards.
+def news_trust():
+    spec = base(230)
+    spec.update({
+        "description": "Trust in three types of news, from a separate 2026 survey of Australian news consumers.",
+        "data": {"url": "data/news_indicators.csv"},
+        "transform": [
+            {"filter": "datum.topic === 'Trust'"},
+            {"calculate": "datum.group === 'News I use' ? 'News they use' : datum.group", "as": "label"},
+            {"calculate": "format(datum.percent, '.0f') + '%'", "as": "value_label"},
+        ],
+        "encoding": {
+            "y": {"field": "group", "type": "ordinal", "axis": None,
+                  "sort": ["News I use", "News on social media", "News from AI chatbots"]},
+            "tooltip": [{"field": "label", "title": "Type of news"},
+                        {"field": "percent", "type": "quantitative", "format": ".0f", "title": "Trust (%)"},
+                        {"field": "source", "title": "Separate survey"}],
+        },
+        "layer": [
+            {"name": "trust_bars", "mark": {"type": "bar", "color": GREEN, "size": 18},
+             "encoding": {"x": {"field": "percent", "type": "quantitative",
+                                "scale": {"domain": [0, 100], "nice": False},
+                                "axis": {"title": "Trust (%)", "values": [0, 25, 50, 75, 100]}}}},
+            {"name": "trust_labels", "mark": {"type": "text", "align": "left", "dy": -21,
+                                               "font": "Inter", "fontSize": 14, "color": INK},
+             "encoding": {"x": {"value": 0}, "text": {"field": "label"}}},
+            {"name": "trust_values", "mark": {"type": "text", "align": "left", "dx": 7,
+                                               "font": "Inter", "fontSize": 14, "fontWeight": 700, "color": INK},
+             "encoding": {"x": {"field": "percent", "type": "quantitative"},
+                          "text": {"field": "value_label"}}},
+        ],
+    })
+    return spec
+
+
+# WHAT: Build the charts with stable file numbers and attach annotations and interactions.
+# WHY: One generator keeps the numbered specifications and manifest consistent.
 def main():
     SPECS.mkdir(exist_ok=True)
     charts = {
@@ -912,12 +1068,15 @@ def main():
         "audio-age-heatmap": audio_heatmap(),
         "audio-location-network": audio_network(),
         "news-age": news_age(),
-        "metro-regional": metro_regional(),
         "adii-choropleth": state_choropleth(),
         "adii-cartogram": state_cartogram(),
+        "metro-regional": metro_regional(),
         "radio-symbol-map": radio_map(digital=True),
         "radio-dot-map": radio_map(),
+        "news-trust": news_trust(),
     }
+    for chart_id, specification in charts.items():
+        specification.setdefault("usermeta", {})["chart"] = chart_id
     add_callout(
         charts["streaming-fta-connected"],
         "Free-to-air TV use rose again in 2025. Streaming's growth does not mean everyone has left TV behind.",
@@ -927,24 +1086,24 @@ def main():
     )
     add_callout(
         charts["age-parallel-profile"],
-        "Paid video is most common at this age. TV and radio still have users, so these habits are not all online.",
-        [{"filter": "datum.age === selectedAge"},
+        "Paid video leads here. Other formats still have users; the mix is not all online.",
+        [{"filter": "datum.age === (hoveredSeries !== '' ? hoveredSeries : selectedAge === 'All' ? '75+' : selectedAge)"},
          {"window": [{"op": "row_number", "as": "callout_rank"}], "sort": [{"field": "percent", "order": "descending"}]},
          {"filter": "datum.callout_rank === 1"}],
         {"x": {"field": "metric", "type": "ordinal", "sort": MEDIA_ORDER},
          "y": {"field": "percent", "type": "quantitative"}},
         alternate=("datum.metric === 'Free-to-air TV'",
-                   "Free-to-air TV leads for this age group. Online media still has users here, so older audiences are not all offline."),
+                   "Free-to-air TV leads here, but online media still reaches many in this age group."),
     )
     add_callout(
         charts["video-hours-bullet"],
-        "The longest bar means more time watching, not more viewers. These are averages for each survey group.",
+        "Beyond the tick means more hours than the national mean, not more viewers.",
         [{"window": [{"op": "row_number", "as": "callout_rank"}], "sort": [{"field": "hours", "order": "descending"}]},
          {"filter": "datum.callout_rank === 1"}],
         {"x": {"field": "hours", "type": "quantitative"},
          "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER}},
         alternate=("videoFormat === 'Free-to-air TV'",
-                   "Older adults spend longer watching free-to-air TV. Counting viewers alone misses how much time they spend."),
+                   "Older adults spend longer watching TV. Viewer counts alone miss this difference."),
     )
     add_callout(
         charts["device-slope"],
@@ -960,19 +1119,6 @@ def main():
         {"x": {"field": "percent", "type": "quantitative"},
          "y": {"field": "age", "type": "ordinal", "sort": AGE_ORDER}},
     )
-    news_leader = charts["news-age"]["layer"][-2]
-    elbow = {
-        **news_leader,
-        "name": "callout_elbow",
-        "encoding": {
-            **news_leader["encoding"],
-            "x": {"value": {"expr": "width - 2"}},
-            "x2": {"value": {"expr": "width - 2"}},
-        },
-    }
-    news_leader["encoding"]["x2"] = {"value": {"expr": "width - 2"}}
-    news_leader["encoding"]["y2"] = {"field": "age"}
-    charts["news-age"]["layer"].append(elbow)
     add_callout(
         charts["metro-regional"],
         "Regional groups use more FM radio and free-to-air TV. Similar podcast use shows they are not simply offline.",
@@ -987,12 +1133,17 @@ def main():
          {"calculate": "datum.pixel_y - sqrt(datum.symbol_size) / 2", "as": "callout_edge_y"}],
         {"x": {"field": "pixel_x", "type": "quantitative", "scale": None, "axis": None},
          "y": {"field": "callout_edge_y", "type": "quantitative", "scale": None, "axis": None}},
-        reserve=False,
     )
-    for name, spec in charts.items():
-        write(name, spec)
+    add_focus(charts["age-parallel-profile"], "age", "selectedAge", AGE_ORDER, "Pin age group  ")
+    add_focus(charts["video-service-bump"], "service", "selectedService", SERVICE_ORDER, "Pin service  ")
+    add_focus(charts["device-slope"], "device", "selectedDevice", DEVICE_ORDER, "Pin device  ")
+    add_focus(charts["audio-location-network"], "format", "audioFocus", AUDIO_ORDER, "Pin audio format  ", "All formats")
+    manifest = []
+    for number, (name, spec) in enumerate(charts.items(), start=1):
+        filename = write(name, spec, number)
+        manifest.append({"number": number, "id": name, "file": filename})
     with (SPECS / "manifest.json").open("w", encoding="utf-8") as handle:
-        json.dump(list(charts), handle, indent=2)
+        json.dump(manifest, handle, indent=2)
         handle.write("\n")
     print(f"Built {len(charts)} Vega-Lite specifications in {SPECS}")
 

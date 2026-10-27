@@ -1,5 +1,96 @@
-{
+{"description": "10. Audio formats and listening locations - Network diagram",
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "audio-location-network",
+    "focus": {
+      "field": "format",
+      "parameter": "audioFocus",
+      "categories": [
+        "Music streaming",
+        "Podcasts",
+        "Internet radio",
+        "DAB+ radio",
+        "FM radio",
+        "AM radio"
+      ],
+      "all": "All formats"
+    },
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 10,
+      "source_file": "specs/10.audio_location_network.json",
+      "WHAT": "Listening network: left nodes are audio formats, right nodes are locations, and link thickness is percentage.",
+      "WHY": "Links make format-to-location relationships visible; thickness expresses the strength of each relationship.",
+      "data_preparation_and_limits": "Each percentage uses listeners of that format as its base. Locations can overlap. This is not a Sankey with conserved flows, and thickness is not total audience size.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "condition": {
+          "WHAT": "Use one visual setting when a test is true and another otherwise.",
+          "WHY": "This provides highlighting, readable text contrast and responsive annotations without changing measurements."
+        },
+        "params": {
+          "WHAT": "Store adjustable values such as videoFormat or hoveredSeries.",
+          "WHY": "Controls and JavaScript can update the view without modifying the CSV."
+        },
+        "bind": {
+          "WHAT": "Connect a parameter to an input, such as a select dropdown.",
+          "WHY": "Readers can choose a format, series or city without editing code."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "calculate": {
+          "WHAT": "Evaluate an expression and store its result under the name in as.",
+          "WHY": "Derived coordinates and labels prepare data for display without replacing source fields."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      },
+      "interaction_bridge": "bind creates chart dropdowns. assets/main.js handles custom hover/click events and updates Vega signals; conditions then change appearance. The page's state selector is HTML/JavaScript; the ocean-and-amber theme is fixed."
+    }
+  },
   "width": "container",
   "height": 540,
   "autosize": {
@@ -42,7 +133,6 @@
       "titleFont": "Inter"
     }
   },
-  "description": "Lines linking six types of audio to three listening locations. Thicker lines mean more of that format's listeners use it there.",
   "data": {
     "url": "data/audio_locations.csv",
     "format": {
@@ -68,8 +158,12 @@
           "FM radio",
           "AM radio"
         ],
-        "name": "Choose audio  "
+        "name": "Pin audio format  "
       }
+    },
+    {
+      "name": "hoveredSeries",
+      "value": ""
     }
   ],
   "transform": [
@@ -122,31 +216,31 @@
           "field": "format",
           "type": "nominal",
           "scale": {
+            "domain": [
+              "Music streaming",
+              "Podcasts",
+              "Internet radio",
+              "DAB+ radio",
+              "FM radio",
+              "AM radio"
+            ],
             "range": [
-              "#24665a",
-              "#914859",
-              "#355f91",
-              "#854689",
-              "#946218",
-              "#496a31",
-              "#9f4329",
-              "#536069"
+              "#23658b",
+              "#b05d25",
+              "#267b75",
+              "#a65c86",
+              "#947026",
+              "#4c8ca8"
             ]
           },
           "legend": null
         },
         "opacity": {
-          "condition": [
-            {
-              "test": "audioFocus === 'All formats'",
-              "value": 0.5
-            },
-            {
-              "test": "datum.format === audioFocus",
-              "value": 0.95
-            }
-          ],
-          "value": 0.06
+          "condition": {
+            "test": "(audioFocus === \"All formats\" && hoveredSeries === '') || (datum.format === audioFocus || datum.format === hoveredSeries)",
+            "value": 1
+          },
+          "value": 0.4
         },
         "strokeWidth": {
           "field": "percent",
@@ -192,7 +286,8 @@
             "title": "Survey participants"
           }
         ]
-      }
+      },
+      "description": "WHAT: Draw a rule from each audio-format node to a location node. WHY: Line thickness communicates the percentage for that specific relationship."
     },
     {
       "data": {
@@ -248,27 +343,34 @@
           "field": "name",
           "type": "nominal",
           "scale": {
+            "domain": [
+              "Music streaming",
+              "Podcasts",
+              "Internet radio",
+              "DAB+ radio",
+              "FM radio",
+              "AM radio"
+            ],
             "range": [
-              "#24665a",
-              "#914859",
-              "#355f91",
-              "#854689",
-              "#946218",
-              "#496a31",
-              "#9f4329",
-              "#536069"
+              "#23658b",
+              "#b05d25",
+              "#267b75",
+              "#a65c86",
+              "#947026",
+              "#4c8ca8"
             ]
           },
           "legend": null
         },
         "opacity": {
           "condition": {
-            "test": "audioFocus === 'All formats' || datum.name === audioFocus",
+            "test": "(audioFocus === \"All formats\" && hoveredSeries === '') || (datum.name === audioFocus || datum.name === hoveredSeries)",
             "value": 1
           },
-          "value": 0.25
+          "value": 0.4
         }
-      }
+      },
+      "description": "WHAT: Draw audio-format nodes on the left. WHY: They give each group of links a clear starting point."
     },
     {
       "data": {
@@ -326,7 +428,8 @@
         "text": {
           "field": "name"
         }
-      }
+      },
+      "description": "WHAT: Label the audio-format nodes. WHY: Readers should not have to memorise colours."
     },
     {
       "data": {
@@ -364,7 +467,8 @@
           "field": "y",
           "type": "quantitative"
         }
-      }
+      },
+      "description": "WHAT: Draw location nodes on the right. WHY: Shared destinations make it easier to compare listening contexts."
     },
     {
       "data": {
@@ -407,13 +511,14 @@
         "text": {
           "field": "name"
         }
-      }
+      },
+      "description": "WHAT: Label the location nodes. WHY: The destinations are understandable without a separate key."
     },
     {
       "name": "audio_readout",
       "transform": [
         {
-          "filter": "datum.format === audioFocus"
+          "filter": "datum.format === (hoveredSeries !== '' ? hoveredSeries : audioFocus)"
         },
         {
           "calculate": "format(datum.percent, '.1f') + '%'",
@@ -441,7 +546,8 @@
         "text": {
           "field": "reading"
         }
-      }
+      },
+      "description": "WHAT: Show percentages for the hovered format, or the pinned format if nothing is hovered. WHY: The active comparison can be read precisely without showing every number at once."
     }
   ]
 }

@@ -1,28 +1,10 @@
 #!/usr/bin/env python3
-"""Check palette switching, chart contrast and saved preferences in a browser."""
+"""Check the final ocean palette, label contrast and obsolete saved preferences."""
 
 import argparse
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
-
-
-def wait_for_palette(page, palette):
-    page.wait_for_function("""palette => [...document.querySelectorAll('.chart')].every(
-        element => element.dataset.status === 'ready' && element.dataset.palette === palette &&
-        element.dataset.compact === String(element.clientWidth < 560))""", arg=palette)
-
-
-def check_selections(page):
-    expected = {
-        "age-parallel-profile": ["selectedAge", "75+"],
-        "video-hours-bullet": ["videoFormat", "Paid streaming"],
-        "audio-location-network": ["audioFocus", "FM radio"],
-        "adii-cartogram": ["stateFocus", "TAS"],
-        "radio-dot-map": ["mapRegion", "Sydney"],
-    }
-    assert page.evaluate("""expected => Object.entries(expected).every(
-        ([name, [signal, value]]) => chartViews.get(name).signal(signal) === value)""", expected)
 
 
 def main():
@@ -37,93 +19,75 @@ def main():
             page = browser.new_page(viewport={"width": width, "height": 900})
             failures = []
             page.on("pageerror", lambda error: failures.append(str(error)))
+            page.add_init_script("localStorage.setItem('different-feeds-palette', 'plum')")
             page.goto(options.url, wait_until="networkidle")
             for chart in page.locator(".chart").all():
                 chart.scroll_into_view_if_needed()
                 page.wait_for_function("element => element.dataset.status === 'ready'", arg=chart.element_handle())
-            source_specs = page.evaluate("JSON.stringify([...chartSpecifications])")
-            page.locator("#age-parallel-profile select").select_option("75+")
-            page.locator("#video-hours-bullet select").select_option("Paid streaming")
-            page.locator("#audio-location-network select").select_option("FM radio")
-            page.locator("#state-focus").select_option("TAS")
-            page.locator("#radio-dot-map select").select_option("Sydney")
-            for palette in ["ocean", "editorial", "plum", "original"]:
-                page.locator("#palette-choice").select_option(palette)
-                wait_for_palette(page, palette)
-                check_selections(page)
-                assert page.locator(".chart svg.marks").count() == 16
-                assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
-                assert page.evaluate("JSON.stringify([...chartSpecifications])") == source_specs
-                assert page.evaluate("""() => {
-                    const colour = document.createElement('span');
-                    colour.style.color = palettes[activePalette].colours.primary;
-                    return ['age-media-heatmap', 'adii-choropleth', 'adii-cartogram'].every(
-                        name => chartViews.get(name).scale('color').range()[1] === colour.style.color);
-                }""")
-                assert page.evaluate("""() => {
-                    const luminance = vega.expressionFunction('luminance');
-                    return ['growth', 'fall'].every(direction => {
-                        const levels = palettes[activePalette][direction].map(luminance);
-                        return levels.slice(1).every((value, index) => direction === 'growth'
-                            ? value < levels[index] : value > levels[index]);
-                    });
-                }"""), f"Unordered horizon bands: {palette}"
-                contrast = page.evaluate("""() => {
-                    const contrast = vega.expressionFunction('contrast');
-                    const ratios = [];
-                    for (const [name, field] of [['age-media-heatmap', 'percent'], ['adii-cartogram', 'score']]) {
-                        const view = chartViews.get(name);
-                        const inspect = item => {
-                            if (item.mark?.marktype === 'text' && item.datum?.[field] !== undefined &&
-                                (field === 'percent' || item.text === item.datum.state)) {
-                                ratios.push(contrast(item.fill, view.scale('color')(item.datum[field])));
-                            }
-                            item.items?.forEach(inspect);
-                        };
-                        inspect(view.scenegraph().root);
-                    }
-                    return ratios;
-                }""")
-                assert len(contrast) == 64 and min(contrast) >= 4.5, (palette, len(contrast), min(contrast))
-                if palette != "original":
-                    assert page.evaluate("""() => {
-                        const contrast = vega.expressionFunction('contrast');
-                        const colours = palettes[activePalette].colours;
-                        return ['ink', 'primary', 'accent', 'muted'].every(token =>
-                            ['paper', 'paper-deep'].every(background => contrast(colours[token], colours[background]) >= 4.5));
-                    }"""), f"Low-contrast page text: {palette}"
-                page.evaluate("window.scrollTo({top: 0, behavior: 'instant'})")
-                page.screenshot(path=str(options.output / f"{palette}-{width}.png"))
-                for chart_id in ["media-horizon", "adii-cartogram"]:
-                    page.locator(f"#{chart_id}").screenshot(path=str(options.output / f"{palette}-{chart_id}-{width}.png"))
-                print(f"{width}px {palette}: all 16 charts; selections retained; 64 chart labels meet 4.5:1 contrast.")
-            page.evaluate("""() => {
-                const choice = document.getElementById('palette-choice');
-                for (const palette of ['editorial', 'ocean', 'original', 'plum']) {
-                    choice.value = palette;
-                    choice.dispatchEvent(new Event('change'));
-                }
+            assert page.locator("#palette-choice").count() == 0
+            assert page.locator("html").get_attribute("data-palette") == "ocean"
+            assert page.locator(".chart svg.marks").count() == 17
+            assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+            assert page.evaluate("""() => {
+                const colour = document.createElement('span');
+                colour.style.color = palette.colours.primary;
+                return ['age-media-heatmap', 'audio-age-heatmap', 'adii-choropleth', 'adii-cartogram'].every(
+                    name => chartViews.get(name).scale('color').range()[1] === colour.style.color);
             }""")
-            page.set_viewport_size({"width": 390 if width == 1366 else 1366, "height": 900})
-            wait_for_palette(page, "plum")
-            check_selections(page)
-            assert page.locator(".chart svg.marks").count() == 16
-            page.reload(wait_until="networkidle")
-            assert page.locator("#palette-choice").input_value() == "plum"
-            page.locator("#hero-waffle").scroll_into_view_if_needed()
-            page.wait_for_selector('#hero-waffle[data-status="ready"][data-palette="plum"]')
+            assert page.evaluate("""() => {
+                const luminance = vega.expressionFunction('luminance');
+                return ['growth', 'fall'].every(direction => {
+                    const levels = palette[direction].map(luminance);
+                    return levels.slice(1).every((value, index) => direction === 'growth'
+                        ? value < levels[index] : value > levels[index]);
+                });
+            }""")
+            contrast = page.evaluate("""() => {
+                const contrast = vega.expressionFunction('contrast');
+                const ratios = [];
+                for (const [name, field] of [['age-media-heatmap', 'percent'], ['audio-age-heatmap', 'percent'], ['adii-cartogram', 'score']]) {
+                    const view = chartViews.get(name);
+                    const inspect = item => {
+                        if (item.mark?.marktype === 'text' && item.datum?.[field] !== undefined &&
+                            (field === 'percent' || item.text === item.datum.state)) {
+                            ratios.push(contrast(item.fill, view.scale('color')(item.datum[field])));
+                        }
+                        item.items?.forEach(inspect);
+                    };
+                    inspect(view.scenegraph().root);
+                }
+                return ratios;
+            }""")
+            assert len(contrast) == 106 and min(contrast) >= 4.5, (width, len(contrast), min(contrast))
+            assert page.evaluate("""() => {
+                const contrast = vega.expressionFunction('contrast');
+                const colours = palette.colours;
+                return ['ink', 'primary', 'accent', 'muted'].every(token =>
+                    ['paper', 'paper-deep'].every(background => contrast(colours[token], colours[background]) >= 4.5));
+            }""")
+            assert page.evaluate("""() => {
+                const contrast = vega.expressionFunction('contrast');
+                const backgrounds = [...document.querySelectorAll('.chapter')]
+                    .map(section => getComputedStyle(section).backgroundColor);
+                const textColours = ['ink', 'primary', 'accent', 'muted'].map(token => palette.colours[token]);
+                const seriesColours = chartViews.get('video-service-bump').scale('color').range();
+                return new Set(backgrounds).size === 4 && new Set(seriesColours).size === 8 &&
+                    backgrounds.every(background => textColours.every(colour => contrast(colour, background) >= 4.5) &&
+                        seriesColours.every(colour => contrast(colour, background) >= 3));
+            }"""), 'Text or series colours lack contrast against a section background'
+            assert page.locator('.story-bridge').evaluate_all("""bridges => bridges.every(bridge => {
+                const style = getComputedStyle(bridge);
+                return parseFloat(style.fontSize) >= 18 && parseInt(style.fontWeight) >= 600 &&
+                    style.color === 'rgb(23, 42, 58)';
+            })"""), 'Transitions should stand out from body text'
+            page.evaluate("window.scrollTo({top: 0, behavior: 'instant'})")
+            page.screenshot(path=str(options.output / f"ocean-{width}.png"))
             assert not failures, failures
             page.close()
         page = browser.new_page()
-        page.add_init_script("localStorage.setItem('different-feeds-palette', 'not-a-palette')")
-        page.goto(options.url, wait_until="networkidle")
-        assert page.locator("#palette-choice").input_value() == "ocean"
-        page.close()
-        page = browser.new_page()
         page.add_init_script("Object.defineProperty(window, 'localStorage', {get() {throw new Error('Storage disabled');}})")
         page.goto(options.url, wait_until="networkidle")
-        page.locator("#palette-choice").select_option("editorial")
-        page.wait_for_selector('#hero-waffle[data-status="ready"][data-palette="editorial"]')
+        page.wait_for_selector('#hero-waffle[data-status="ready"][data-palette="ocean"]')
         for width in [320, 768]:
             page.set_viewport_size({"width": width, "height": 900})
             assert page.evaluate("""() => {
@@ -131,9 +95,8 @@ def main():
                 const story = document.querySelector('.hero-copy').getBoundingClientRect();
                 return header.bottom <= story.top && document.documentElement.scrollWidth <= innerWidth;
             }"""), f"Header overlap at {width}px"
-        page.close()
         browser.close()
-        print("Rapid switching, live resizing, saved preferences and unavailable storage passed.")
+        print("Ocean palette, 106 label contrasts, obsolete preferences and unavailable storage passed.")
 
 
 if __name__ == "__main__":

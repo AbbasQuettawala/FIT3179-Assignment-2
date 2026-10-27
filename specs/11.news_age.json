@@ -1,0 +1,384 @@
+{"description": "11. Online news use by age - Dot plot",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "news-age",
+    "callout": true,
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 11,
+      "source_file": "specs/11.news_age.json",
+      "WHAT": "News dot plot: each dot shows online news and information use for one age group.",
+      "WHY": "Aligned positions make small differences easier to compare than differently sized areas.",
+      "data_preparation_and_limits": "The separate trust bar chart uses another survey; its data is not joined to this age chart.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "sort": {
+          "WHAT": "Set an explicit category or calculation order.",
+          "WHY": "Ages, services and years should not depend on accidental file order."
+        },
+        "params": {
+          "WHAT": "Store adjustable values such as videoFormat or hoveredSeries.",
+          "WHY": "Controls and JavaScript can update the view without modifying the CSV."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "expr": {
+          "WHAT": "Evaluate a dynamic expression instead of using a fixed literal.",
+          "WHY": "Coordinates, sizes or scales can respond to chart dimensions and parameter choices."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      },
+      "interaction_bridge": "bind creates chart dropdowns. assets/main.js handles custom hover/click events and updates Vega signals; conditions then change appearance. The page's state selector is HTML/JavaScript; the ocean-and-amber theme is fixed.",
+      "annotation_connectors": "The rule layer uses x/y and x2/y2 as endpoints. Current connectors are short and solid. The earlier strokeDash [3,3] meant 3 pixels of stroke followed by 3 pixels of gap. Compact mode uses the main explanation below the plot."
+    }
+  },
+  "width": "container",
+  "height": 480,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 14,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 13,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "data": {
+    "url": "data/news_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "percent": "number",
+        "base_n": "number",
+        "year": "number"
+      }
+    }
+  },
+  "encoding": {
+    "y": {
+      "field": "age",
+      "type": "ordinal",
+      "sort": [
+        "18–24",
+        "25–34",
+        "35–44",
+        "45–54",
+        "55–64",
+        "65–74",
+        "75+"
+      ],
+      "axis": {
+        "title": "Age"
+      }
+    },
+    "x": {
+      "field": "percent",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          100
+        ]
+      },
+      "axis": {
+        "title": "Used online news and information (%)"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "age",
+        "title": "Age"
+      },
+      {
+        "field": "percent",
+        "type": "quantitative",
+        "format": ".1f",
+        "title": "Used in past 6 months (%)"
+      },
+      {
+        "field": "base_n",
+        "type": "quantitative",
+        "title": "Survey participants"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "size": 200,
+        "color": "#1f6f5b",
+        "opacity": 1
+      },
+      "description": "WHAT: Draw one dot per age group. WHY: Position along a shared percentage axis supports comparison."
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dx": -12,
+        "align": "right",
+        "font": "Inter",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "text": {
+          "field": "percent",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      },
+      "description": "WHAT: Label each dot's percentage. WHY: Small differences can be read precisely."
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "filter": "datum.age === '75+'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "scale('x', datum[\"percent\"])"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "scale('y', datum[\"age\"]) + bandwidth('y') / 2"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "clamp((scale('x', datum[\"percent\"])), (clamp((scale('x', datum[\"percent\"])) - 247, 4, max(4, width - 206))), (clamp((scale('x', datum[\"percent\"])) - 247, 4, max(4, width - 206))) + 202)"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2), (clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 4))), (clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 4))) + (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))))"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 1"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw a short solid rule from the highlighted point towards the annotation box. WHY: A nearby connector links the explanation to its evidence without crossing the whole chart."
+    },
+    {
+      "name": "callout_background",
+      "transform": [
+        {
+          "filter": "datum.age === '75+'"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "color": "#f7f3e8",
+        "opacity": 0.96,
+        "cornerRadius": 4
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "clamp((scale('x', datum[\"percent\"])) - 247, 4, max(4, width - 206))"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 4))"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "(clamp((scale('x', datum[\"percent\"])) - 247, 4, max(4, width - 206))) + 202"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "(clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 4))) + (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n')))"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 0.96"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw a pale rectangle behind the annotation. WHY: The note stays readable over marks and grid lines."
+    },
+    {
+      "name": "callout_anchor",
+      "transform": [
+        {
+          "filter": "datum.age === '75+'"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "shape": "circle",
+        "filled": false,
+        "size": 180,
+        "color": "#f7f3e8",
+        "stroke": "#1f6f5b",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "percent",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ]
+        },
+        "tooltip": {
+          "value": "Most older adults use online news and information too. Using it does not tell us whether they trust it."
+        }
+      },
+      "description": "WHAT: Place a small outlined marker at the selected data point. WHY: It identifies exactly which observation the explanation refers to."
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "filter": "datum.age === '75+'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\""
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "(clamp((scale('x', datum[\"percent\"])) - 247, 4, max(4, width - 206))) + 7"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "(clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split((\"Most older adults use online\\nnews and information too.\\nUsing it does not tell us\\nwhether they trust it.\"), '\\n'))) - 4))) + 6"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 1"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw the explanatory annotation. WHY: It explains why the highlighted pattern matters, rather than just repeating a value."
+    }
+  ],
+  "params": [
+    {
+      "name": "compactLayout",
+      "value": false
+    }
+  ]
+}

@@ -1,5 +1,70 @@
-{
+{"description": "4. Video services by age - Heatmap",
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "age-media-heatmap",
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 4,
+      "source_file": "specs/4.age_media_heatmap.json",
+      "WHAT": "Video-service heatmap: columns are age groups, rows are services, colour is percentage.",
+      "WHY": "A grid makes many age-by-service comparisons easier to scan than dozens of separate charts.",
+      "data_preparation_and_limits": "The CSV already contains percentages. A 0-100 colour domain is a display scale, not a normalisation calculation. People can use multiple services.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "sort": {
+          "WHAT": "Set an explicit category or calculation order.",
+          "WHY": "Ages, services and years should not depend on accidental file order."
+        },
+        "condition": {
+          "WHAT": "Use one visual setting when a test is true and another otherwise.",
+          "WHY": "This provides highlighting, readable text contrast and responsive annotations without changing measurements."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      }
+    }
+  },
   "width": "container",
   "height": 500,
   "autosize": {
@@ -42,7 +107,6 @@
       "titleFont": "Inter"
     }
   },
-  "description": "A colour-coded grid showing use of eight video services by age group in the past six months.",
   "data": {
     "url": "data/video_services_age.csv",
     "format": {
@@ -134,7 +198,8 @@
             "title": "Survey participants"
           }
         ]
-      }
+      },
+      "description": "WHAT: Draw the coloured cells. WHY: Colour reveals broad patterns across rows and columns."
     },
     {
       "mark": {
@@ -183,7 +248,8 @@
           },
           "value": "#000000"
         }
-      }
+      },
+      "description": "WHAT: Draw numbers over the cells at the same x/y positions. WHY: Readers can read exact rounded values instead of guessing from colour."
     }
   ]
 }

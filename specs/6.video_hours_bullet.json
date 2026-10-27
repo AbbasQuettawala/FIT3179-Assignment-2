@@ -1,0 +1,564 @@
+{"description": "6. Viewing hours by age and format - Bullet chart",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "usermeta": {
+    "chart": "video-hours-bullet",
+    "callout": true,
+    "explanations": {
+      "READ_ME": "These are explanatory notes, not rendering instructions. Search WHAT or WHY. The chart code follows below.",
+      "chart_number": 6,
+      "source_file": "specs/6.video_hours_bullet.json",
+      "WHAT": "Bullet chart: bars show age-group viewing hours; ticks show the national average for the selected format.",
+      "WHY": "A shared reference tick makes it easy to see which groups watch more or less than the national average.",
+      "data_preparation_and_limits": "The dropdown filters formats, not people. The hours axis rescales by format. Hours and percentages are different measurements.",
+      "features": {
+        "data": {
+          "WHAT": "Load a table, geographic file or inline records.",
+          "WHY": "Keep source measurements separate from the instructions that draw them."
+        },
+        "parse": {
+          "WHAT": "Read the listed CSV columns as numbers.",
+          "WHY": "Numerical comparisons and calculations must not treat values as text."
+        },
+        "mark": {
+          "WHAT": "Choose the graphical shape: rectangle, line, point, text, rule, tick, bar or geoshape.",
+          "WHY": "The mark should support the comparison this chart is designed to show."
+        },
+        "encoding": {
+          "WHAT": "Map data fields to position, colour, size, text and other visual properties.",
+          "WHY": "The viewer needs a consistent visual meaning for each measurement or category."
+        },
+        "layer": {
+          "WHAT": "Draw several sets of marks in the same plot.",
+          "WHY": "This combines data marks with labels, reference ticks and explanatory annotations."
+        },
+        "field": {
+          "WHAT": "Read a named column from each data row.",
+          "WHY": "This connects the source data or a derived field to the visual property."
+        },
+        "domain": {
+          "WHAT": "Set the input bounds or categories of a scale.",
+          "WHY": "This controls the display mapping; a domain of 0-100 does NOT normalise the data."
+        },
+        "range": {
+          "WHAT": "Set the visual outputs of a scale, such as colours or symbol sizes.",
+          "WHY": "The domain's values need corresponding visual appearances."
+        },
+        "tooltip": {
+          "WHAT": "List the fields shown when pointing at a mark.",
+          "WHY": "Exact values and context are available without permanently crowding the plot."
+        },
+        "sort": {
+          "WHAT": "Set an explicit category or calculation order.",
+          "WHY": "Ages, services and years should not depend on accidental file order."
+        },
+        "params": {
+          "WHAT": "Store adjustable values such as videoFormat or hoveredSeries.",
+          "WHY": "Controls and JavaScript can update the view without modifying the CSV."
+        },
+        "bind": {
+          "WHAT": "Connect a parameter to an input, such as a select dropdown.",
+          "WHY": "Readers can choose a format, series or city without editing code."
+        },
+        "filter": {
+          "WHAT": "Keep only rows whose expression is true; datum means the current row.",
+          "WHY": "The selected format or annotation needs a subset of the data, not a change to its values."
+        },
+        "window": {
+          "WHAT": "Calculate ranks or row numbers across sorted rows.",
+          "WHY": "Rank compares services within each year; row_number selects an observation for a callout. Neither is normalisation."
+        },
+        "expr": {
+          "WHAT": "Evaluate a dynamic expression instead of using a fixed literal.",
+          "WHY": "Coordinates, sizes or scales can respond to chart dimensions and parameter choices."
+        },
+        "format": {
+          "WHAT": "Choose file parsing or numeric display formatting, depending on its location.",
+          "WHY": "For labels, .0f shows whole numbers and .1f one decimal; this does not replace the stored value."
+        },
+        "config": {
+          "WHAT": "Set shared fonts, axes, legends and background styling.",
+          "WHY": "Consistent presentation keeps attention on the data rather than unnecessary decoration."
+        }
+      },
+      "interaction_bridge": "bind creates chart dropdowns. assets/main.js handles custom hover/click events and updates Vega signals; conditions then change appearance. The page's state selector is HTML/JavaScript; the ocean-and-amber theme is fixed.",
+      "annotation_connectors": "The rule layer uses x/y and x2/y2 as endpoints. Current connectors are short and solid. The earlier strokeDash [3,3] meant 3 pixels of stroke followed by 3 pixels of gap. Compact mode uses the main explanation below the plot."
+    }
+  },
+  "width": "container",
+  "height": 500,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domain": false,
+      "gridColor": "#d9ded8",
+      "gridOpacity": 0.65,
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 14,
+      "labelPadding": 7,
+      "tickColor": "#a8b3ad",
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleFontWeight": 650,
+      "titlePadding": 12
+    },
+    "legend": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "labelFontSize": 13,
+      "symbolStrokeWidth": 3,
+      "titleColor": "#10231f",
+      "titleFont": "Inter",
+      "titleFontSize": 11
+    },
+    "header": {
+      "labelColor": "#10231f",
+      "labelFont": "Inter",
+      "titleColor": "#10231f",
+      "titleFont": "Inter"
+    },
+    "axisX": {
+      "grid": false
+    }
+  },
+  "data": {
+    "url": "data/video_hours_age.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "age_order": "number",
+        "hours": "number",
+        "national_hours": "number",
+        "base_n": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "videoFormat",
+      "value": "Free-to-air TV",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Free-to-air TV",
+          "Paid streaming",
+          "Short-form video",
+          "FTA catch-up",
+          "Pay TV",
+          "Pay-per-view"
+        ],
+        "labels": [
+          "Free-to-air TV",
+          "Paid streaming",
+          "Short-form video",
+          "Catch-up TV",
+          "Pay TV",
+          "Pay-per-view"
+        ],
+        "name": "Video type  "
+      }
+    },
+    {
+      "name": "compactLayout",
+      "value": false
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.metric === videoFormat"
+    }
+  ],
+  "layer": [
+    {
+      "name": "bullet_bars",
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4,
+        "height": 32
+      },
+      "encoding": {
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ],
+          "axis": {
+            "title": "Age"
+          }
+        },
+        "x": {
+          "field": "hours",
+          "type": "quantitative",
+          "scale": {
+            "domain": {
+              "expr": "[0, videoFormat === 'Free-to-air TV' ? 20 : videoFormat === 'Paid streaming' ? 10 : videoFormat === 'Short-form video' ? 11 : videoFormat === 'FTA catch-up' ? 6 : videoFormat === 'Pay TV' ? 5 : 0.6]"
+            }
+          },
+          "axis": {
+            "title": "Average hours in past 7 days"
+          }
+        },
+        "color": {
+          "datum": "Age-group average",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Age-group average",
+              "National average"
+            ],
+            "range": [
+              "#1f6f5b",
+              "#d94d72"
+            ]
+          },
+          "legend": {
+            "title": "Bar length = average hours",
+            "orient": "top",
+            "columns": 1,
+            "symbolType": "square",
+            "labelExpr": "datum.label === 'Age-group average' ? 'Bar: age-group average' : 'Tick: national average'"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "age",
+            "title": "Age"
+          },
+          {
+            "field": "hours",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Hours"
+          },
+          {
+            "field": "national_hours",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "National average (hours)"
+          },
+          {
+            "field": "base_n",
+            "type": "quantitative",
+            "title": "Survey participants"
+          },
+          {
+            "field": "metric",
+            "title": "Video format"
+          }
+        ]
+      },
+      "description": "WHAT: Draw age-group average hours as horizontal bars. WHY: Length on a common baseline makes ages easy to compare."
+    },
+    {
+      "name": "bullet_average",
+      "mark": {
+        "type": "tick",
+        "color": "#d94d72",
+        "thickness": 3,
+        "size": 40
+      },
+      "encoding": {
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ]
+        },
+        "x": {
+          "field": "national_hours",
+          "type": "quantitative"
+        },
+        "color": {
+          "datum": "National average",
+          "type": "nominal"
+        }
+      },
+      "description": "WHAT: Overlay a short vertical tick at the national average on each row. WHY: The repeated reference makes above/below-average comparisons local and immediate."
+    },
+    {
+      "name": "bullet_values",
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "font": "Inter",
+        "fontWeight": 700,
+        "color": "#10231f"
+      },
+      "encoding": {
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ]
+        },
+        "x": {
+          "field": "hours",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "hours",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      },
+      "description": "WHAT: Label each age group's hours. WHY: Exact readings complement the visual bar lengths."
+    },
+    {
+      "name": "callout_leader",
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "hours",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#63736f",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "scale('x', datum[\"hours\"])"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "scale('y', datum[\"age\"]) + bandwidth('y') / 2"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "clamp((scale('x', datum[\"hours\"])), (clamp((scale('x', datum[\"hours\"])) + 18, 4, max(4, width - 206))), (clamp((scale('x', datum[\"hours\"])) + 18, 4, max(4, width - 206))) + 202)"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2), (clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 4))), (clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 4))) + (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))))"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 1"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw a short solid rule from the highlighted point towards the annotation box. WHY: A nearby connector links the explanation to its evidence without crossing the whole chart."
+    },
+    {
+      "name": "callout_background",
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "hours",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "color": "#f7f3e8",
+        "opacity": 0.96,
+        "cornerRadius": 4
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "clamp((scale('x', datum[\"hours\"])) + 18, 4, max(4, width - 206))"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 4))"
+          }
+        },
+        "x2": {
+          "value": {
+            "expr": "(clamp((scale('x', datum[\"hours\"])) + 18, 4, max(4, width - 206))) + 202"
+          }
+        },
+        "y2": {
+          "value": {
+            "expr": "(clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 4))) + (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n')))"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 0.96"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw a pale rectangle behind the annotation. WHY: The note stays readable over marks and grid lines."
+    },
+    {
+      "name": "callout_anchor",
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "hours",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "shape": "circle",
+        "filled": false,
+        "size": 180,
+        "color": "#f7f3e8",
+        "stroke": "#1f6f5b",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "hours",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": [
+            "18–24",
+            "25–34",
+            "35–44",
+            "45–54",
+            "55–64",
+            "65–74",
+            "75+"
+          ]
+        },
+        "tooltip": {
+          "value": "Beyond the tick means more hours than the national mean, not more viewers."
+        }
+      },
+      "description": "WHAT: Place a small outlined marker at the selected data point. WHY: It identifies exactly which observation the explanation refers to."
+    },
+    {
+      "name": "callout_text",
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "callout_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "hours",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.callout_rank === 1"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": {
+          "expr": "(videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")"
+        },
+        "font": "Inter",
+        "fontSize": 11,
+        "lineHeight": 15,
+        "lineBreak": "\n",
+        "align": "left",
+        "baseline": "top",
+        "color": "#10231f"
+      },
+      "encoding": {
+        "x": {
+          "value": {
+            "expr": "(clamp((scale('x', datum[\"hours\"])) + 18, 4, max(4, width - 206))) + 7"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "(clamp((scale('y', datum[\"age\"]) + bandwidth('y') / 2) - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 10, 4, max(4, height - (12 + 15 * length(split(((videoFormat === 'Free-to-air TV') ? (\"Older adults spend longer\\nwatching TV. Viewer counts\\nalone miss this difference.\") : (\"Beyond the tick means more\\nhours than the national mean,\\nnot more viewers.\")), '\\n'))) - 4))) + 6"
+          }
+        },
+        "opacity": {
+          "value": {
+            "expr": "compactLayout ? 0 : 1"
+          }
+        },
+        "tooltip": {
+          "value": null
+        }
+      },
+      "description": "WHAT: Draw the explanatory annotation. WHY: It explains why the highlighted pattern matters, rather than just repeating a value."
+    }
+  ]
+}
